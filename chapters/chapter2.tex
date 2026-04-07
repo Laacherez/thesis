@@ -1,0 +1,45 @@
+\chapter{Brownian Motion in extreme lubrication}
+
+\section{Introduction} 
+
+Let us now turn to the second part of my thesis, and dare I say, the heaviest part of my doctoral work, both from the theoretical and the numerical standpoints. 
+
+Consider now an infinite plane, which we will take normal to the vertical $z$ axis. Over that plane lays a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$. As per usual Stokesian assumptions, we will take the fluid as incompressible.
+
+In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. We may now detail all forces acting upon that colloid:
+
+\begin{itemize}
+    \item The force of gravity, which is given by $\vv{F_\mathrm{g}} = \frac{4}{3} \pi a^3 \rho \vv{g}$, where $\vv{g}$ is the acceleration of gravity.
+    \item The buoyant force, which is given by $\vv{F_\mathrm{b}} = \frac{4}{3} \pi a^3 \rho_\mathrm{p} \vv{g}$, where $\rho_\mathrm{p}$ is the density of the particle.
+    \item The stochastic Brownian force, which is given by $\vv{F_\mathrm{B}} = \sqrt{2 k_\mathrm{B} T \gamma} \vv{\xi(t)}$, where $\vv{\xi(t)}$ is a Gaussian white noise with zero mean and unit variance, and $\zeta$ is the friction coefficient of the particle, which in the case of a sphere is given by $\gamma = 6 \pi \eta a$.
+    \item The electrostatic repulsion force, due to the presence of charges at both involved surfaces (the confining boundary and the colloid), which is given by $\vv{F_\mathrm{el}} = A \exp(-\kappa z)$, where $A$ is a constant that depends on the surface charge densities and the dielectric constant of the medium, $\kappa$ is the inverse Debye length, and $z$ is the distance between the particle and the plane.
+\end{itemize}
+
+Due to the no-slip boundary conditions at contact with the plane, we must modify the effective viscosity of the fluid as the particle evolves in the $z$ direction. This correction brings not only inhomogeneity along the $z$-axis but also anisotropy, as the $x$ and $y$ components of the friction coefficient will differ from the $z$ component. The effective friction coefficients are given by the following expressions.
+
+Brenner's formula for the perpendicular friction coefficient is given by:
+
+\begin{equation}
+    \ref{Brenner}
+    brenner
+\end{equation}
+
+
+Which has been approximated by Padé approximants as:
+
+\begin{equation}
+    \ref{Pade}
+    pade
+\end{equation}
+
+
+
+
+
+The parallel friction coefficient, on the other hand, is given by:
+\begin{equation}
+    \ref{Faxén}
+    faxen.
+\end{equation}
+
+
