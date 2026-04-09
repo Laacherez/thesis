@@ -1,0 +1,173 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{LeBellac_2004}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=9836340323d19ff0f40a28d1d60df251}{%
+           family={Bellac},
+           familyi={B\bibinitperiod},
+           given={Michel\bibnamedelima Le},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=1fd18e5c3be23136a6906a9dd9373d0c}{%
+           family={Mortessagne},
+           familyi={M\bibinitperiod},
+           given={Fabrice},
+           giveni={F\bibinitperiod}}}%
+        {{hash=8fb6d32313a52ccf1c1ca4b89a6387a3}{%
+           family={Batrouni},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi George},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{369da286baa953a524553d95858271bf}
+      \strng{fullhash}{369da286baa953a524553d95858271bf}
+      \strng{fullhashraw}{369da286baa953a524553d95858271bf}
+      \strng{bibnamehash}{369da286baa953a524553d95858271bf}
+      \strng{authorbibnamehash}{369da286baa953a524553d95858271bf}
+      \strng{authornamehash}{369da286baa953a524553d95858271bf}
+      \strng{authorfullhash}{369da286baa953a524553d95858271bf}
+      \strng{authorfullhashraw}{369da286baa953a524553d95858271bf}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780521821438}
+      \field{title}{Equilibrium and Non-Equilibrium Statistical Thermodynamics}
+      \field{year}{2004}
+      \verb{doi}
+      \verb 10.1017/CBO9780511606571
+      \endverb
+    \endentry
+    \entry{brenner_slow_1961}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=702d7838ff4deb372c0f4f09c4087181}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{fullhash}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{fullhashraw}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{bibnamehash}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{authorbibnamehash}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{authornamehash}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{authorfullhash}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{authorfullhashraw}{702d7838ff4deb372c0f4f09c4087181}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Bipolar co-ordinates are employed to obtain “exact” solutions of the equations of slow, viscous flow for the steady motion of a solid sphere towards or away from a plane surface of infinite extent. Two cases are considered: (i) the plane surface is rigid and fluid adheres to its surface; (ii) the plane is a free surface on which the tangential stresses vanish. Deformation of the surface in the latter case is neglected. Numerical results are provided for the corrections to Stokes' law necessitated by the presence of the plane boundary at a finite distance from the particle. Application of the results to end-effect correlations in the falling-ball viscometer are discussed. Résumé Des coordonnées bipolaires sont utilisées pour obtenir des solutions “exactes” des équations relatives à l'écoulement lent et visqueux d'une sphére solide en mouvement uniforme au voisinage ou à distance d'une surface plane infinie. Deux cas sont considérés: (1) La surface plane est rigide et le fluide y adhère; (II) elle est libre et les forces tangentielles disparaissent. On néglige dans ce dernier cas la déformation de la surface. Des résultats numériques sont donnés pour les corrections de la loi de Stokes nécessitées par la présence d'un plan de séparation à une distance finie de la particule. Suit une discussion de l'application des résultats aux relations donnant l'effect des extrémités dans les viscosimètres à chute de bille. Zusammenfassung Mit Polarkoordinaten werden “exakte” Lösengun der Gleichungen für langsames viskoses Fliessen für die stationäre Bewegung einer festen Kugel gegen eine ebene, unendlich grosse Oberfläche, oder von ihr hinweg, erhalten. Es werden zwei Fälle betrachtet: (I) Die ebene Oberfläche ist fest und mit Flüssigkeit behaftet; (II) Es liegt eine freie Oberfläche vor, in der die Tangentialspannungen verschwinden. In diesem Fall wird die Verformung der Oberfläche vernachlässigy. Numerische Ergebnisse werden angegeben zur Korrektur des Stokes'schen Gesetzes, die infolge der Gegenwart einer ebenen Grenzfläche in endlicher Entfernung von dem Teilchen notwendig ist. Die Anwendung der Ergebnisse zur Korrektur von Endeffekten im Kugelviskosimeter wird diskutiert.}
+      \field{issn}{0009-2509}
+      \field{journaltitle}{Chemical Engineering Science}
+      \field{number}{3}
+      \field{title}{The slow motion of a sphere through a viscous fluid towards a plane surface}
+      \field{volume}{16}
+      \field{year}{1961}
+      \field{pages}{242\bibrangedash 251}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0009-2509(61)80035-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0009250961800353
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0009250961800353
+      \endverb
+    \endentry
+    \entry{Faxen_1924}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6191e3ea613df7f0a6bb457bcb28afa6}{%
+           family={Faxén},
+           familyi={F\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{fullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{fullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{bibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorbibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authornamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorfullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorfullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Arkiv for Matematik, Astronomi och Fysik}
+      \field{title}{Fredholm integral equations of hydrodynamics of liquids I}
+      \field{volume}{18}
+      \field{year}{1924}
+      \field{pages}{29\bibrangedash 32}
+      \range{pages}{4}
+    \endentry
+    \entry{BakerGravesMorris_1996}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=3003b6385bc53d8f16fcf34291f4af02}{%
+           family={Jr.},
+           familyi={J\bibinitperiod},
+           given={George\bibnamedelimb A.\bibnamedelimi Baker},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=c84d6360c7f9662a736f29d2d33481cc}{%
+           family={Graves-Morris},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{445ba675c3060eafbf17383c78c40d80}
+      \strng{fullhash}{445ba675c3060eafbf17383c78c40d80}
+      \strng{fullhashraw}{445ba675c3060eafbf17383c78c40d80}
+      \strng{bibnamehash}{445ba675c3060eafbf17383c78c40d80}
+      \strng{authorbibnamehash}{445ba675c3060eafbf17383c78c40d80}
+      \strng{authornamehash}{445ba675c3060eafbf17383c78c40d80}
+      \strng{authorfullhash}{445ba675c3060eafbf17383c78c40d80}
+      \strng{authorfullhashraw}{445ba675c3060eafbf17383c78c40d80}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{series}{Encyclopedia of Mathematics and its Applications}
+      \field{title}{Padé Approximants}
+      \field{volume}{59}
+      \field{year}{1996}
+    \endentry
+  \enddatalist
+  \missing{Bevan}
+  \missing{Honig}
+\endrefsection
+\endinput
+

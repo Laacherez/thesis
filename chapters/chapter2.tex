@@ -1,45 +1,133 @@
 \chapter{Brownian Motion in extreme lubrication}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} 
 
 Let us now turn to the second part of my thesis, and dare I say, the heaviest part of my doctoral work, both from the theoretical and the numerical standpoints. 
 
-Consider now an infinite plane, which we will take normal to the vertical $z$ axis. Over that plane lays a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$. As per usual Stokesian assumptions, we will take the fluid as incompressible.
+This chapter is a two-headed hydra, in that two main flavours will naturally present themselves (colloid-wall lubrication, and colloid-colloid lubrication), and we cut one head off, more will keep on coming. 
+I ask the reader to bear with me and accept that I will be revising my wording as I go, but for my own sanity, I need to be writing this as if i was sending a note to a friend who is weirdly into lubrication theory. Anyway.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Colloid-plane lubrication theory}
+Consider now an infinite silica plane, which we will take normal to the vertical $z$ axis, laying at $z=0$. Over that plane is a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$ with $k_\mathrm{B}$ Boltzmann's constant. As per usual Stokesian assumptions, we will take the fluid as incompressible.
 
-In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. We may now detail all forces acting upon that colloid:
+In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. We now wonder how we could simulate accurately such a system.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Forces acting upon the colloid}
 
-\begin{itemize}
-    \item The force of gravity, which is given by $\vv{F_\mathrm{g}} = \frac{4}{3} \pi a^3 \rho \vv{g}$, where $\vv{g}$ is the acceleration of gravity.
-    \item The buoyant force, which is given by $\vv{F_\mathrm{b}} = \frac{4}{3} \pi a^3 \rho_\mathrm{p} \vv{g}$, where $\rho_\mathrm{p}$ is the density of the particle.
-    \item The stochastic Brownian force, which is given by $\vv{F_\mathrm{B}} = \sqrt{2 k_\mathrm{B} T \gamma} \vv{\xi(t)}$, where $\vv{\xi(t)}$ is a Gaussian white noise with zero mean and unit variance, and $\zeta$ is the friction coefficient of the particle, which in the case of a sphere is given by $\gamma = 6 \pi \eta a$.
-    \item The electrostatic repulsion force, due to the presence of charges at both involved surfaces (the confining boundary and the colloid), which is given by $\vv{F_\mathrm{el}} = A \exp(-\kappa z)$, where $A$ is a constant that depends on the surface charge densities and the dielectric constant of the medium, $\kappa$ is the inverse Debye length, and $z$ is the distance between the particle and the plane.
-\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Stochastic drift and derivation from the Fokker-Plank equation}
+A much more subtle effect contributing to preserving the system's accurate physics is the so-called stochastic drift. This drift is a consequence of the effective viscosity of the fluid being inhomogeneous and anisotropic. This means that the friction coefficient $\gamma$ felt by the particle will also be inhomogeneous and anisotropic, and so will be the diffusion coefficient $D = k_\mathrm{B} T / \gamma$.
+In turn, we cannot consider the stochastic force $\vv{F}_\mathrm{stoch}$ as a simple white noise, as it will have to be multiplicative, and thus, we will have to add a drift term to the Langevin equation in order to preserve the correct equilibrium distribution of the system.
+
+To derive this stochastic drift contribution to the total of all forces acting upon the colloid, we start from the one-dimensional Fokker-Plank equation, which describes the evolution of the Probability Density Function (PDF) $P(X_t, X_0; t)$ of the particle's position $X_t$ at time $t$, given its initial position $X_0$ at time $t=0$:
+\begin{equation}
+\mathrm{d}X_t = u(X_t)\mathrm{d}t + g \mathrm{d}B_t~,
+\label{Fokker-Plank}
+\end{equation}
+
+where $u(X_t)$ is the drift velocity term, $g$ is the magnitude of the noise, and $\mathrm{d}B_t$ is the increment of a Wiener process.
+
+We now take the average value of a function obeying the PDF $P(X_t, X_0; t)$, which we will call $f(X_t)$. This average value will, by definition, follow \cite{LeBellac_2004}:
+
+\begin{equation}
+\langle f(X_t) \rangle = \int f(X_t) P(X_t, X_0; t) \mathrm{d}X_t~,
+\label{avg_f}
+\end{equation}
+
+with the initial condition $P(X_t, X_0; 0) = \delta(X_t - X_0)$. Expanding $f(X_t)$ in a Taylor series yields:
+
+\begin{equation}
+    f(X_t + \mathrm{d}X_t) = f(X_t) + f'(X_t) \mathrm{d}X_t + \frac{1}{2} f''(X_t) (\mathrm{d}X_t)^2 + \ldots
+    \label{f_expansion}
+\end{equation}
+
+Substituting $\mathrm{d}X_t$ from the Fokker-Plank equation and taking the average, we get:
+
+\begin{equation}
+    \left\langle \frac{\mathrm{d}f(X_t)}{\mathrm{d}t} \right\rangle \simeq  \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2
+    \label{f_avg_evolution}
+\end{equation}
+
+Combining this with the definition of the average value of $f(X_t)$, we can derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$:
+\begin{eqnarray}
+\int \mathrm{d}X_t \frac{\partial f(X_t)}{\partial t} f(X_t) = \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2\\
+= \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t)~,
+\end{eqnarray}
+
+where $G$ is the Generator, defined as $G = u(X_t) \frac{\partial}{\partial X_t} + \frac{1}{2} g^2 \frac{\partial^2}{\partial X_t^2}~$. Taking the adjoint of $G$ as $G^\dagger$, we can rewrite the above equation as:
+\begin{equation}
+    \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t) = \int \mathrm{d}X_t\, f(X_t) G^\dagger P(X_t, X_0; t)~.
+\end{equation}
+
+We can then derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$ as:
+\begin{equation}
+    \frac{\partial P(X_t, X_0; t)}{\partial t} = G^\dagger P(X_t, X_0; t) = -\frac{\partial}{\partial X_t} \left( u(X_t) P(X_t, X_0; t) \right) + \frac{1}{2} \frac{\partial^2}{\partial X_t^2} \left( g^2 P(X_t, X_0; t) \right)~.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Langevin equation}
+
+
+The equation of motion of the particle is then given by the overdamped Langevin equation:
+\begin{equation}
+    \label{Langevin}
+1111
+\end{equation}
 
 Due to the no-slip boundary conditions at contact with the plane, we must modify the effective viscosity of the fluid as the particle evolves in the $z$ direction. This correction brings not only inhomogeneity along the $z$-axis but also anisotropy, as the $x$ and $y$ components of the friction coefficient will differ from the $z$ component. The effective friction coefficients are given by the following expressions.
 
-Brenner's formula for the perpendicular friction coefficient is given by:
+
+In his seminal work\cite{brenner_slow_1961}, Brenner derives the exact expression for the effective viscosity felt by a sphere moving perpendicular to a plane wall.
+Brenner's formula for the perpendicular effective viscosity is given by:
 
 \begin{equation}
-    \ref{Brenner}
-    brenner
+    \label{Brenner}
+    \eta_\perp (z) = \eta \frac{4}{3} \sinh(\alpha) \sum_{n=1}^{\infty} \frac{n(n+1)}{(2n-1)(2n+3)} \left[ \frac{2 \sinh((2n+1)\alpha) + (2n+1) \sinh(2\alpha)}{4 \sinh^2((n+\frac{1}{2})\alpha) - (2n+1)^2 \sinh^2(\alpha)} - 1 \right],
+\end{equation}
+
+with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner derives the effective viscosity from full Stokes derivations, it is worth noting that this expression is exact and valid for all values of $z/a > 1$, aka up until sphere-boundary contact. However, for the sake of efficient numerical computations later on, we will avoid infinite-series computations and prefer the use of Padé approximants \cite{BakerGravesMorris_1996} 
+\footnote{Padé approximants are used to approximate a function by a ratio of two polynomials rather than a single polynomial as a Taylor expansion would. This allows for higher precision faraway from the expansion point, as well as for the existence of poles}, which were computed by Honig \cite{Honig}, Bevan and Prieve \cite{Bevan} as
+
+
+\textcolor{red}{\textbf{TODO:} Add the petit O and domain of validity.}
+\begin{equation}
+    \label{Padé}
+    \eta_\perp (z) \simeq \eta \frac{6z^2 + 2az}{6z^2 - 9az + 2a^2}.
 \end{equation}
 
 
-Which has been approximated by Padé approximants as:
+\textcolor{red}{\textbf{TODO:} Add Maxou-like comparison of the formulae maybe ?}
 
+
+
+The parallel effective viscosity, on the other hand, was derived by Faxén \cite{Faxen_1924} and is given by the following expression:
 \begin{equation}
-    \ref{Pade}
-    pade
+    \label{Faxén}
+    \eta_\parallel (z) \simeq  \frac{\eta}{1 - \frac{9}{16} \frac{a}{z} + \frac{1}{8} \left( \frac{a}{z} \right)^3 - \frac{45}{256} \left( \frac{a}{z} \right)^4 - \frac{1}{16} \left( \frac{a}{z} \right)^5}.
 \end{equation}
 
+These expressions suffice for the simulation of a colloid over an infinite plane in far-field to moderate-field regimes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Colloid-colloid lubrication theory}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Coupling colloid-wall and colloid-colloid lubrication theories}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The lubrication-corrected RigidBlobWalls algorithm for simulating Brownian suspensions in confinement}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lubrication-corrected mobility tensor}
+We would now like to predict the behaviour of a Brownian suspension which is both very dense and very close to a confining wall. In order to conduct these predictions accurately, we turn to the study of two colloids diffusing over the plane. Such a question constitutes by essence a three-body problem, for which no evident, closed-form solutions typically exist.
+However, it is possible by cleverly building the mobility matrices to still recover satisfactory approximations of the dynamics of the system, even in the deep lubrication regime.
+As stated above, there exists an exact expression computed by Brenner for the perpendicular effective viscosity of a single colloid diffusing over an infinite plane, and an approximate expression computed by Faxén for the parallel effective viscosity. However, the former relies on infinite series, which is highly computationally inefficient; and the latter fails in the deep lubrication regime.
+Thus, we will turn to approximations depending on the wall-colloid distance $z$.
 
+At this level, it becomes more convenient to work in terms of \emph{self-mobility} and \emph{self-resistance} matrices rather than in terms of effective viscosities. The mobility matrix $\mathbf{M}$ relates the velocity $\vv{U}$ of the particle to the applied force $\vv{F}$ via $\vv{U} = \mathbf{M} \cdot \vv{F}$, while the resistance matrix $\mathbf{R}$ is its inverse, relating the force to the velocity via $\vv{F} = \mathbf{R} \cdot \vv{U}$. In the context of a sphere near a plane wall, these matrices become anisotropic and depend on the distance $z$ from the wall.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Numerical methods for simulating dense Brownian suspensions in close confinement}
 
-The parallel friction coefficient, on the other hand, is given by:
-\begin{equation}
-    \ref{Faxén}
-    faxen.
-\end{equation}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Application to the Dufresne experiments: going beyond the Blake approximation}
