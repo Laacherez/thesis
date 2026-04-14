@@ -37,7 +37,7 @@ We now take the average value of a function obeying the PDF $P(X_t, X_0; t)$, wh
 \label{avg_f}
 \end{equation}
 
-with the initial condition $P(X_t, X_0; 0) = \delta(X_t - X_0)$. Expanding $f(X_t)$ in a Taylor series yields:
+with the initial condition $P(X_t, X_0; 0) = \delta(X_t - X_0)$, where $\delta$ is the Dirac delta function. Expanding $f(X_t)$ in a Taylor series yields:
 
 \begin{equation}
     f(X_t + \mathrm{d}X_t) = f(X_t) + f'(X_t) \mathrm{d}X_t + \frac{1}{2} f''(X_t) (\mathrm{d}X_t)^2 + \ldots
@@ -115,15 +115,108 @@ These expressions suffice for the simulation of a colloid over an infinite plane
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Coupling colloid-wall and colloid-colloid lubrication theories}
+Naturally, the next step is to couple both lubrication effects together. Luckily, such study has already been carried out both theoretically and experimentally by Dufresne et al. \cite{Dufresne_2000}. In this article, the authors discuss the modification on colloid cross-diffusion due to wall and colloid-colloid-induced lubrication effects.
+The following setup, depicted in Figure \ref{dufresne_system}, is used: two colloids of radius $a=0.485\pm0.025 \mu m$ (Duke Scientific lot 21024) are submerged in a water-salt solution of 2mM [NaCl] and viscosity $\eta = 0.817 cP$. 
+The water-salt layer is $140 \pm 2 \mu \mathrm{m}$ thick, and sealed between a microscope slide and a No. 1 coverslip, with the system fully sealed with UV-cured epoxy to prevent evaporation of the fluid and fluid flows in the bulk. The system is maintained at $T = 29.00 \pm 0.01 ^\circ C$. In these conditions, the colloid self-diffusion is found to be $D_0 = \frac{k_\mathrm{B}T}{6 \pi \eta a} = 0.550 \pm 0.028 \mu \mathrm{m}^2/\mathrm{s}$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+    \centering
+    \label{dufresne_system}
+    \includegraphics[width=0.8\textwidth]{figures/chapter2/dufresne_system.pdf}
+    \caption{Experimental setup of Dufresne et al. \cite{Dufresne_2000} for the study of two colloids diffusing over a plane wall.}
+\end{figure}
+
+The authors then trap the two colloids with a single optical tweezer, by alternating the position of the focal plane at the two positions of interest at a frequency of 200Hz using a galvanometer-driven mirror. Then, by blocking the beam for $t=83\mathrm{ms}$, they retrieve the sphere positions over five video frames only to ensure minimal out-of-focal displacement. By reactivating the trapping, they can repeat the experiment with perfect reproducibility for each starting position of interest in their system.
+From there on, authors carry out experiments over a grid of starting positions in $(r, h)$ space, with $r$ the center-to-center distance between colloids and $2 \mu \mathrm{m}< r < 10 \mu \mathrm{m}$, and $h$ the colloid center-to-wall distance, with $1\mu \mathrm{m}< h < 30 \mu \mathrm{m}$.
+
+As discussed in the previous sections, colloids in a same bath should see their motion coupled non-trivially, and the coupling to the wall itself should also modify their expected diffusion. To investigate these effects, the authors decompose the trajectories of the colloids into cooperative and relative motions, respectively $\vv\rho = \vv{r_1} + \vv{r_2}$ and $\vv{r} = \vv{r_1} - \vv{r_2}$ along ($\parallel$) and perpendicular ($\perp$) to the line of centers of the spheres. From there, they fill displacement histograms for each mode of motion at each of the five time steps taken into consideration and retrieve the effective diffusion coefficients from the standard deviation of each histogram, as
+
+\begin{equation}
+    \langle \Delta r_{i, \alpha} ( \tau ) \Delta r_{j, \beta} \rangle = 2 D_{i\alpha, j\beta} \tau~,
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+with $i,j \in \{1,2\}$ and $\alpha, \beta \in \{\parallel, \perp\}$, and where $\langle . \rangle$ denotes an ensemble average.
+
+A typical result of the experiment for a given set of $(r, h)$ is shown in Figure \ref{dufresne_results_msd}.
+
+\begin{figure}
+    \centering
+    \label{dufresne_results_msd}
+    \includegraphics[width=0.8\textwidth]{figures/chapter2/dufresne_results.pdf}
+    \caption{Adapted from \cite{Dufresne_2000}. Measured pair diffusion for the relative perpendicular mode of motion of the two colloids. The upper inset shows the histogram of all binned displacements for a given time step, for $h = 25.5 \pm 0.7 \mu \mathrm{m}$ and $r = 7.00 \pm 0.25 \mu \mathrm{m}$. This process is repeated over all timesteps and each histogram is fitted with a Gaussian curve to recover the root mean square displacement $\Delta \rho (r, h, \tau)$ to recover the MSD of the main plot. The effective cross-diffusion coefficient for the perpendicular mode is then extracted from the slope of the MSD.}
+\end{figure}
+
+
+For comparisons purposes with their retrieved cross-diffusions in the four possible modes, the authors then compute by different means the theoretical expected value of the cross-diffusion coefficients.
+In the case of two colloids in the bulk that are separated by a sufficient distance to approximate them by point forces, the flow field around one of the colloids can be described by a Stokeslet, and the Green's function for the flow at $\vv{x}$ in the $\alpha$ direction from a unit force at $\vv{r}_j$ in the $\beta$ direction reads :
+
+\begin{equation}
+    G^S_{\alpha \beta} (\vv{x} - \vv{r}_j) = \frac{1}{8 \pi \eta} \left( \frac{\delta_{\alpha \beta}}{|\vv{x} - \vv{r_j}|} + \frac{(\vv{x} - \vv{r_{j}})_\alpha(\vv{x} - \vv{r_{j}})_\beta}{|\vv{x} - \vv{r}_j|^3} \right).
+\end{equation}
+
+Then, for the case of two colloids of same radius, they recover the following expression for the cross-diffusion coefficient in the bulk:
+
+\begin{eqnarray}
+ \frac{D^{C,R}_\perp}{2D_0} = 1 \pm \frac{3}{4} \frac{a}{r} + \mathcal{O} \left( \frac{a^3}{r^3} \right)~,\\
+ \frac{D^{C,R}_\parallel}{2D_0} = 1 \pm \frac{3}{2} \frac{a}{r} + \mathcal{O} \left( \frac{a^3}{r^3} \right)~,
+\end{eqnarray}
+
+where positive and negative corrections correspond respectively to the collective and relative modes of motion. These expressions are known as the Oseen approximations \cite{Oseen}, and are valid solely in the far-field regime due to the point-force approximation not taking into account the finite-size effects.
+
+Now, in the presence of a wall, one must take extra care to ensure no-slip boundary conditions at the wall as well as no fluid penetration through the wall itself. To do this, one may use the single-colloid method of images \ref{Blake}, where a Stokeslet (S), as Source Doublet (D) and a Stokeslet Doublet (SD) of opposite strength to the Stokeslet of interest at $\vv{r_j}$ above the wall is placed at equal distance below the wall, at $\vv{R_j} = \vv{r_j} - 2h \vv{e_z}$. The goal of the mirror Stokeslet is to cancel most of the normal penetration at the wall. The Source Doublet ensures no-slip at the wall, and the Stokeslet Doublet cancels remaining penetration. Then, the flow at the position of the image colloid is written
+
+\begin{equation}
+    \label{image_system}
+    G^W_{\alpha\beta} \left(\vv{x} - \vv{R_j}\right) = - G^S_{\alpha\beta}\left(\vv{x} - \vv{R_j}\right) + 2 h ^2 G^D_{\alpha\beta}\left(\vv{x} - \vv{R_j}\right) - 2 h G^{SD}_{\alpha\beta}\left(\vv{x} - \vv{R_j}\right)~,
+\end{equation}
+
+with 
+
+\begin{align}
+    \label{Image_system_details}
+    G^D_{\alpha\beta} (\vv{x} - \vv{R_j}) &= \frac{1}{8 \pi \eta} \left( 1 - 2 \delta_{\beta z} \right) \frac{\partial}{\partial R_{j, \beta}} \left( \frac{(\vv{x} - \vv{R_j})_\alpha}{|\vv{x} - \vv{R_j}|^3} \right)~,\\
+    G^{SD}_{\alpha\beta} (\vv{x} - \vv{R_j}) &= (1 - 2\delta_{\beta z}) \frac{\partial}{\partial R_{j, \beta}} G^S_{\alpha z} (\vv{x} - \vv{R_j})~.
+\end{align}
+
+which yields the two following modes of motion for the cross-diffusion coefficients
+
+\begin{align}
+    \label{cross_diffusion_modes}
+    \frac{D_z}{D_0} &=   1 - \frac{9}{8} \frac{a}{r}  + \mathcal{O}\left(\frac{a^3}{r^3}\right)~,\\
+    \frac{D_{xy}}{D_0} &=   1 - \frac{9}{16} \frac{a}{r} + \mathcal{O}\left(\frac{a^3}{r^3}\right)~.
+\end{align}
+
+One may notice the resemblance between the correction terms in the above expressions and the corrections in the Faxén formula from equation \ref{Faxén}, which is not surprising as both corrections are due to the same wall-induced hydrodynamic effects. However, these expressions are only valid in the far-field regime, and fail to capture the lubrication effects in the near-field regime, which is precisely the regime of interest for our simulations.
+
+The authors then propose an intermediate regime, first by naively superimposing the Oseen and Blake approximations as $D_\psi^{-1}(r, h) = D_\psi^{-1}(r) + \left[D_{xy}^{-1}(h) - D_0^{-1}\right]/2$ (in dash lines in Figure \ref{Dufresne_cross_diffusion}), which is a crude approximation which fails to capture the behaviour of the cross-diffusion for colloids below 50 radii from the plane. The authors then propose that the colloid must interact with its image, its neighbour, and its neighbour's image. In that case, the cross-diffusion is given by
+
+\begin{align}
+\frac{ D^{C,R}_\perp }{ 2D_0 } &= 1 - \frac{9}{16} \frac{a}{r} \pm \frac{3}{4} \frac{a}{r} \left( 1 - \frac{ 1 + \frac{3}{2}\xi }{ (1 + \xi )^{3/2} } \right) \\
+\frac{ D^{C,R}_\parallel }{ 2D_0 } &= 1 - \frac{9}{16} \frac{a}{r} \pm \frac{3}{2} \frac{a}{r} \left( 1 - \frac{1 + \xi + \frac{3}{2} \xi^2}{ (1 + \xi )^{5/2} }\right)
+\label{cross_diffusion_modes_dufresne}
+\end{align}
+
+with $\xi = 4h^2 / r^2$ and up to $\mathcal{O} \left( \frac{a^3}{r^3}\right)$ and $\mathcal{O} \left( \frac{a^3}{h^3}\right)$ (in solid lines in Figure \ref{Dufresne_cross_diffusion}).
+
+
+%\begin{figure}
+  %  \centering
+  %  \label{Dufresne_cross_diffusion}
+   % \includegraphics[width=0.8\textwidth]{figures/chapter2/dufresne_cross_diffusion.pdf}
+  %  \caption{Adapted from \cite{Dufresne_2000}. Measured cross-diffusion coefficients for the relative perpendicular and parallel modes of motion of the two colloids, as a function of the center-to-center distance $r$ between the colloids, for different values of the center-to-wall distance $h$. The dash lines correspond to the naive superposition of Oseen and Blake approximations, while the solid lines correspond to the more accurate approximation taking into account the interaction with the image colloid.}
+%\end{figure}
+
+
+Furthermore, as noted by the authors, in the very far-field regime, the Oseen approximations of Eq. \ref{Oseen} should be recovered numerically and experimentally, whereas they expect the above expressions to hold in the very near-field regime as the wall hinders coupling between colloid motions. 
+
+
+In the following part, we will go about confirming the above predictions numerically, but we will push the study much deeper into the lubrication regimes to investigate its validity once we cannot ignore finite-size effects anymore in the lubrication approximations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The lubrication-corrected RigidBlobWalls algorithm for simulating Brownian suspensions in confinement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lubrication-corrected mobility tensor}
-We would now like to predict the behaviour of a Brownian suspension which is both very dense and very close to a confining wall. In order to conduct these predictions accurately, we turn to the study of two colloids diffusing over the plane. Such a question constitutes by essence a three-body problem, for which no evident, closed-form solutions typically exist.
-However, it is possible by cleverly building the mobility matrices to still recover satisfactory approximations of the dynamics of the system, even in the deep lubrication regime.
-As stated above, there exists an exact expression computed by Brenner for the perpendicular effective viscosity of a single colloid diffusing over an infinite plane, and an approximate expression computed by Faxén for the parallel effective viscosity. However, the former relies on infinite series, which is highly computationally inefficient; and the latter fails in the deep lubrication regime.
-Thus, we will turn to approximations depending on the wall-colloid distance $z$.
+
 
 At this level, it becomes more convenient to work in terms of \emph{self-mobility} and \emph{self-resistance} matrices rather than in terms of effective viscosities. The mobility matrix $\mathbf{M}$ relates the velocity $\vv{U}$ of the particle to the applied force $\vv{F}$ via $\vv{U} = \mathbf{M} \cdot \vv{F}$, while the resistance matrix $\mathbf{R}$ is its inverse, relating the force to the velocity via $\vv{F} = \mathbf{R} \cdot \vv{U}$. In the context of a sphere near a plane wall, these matrices become anisotropic and depend on the distance $z$ from the wall.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,3 +224,5 @@ At this level, it becomes more convenient to work in terms of \emph{self-mobilit
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Application to the Dufresne experiments: going beyond the Blake approximation}
+
+

@@ -101,6 +101,55 @@
       \verb https://www.sciencedirect.com/science/article/pii/0009250961800353
       \endverb
     \endentry
+    \entry{Dufresne_2000}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=78344dace4f32dbd0231c8dc35613a51}{%
+           family={Dufresne},
+           familyi={D\bibinitperiod},
+           given={Eric\bibnamedelima R.},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=8e950148e988d5d29466595990b5aad7}{%
+           family={Squires},
+           familyi={S\bibinitperiod},
+           given={Todd\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7b08b1e717ce032c2c0945b3183ef038}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=38e1bb8b010ced5c82b43be2661a35d2}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
+      \strng{fullhash}{1d01f15124afb9caa0604f6ae647a2d6}
+      \strng{fullhashraw}{1d01f15124afb9caa0604f6ae647a2d6}
+      \strng{bibnamehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
+      \strng{authorbibnamehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
+      \strng{authornamehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
+      \strng{authorfullhash}{1d01f15124afb9caa0604f6ae647a2d6}
+      \strng{authorfullhashraw}{1d01f15124afb9caa0604f6ae647a2d6}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{15}
+      \field{title}{Hydrodynamic Coupling of Two Brownian Spheres to a Planar Surface}
+      \field{volume}{85}
+      \field{year}{2000}
+      \field{pages}{3317\bibrangedash 3320}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.85.3317
+      \endverb
+    \endentry
     \entry{Faxen_1924}{article}{}{}
       \name{author}{1}{}{%
         {{hash=6191e3ea613df7f0a6bb457bcb28afa6}{%
@@ -168,6 +217,7 @@
   \enddatalist
   \missing{Bevan}
   \missing{Honig}
+  \missing{Oseen}
 \endrefsection
 \endinput
 

@@ -2378,6 +2378,12 @@
     <bcf:citekey order="4" intorder="1">Honig</bcf:citekey>
     <bcf:citekey order="5" intorder="1">Bevan</bcf:citekey>
     <bcf:citekey order="6" intorder="1">Faxen_1924</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Oseen</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
