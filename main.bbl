@@ -19,23 +19,20 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{LeBellac_2004}{book}{}{}
-      \name{author}{3}{}{%
-        {{hash=9836340323d19ff0f40a28d1d60df251}{%
-           family={Bellac},
+    \entry{BakerGravesMorris_1996}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=8dbfeef9673a1811e4a7bce2b0539419}{%
+           family={Baker},
            familyi={B\bibinitperiod},
-           given={Michel\bibnamedelima Le},
-           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-        {{hash=1fd18e5c3be23136a6906a9dd9373d0c}{%
-           family={Mortessagne},
-           familyi={M\bibinitperiod},
-           given={Fabrice},
-           giveni={F\bibinitperiod}}}%
-        {{hash=8fb6d32313a52ccf1c1ca4b89a6387a3}{%
-           family={Batrouni},
-           familyi={B\bibinitperiod},
-           given={G.\bibnamedelimi George},
-           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           suffix={G.\bibnamedelimi A.},
+           suffixi={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ce24412b6f49f5705f89b254e79797fd}{%
+           family={Graves-Morris},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge}%
@@ -43,47 +40,138 @@
       \list{publisher}{1}{%
         {Cambridge University Press}%
       }
-      \strng{namehash}{369da286baa953a524553d95858271bf}
-      \strng{fullhash}{369da286baa953a524553d95858271bf}
-      \strng{fullhashraw}{369da286baa953a524553d95858271bf}
-      \strng{bibnamehash}{369da286baa953a524553d95858271bf}
-      \strng{authorbibnamehash}{369da286baa953a524553d95858271bf}
-      \strng{authornamehash}{369da286baa953a524553d95858271bf}
-      \strng{authorfullhash}{369da286baa953a524553d95858271bf}
-      \strng{authorfullhashraw}{369da286baa953a524553d95858271bf}
+      \strng{namehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{fullhash}{b17157effa5d2451cdade0792cabd320}
+      \strng{fullhashraw}{b17157effa5d2451cdade0792cabd320}
+      \strng{bibnamehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authorbibnamehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authornamehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authorfullhash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authorfullhashraw}{b17157effa5d2451cdade0792cabd320}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{9780521821438}
-      \field{title}{Equilibrium and Non-Equilibrium Statistical Thermodynamics}
-      \field{year}{2004}
+      \field{edition}{2}
+      \field{series}{Encyclopedia of Mathematics and its Applications}
+      \field{title}{{Padé} Approximants}
+      \field{volume}{59}
+      \field{year}{1996}
+    \endentry
+    \entry{Batchelor_1976}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c9981a4cb1fa67e9638e3e167ac5cb2b}{%
+           family={Batchelor},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi K.},
+           giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{fullhash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{fullhashraw}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{bibnamehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authorbibnamehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authornamehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authorfullhash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authorfullhashraw}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Fluid Mechanics}
+      \field{number}{1}
+      \field{title}{Brownian diffusion of particles with hydrodynamic interaction}
+      \field{volume}{74}
+      \field{year}{1976}
+      \field{pages}{1\bibrangedash 29}
+      \range{pages}{29}
       \verb{doi}
-      \verb 10.1017/CBO9780511606571
+      \verb 10.1017/S0022112076001663
+      \endverb
+    \endentry
+    \entry{Bevan_2000}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=45aa00a9d145157102312edc65786bc9}{%
+           family={Bevan},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3aba508e6d6e408a49d99c547ad12f0b}{%
+           family={Prieve},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{fullhash}{522aa3347a767d888fabea7a32c040de}
+      \strng{fullhashraw}{522aa3347a767d888fabea7a32c040de}
+      \strng{bibnamehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authorbibnamehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authornamehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authorfullhash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authorfullhashraw}{522aa3347a767d888fabea7a32c040de}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Physics}
+      \field{title}{Hindered diffusion of colloidal particles very near to a wall: revisited}
+      \field{volume}{113}
+      \field{year}{2000}
+      \field{pages}{1228\bibrangedash 1236}
+      \range{pages}{9}
+    \endentry
+    \entry{Blake_1971}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1c99995c753900532fb241b048045917}{%
+           family={Blake},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c99995c753900532fb241b048045917}
+      \strng{fullhash}{1c99995c753900532fb241b048045917}
+      \strng{fullhashraw}{1c99995c753900532fb241b048045917}
+      \strng{bibnamehash}{1c99995c753900532fb241b048045917}
+      \strng{authorbibnamehash}{1c99995c753900532fb241b048045917}
+      \strng{authornamehash}{1c99995c753900532fb241b048045917}
+      \strng{authorfullhash}{1c99995c753900532fb241b048045917}
+      \strng{authorfullhashraw}{1c99995c753900532fb241b048045917}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Proceedings of the Cambridge Philosophical Society}
+      \field{number}{2}
+      \field{title}{A note on the image system for a {Stokeslet} in a no-slip boundary}
+      \field{volume}{70}
+      \field{year}{1971}
+      \field{pages}{303\bibrangedash 310}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1017/S0305004100049902
       \endverb
     \endentry
     \entry{brenner_slow_1961}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=702d7838ff4deb372c0f4f09c4087181}{%
+        {{hash=7ed117964de0d4434ace5135a56bb2d2}{%
            family={Brenner},
            familyi={B\bibinitperiod},
-           given={Howard},
+           given={H.},
            giveni={H\bibinitperiod}}}%
       }
-      \strng{namehash}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{fullhash}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{fullhashraw}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{bibnamehash}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{authorbibnamehash}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{authornamehash}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{authorfullhash}{702d7838ff4deb372c0f4f09c4087181}
-      \strng{authorfullhashraw}{702d7838ff4deb372c0f4f09c4087181}
+      \strng{namehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{fullhash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{fullhashraw}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{bibnamehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authorbibnamehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authornamehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authorfullhash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authorfullhashraw}{7ed117964de0d4434ace5135a56bb2d2}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Bipolar co-ordinates are employed to obtain “exact” solutions of the equations of slow, viscous flow for the steady motion of a solid sphere towards or away from a plane surface of infinite extent. Two cases are considered: (i) the plane surface is rigid and fluid adheres to its surface; (ii) the plane is a free surface on which the tangential stresses vanish. Deformation of the surface in the latter case is neglected. Numerical results are provided for the corrections to Stokes' law necessitated by the presence of the plane boundary at a finite distance from the particle. Application of the results to end-effect correlations in the falling-ball viscometer are discussed. Résumé Des coordonnées bipolaires sont utilisées pour obtenir des solutions “exactes” des équations relatives à l'écoulement lent et visqueux d'une sphére solide en mouvement uniforme au voisinage ou à distance d'une surface plane infinie. Deux cas sont considérés: (1) La surface plane est rigide et le fluide y adhère; (II) elle est libre et les forces tangentielles disparaissent. On néglige dans ce dernier cas la déformation de la surface. Des résultats numériques sont donnés pour les corrections de la loi de Stokes nécessitées par la présence d'un plan de séparation à une distance finie de la particule. Suit une discussion de l'application des résultats aux relations donnant l'effect des extrémités dans les viscosimètres à chute de bille. Zusammenfassung Mit Polarkoordinaten werden “exakte” Lösengun der Gleichungen für langsames viskoses Fliessen für die stationäre Bewegung einer festen Kugel gegen eine ebene, unendlich grosse Oberfläche, oder von ihr hinweg, erhalten. Es werden zwei Fälle betrachtet: (I) Die ebene Oberfläche ist fest und mit Flüssigkeit behaftet; (II) Es liegt eine freie Oberfläche vor, in der die Tangentialspannungen verschwinden. In diesem Fall wird die Verformung der Oberfläche vernachlässigy. Numerische Ergebnisse werden angegeben zur Korrektur des Stokes'schen Gesetzes, die infolge der Gegenwart einer ebenen Grenzfläche in endlicher Entfernung von dem Teilchen notwendig ist. Die Anwendung der Ergebnisse zur Korrektur von Endeffekten im Kugelviskosimeter wird diskutiert.}
-      \field{issn}{0009-2509}
       \field{journaltitle}{Chemical Engineering Science}
       \field{number}{3}
       \field{title}{The slow motion of a sphere through a viscous fluid towards a plane surface}
@@ -92,56 +180,47 @@
       \field{pages}{242\bibrangedash 251}
       \range{pages}{10}
       \verb{doi}
-      \verb https://doi.org/10.1016/0009-2509(61)80035-3
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/0009250961800353
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/0009250961800353
+      \verb 10.1016/0009-2509(61)80035-3
       \endverb
     \endentry
     \entry{Dufresne_2000}{article}{}{}
       \name{author}{4}{}{%
-        {{hash=78344dace4f32dbd0231c8dc35613a51}{%
+        {{hash=0f944d1593cefa30432030f0ee1e2891}{%
            family={Dufresne},
            familyi={D\bibinitperiod},
-           given={Eric\bibnamedelima R.},
+           given={E.\bibnamedelimi R.},
            giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=8e950148e988d5d29466595990b5aad7}{%
+        {{hash=40b290aea24c34ea35ed46b4f089e1b8}{%
            family={Squires},
            familyi={S\bibinitperiod},
-           given={Todd\bibnamedelima M.},
+           given={T.\bibnamedelimi M.},
            giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=7b08b1e717ce032c2c0945b3183ef038}{%
+        {{hash=2253de395e0805b05666e03159bf7261}{%
            family={Brenner},
            familyi={B\bibinitperiod},
-           given={Michael\bibnamedelima P.},
+           given={M.\bibnamedelimi P.},
            giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=38e1bb8b010ced5c82b43be2661a35d2}{%
+        {{hash=2287c9de77251cabc9b523adea2f4b88}{%
            family={Grier},
            familyi={G\bibinitperiod},
-           given={David\bibnamedelima G.},
+           given={D.\bibnamedelimi G.},
            giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {American Physical Society}%
-      }
-      \strng{namehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
-      \strng{fullhash}{1d01f15124afb9caa0604f6ae647a2d6}
-      \strng{fullhashraw}{1d01f15124afb9caa0604f6ae647a2d6}
-      \strng{bibnamehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
-      \strng{authorbibnamehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
-      \strng{authornamehash}{15c5ec23a0dfeb4755e33bc4fb2688c7}
-      \strng{authorfullhash}{1d01f15124afb9caa0604f6ae647a2d6}
-      \strng{authorfullhashraw}{1d01f15124afb9caa0604f6ae647a2d6}
+      \strng{namehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{fullhash}{4094395bc24680fa1fdaf1d6681381af}
+      \strng{fullhashraw}{4094395bc24680fa1fdaf1d6681381af}
+      \strng{bibnamehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{authorbibnamehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{authornamehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{authorfullhash}{4094395bc24680fa1fdaf1d6681381af}
+      \strng{authorfullhashraw}{4094395bc24680fa1fdaf1d6681381af}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Letters}
       \field{number}{15}
-      \field{title}{Hydrodynamic Coupling of Two Brownian Spheres to a Planar Surface}
+      \field{title}{Hydrodynamic coupling of two {Brownian} spheres to a planar surface}
       \field{volume}{85}
       \field{year}{2000}
       \field{pages}{3317\bibrangedash 3320}
@@ -171,24 +250,66 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Arkiv for Matematik, Astronomi och Fysik}
-      \field{title}{Fredholm integral equations of hydrodynamics of liquids I}
+      \field{title}{Fredholm integral equations of hydrodynamics of liquids {I}}
       \field{volume}{18}
       \field{year}{1924}
       \field{pages}{29\bibrangedash 32}
       \range{pages}{4}
     \endentry
-    \entry{BakerGravesMorris_1996}{book}{}{}
-      \name{author}{2}{}{%
-        {{hash=3003b6385bc53d8f16fcf34291f4af02}{%
-           family={Jr.},
-           familyi={J\bibinitperiod},
-           given={George\bibnamedelimb A.\bibnamedelimi Baker},
-           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=c84d6360c7f9662a736f29d2d33481cc}{%
-           family={Graves-Morris},
-           familyi={G\bibinithyphendelim M\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod}}}%
+    \entry{Honig_1971}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=fcf0b4dbda8400f6ff4753f29117af1d}{%
+           family={Honig},
+           familyi={H\bibinitperiod},
+           given={E.\bibnamedelimi P.},
+           giveni={E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2a81dd011a6040ea8497e49a6280f81f}{%
+           family={Roebersen},
+           familyi={R\bibinitperiod},
+           given={G.\bibnamedelimi J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=bce97405c77a61c290e06382375759c3}{%
+           family={Wiersema},
+           familyi={W\bibinitperiod},
+           given={P.\bibnamedelimi H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{fullhash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{fullhashraw}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{bibnamehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authorbibnamehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authornamehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authorfullhash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authorfullhashraw}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Colloid and Interface Science}
+      \field{title}{Effect of hydrodynamic interaction on the coagulation rate of hydrophobic colloids}
+      \field{volume}{36}
+      \field{year}{1971}
+      \field{pages}{97\bibrangedash 109}
+      \range{pages}{13}
+    \endentry
+    \entry{LeBellac_2004}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=1380088ada92752b8078ec76cfcc7a3c}{%
+           family={Le\bibnamedelima Bellac},
+           familyi={L\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fda6db1c97ed2dc286d147655ba40178}{%
+           family={Mortessagne},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e17f800c63164a4b5deee01cfc4c2529}{%
+           family={Batrouni},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge}%
@@ -196,28 +317,54 @@
       \list{publisher}{1}{%
         {Cambridge University Press}%
       }
-      \strng{namehash}{445ba675c3060eafbf17383c78c40d80}
-      \strng{fullhash}{445ba675c3060eafbf17383c78c40d80}
-      \strng{fullhashraw}{445ba675c3060eafbf17383c78c40d80}
-      \strng{bibnamehash}{445ba675c3060eafbf17383c78c40d80}
-      \strng{authorbibnamehash}{445ba675c3060eafbf17383c78c40d80}
-      \strng{authornamehash}{445ba675c3060eafbf17383c78c40d80}
-      \strng{authorfullhash}{445ba675c3060eafbf17383c78c40d80}
-      \strng{authorfullhashraw}{445ba675c3060eafbf17383c78c40d80}
-      \field{sortinit}{J}
-      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \strng{namehash}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{fullhash}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{fullhashraw}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{bibnamehash}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{authorbibnamehash}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{authornamehash}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{authorfullhash}{a66fe7fb74d9f279658e1117d828e472}
+      \strng{authorfullhashraw}{a66fe7fb74d9f279658e1117d828e472}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{2}
-      \field{series}{Encyclopedia of Mathematics and its Applications}
-      \field{title}{Padé Approximants}
-      \field{volume}{59}
-      \field{year}{1996}
+      \field{title}{Equilibrium and Non-Equilibrium Statistical Thermodynamics}
+      \field{year}{2004}
+      \verb{doi}
+      \verb 10.1017/CBO9780511606571
+      \endverb
+    \endentry
+    \entry{Oseen_1927}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b301872d87f37e159237a92c47853a7a}{%
+           family={Oseen},
+           familyi={O\bibinitperiod},
+           given={C.\bibnamedelimi W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leipzig}%
+      }
+      \list{publisher}{1}{%
+        {Akademische Verlagsgesellschaft}%
+      }
+      \strng{namehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{fullhash}{b301872d87f37e159237a92c47853a7a}
+      \strng{fullhashraw}{b301872d87f37e159237a92c47853a7a}
+      \strng{bibnamehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authorbibnamehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authornamehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authorfullhash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authorfullhashraw}{b301872d87f37e159237a92c47853a7a}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neuere Methoden und Ergebnisse in der Hydrodynamik}
+      \field{year}{1927}
     \endentry
   \enddatalist
-  \missing{Bevan}
-  \missing{Honig}
-  \missing{Oseen}
 \endrefsection
 \endinput
 

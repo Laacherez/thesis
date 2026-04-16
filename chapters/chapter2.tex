@@ -2,15 +2,48 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} 
 
-Let us now turn to the second part of my thesis, and dare I say, the heaviest part of my doctoral work, both from the theoretical and the numerical standpoints. 
+Let us now turn to the second part of my thesis, and dare I say, the heaviest part of my very own doctoral work, both from the theoretical and the numerical standpoints.
 
-This chapter is a two-headed hydra, in that two main flavours will naturally present themselves (colloid-wall lubrication, and colloid-colloid lubrication), and we cut one head off, more will keep on coming. 
-I ask the reader to bear with me and accept that I will be revising my wording as I go, but for my own sanity, I need to be writing this as if i was sending a note to a friend who is weirdly into lubrication theory. Anyway.
+When considering Brownian suspensions, one must remain aware of hydrodynamic interactions at play in the system. Indeed, even at long range, hydrodynamics play a strong role on the behaviour of colloids diffusing in the fluid. Thus, strong care must be taken to ensure that these interactions are accounted for at every range, including the sub-radius range, when a colloid is either close to a confining plane or another colloid. 
+Together, we will see that typically, excellent approximations exist for the so-called far-field and moderate-field regimes, but that the near-field regime requires extra care and involves much more complex physics.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Colloid-plane lubrication theory}
 Consider now an infinite silica plane, which we will take normal to the vertical $z$ axis, laying at $z=0$. Over that plane is a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$ with $k_\mathrm{B}$ Boltzmann's constant. As per usual Stokesian assumptions, we will take the fluid as incompressible.
 
-In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. We now wonder how we could simulate accurately such a system.
+In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. The goal is now to accurately simulate such a system in the overdamped regime.
+Due to the no-slip boundary conditions at contact with the plane and the colloid's surface, we must modify the effective viscosity of the fluid as the colloid evolves in the $z$ direction. This correction brings not only inhomogeneity along the $z$-axis but also anisotropy, as the $x$ and $y$ components of the friction coefficient will differ from the $z$ component.
+
+
+In his seminal work\cite{brenner_slow_1961}, Brenner derives the exact expression for the effective viscosity felt by a sphere moving perpendicularly to a plane wall, $\eta_\perp(z)$, as
+
+\begin{equation}
+    \label{Brenner}
+    \eta_\perp (z) = \eta \frac{4}{3} \sinh(\alpha) \sum_{n=1}^{\infty} \frac{n(n+1)}{(2n-1)(2n+3)} \left[ \frac{2 \sinh((2n+1)\alpha) + (2n+1) \sinh(2\alpha)}{4 \sinh^2((n+\frac{1}{2})\alpha) - (2n+1)^2 \sinh^2(\alpha)} - 1 \right]~,
+\end{equation}
+
+with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner obtains the effective viscosity from full Stokes derivations, it is worth noting that this expression is exact and valid for all values of $z/a > 1$, that is to say up until colloid/plane contact. However, for the sake of efficient numerical computations later on, we will avoid infinite-series computations and prefer the use of Padé approximants \cite{BakerGravesMorris_1996}, which were computed by Honig \cite{Honig_1971}, Bevan and Prieve \cite{Bevan_2000} as
+
+
+\textcolor{red}{\textbf{TODO:} Add the petit O and domain of validity.}
+\begin{equation}
+    \label{Padé}
+    \eta_\perp (z) \simeq \eta \frac{6z^2 + 2az}{6z^2 - 9az + 2a^2}.
+\end{equation}
+
+
+\textcolor{red}{\textbf{TODO:} Add Maxou-like comparison of the formulae maybe ? idk i dont fuking feel like it right now bye.}
+
+
+
+The parallel effective viscosity, on the other hand, was derived by Fax\'en \cite{Faxen_1924} and is given by the following expression:
+\begin{equation}
+    \eta_\parallel (z) \simeq  \frac{\eta}{1 - \frac{9}{16} \frac{a}{z} + \frac{1}{8} \left( \frac{a}{z} \right)^3 - \frac{45}{256} \left( \frac{a}{z} \right)^4 - \frac{1}{16} \left( \frac{a}{z} \right)^5}~.
+    \label{Faxén}
+\end{equation}
+
+These expressions suffice for the simulation of a colloid over an infinite plane in far-field to moderate-field regimes.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Forces acting upon the colloid}
 
@@ -18,7 +51,7 @@ In that fluid, we now submerge a colloidal silica particle of radius $a$, of the
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Stochastic drift and derivation from the Fokker-Plank equation}
+\subsubsection{The Fokker-Plank equation}
 A much more subtle effect contributing to preserving the system's accurate physics is the so-called stochastic drift. This drift is a consequence of the effective viscosity of the fluid being inhomogeneous and anisotropic. This means that the friction coefficient $\gamma$ felt by the particle will also be inhomogeneous and anisotropic, and so will be the diffusion coefficient $D = k_\mathrm{B} T / \gamma$.
 In turn, we cannot consider the stochastic force $\vv{F}_\mathrm{stoch}$ as a simple white noise, as it will have to be multiplicative, and thus, we will have to add a drift term to the Langevin equation in order to preserve the correct equilibrium distribution of the system.
 
@@ -67,57 +100,169 @@ We can then derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$ as:
     \frac{\partial P(X_t, X_0; t)}{\partial t} = G^\dagger P(X_t, X_0; t) = -\frac{\partial}{\partial X_t} \left( u(X_t) P(X_t, X_0; t) \right) + \frac{1}{2} \frac{\partial^2}{\partial X_t^2} \left( g^2 P(X_t, X_0; t) \right)~.
 \end{equation}
 
+Thus, for a bulk Brownian motion with Langevin equation
+\begin{equation}
+    \frac{\mathrm{d}x}{\mathrm{d}t} = \sqrt{2D_0} \eta(t)~,
+    \label{Langevin_Fokker_plank_bulk}
+\end{equation}
+
+with $x$ the colloid's position, $D_0$ the bulk diffusion coefficient, and $\eta(t)$ a white noise of zero mean and unit variance, we can identify $u(x) = 0$ and $g = \sqrt{2D_0}$, and thus, the Fokker-Plank equation for the PDF of the colloid's position reads:
+\begin{equation}
+    \frac{\partial P(x, x_0; t)}{\partial t} = D_0 \frac{\partial^2 P(x, x_0; t)}{\partial x^2}~,
+    \label{Fokker_Plank_bulk_diffusion_equation}
+\end{equation}
+which is the well-known diffusion equation.
+
+
+\subsubsection{Fokker-Plank equation with multiplicative noise}
+
+Now, in the case of an inhomogeneous and anisotropic diffusion coefficient, the Fokker-Plank equation reads 
+
+\begin{equation}
+\mathrm{d}X_t = u(X_t)\mathrm{d}t + g(X_t) \mathrm{d}B_t~,
+\label{Fokker-Plank_mulitplicative}
+\end{equation}
+
+\begin{equation}
+    X_{t + \Delta t} = X_t + \int_{t}^{t + \Delta t} u(X_s) \mathrm{d}s + \int_{t}^{t + \Delta t} g(X_s) \mathrm{d}B_s~,
+    \label{Fokker-Plank_mulitplicative_discrete}
+\end{equation}
+
+\begin{equation}
+    \int_{t}^{t + \Delta t} g(X_s) \mathrm{d}B_s \mathrm{d}s \equiv B\left([1 - \alpha]X_t + \alpha X_{t+\Delta t}\right)\Delta W(t)~,
+\end{equation}
+
+\begin{equation}
+    \Delta W(t) = \int_{t}^{t + \Delta t} \mathrm{d}B_s~,
+    \label{Wiener_increment}
+\end{equation}
+
+\begin{equation}
+ X_{t+\Delta t} = X_t + g(X_t) \Delta W(t)
+\end{equation}
+
+\begin{align}
+    \int_{t}^{t + \Delta t} g(X_s)\mathrm{d}B_s \,\mathrm{d}s
+    &= g\bigl(X_t + \alpha [X_{t + \Delta t}-X_t]\bigr)\,\Delta W(t)\\
+    &\approx g\bigl(X_t + \alpha g(X_t)\Delta W(t)\bigr)\,\Delta W(t)\\
+    &\approx g(X_t)\Delta W(t) + \alpha g(X_t) g'(X_t)[\Delta W(t)]^2~.
+\end{align}
+
+\begin{equation}
+X_{t + \Delta t} = X_t + u(X_t) \Delta t + g(X_t) \Delta W(t) + \alpha g(X_t)g'(X_t) [\Delta W(t)]^2~,
+\end{equation}
+
+\begin{equation}
+    \frac{\partial P(X_t, t)}{\partial t} = - \frac{\partial}{\partial X_t}K_1(X_t)P(X_t,t) + \frac{1}{2}\frac{\partial^2}{\partial X_t^2}K_2(X_t)P(X_t,t)~,
+\end{equation}
+
+\begin{align}
+K_1(X_t) & = \lim_{\Delta t \to 0} \frac{\Delta X_t}{\Delta t}\\
+& = u(X_t) + \alpha g(X_t)g'(X_t)~,
+\end{align}
+
+and
+
+\begin{align}
+K_2(X_t) & = \lim_{\Delta t \to 0} \frac{(\Delta X_t)^2}{\Delta t}\\
+& = g(X_t)^2~.
+\end{align}
+
+\textcolor{red}{why the fuck z ?}
+
+
+\begin{equation}
+    \frac{\partial P(X_t, t)}{\partial t} = - \frac{\partial}{\partial X_t}\left\{u(X_t) + \alpha g(X_t)g'(X_t)\right\}P(X_t, t) + \frac{1}{2}\frac{\partial^2}{\partial X_t^2}\left\{g(X_t)^2\right\}P(X_t, t)~.
+\end{equation}
+
+\subsubsection{Derivation of the stochastic drift term}
+
+\begin{equation}
+    \mathrm{d}z = \frac{F(z)}{\gamma_\perp(z)}\mathrm{d}t + \sqrt{2D_\perp(z)}\mathrm{d}B_t~,
+    \label{confinedLangevin_stochdrift}
+\end{equation}
+
+where $F(z)$ is the total of deterministic forces and $F(z) = -k_\mathrm{B}T \ln(U(z))$.
+
+\begin{equation}
+\left<\frac{\Delta z}{\Delta t}\right> \equiv \bar{v_d} = \frac{F(z)}{\gamma_\perp(z)} + \alpha \frac{\mathrm{d}D_\perp(z)}{\mathrm{d}z}~.
+\label{avg_velocity_stochdrift}
+\end{equation}
+
+\begin{equation}
+F_\mathrm{eq} = - \frac{\mathrm{d}U_\mathrm{steady-state}(z)}{\mathrm{d}z}
+\label{equilibrium_force_stochdrift}
+\end{equation}
+
+\begin{equation}
+    U_\mathrm{steady-state}(z) = -k_\mathrm{B}T \ln(P_\mathrm{steady-state}(z))~,
+    \label{Uss_stochdrift}
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}z} \left\{-u(z) - \alpha g(z)g'(z) + \frac{1}{2} \frac{\mathrm{d}}{\mathrm{d}z} g(z)^2 \right\} P_\mathrm{steady-state}(z) = 0~.
+\end{equation}
+
+
+\begin{equation}
+(-u(z) - \alpha g(z)g'(z)) P_\mathrm{steady-state}(z) + \frac{1}{2} \frac{\partial }{\partial z} \left\{g(z)^2 P_\mathrm{steady-state}(z)\right\} = 0~,
+\end{equation}
+
+We may now substitute $Y = g^2(z)P_{steady-state}(z)$, which yields
+
+\begin{equation}
+    - \frac{u(z) + \alpha g(z)g'(z)}{g^2(z)/2}Y + \frac{\mathrm{d}Y}{\mathrm{d}z} = 0~,
+\end{equation}
+
+which solves as
+
+\begin{equation}
+    P_{steady-state}(z) = \frac{1}{g^2(z)} \exp\left\{ 2 \int_0^z \frac{u(z') + \alpha g(z')g'(z')}{g^2(z')} \mathrm{d}z' \right\}~.
+\end{equation}
+
+\begin{equation}
+    U_{steady-state}(z) = -k_\mathrm{B}T \int^{\Delta t} \frac{u(z') + (\alpha - 1)g(z')g'(z')}{g^2(z')/2} \mathrm{d}z'~.
+\end{equation}
+
+\begin{equation}
+\frac{F_\mathrm{eq}}{\gamma_\perp(z)} = \frac{F(z)}{\gamma_\perp(z)} + (\alpha - 1)g(z)g'g(z)
+\end{equation}
+
+
+\begin{equation}
+    \bar{v_\mathrm{d}} = \frac{1}{\gamma_\perp(z)} \frac{\mathrm{d}U_\mathrm{steady-state}(z)}{\mathrm{d}z} + \frac{\mathrm{d}D_\perp(z)}{\mathrm{d}z}~.
+\end{equation}
+
+\begin{equation}
+v_\mathrm{d} = \frac{k_\mathrm{B}T}{\gamma_\perp(z)} \left[-\frac{1}{l_\mathrm{D}}B \exp \left(-\frac{z}{L_\mathrm{D}}\right) + \frac{1}{l_\mathrm{B}} \right]~.
+\end{equation}
+
+\begin{equation}
+v_{stochastic~drift} = 2D_0a\frac{2a^2 + 12 az + 21 z^2}{(2a^2 + 9az + z^2)^2}~.
+\label{final_stochastic_drift}
+\end{equation}
+
+\textcolor{red}{\textbf{TODO:} Abosultely verify every single equation maxime wrote. they moght be wrong.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Langevin equation}
+\subsubsection{Simple Langevin simulation of a confined colloid}
 
+We may now write the Euler-discretised equations of motion for a colloid confined in the $z$ direction as:
+\begin{align}
+    x_i & = x_{i-1} + \sqrt{2D_\parallel(z_{i-1})\Delta t} w_{x_i}~,\\
+    z_i & = z_{i-1} + \bar{v_d}(z_{i-1}) \Delta t + \sqrt{2D_\perp(z_{i-1})}w_{z_i}~,
+\end{align}
 
-The equation of motion of the particle is then given by the overdamped Langevin equation:
-\begin{equation}
-    \label{Langevin}
-1111
-\end{equation}
-
-Due to the no-slip boundary conditions at contact with the plane, we must modify the effective viscosity of the fluid as the particle evolves in the $z$ direction. This correction brings not only inhomogeneity along the $z$-axis but also anisotropy, as the $x$ and $y$ components of the friction coefficient will differ from the $z$ component. The effective friction coefficients are given by the following expressions.
-
-
-In his seminal work\cite{brenner_slow_1961}, Brenner derives the exact expression for the effective viscosity felt by a sphere moving perpendicular to a plane wall.
-Brenner's formula for the perpendicular effective viscosity is given by:
-
-\begin{equation}
-    \label{Brenner}
-    \eta_\perp (z) = \eta \frac{4}{3} \sinh(\alpha) \sum_{n=1}^{\infty} \frac{n(n+1)}{(2n-1)(2n+3)} \left[ \frac{2 \sinh((2n+1)\alpha) + (2n+1) \sinh(2\alpha)}{4 \sinh^2((n+\frac{1}{2})\alpha) - (2n+1)^2 \sinh^2(\alpha)} - 1 \right],
-\end{equation}
-
-with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner derives the effective viscosity from full Stokes derivations, it is worth noting that this expression is exact and valid for all values of $z/a > 1$, aka up until sphere-boundary contact. However, for the sake of efficient numerical computations later on, we will avoid infinite-series computations and prefer the use of Padé approximants \cite{BakerGravesMorris_1996} 
-\footnote{Padé approximants are used to approximate a function by a ratio of two polynomials rather than a single polynomial as a Taylor expansion would. This allows for higher precision faraway from the expansion point, as well as for the existence of poles}, which were computed by Honig \cite{Honig}, Bevan and Prieve \cite{Bevan} as
-
-
-\textcolor{red}{\textbf{TODO:} Add the petit O and domain of validity.}
-\begin{equation}
-    \label{Padé}
-    \eta_\perp (z) \simeq \eta \frac{6z^2 + 2az}{6z^2 - 9az + 2a^2}.
-\end{equation}
-
-
-\textcolor{red}{\textbf{TODO:} Add Maxou-like comparison of the formulae maybe ?}
-
-
-
-The parallel effective viscosity, on the other hand, was derived by Faxén \cite{Faxen_1924} and is given by the following expression:
-\begin{equation}
-    \label{Faxén}
-    \eta_\parallel (z) \simeq  \frac{\eta}{1 - \frac{9}{16} \frac{a}{z} + \frac{1}{8} \left( \frac{a}{z} \right)^3 - \frac{45}{256} \left( \frac{a}{z} \right)^4 - \frac{1}{16} \left( \frac{a}{z} \right)^5}.
-\end{equation}
-
-These expressions suffice for the simulation of a colloid over an infinite plane in far-field to moderate-field regimes.
+where $w_{x_i}$ and $w_{z_i}$ are two independent Gaussian white noises of zero mean and $\Delta t$ variance, and where $\bar{v_d}(z)$ is the average drift velocity of the colloid at position $z$ as computed in Eq. \ref{final_stochastic_drift}, which includes both deterministic and stochastic contributions as per equation \ref{avg_velocity_stochdrift}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Colloid-colloid lubrication theory}
 
+
+\cite{Batchelor_1976}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Coupling colloid-wall and colloid-colloid lubrication theories}
 Naturally, the next step is to couple both lubrication effects together. Luckily, such study has already been carried out both theoretically and experimentally by Dufresne et al. \cite{Dufresne_2000}. In this article, the authors discuss the modification on colloid cross-diffusion due to wall and colloid-colloid-induced lubrication effects.
-The following setup, depicted in Figure \ref{dufresne_system}, is used: two colloids of radius $a=0.485\pm0.025 \mu m$ (Duke Scientific lot 21024) are submerged in a water-salt solution of 2mM [NaCl] and viscosity $\eta = 0.817 cP$. 
-The water-salt layer is $140 \pm 2 \mu \mathrm{m}$ thick, and sealed between a microscope slide and a No. 1 coverslip, with the system fully sealed with UV-cured epoxy to prevent evaporation of the fluid and fluid flows in the bulk. The system is maintained at $T = 29.00 \pm 0.01 ^\circ C$. In these conditions, the colloid self-diffusion is found to be $D_0 = \frac{k_\mathrm{B}T}{6 \pi \eta a} = 0.550 \pm 0.028 \mu \mathrm{m}^2/\mathrm{s}$.
+The following setup, depicted in Figure \ref{dufresne_system}, is used: two colloids of radius $a=0.485\pm0.025 \mu \mathrm{m}$ (Duke Scientific lot 21024) are submerged in a water-salt solution of 2mM [NaCl] and viscosity $\eta = 0.817 \mathrm{cP}$. 
+The water-salt layer is $140 \pm 2 \mu \mathrm{m}$ thick, and sealed between a microscope slide and a No. 1 coverslip, with the system fully sealed with UV-cured epoxy to prevent evaporation of the fluid and fluid flows in the bulk. The system is maintained at $T = 29.00 \pm 0.01 ^\circ \mathrm{C}$. In these conditions, the colloid self-diffusion is found to be $D_0 = \frac{k_\mathrm{B}T}{6 \pi \eta a} = 0.550 \pm 0.028 \mu \mathrm{m}^2/\mathrm{s}$.
 
 \begin{figure}
     \centering
@@ -126,30 +271,32 @@ The water-salt layer is $140 \pm 2 \mu \mathrm{m}$ thick, and sealed between a m
     \caption{Experimental setup of Dufresne et al. \cite{Dufresne_2000} for the study of two colloids diffusing over a plane wall.}
 \end{figure}
 
-The authors then trap the two colloids with a single optical tweezer, by alternating the position of the focal plane at the two positions of interest at a frequency of 200Hz using a galvanometer-driven mirror. Then, by blocking the beam for $t=83\mathrm{ms}$, they retrieve the sphere positions over five video frames only to ensure minimal out-of-focal displacement. By reactivating the trapping, they can repeat the experiment with perfect reproducibility for each starting position of interest in their system.
+The authors then trap the two colloids with a single optical tweezer, by alternating the position of the focal plane at the two positions of interest at a frequency of 200Hz using a galvanometer-driven mirror. Then, by blocking the beam for $t=83\mathrm{ms}$, they retrieve the sphere positions over five video frames only to ensure minimal out-of-focal displacement.
 From there on, authors carry out experiments over a grid of starting positions in $(r, h)$ space, with $r$ the center-to-center distance between colloids and $2 \mu \mathrm{m}< r < 10 \mu \mathrm{m}$, and $h$ the colloid center-to-wall distance, with $1\mu \mathrm{m}< h < 30 \mu \mathrm{m}$.
+ By reactivating the trapping, they can repeat the experiment with perfect reproducibility for each starting position of interest in their system.
 
-As discussed in the previous sections, colloids in a same bath should see their motion coupled non-trivially, and the coupling to the wall itself should also modify their expected diffusion. To investigate these effects, the authors decompose the trajectories of the colloids into cooperative and relative motions, respectively $\vv\rho = \vv{r_1} + \vv{r_2}$ and $\vv{r} = \vv{r_1} - \vv{r_2}$ along ($\parallel$) and perpendicular ($\perp$) to the line of centers of the spheres. From there, they fill displacement histograms for each mode of motion at each of the five time steps taken into consideration and retrieve the effective diffusion coefficients from the standard deviation of each histogram, as
+
+As discussed in the previous sections, colloids in a same bath should see their motion coupled through hydrodynamic interactions, and the coupling to the wall itself should also modify their expected diffusion. To investigate these coupling effects, the authors decompose the trajectories of the colloids into cooperative and relative motions, respectively $\vv\rho = \vv{r_1} + \vv{r_2}$ and $\vv{r} = \vv{r_1} - \vv{r_2}$ along ($\parallel$) and perpendicular ($\perp$) directions to the line of centers of the colloids. From there, they fill displacement histograms for each mode of motion at each of the five time steps taken into consideration and retrieve the effective diffusion coefficients from the standard deviation of each histogram, as
 
 \begin{equation}
     \langle \Delta r_{i, \alpha} ( \tau ) \Delta r_{j, \beta} \rangle = 2 D_{i\alpha, j\beta} \tau~,
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-with $i,j \in \{1,2\}$ and $\alpha, \beta \in \{\parallel, \perp\}$, and where $\langle . \rangle$ denotes an ensemble average.
+with $i,j \in \{1,2\}$ and $\alpha, \beta \in \{\parallel, \perp\}$, where $\tau$ is the elapsed time, and where $\langle . \rangle$ denotes an ensemble average.
 
-A typical result of the experiment for a given set of $(r, h)$ is shown in Figure \ref{dufresne_results_msd}.
+A typical result of the experiment for a given set of $(r, h)$ is shown in Figure \ref{dufresne_results_msd}. There, MSDs are extracted from displacement histograms at each of the five time lags into consideration. From there, authors can extract the effective cross-diffusion coefficient.
 
 \begin{figure}
     \centering
     \label{dufresne_results_msd}
     \includegraphics[width=0.8\textwidth]{figures/chapter2/dufresne_results.pdf}
-    \caption{Adapted from \cite{Dufresne_2000}. Measured pair diffusion for the relative perpendicular mode of motion of the two colloids. The upper inset shows the histogram of all binned displacements for a given time step, for $h = 25.5 \pm 0.7 \mu \mathrm{m}$ and $r = 7.00 \pm 0.25 \mu \mathrm{m}$. This process is repeated over all timesteps and each histogram is fitted with a Gaussian curve to recover the root mean square displacement $\Delta \rho (r, h, \tau)$ to recover the MSD of the main plot. The effective cross-diffusion coefficient for the perpendicular mode is then extracted from the slope of the MSD.}
+    \caption{Adapted from \cite{Dufresne_2000}. Measured pair diffusion for the relative perpendicular mode of motion of the two colloids. The upper inset shows the histogram of all binned displacements for a given time step, for $h = 25.5 \pm 0.7 \mu \mathrm{m}$ and $r = 7.00 \pm 0.25 \mu \mathrm{m}$. This process is repeated over all time steps and each histogram is fitted with a Gaussian curve to recover the root mean square displacement $\Delta \rho (r, h, \tau)$ to recover the MSD of the main plot. The effective cross-diffusion coefficient for the perpendicular mode is then extracted from the slope of the MSD.}
 \end{figure}
 
 
-For comparisons purposes with their retrieved cross-diffusions in the four possible modes, the authors then compute by different means the theoretical expected value of the cross-diffusion coefficients.
-In the case of two colloids in the bulk that are separated by a sufficient distance to approximate them by point forces, the flow field around one of the colloids can be described by a Stokeslet, and the Green's function for the flow at $\vv{x}$ in the $\alpha$ direction from a unit force at $\vv{r}_j$ in the $\beta$ direction reads :
+For comparisons purposes with their experimentally retrieved cross-diffusions in the four possible modes, the authors then compute by different means the theoretical expected value of the cross-diffusion coefficients.
+In the case of two colloids in the bulk that are separated by a sufficient distance to approximate them by point forces, the flow field around one of the colloids can be described by the fundamental solution to Stokes' equations for a point force, the Stokeslet \cite{Oseen_1927}, and the Green's function for the flow at $\vv{x}$ in the $\alpha$ direction from a unit force at $\vv{r}_j$ in the $\beta$ direction reads :
 
 \begin{equation}
     G^S_{\alpha \beta} (\vv{x} - \vv{r}_j) = \frac{1}{8 \pi \eta} \left( \frac{\delta_{\alpha \beta}}{|\vv{x} - \vv{r_j}|} + \frac{(\vv{x} - \vv{r_{j}})_\alpha(\vv{x} - \vv{r_{j}})_\beta}{|\vv{x} - \vv{r}_j|^3} \right).
@@ -157,14 +304,15 @@ In the case of two colloids in the bulk that are separated by a sufficient dista
 
 Then, for the case of two colloids of same radius, they recover the following expression for the cross-diffusion coefficient in the bulk:
 
-\begin{eqnarray}
- \frac{D^{C,R}_\perp}{2D_0} = 1 \pm \frac{3}{4} \frac{a}{r} + \mathcal{O} \left( \frac{a^3}{r^3} \right)~,\\
- \frac{D^{C,R}_\parallel}{2D_0} = 1 \pm \frac{3}{2} \frac{a}{r} + \mathcal{O} \left( \frac{a^3}{r^3} \right)~,
-\end{eqnarray}
+\begin{align}
+ \frac{D^{C,R}_\perp}{2D_0}& = 1 \pm \frac{3}{4} \frac{a}{r} + \mathcal{O} \left( \frac{a^3}{r^3} \right)~,\\
+ \frac{D^{C,R}_\parallel}{2D_0} &= 1 \pm \frac{3}{2} \frac{a}{r} + \mathcal{O} \left( \frac{a^3}{r^3} \right)~,
+ \label{Oseen}
+\end{align}
 
-where positive and negative corrections correspond respectively to the collective and relative modes of motion. These expressions are known as the Oseen approximations \cite{Oseen}, and are valid solely in the far-field regime due to the point-force approximation not taking into account the finite-size effects.
+where positive and negative corrections correspond respectively to the collective and relative modes of motion. These expressions are known as the Oseen approximations \cite{Oseen_1927}, and are valid solely in the far-field regime due to the point-force approximation not taking into account the finite-size effects.
 
-Now, in the presence of a wall, one must take extra care to ensure no-slip boundary conditions at the wall as well as no fluid penetration through the wall itself. To do this, one may use the single-colloid method of images \ref{Blake}, where a Stokeslet (S), as Source Doublet (D) and a Stokeslet Doublet (SD) of opposite strength to the Stokeslet of interest at $\vv{r_j}$ above the wall is placed at equal distance below the wall, at $\vv{R_j} = \vv{r_j} - 2h \vv{e_z}$. The goal of the mirror Stokeslet is to cancel most of the normal penetration at the wall. The Source Doublet ensures no-slip at the wall, and the Stokeslet Doublet cancels remaining penetration. Then, the flow at the position of the image colloid is written
+Now, in the presence of a wall, one must take extra care to ensure no-slip boundary conditions at the wall as well as no fluid penetration through the wall itself. To do this, one may use the single-colloid method of images \cite{Blake_1971}, where a Stokeslet (S), as Source Doublet (D) and a Stokeslet Doublet (SD) of opposite strength to the Stokeslet of interest at $\vv{r_j}$ above the wall is placed at equal distance below the wall, at $\vv{R_j} = \vv{r_j} - 2h \vv{e_z}$. The goal of the mirror Stokeslet is to cancel most of the normal penetration at the wall. The Source Doublet ensures no-slip at the wall, and the Stokeslet Doublet cancels remaining penetration. Then, the flow at the position of the image colloid is written
 
 \begin{equation}
     \label{image_system}
@@ -200,12 +348,12 @@ The authors then propose an intermediate regime, first by naively superimposing 
 with $\xi = 4h^2 / r^2$ and up to $\mathcal{O} \left( \frac{a^3}{r^3}\right)$ and $\mathcal{O} \left( \frac{a^3}{h^3}\right)$ (in solid lines in Figure \ref{Dufresne_cross_diffusion}).
 
 
-%\begin{figure}
-  %  \centering
-  %  \label{Dufresne_cross_diffusion}
-   % \includegraphics[width=0.8\textwidth]{figures/chapter2/dufresne_cross_diffusion.pdf}
-  %  \caption{Adapted from \cite{Dufresne_2000}. Measured cross-diffusion coefficients for the relative perpendicular and parallel modes of motion of the two colloids, as a function of the center-to-center distance $r$ between the colloids, for different values of the center-to-wall distance $h$. The dash lines correspond to the naive superposition of Oseen and Blake approximations, while the solid lines correspond to the more accurate approximation taking into account the interaction with the image colloid.}
-%\end{figure}
+\begin{figure}
+    \centering
+    \label{Dufresne_cross_diffusion}
+    \includegraphics[width=0.8\textwidth]{figures/chapter2/dufresne_final_result.pdf}
+    \caption{Adapted from \cite{Dufresne_2000}. Measured cross-diffusion coefficients for the relative perpendicular and parallel modes of motion of the two colloids, as a function of the center-to-center distance $r$ between the colloids, for different values of the center-to-wall distance $h$. The dash lines correspond to the naive superposition of Oseen and Blake approximations, while the solid lines correspond to the more accurate approximation taking into account the interaction with the image colloid.}
+\end{figure}
 
 
 Furthermore, as noted by the authors, in the very far-field regime, the Oseen approximations of Eq. \ref{Oseen} should be recovered numerically and experimentally, whereas they expect the above expressions to hold in the very near-field regime as the wall hinders coupling between colloid motions. 
@@ -221,7 +369,7 @@ In the following part, we will go about confirming the above predictions numeric
 At this level, it becomes more convenient to work in terms of \emph{self-mobility} and \emph{self-resistance} matrices rather than in terms of effective viscosities. The mobility matrix $\mathbf{M}$ relates the velocity $\vv{U}$ of the particle to the applied force $\vv{F}$ via $\vv{U} = \mathbf{M} \cdot \vv{F}$, while the resistance matrix $\mathbf{R}$ is its inverse, relating the force to the velocity via $\vv{F} = \mathbf{R} \cdot \vv{U}$. In the context of a sphere near a plane wall, these matrices become anisotropic and depend on the distance $z$ from the wall.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Numerical methods for simulating dense Brownian suspensions in close confinement}
-
+Naturally, researchers have been pondering on how to simulate dense Brownian suspensions for a few decades already \cite{Batchelor_1976}. However, the numerical complexity of such a method (and namely, how to efficiently solve for a multiplicative noise and, a fortiori, how to compute efficiently the square root of a diffusion or mobility tensor without computational cost blowups).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Application to the Dufresne experiments: going beyond the Blake approximation}
 
