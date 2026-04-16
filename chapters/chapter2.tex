@@ -8,7 +8,7 @@ When considering Brownian suspensions, one must remain aware of hydrodynamic int
 Together, we will see that typically, excellent approximations exist for the so-called far-field and moderate-field regimes, but that the near-field regime requires extra care and involves much more complex physics.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Colloid-plane lubrication theory}
+\section{Colloid-plane lubrication theory}
 Consider now an infinite silica plane, which we will take normal to the vertical $z$ axis, laying at $z=0$. Over that plane is a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$ with $k_\mathrm{B}$ Boltzmann's constant. As per usual Stokesian assumptions, we will take the fluid as incompressible.
 
 In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. The goal is now to accurately simulate such a system in the overdamped regime.
@@ -32,8 +32,6 @@ with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner obtains t
 \end{equation}
 
 
-\textcolor{red}{\textbf{TODO:} Add Maxou-like comparison of the formulae maybe ? idk i dont fuking feel like it right now bye.}
-
 
 
 The parallel effective viscosity, on the other hand, was derived by Fax\'en \cite{Faxen_1924} and is given by the following expression:
@@ -45,11 +43,120 @@ The parallel effective viscosity, on the other hand, was derived by Fax\'en \cit
 These expressions suffice for the simulation of a colloid over an infinite plane in far-field to moderate-field regimes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Forces acting upon the colloid}
+\subsection{Summary of potentials in the system}
+
+Furthermore, beyond the hydrodynamic correction discussed in the previous section, the colloid is also subject to a number of forces, which we will now carefully enumerate as they will be present throughout the remainder parts of this chapter.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Gravitational potential and buoyant mass}
 
 
 
 
+\begin{align}
+    U_\mathrm{grav} &  = \Delta m g z~,\\
+    & = \frac{4}{3} \pi a^3 (\rho_\mathrm{colloid} - \rho_\mathrm{fluid}) g z~,
+    \label{grav_potential}
+\end{align}
+
+where $\Delta m$ is the buoyant mass of the colloid, $g$ is the acceleration of gravity, and $\rho_\mathrm{colloid}$ and $\rho_\mathrm{fluid}$ are the mass densities of the colloid and the fluid, respectively.
+We may rewrite the above Eq. \eqref{grav_potential} as
+\begin{equation}
+U_\mathrm{grav} = \frac{k_\mathrm{B} T}{l_\mathrm{B}} z~,
+\label{grav_potential_lB}
+\end{equation}
+
+where $l_\mathrm{B}$ is Bolzmann's length, defined as $l_\mathrm{B} = \frac{k_\mathrm{B} T}{\Delta m g}$. Boltzmann's length quantifies the distance over which gravitational potential energy is comparable to thermal energy.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Electrostatic potential and double-layer interactions}
+
+Because of the amphoteric nature of silica, both the infinite place and the colloid surfaces are able to ionise when in contact with water. Thus, a pH-dependant but positive in the case of pH=7 double-layer of ions form around both surfaces, which leads to electrostatic repulsion. 
+At thermodynamic equilibrium, the local ion concentration $c_i(\vv{r})$ of a given species should follow the Boltzmann distribution
+
+\begin{equation}
+c_i(\vv{r}) = c^\infty_{i} \exp\left\{-\frac{z_i e \psi(\vv{r})}{k_\mathrm{B} T}\right\}~, 
+\label{Boltzmann_ion_concentration}
+\end{equation}
+
+where $c_{i, \infty}$ is the bulk or infinitely far from surfaces ion concentration, $z_i$ is the valence of the ion, $e$ is the elementary charge, and $\psi(\vv{r})$ is the electrostatic potential at position $\vv{r}$, which satisfies the Poisson equation
+
+\begin{equation}
+\nabla^2 \psi(\vv{r}) = - \frac{1}{\epsilon} \sum_i z_i e c_i(\vv{r})~,
+\label{poisson_equation}
+\end{equation}
+
+where $\epsilon$ is the permittivity of the fluid. Substituting the Boltzmann distribution for $c_i(\vv{r})$ into the Poisson equation yields the Poisson-Boltzmann equation, which is a non-linear partial differential equation for $\psi(\vv{r})$.
+
+Thus, combining the above expressions, we get
+
+\begin{equation}
+    \nabla^2 \psi(\vv{r}) + \frac{e}{\epsilon} \sum_i z_i c^\infty_i \exp \left\{\frac{-z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right\} = 0~.
+    \label{Psi_full_equation}
+\end{equation}
+
+We will only draw our interest to sufficiently dilute solutions in terms of electrolyte concentration $[NaCl]$. In that case, we may Taylor expand the exponential term to obtain 
+
+\begin{equation}
+    \nabla^2 \psi(\vv{r}) + \frac{e}{\epsilon} \sum_i z_i c^\infty_i  \left(1 - \frac{z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right) = 0~.
+    \label{Psi_taylor_expanded}
+\end{equation}
+
+Since the fluid is electrically neutral
+\begin{equation}
+    \sum_i z_ic^\infty_i = 0~.
+\end{equation}
+
+Thus, Eq. \label{Psi_taylor_expanded} becomes 
+
+\begin{align}
+    \nabla^2 \psi(\vv{r}) &= \left[\sum_i \frac{z_i^2e^2c^\infty_i}{\epsilon k_\mathrm{B}T}\right] \psi(\vv{r})~,
+    & = \frac{1}{l_\mathrm{D}} \psi(\vv{r})
+    \label{lD_psi}
+\end{align}
+
+where $l_\mathrm{D}$ is Debye's length, 
+
+\begin{equation}
+l_\mathrm{D} = \sqrt{\sum_i \frac{\epsilon k_\mathrm{B}T}{z^2_i e^2 c^\infty_i}}~.
+\label{debye_length}
+\end{equation}
+
+The above expression can be used to compute the Debye length in a given solution. For the case of a monovalent salt in water, we may keep in mind the simple relation $l_\mathrm{D} = 0.304 \sqrt{C}^{-1}$, with C the salt concentration in solution.
+
+
+\textcolor{red}{Maybe : add derivations maybe ?}
+Now, we may write the electrostatic potential between a sphere and a plane wall as
+
+\begin{equation}
+    \frac{U_\mathrm{elec}}{k_\mathrm{B}T} = B \mathrm{e}^{-\frac{z}{l_\mathrm{D}}}~,
+    \label{Sphere-wall potential}
+\end{equation}
+
+where
+
+\begin{equation}
+B = \frac{4\pi}{k_\mathrm{B}T\epsilon} \left(\frac{\sigma a^2}{1 + \kappa \alpha}\right) \frac{\sigma_\mathrm{w}}{\kappa}~.
+\end{equation}
+
+
+We will furthermore neglect Van der Waals interactions, which in our cases of study only play a role within a few nanometers, whereas the repulsive interactions take place up to a few tens of nanometers.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/chapter2/double_layer.pdf}
+    \caption{Schematic representation of a colloid of radius $a$ at a distance $z$ from an infinite plane. Both surfaces are charged, and thus, a double layer of counter-ions forms around each of them.}
+    \label{system_single_colloid_wall}
+
+\end{figure}
+
+\textcolor{red}{Mention how vdw is ignored.}
+
+\subsubsection{Equilibrium distribution}
+
+\begin{equation}
+    U(z) = U_\mathrm{g} + U_\mathrm{elec}
+    \label{total_potentials}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The Fokker-Plank equation}
 A much more subtle effect contributing to preserving the system's accurate physics is the so-called stochastic drift. This drift is a consequence of the effective viscosity of the fluid being inhomogeneous and anisotropic. This means that the friction coefficient $\gamma$ felt by the particle will also be inhomogeneous and anisotropic, and so will be the diffusion coefficient $D = k_\mathrm{B} T / \gamma$.
