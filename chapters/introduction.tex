@@ -1,0 +1,60 @@
+
+
+\subsubsection{The Fokker-Plank equation}
+
+\begin{equation}
+\mathrm{d}X_t = u(X_t)\mathrm{d}t + g \mathrm{d}B_t~,
+\label{Fokker-Plank}
+\end{equation}
+
+where $u(X_t)$ is the drift velocity term, $g$ is the magnitude of the noise, and $\mathrm{d}B_t$ is the increment of a Wiener process.
+
+We now take the average value of a function obeying the PDF $P(X_t, X_0; t)$, which we will call $f(X_t)$. This average value will, by definition, follow \cite{LeBellac_2004}:
+
+\begin{equation}
+\langle f(X_t) \rangle = \int f(X_t) P(X_t, X_0; t) \mathrm{d}X_t~,
+\label{avg_f}
+\end{equation}
+
+with the initial condition $P(X_t, X_0; 0) = \delta(X_t - X_0)$, where $\delta$ is the Dirac delta function. Expanding $f(X_t)$ in a Taylor series yields:
+
+\begin{equation}
+    f(X_t + \mathrm{d}X_t) = f(X_t) + f'(X_t) \mathrm{d}X_t + \frac{1}{2} f''(X_t) (\mathrm{d}X_t)^2 + \ldots
+    \label{f_expansion}
+\end{equation}
+
+Substituting $\mathrm{d}X_t$ from the Fokker-Plank equation and taking the average, we get:
+
+\begin{equation}
+    \left\langle \frac{\mathrm{d}f(X_t)}{\mathrm{d}t} \right\rangle \simeq  \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2
+    \label{f_avg_evolution}
+\end{equation}
+
+Combining this with the definition of the average value of $f(X_t)$, we can derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$:
+\begin{eqnarray}
+\int \mathrm{d}X_t \frac{\partial f(X_t)}{\partial t} f(X_t) = \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2\\
+= \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t)~,
+\end{eqnarray}
+
+where $G$ is the Generator, defined as $G = u(X_t) \frac{\partial}{\partial X_t} + \frac{1}{2} g^2 \frac{\partial^2}{\partial X_t^2}~$. Taking the adjoint of $G$ as $G^\dagger$, we can rewrite the above equation as:
+\begin{equation}
+    \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t) = \int \mathrm{d}X_t\, f(X_t) G^\dagger P(X_t, X_0; t)~.
+\end{equation}
+
+We can then derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$ as:
+\begin{equation}
+    \frac{\partial P(X_t, X_0; t)}{\partial t} = G^\dagger P(X_t, X_0; t) = -\frac{\partial}{\partial X_t} \left( u(X_t) P(X_t, X_0; t) \right) + \frac{1}{2} \frac{\partial^2}{\partial X_t^2} \left( g^2 P(X_t, X_0; t) \right)~.
+\end{equation}
+
+Thus, for a bulk Brownian motion with Langevin equation
+\begin{equation}
+    \frac{\mathrm{d}x}{\mathrm{d}t} = \sqrt{2D_0} \eta(t)~,
+    \label{Langevin_Fokker_plank_bulk}
+\end{equation}
+
+with $x$ the colloid's position, $D_0$ the bulk diffusion coefficient, and $\eta(t)$ a white noise of zero mean and unit variance, we can identify $u(x) = 0$ and $g = \sqrt{2D_0}$, and thus, the Fokker-Plank equation for the PDF of the colloid's position reads:
+\begin{equation}
+    \frac{\partial P(x, x_0; t)}{\partial t} = D_0 \frac{\partial^2 P(x, x_0; t)}{\partial x^2}~,
+    \label{Fokker_Plank_bulk_diffusion_equation}
+\end{equation}
+which is the well-known diffusion equation.

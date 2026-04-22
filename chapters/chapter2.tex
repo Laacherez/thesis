@@ -25,7 +25,6 @@ In his seminal work\cite{brenner_slow_1961}, Brenner derives the exact expressio
 with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner obtains the effective viscosity from full Stokes derivations, it is worth noting that this expression is exact and valid for all values of $z/a > 1$, that is to say up until colloid/plane contact. However, for the sake of efficient numerical computations later on, we will avoid infinite-series computations and prefer the use of Padé approximants \cite{BakerGravesMorris_1996}, which were computed by Honig \cite{Honig_1971}, Bevan and Prieve \cite{Bevan_2000} as
 
 
-\textcolor{red}{\textbf{TODO:} Add the petit O and domain of validity.}
 \begin{equation}
     \label{Padé}
     \eta_\perp (z) \simeq \eta \frac{6z^2 + 2az}{6z^2 - 9az + 2a^2}.
@@ -45,7 +44,7 @@ These expressions suffice for the simulation of a colloid over an infinite plane
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Summary of potentials in the system}
 
-Furthermore, beyond the hydrodynamic correction discussed in the previous section, the colloid is also subject to a number of forces, which we will now carefully enumerate as they will be present throughout the remainder parts of this chapter.
+Furthermore, in order to write the correct overdamped Langevin equation for a simulation, we recall that the colloid is also subject to a number of forces, which we will now carefully enumerate as they will be present throughout the remainder parts of this chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Gravitational potential and buoyant mass}
 
@@ -59,18 +58,29 @@ Furthermore, beyond the hydrodynamic correction discussed in the previous sectio
 \end{align}
 
 where $\Delta m$ is the buoyant mass of the colloid, $g$ is the acceleration of gravity, and $\rho_\mathrm{colloid}$ and $\rho_\mathrm{fluid}$ are the mass densities of the colloid and the fluid, respectively.
-We may rewrite the above Eq. \eqref{grav_potential} as
+We may rewrite the above Eq. \ref{grav_potential} as
 \begin{equation}
 U_\mathrm{grav} = \frac{k_\mathrm{B} T}{l_\mathrm{B}} z~,
 \label{grav_potential_lB}
 \end{equation}
 
-where $l_\mathrm{B}$ is Bolzmann's length, defined as $l_\mathrm{B} = \frac{k_\mathrm{B} T}{\Delta m g}$. Boltzmann's length quantifies the distance over which gravitational potential energy is comparable to thermal energy.
+where $l_\mathrm{B}$ is Boltzmann's length, defined as $l_\mathrm{B} = \frac{k_\mathrm{B} T}{\Delta m g}$. Boltzmann's length quantifies the distance over which gravitational potential energy is comparable to thermal energy.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Electrostatic potential and double-layer interactions}
 
-Because of the amphoteric nature of silica, both the infinite place and the colloid surfaces are able to ionise when in contact with water. Thus, a pH-dependant but positive in the case of pH=7 double-layer of ions form around both surfaces, which leads to electrostatic repulsion. 
-At thermodynamic equilibrium, the local ion concentration $c_i(\vv{r})$ of a given species should follow the Boltzmann distribution
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/chapter2/double_layer.pdf}
+    \caption{Schematic representation of a colloid of radius $a$ at a distance $z$ from an infinite plane. Both surfaces are charged, and thus, a double layer of counter-ions forms around each of them.}
+    \label{double_layer}
+
+\end{figure}
+Because of the amphoteric nature of silica, both the infinite place and the colloid surfaces are able to ionise when in contact with water (Fig. \ref{double_layer}). The surfaces themselves become negatively charged, which in turn attract adsorb ions in contact with the surface, in a dense and tightly bound Stern layer. Around this plane, a mobile, ionic "atmosphere" screens the electric potential of the colloid over distance with a characteristic length $l_\mathrm{D}$, for which we provide the derivation below.
+This diffuse layer, existing for both surfaces at play in the system, is responsible for the electrostatic repulsion between the two bodies (plane and colloid). 
+It is also worth mentioning, for the sake of the following derivation of the electronic interaction potential, that within the diffuse layer exists the so-called Slipping plane. This plane separates the fluid that is dragged by the colloid from the fluid that flows around it. Experimentally speaking, this is where one will measure the electrostatic potential of a surface, the $\zeta$ potential.
+
+At thermodynamic equilibrium, the local ion concentration in the diffuse layer $c_i(\vv{r})$ of a given species should follow the Boltzmann distribution
 
 \begin{equation}
 c_i(\vv{r}) = c^\infty_{i} \exp\left\{-\frac{z_i e \psi(\vv{r})}{k_\mathrm{B} T}\right\}~, 
@@ -80,23 +90,23 @@ c_i(\vv{r}) = c^\infty_{i} \exp\left\{-\frac{z_i e \psi(\vv{r})}{k_\mathrm{B} T}
 where $c_{i, \infty}$ is the bulk or infinitely far from surfaces ion concentration, $z_i$ is the valence of the ion, $e$ is the elementary charge, and $\psi(\vv{r})$ is the electrostatic potential at position $\vv{r}$, which satisfies the Poisson equation
 
 \begin{equation}
-\nabla^2 \psi(\vv{r}) = - \frac{1}{\epsilon} \sum_i z_i e c_i(\vv{r})~,
+\nabla^2 \psi(\vv{r}) = - \frac{1}{\varepsilon} \sum_i z_i e c_i(\vv{r})~,
 \label{poisson_equation}
 \end{equation}
 
-where $\epsilon$ is the permittivity of the fluid. Substituting the Boltzmann distribution for $c_i(\vv{r})$ into the Poisson equation yields the Poisson-Boltzmann equation, which is a non-linear partial differential equation for $\psi(\vv{r})$.
+where $\varepsilon$ is the permittivity of the fluid. Substituting the Boltzmann distribution for $c_i(\vv{r})$ into the Poisson equation yields the Poisson-Boltzmann equation, which is a non-linear partial differential equation for $\psi(\vv{r})$.
 
 Thus, combining the above expressions, we get
 
 \begin{equation}
-    \nabla^2 \psi(\vv{r}) + \frac{e}{\epsilon} \sum_i z_i c^\infty_i \exp \left\{\frac{-z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right\} = 0~.
+    \nabla^2 \psi(\vv{r}) + \frac{e}{\varepsilon} \sum_i z_i c^\infty_i \exp \left\{\frac{-z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right\} = 0~.
     \label{Psi_full_equation}
 \end{equation}
 
 We will only draw our interest to sufficiently dilute solutions in terms of electrolyte concentration $[NaCl]$. In that case, we may Taylor expand the exponential term to obtain 
 
 \begin{equation}
-    \nabla^2 \psi(\vv{r}) + \frac{e}{\epsilon} \sum_i z_i c^\infty_i  \left(1 - \frac{z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right) = 0~.
+    \nabla^2 \psi(\vv{r}) + \frac{e}{\varepsilon} \sum_i z_i c^\infty_i  \left(1 - \frac{z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right) = 0~.
     \label{Psi_taylor_expanded}
 \end{equation}
 
@@ -105,264 +115,326 @@ Since the fluid is electrically neutral
     \sum_i z_ic^\infty_i = 0~.
 \end{equation}
 
-Thus, Eq. \label{Psi_taylor_expanded} becomes 
+Thus, Eq. \ref{Psi_taylor_expanded} becomes 
 
 \begin{align}
-    \nabla^2 \psi(\vv{r}) &= \left[\sum_i \frac{z_i^2e^2c^\infty_i}{\epsilon k_\mathrm{B}T}\right] \psi(\vv{r})~,
-    & = \frac{1}{l_\mathrm{D}} \psi(\vv{r})
+    \nabla^2 \psi(\vv{r}) &= \left[\sum_i \frac{z_i^2e^2c^\infty_i}{\varepsilon k_\mathrm{B}T}\right] \psi(\vv{r})\\
+    & = \frac{1}{l_\mathrm{D}} \psi(\vv{r})~,
     \label{lD_psi}
 \end{align}
 
 where $l_\mathrm{D}$ is Debye's length, 
 
 \begin{equation}
-l_\mathrm{D} = \sqrt{\sum_i \frac{\epsilon k_\mathrm{B}T}{z^2_i e^2 c^\infty_i}}~.
+l_\mathrm{D} = \sqrt{\sum_i \frac{\varepsilon k_\mathrm{B}T}{z^2_i e^2 c^\infty_i}}~.
 \label{debye_length}
 \end{equation}
 
 The above expression can be used to compute the Debye length in a given solution. For the case of a monovalent salt in water, we may keep in mind the simple relation $l_\mathrm{D} = 0.304 \sqrt{C}^{-1}$, with C the salt concentration in solution.
 
-
-\textcolor{red}{Maybe : add derivations maybe ?}
-Now, we may write the electrostatic potential between a sphere and a plane wall as
-
-\begin{equation}
-    \frac{U_\mathrm{elec}}{k_\mathrm{B}T} = B \mathrm{e}^{-\frac{z}{l_\mathrm{D}}}~,
-    \label{Sphere-wall potential}
-\end{equation}
-
-where
+Now, we want to compute the electrostatic repulsion potential between a sphere and a plane. To do so, it is convenient to consider the plane as a sphere of infinite radius, thus reducing the problem to a sphere-sphere interaction.
+The Debye-Huckel expression for the electrostatic potential around a single charged sphere is given in spherical coordinates by 
 
 \begin{equation}
-B = \frac{4\pi}{k_\mathrm{B}T\epsilon} \left(\frac{\sigma a^2}{1 + \kappa \alpha}\right) \frac{\sigma_\mathrm{w}}{\kappa}~.
+\frac{1}{r^2}\left[ \frac{\partial}{\partial r} \left( r^2 \frac{\partial \psi(r)}{\partial r}\right) \right] = \frac{1}{l_\mathrm{D}^2}\psi(r)~.
+    \label{spherical_debye-huckel}
+\end{equation}
+
+This equation has general solution
+
+\begin{equation}
+    \psi(r) = K_1 \frac{\exp(\frac{r}{l_\mathrm{D}})}{r} + K_2 \frac{\exp(\frac{-r}{l_\mathrm{D}})}{r}
+\end{equation}
+
+Taking into account that $\lim_{r \to \infty}\psi(r) = 0$, we identify $K_1 = 0$. Thus, we can write
+
+\begin{equation}
+    \psi(r) = K_2 \frac{\exp(\frac{-r}{l_\mathrm{D}})}{r}~.
+\end{equation}
+
+We now are left with the identification of $K_2$. To do so, we use Gauss's flux theorem, and we finally get
+
+\begin{equation}
+    \psi(r) = \frac{\sigma a^2}{\varepsilon} \frac{\exp(\frac{a}{l_\mathrm{D}})}{1 + \frac{a}{l_\mathrm{D}}} \frac{\exp\left(\frac{-r}{l_\mathrm{D}}\right)}{r}~,
+\end{equation}
+
+where $\sigma$ is the charge density at the surface of the sphere, $a$ is its radius. 
+
+Now that we have the electrostatic potential around a single sphere, we can suppose that the potential between two spheres is simply additive by approximation
+
+\begin{equation}
+    \psi_\mathrm{tot} (r) = \psi_1(r) + \psi_2(r)~,
+\end{equation}
+
+and with $r = a_1 + a_2 + z$ along sphere line of centers and keeping in mind cylindrical symmetry, the total electrostatic interaction potential along the z-direction becomes
+
+\begin{equation}
+ U_\mathrm{tot}(z) = \frac{4\pi}{\varepsilon}\left(\frac{\sigma_1a_1^2}{1 + l_\mathrm{D}^{-1}a_1}\right)\left(\frac{\sigma_2a_2^2}{1 + l_\mathrm{D}^{-1}a_2}\right) \frac{\exp(-l_\mathrm{D}^{-1}z)}{a_1 + a_2 + z}~.
 \end{equation}
 
 
-We will furthermore neglect Van der Waals interactions, which in our cases of study only play a role within a few nanometers, whereas the repulsive interactions take place up to a few tens of nanometers.
+We now have the expression of the interaction potential between two charged spheres. As stated above, we may set one of the two radii to infinity and work with this limit to obtain the interaction potential between a sphere and a plane, as
+
+\begin{equation}
+\frac{U_\mathrm{elec}}{k_\mathrm{B}T} = B \mathrm{e}^{-\frac{z}{l_\mathrm{D}}}~,
+\label{Sphere-Wall interaction}
+\end{equation}
+
+where 
+
+\begin{equation}
+    B = \frac{4 \pi}{k_\mathrm{B}T \varepsilon}\left( \frac{\sigma a^2}{1 + l_\mathrm{D}^{-1} a}\right) l_\mathrm{D} \sigma_\mathrm{wall}~.
+\end{equation}
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/chapter2/double_layer.pdf}
-    \caption{Schematic representation of a colloid of radius $a$ at a distance $z$ from an infinite plane. Both surfaces are charged, and thus, a double layer of counter-ions forms around each of them.}
-    \label{system_single_colloid_wall}
 
-\end{figure}
 
-\textcolor{red}{Mention how vdw is ignored.}
+
+
+We will furthermore neglect the attractive Van der Waals interactions, which in our cases of study only play a role within a few nanometers, whereas the repulsive interactions take place up to a few tens of nanometers.
+
+
+
+
 
 \subsubsection{Equilibrium distribution}
-
+Finally, we may summarize the total potential to which the colloid is subjected when immersed in water above a charged plane as
 \begin{equation}
-    U(z) = U_\mathrm{g} + U_\mathrm{elec}
+    U(z) = U_\mathrm{g} + U_\mathrm{elec}~,
     \label{total_potentials}
 \end{equation}
+
+or, more in detail,
+
+\begin{equation}
+    \frac{U(z)}{k_\mathrm{B}T} = B \mathrm{e}^{\frac{-z}{l_\mathrm{D}}} + \frac{z}{l_\mathrm{B}}; ~~~~~~\forall z>0~,
+    \label{total_potential_renormalised}
+\end{equation}
+
+as we would not want our colloid to cross the boundary.
+
+As I discussed in the Introduction, the probability to find the colloid at position $z$ given its diffusive behaviour, the gravitational and electrostatic potentials, should follow the Gibbs-Boltzmann equilibrium distribution
+
+\begin{equation}
+    P_\mathrm{eq} = \frac{1}{Z} \exp \left( - \frac{U(z)}{k_\mathrm{B}T} \right)~.
+\end{equation}
+
+This distribution should be normalised, hence the $\frac{1}{Z}$ factor. It is particularly useful to keep the shape of it in mind when designing a simulation, as depending on the effect one wants to probe (very dense suspension, monolayer, or inversely, virtually unbounded colloids in the $z$-plane), we may play with the parameters to get the desired behaviour. I will come back to this later in Chapter \textcolor{red}{WHICH CHAPTER GIRL ???}.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{The Fokker-Plank equation}
-A much more subtle effect contributing to preserving the system's accurate physics is the so-called stochastic drift. This drift is a consequence of the effective viscosity of the fluid being inhomogeneous and anisotropic. This means that the friction coefficient $\gamma$ felt by the particle will also be inhomogeneous and anisotropic, and so will be the diffusion coefficient $D = k_\mathrm{B} T / \gamma$.
-In turn, we cannot consider the stochastic force $\vv{F}_\mathrm{stoch}$ as a simple white noise, as it will have to be multiplicative, and thus, we will have to add a drift term to the Langevin equation in order to preserve the correct equilibrium distribution of the system.
 
-To derive this stochastic drift contribution to the total of all forces acting upon the colloid, we start from the one-dimensional Fokker-Plank equation, which describes the evolution of the Probability Density Function (PDF) $P(X_t, X_0; t)$ of the particle's position $X_t$ at time $t$, given its initial position $X_0$ at time $t=0$:
-\begin{equation}
-\mathrm{d}X_t = u(X_t)\mathrm{d}t + g \mathrm{d}B_t~,
-\label{Fokker-Plank}
-\end{equation}
-
-where $u(X_t)$ is the drift velocity term, $g$ is the magnitude of the noise, and $\mathrm{d}B_t$ is the increment of a Wiener process.
-
-We now take the average value of a function obeying the PDF $P(X_t, X_0; t)$, which we will call $f(X_t)$. This average value will, by definition, follow \cite{LeBellac_2004}:
-
-\begin{equation}
-\langle f(X_t) \rangle = \int f(X_t) P(X_t, X_0; t) \mathrm{d}X_t~,
-\label{avg_f}
-\end{equation}
-
-with the initial condition $P(X_t, X_0; 0) = \delta(X_t - X_0)$, where $\delta$ is the Dirac delta function. Expanding $f(X_t)$ in a Taylor series yields:
-
-\begin{equation}
-    f(X_t + \mathrm{d}X_t) = f(X_t) + f'(X_t) \mathrm{d}X_t + \frac{1}{2} f''(X_t) (\mathrm{d}X_t)^2 + \ldots
-    \label{f_expansion}
-\end{equation}
-
-Substituting $\mathrm{d}X_t$ from the Fokker-Plank equation and taking the average, we get:
-
-\begin{equation}
-    \left\langle \frac{\mathrm{d}f(X_t)}{\mathrm{d}t} \right\rangle \simeq  \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2
-    \label{f_avg_evolution}
-\end{equation}
-
-Combining this with the definition of the average value of $f(X_t)$, we can derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$:
-\begin{eqnarray}
-\int \mathrm{d}X_t \frac{\partial f(X_t)}{\partial t} f(X_t) = \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2\\
-= \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t)~,
-\end{eqnarray}
-
-where $G$ is the Generator, defined as $G = u(X_t) \frac{\partial}{\partial X_t} + \frac{1}{2} g^2 \frac{\partial^2}{\partial X_t^2}~$. Taking the adjoint of $G$ as $G^\dagger$, we can rewrite the above equation as:
-\begin{equation}
-    \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t) = \int \mathrm{d}X_t\, f(X_t) G^\dagger P(X_t, X_0; t)~.
-\end{equation}
-
-We can then derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$ as:
-\begin{equation}
-    \frac{\partial P(X_t, X_0; t)}{\partial t} = G^\dagger P(X_t, X_0; t) = -\frac{\partial}{\partial X_t} \left( u(X_t) P(X_t, X_0; t) \right) + \frac{1}{2} \frac{\partial^2}{\partial X_t^2} \left( g^2 P(X_t, X_0; t) \right)~.
-\end{equation}
-
-Thus, for a bulk Brownian motion with Langevin equation
-\begin{equation}
-    \frac{\mathrm{d}x}{\mathrm{d}t} = \sqrt{2D_0} \eta(t)~,
-    \label{Langevin_Fokker_plank_bulk}
-\end{equation}
-
-with $x$ the colloid's position, $D_0$ the bulk diffusion coefficient, and $\eta(t)$ a white noise of zero mean and unit variance, we can identify $u(x) = 0$ and $g = \sqrt{2D_0}$, and thus, the Fokker-Plank equation for the PDF of the colloid's position reads:
-\begin{equation}
-    \frac{\partial P(x, x_0; t)}{\partial t} = D_0 \frac{\partial^2 P(x, x_0; t)}{\partial x^2}~,
-    \label{Fokker_Plank_bulk_diffusion_equation}
-\end{equation}
-which is the well-known diffusion equation.
 
 
 \subsubsection{Fokker-Plank equation with multiplicative noise}
 
-Now, in the case of an inhomogeneous and anisotropic diffusion coefficient, the Fokker-Plank equation reads 
+Now, in the case of an inhomogeneous and anisotropic diffusion coefficient, the noise in our diffusion equation cannot simply be treated as a Gaussian white noise anymore. Indeed, because its amplitude depends on the diffusivity, and because the diffusivity is neither homogeneous nor isotropic anymore, we will need to include a so-called multiplicative noise in the Langevin equation.
+This, as we will see, raises the question of the integration of the multiplicative noise, and the intent of the following derivation is to demonstrate the care that must be taken to ensure we obey detailed balance and do not introduce unphysicality by honest mistake.
 
+
+We will begin by taking the following Langevin equation (See the Introduction for its formal presentation), but modify the second term in the right-hand side to include a space-dependent amplitude.
 \begin{equation}
 \mathrm{d}X_t = u(X_t)\mathrm{d}t + g(X_t) \mathrm{d}B_t~,
 \label{Fokker-Plank_mulitplicative}
 \end{equation}
 
+where, as a reminder, $u(X_t)$ is the drift from external forces acting upon the colloid, $g(X_t)$ is the space-dependent noise amplitude, and $\mathrm{d}B_t$ is a Wiener process, such that $\mathrm{d}B_t = \zeta(s)\mathrm{d}s$, $\langle \mathrm{d}B_t\rangle = 0$ and $\mathrm{d}B_t^2 = \mathrm{d}t$, which can be seen as the integral of a white noise: it is nowhere differentiable.
+Integrating Eq. \ref{Fokker-Plank_mulitplicative} over an infinitesimal time step $\Delta t$,
+
 \begin{equation}
-    X_{t + \Delta t} = X_t + \int_{t}^{t + \Delta t} u(X_s) \mathrm{d}s + \int_{t}^{t + \Delta t} g(X_s) \mathrm{d}B_s~,
+    X_{t + \Delta t} = X_t + \int_{t}^{t + \Delta t} u(X_s) \mathrm{d}s + \int_{t}^{t + \Delta t} g(X_s) \mathrm{d}B_s~.
     \label{Fokker-Plank_mulitplicative_discrete}
 \end{equation}
 
+It is straightforward to simply integrate the first term of the right-hand side owing to the smoothness of $\mathrm{d}s$ using simple methods such as a forward Euler scheme \cite{burden_numerical_2015}. 
+However, the second term of the right-hand side is known as a stochastic integral, where $B_s$ is a process which has infinite variation. In that case, one cannot simply treat $\mathrm{d}B_s$ as a small and deterministic increment, which in turn forbids the use of simple Euler integration.
+Thus, in order to compute this second integral, we often express it as 
+
 \begin{equation}
-    \int_{t}^{t + \Delta t} g(X_s) \mathrm{d}B_s \mathrm{d}s \equiv B\left([1 - \alpha]X_t + \alpha X_{t+\Delta t}\right)\Delta W(t)~,
+    \int_{t}^{t + \Delta t} g(X_s) \mathrm{d}B_s \equiv g\left([1 - \alpha]X_t + \alpha X_{t+\Delta t}\right)\Delta W(t)~,
+    \label{gdBt_equivalence}
 \end{equation}
+
+with $\Delta W(t)$ the Wiener increment, as
 
 \begin{equation}
     \Delta W(t) = \int_{t}^{t + \Delta t} \mathrm{d}B_s~,
     \label{Wiener_increment}
 \end{equation}
 
+
+where $\alpha$ encodes where in the time step we want to evaluate the integral. We will need to choose a value for $\alpha$ between $0$ (left endpoint) and $1$ (right endpoint). Of course, conventions for such integrals exist \cite{karatzas_brownian_1991}:
+
+\begin{enumerate}
+\item{The Itô convention:} $\alpha = 0$; $\int_{t}^{t+\Delta t} g(X_s)\mathrm{d}B_s \simeq g(X_t)\Delta W$. The system reacts to the noise, there is no feedback within a single timestep. Mathematically, the SDE becomes a \emph{martingale}
+\footnote{I was unaware of the reason for using Itô convention over other counterparts prior to writing the manuscript. However, upon reading literature, I understood how practical working with martingales can be. A martingale has a bounded mean, and, given that we know its history up to time $t'< t$, its expected value at $t$ must be $\mathbb{E}\left[M_t | \left\{M_s, s \le t'\right\}\right] = M_{t'}$. In my words, this means that the expected value of a martingale at a given time is the last previously known expected value. 
+The name, however, comes from gambling, a field for which I have exactly zero interest to explore.} 
+This means that the process's evolution depends strictly on the previous time step, and not on the history before this time step. 
+However, no matter how convenient and practical this convention may be, it also entrails a modification, or rather correction to the chain rule of calculus when changing variables. We discuss this further down, as we will be using this convention for our SDE.
+
+\item{The Stratonovich convention:} $\alpha = 1/2$; $\int_{t}^{t+\Delta t} g(X_s)\mathrm{d}B_s \simeq g(\frac{X_t + X_{t + \Delta t}}{2})\Delta W$. Stratonovich proposes a way of circumventing the complexities introduced by Itô's convention in the chain rule, breaking the martignale in the process. We now consider a noise which has a finite, non-zero correlation, but this correlation has a characteristic time that is very small compared to the discretisation time step. I will not detail it as much, as I have not really used this convention and am much less aware of its capabilities and pitfalls.
+\end{enumerate}
+
+Mathematically, it is always possible to identify a Stratonovich process to an Itô process with equivalent solutions. Therefore, it is simply a matter of convenience to choose one over the other. There are, of course, subtleties; and I invite the interested reader to read more on the matter in L. Smith's website \cite{oatml_ito_strat_2022} from which I liberally adapted some content within this thesis.
+We'll, for the sake of the development, keep $\alpha$ as a variable for the time being.
+
+We begin by taking Eq. \ref{Fokker-Plank_mulitplicative_discrete} to order $\Delta t^{1/2}$ 
 \begin{equation}
  X_{t+\Delta t} = X_t + g(X_t) \Delta W(t)
 \end{equation}
+
+We can then conveniently develop the $X_{t+\Delta t} - X_t$ term in Eq. \ref{gdBt_equivalence}
+
+
 
 \begin{align}
     \int_{t}^{t + \Delta t} g(X_s)\mathrm{d}B_s \,\mathrm{d}s
     &= g\bigl(X_t + \alpha [X_{t + \Delta t}-X_t]\bigr)\,\Delta W(t)\\
     &\approx g\bigl(X_t + \alpha g(X_t)\Delta W(t)\bigr)\,\Delta W(t)\\
-    &\approx g(X_t)\Delta W(t) + \alpha g(X_t) g'(X_t)[\Delta W(t)]^2~.
+    &\approx g(X_t)\Delta W(t) + \alpha g(X_t) g'(X_t)[\Delta W(t)]^2
 \end{align}
 
+to order $\Delta t$. This in turn gives
+
 \begin{equation}
-X_{t + \Delta t} = X_t + u(X_t) \Delta t + g(X_t) \Delta W(t) + \alpha g(X_t)g'(X_t) [\Delta W(t)]^2~,
+X_{t + \Delta t} = X_t + \left[u(X_t) + \alpha g(X_t)g'(X_t)\right] \Delta t + g(X_t) \Delta W(t)~.
 \end{equation}
 
+Notice then that the integration of a multiplicative noise brings a correction on the term which depends on $\Delta t$, a.k.a. the \emph{drift} term. 
+We want to standardise this expression to easily express the correction to the drift in our equation in order to simulate a trajectory. To do so, we invoke the Fokker-Plank equation yet again
 \begin{equation}
     \frac{\partial P(X_t, t)}{\partial t} = - \frac{\partial}{\partial X_t}K_1(X_t)P(X_t,t) + \frac{1}{2}\frac{\partial^2}{\partial X_t^2}K_2(X_t)P(X_t,t)~,
+    \label{FokkerPlank_moments}
 \end{equation}
 
+
+where $K_1$ and $K_2$ respectively are the first and second moments, which we define as
+
 \begin{align}
-K_1(X_t) & = \lim_{\Delta t \to 0} \frac{\Delta X_t}{\Delta t}\\
-& = u(X_t) + \alpha g(X_t)g'(X_t)~,
+    K_1(X_t) &= \lim_{\Delta t \to 0} \frac{\Delta X_t}{\Delta t} \notag\\
+             &= u(X_t) + \alpha g(X_t)g'(X_t)
+    \label{Fokker_Planck_first_moment}
 \end{align}
 
-and
+for the mean, and
 
 \begin{align}
 K_2(X_t) & = \lim_{\Delta t \to 0} \frac{(\Delta X_t)^2}{\Delta t}\\
-& = g(X_t)^2~.
+& = g^2(X_t)
+\label{Fokker_plank_second_moment}
 \end{align}
 
-\textcolor{red}{why the fuck z ?}
-
+for the standard deviation. Thus, we can rewrite Eq. \ref{FokkerPlank_moments} in those new terms:
 
 \begin{equation}
     \frac{\partial P(X_t, t)}{\partial t} = - \frac{\partial}{\partial X_t}\left\{u(X_t) + \alpha g(X_t)g'(X_t)\right\}P(X_t, t) + \frac{1}{2}\frac{\partial^2}{\partial X_t^2}\left\{g(X_t)^2\right\}P(X_t, t)~.
+\label{Fokker_plank_final_multiplicative}
 \end{equation}
+
+
 
 \subsubsection{Derivation of the stochastic drift term}
 
+
+We would now like to apply this knowledge to compute the new stochastic drift term one must add in the $\mathrm{d}t$ order to achieve physicality in our system. We begin again with the Langevin equation of a colloid sedimenting above a plane
+
 \begin{equation}
-    \mathrm{d}z = \frac{F(z)}{\gamma_\perp(z)}\mathrm{d}t + \sqrt{2D_\perp(z)}\mathrm{d}B_t~,
+    \mathrm{d}z = \frac{F(z)}{\gamma_\perp(z)}\mathrm{d}t + \sqrt{2D_\perp(z)}\mathrm{d}B_t~.
     \label{confinedLangevin_stochdrift}
 \end{equation}
 
-where $F(z)$ is the total of deterministic forces and $F(z) = -k_\mathrm{B}T \ln(U(z))$.
 
+In that case, taking Eq. \ref{Fokker_Planck_first_moment}, we express the mean velocity as
 \begin{equation}
 \left<\frac{\Delta z}{\Delta t}\right> \equiv \bar{v_d} = \frac{F(z)}{\gamma_\perp(z)} + \alpha \frac{\mathrm{d}D_\perp(z)}{\mathrm{d}z}~.
 \label{avg_velocity_stochdrift}
 \end{equation}
 
-\begin{equation}
-F_\mathrm{eq} = - \frac{\mathrm{d}U_\mathrm{steady-state}(z)}{\mathrm{d}z}
-\label{equilibrium_force_stochdrift}
-\end{equation}
 
-\begin{equation}
-    U_\mathrm{steady-state}(z) = -k_\mathrm{B}T \ln(P_\mathrm{steady-state}(z))~,
-    \label{Uss_stochdrift}
-\end{equation}
+where $F(z)/\gamma_\perp(z)$ is our term of interest, and it is worth noting it contains the complexities of the following derivations and is, in no way, trivial and simply deriving from potentials. 
+
+We begin by taking the steady-state of Eq. \ref{Fokker_plank_final_multiplicative} and differentiating with respect to time. By definition,
 
 \begin{equation}
 \frac{\mathrm{d}}{\mathrm{d}z} \left\{-u(z) - \alpha g(z)g'(z) + \frac{1}{2} \frac{\mathrm{d}}{\mathrm{d}z} g(z)^2 \right\} P_\mathrm{steady-state}(z) = 0~.
 \end{equation}
 
+with $u(z) = \frac{F}{\gamma_\perp}$ and, because $\lim_{z\to \infty} P_\mathrm{steady~state}(z) = 0$ and $\lim_{z\to \infty} \frac{\mathrm{d} P_\mathrm{steady~state}(z)}{\mathrm{d}z} = 0$,
+
 
 \begin{equation}
-(-u(z) - \alpha g(z)g'(z)) P_\mathrm{steady-state}(z) + \frac{1}{2} \frac{\partial }{\partial z} \left\{g(z)^2 P_\mathrm{steady-state}(z)\right\} = 0~,
+(-u(z) - \alpha g(z)g'(z)) P_\mathrm{steady-state}(z) + \frac{1}{2} \frac{\mathrm{d} }{\mathrm{d} z} \left\{g(z)^2 P_\mathrm{steady-state}(z)\right\} = 0~.
 \end{equation}
 
-We may now substitute $Y = g^2(z)P_{steady-state}(z)$, which yields
+We may now substitute $A(z) = g^2(z)P_{steady-state}(z)$, which yields
 
 \begin{equation}
-    - \frac{u(z) + \alpha g(z)g'(z)}{g^2(z)/2}Y + \frac{\mathrm{d}Y}{\mathrm{d}z} = 0~,
+    \frac{\mathrm{d}A(z)}{\mathrm{d}z} - 2\frac{u(z) + \alpha g(z)g'(z)}{g^2(z)}A(z) = 0~,
 \end{equation}
 
-which solves as
+which integrates as
+
+\begin{align}
+    \ln \left(A(z)\right) &= \ln \left(g^2(z)\right) + \ln \left(P_\mathrm{steady~state}\right)
+    &= \int \frac{u(z') + \alpha g'(z')g(z')}{g^2(z')/2} \mathrm{d}z'~.
+\end{align}
+
+And thus,
 
 \begin{equation}
-    P_{steady-state}(z) = \frac{1}{g^2(z)} \exp\left\{ 2 \int_0^z \frac{u(z') + \alpha g(z')g'(z')}{g^2(z')} \mathrm{d}z' \right\}~.
+    P_{steady-state}(z) = \frac{1}{g^2(z)} \exp\left\{ 2 \int_0^z \frac{u(z') + \alpha g(z')g'(z')}{g^2(z')} \mathrm{d}z' \right\}~,
 \end{equation}
 
-\begin{equation}
-    U_{steady-state}(z) = -k_\mathrm{B}T \int^{\Delta t} \frac{u(z') + (\alpha - 1)g(z')g'(z')}{g^2(z')/2} \mathrm{d}z'~.
-\end{equation}
+We note that we may express $\ln \left(g^2(z)\right) = \int \frac{2g'(z')g(z')}{g^2(z')}\mathrm{d}z'$, and
 
 \begin{equation}
-\frac{F_\mathrm{eq}}{\gamma_\perp(z)} = \frac{F(z)}{\gamma_\perp(z)} + (\alpha - 1)g(z)g'g(z)
+    U_{steady-state}(z) = -k_\mathrm{B}T \int\frac{u(z') + (\alpha - 1)g(z')g'(z')}{g^2(z')/2} \mathrm{d}z'~.
 \end{equation}
+
+Remembering that $F_\mathrm{steady~state} = -\frac{\mathrm{d}U_\mathrm{steady~state}}{\mathrm{d}z}$, we get
+
+\begin{equation}
+\frac{F_\mathrm{steady~state}}{\gamma_\perp(z)} = \frac{F(z)}{\gamma_\perp(z)} + (\alpha - 1)g(z)g'(z)~.
+\end{equation}
+
+From the Lanvegin equation Eq. \ref{confinedLangevin_stochdrift}, we note that $g(z) = \sqrt{2D_\perp(z)}$, and $F(z) = \frac{u(z)}{\gamma_\perp}$, and we also keep in mind that $D_\perp = \frac{k_\mathrm{B}T}{\gamma_\perp}$. With the Itô convention $\alpha = 0$, we may now write the total drift of Eq. \ref{final_stochastic_drift} as
 
 
 \begin{equation}
     \bar{v_\mathrm{d}} = \frac{1}{\gamma_\perp(z)} \frac{\mathrm{d}U_\mathrm{steady-state}(z)}{\mathrm{d}z} + \frac{\mathrm{d}D_\perp(z)}{\mathrm{d}z}~.
 \end{equation}
 
+
+By identification, we then recover the deterministic drift velocity emerging from external forces
 \begin{equation}
-v_\mathrm{d} = \frac{k_\mathrm{B}T}{\gamma_\perp(z)} \left[-\frac{1}{l_\mathrm{D}}B \exp \left(-\frac{z}{L_\mathrm{D}}\right) + \frac{1}{l_\mathrm{B}} \right]~.
+v_\mathrm{d} = \frac{k_\mathrm{B}T}{\gamma_\perp(z)} \left[-\frac{1}{l_\mathrm{D}}B \exp \left(-\frac{z}{l_\mathrm{D}}\right) + \frac{1}{l_\mathrm{B}} \right]~,
 \end{equation}
 
+whereas the stochastic drift, in the Padé approximation, reads
+
 \begin{equation}
-v_{stochastic~drift} = 2D_0a\frac{2a^2 + 12 az + 21 z^2}{(2a^2 + 9az + z^2)^2}~.
+v_\mathrm{stochastic~drift} = 2D_0a\frac{2a^2 + 12 az + 21 z^2}{(2a^2 + 9az + z^2)^2}~.
 \label{final_stochastic_drift}
 \end{equation}
 
-\textcolor{red}{\textbf{TODO:} Abosultely verify every single equation maxime wrote. they moght be wrong.}
+In the latter parts of this chapter, I will use an algorithm that is specifically made to handle Brownian motion in confined geometries. It is worth keeping in mind the present derivation holds for this algorithm, which is why I deemed it relevant to be included in this thesis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Simple Langevin simulation of a confined colloid}
 
-We may now write the Euler-discretised equations of motion for a colloid confined in the $z$ direction as:
+A very usual task in my group, thanks to the theses produced and defended by Maxime Lavaud \cite{maxime_thesis}and Elodie Millan \cite{elodie_thesis}, is to simulate the system I just spent a few pages describing throughly. Thought not strictly part of my doctoral work (it was more of a Master's project under Maxime and Elodie's supervisions), I briefly include it here both to pay my respects to them and to show what can be done with minimal computations and basic code.
+I invite the interested reader to check their theses for ready-to-run, Cython\footnote{Cython refers both to a compiler and a programming language that is based on Pyrex. Owing to its high level of abstraction, Cython is extremely easy to write, maintain and comprehend, all while reaching the optimization capabilities of pure C code. When I developed algorithms myself from scratch, I mostly favoured Python, and implemented computationally heavier loops in Cython.}-compiled codes \cite{Cython}, and I provide minimal versions here (\textcolor{red}{TODO : make a little jupyterlab for the reader to play around online. Think about whether to make one file per fig or a whole working example with simu and amalysis in the same file like Ryker did for libmobility in zaragoza.}). 
 \begin{align}
     x_i & = x_{i-1} + \sqrt{2D_\parallel(z_{i-1})\Delta t} w_{x_i}~,\\
     z_i & = z_{i-1} + \bar{v_d}(z_{i-1}) \Delta t + \sqrt{2D_\perp(z_{i-1})}w_{z_i}~,
 \end{align}
 
 where $w_{x_i}$ and $w_{z_i}$ are two independent Gaussian white noises of zero mean and $\Delta t$ variance, and where $\bar{v_d}(z)$ is the average drift velocity of the colloid at position $z$ as computed in Eq. \ref{final_stochastic_drift}, which includes both deterministic and stochastic contributions as per equation \ref{avg_velocity_stochdrift}.
+
+We then carefully choose a time step such that ... \textcolor{red}{Write this part when I have rewritten the code. to do : -explanation of code, figure of traj, peq, MSD.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Colloid-colloid lubrication theory}
-
+Now that we can simulate a single colloid in confinement, we may turn to the usual ways of simulating the interaction between two Brownian colloids. The usual approach, in the case of dilute enough suspensions, is to consider 
 
 \cite{Batchelor_1976}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -479,5 +551,7 @@ At this level, it becomes more convenient to work in terms of \emph{self-mobilit
 Naturally, researchers have been pondering on how to simulate dense Brownian suspensions for a few decades already \cite{Batchelor_1976}. However, the numerical complexity of such a method (and namely, how to efficiently solve for a multiplicative noise and, a fortiori, how to compute efficiently the square root of a diffusion or mobility tensor without computational cost blowups).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Application to the Dufresne experiments: going beyond the Blake approximation}
+
+Ill do that later when i have results to show.
 
 

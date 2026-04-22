@@ -2372,24 +2372,30 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">bibliography/references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">brenner_slow_1961</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">BakerGravesMorris_1996</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Honig_1971</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">Bevan_2000</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">Faxen_1924</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">LeBellac_2004</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">Batchelor_1976</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Dufresne_2000</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Dufresne_2000</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Dufresne_2000</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Dufresne_2000</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">Dufresne_2000</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Oseen_1927</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">Oseen_1927</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">Blake_1971</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">LeBellac_2004</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">brenner_slow_1961</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">BakerGravesMorris_1996</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Honig_1971</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">Bevan_2000</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Faxen_1924</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">burden_numerical_2015</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">karatzas_brownian_1991</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">oatml_ito_strat_2022</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">maxime_thesis</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">elodie_thesis</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Cython</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Batchelor_1976</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">Dufresne_2000</bcf:citekey>
     <bcf:citekey order="16" intorder="1">Dufresne_2000</bcf:citekey>
     <bcf:citekey order="17" intorder="1">Dufresne_2000</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">Batchelor_1976</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">Oseen_1927</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">Oseen_1927</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Blake_1971</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Dufresne_2000</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">Batchelor_1976</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
