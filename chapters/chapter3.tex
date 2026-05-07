@@ -26,7 +26,7 @@ Because of the level of complexity of such a study, I present in this chapter a 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/toy_model_figure_1.pdf}
-    \caption{Representation of the system. A Brownian colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled as a second Brownian colloid (orange) subject to a harmonic potential of inverse stiffness of compliance $\kappa$. This membrane is coupled to the colloid of interest through an indirect hydrodynamic coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-friction $\gamma_{11}$ and $\gamma{22}$, respectively.}
+    \caption{Representation of the system. A Brownian colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled as a second Brownian colloid (orange) subject to a harmonic potential of inverse stiffness of compliance $\kappa$. This membrane is coupled to the colloid of interest through an indirect hydrodynamic coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-friction $\gamma_{11}$ and $\gamma_{22}$, respectively.}
     \label{toy_model_figure_1}
 
 \end{figure}
@@ -74,81 +74,156 @@ where $\eta_i$ and $\eta_j$ (with $j \in \{1, 2\}$) are Gaussian white noises of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical developments}
 
-The objective of the following developments is to compute the modification to the long-time dynamics of the Brownian colloid diffusing withing the sinusoidal trap. It is worthwhile to note that our published work presents several derivations to do so, and the method I present here is not strictly rigorous. I invite the interested reader to consult the supplementary material of our publication, which can be found in the appendix of this manuscript. 
+The objective of the following developments is to compute the modification to the long-time dynamics of the Brownian colloid diffusing within the sinusoidal trap. The development I choose to present here is not the most rigorous, and corresponds to the very stiff ($\kappa \to 0$) limit of the elastic membrane. The interested reader can find a more rigorous argument in the appendices of this thesis, alongside a second development for the very compliant limit ($\kappa \to \infty$). 
 
 
-
-
+We begin by refactoring Eqs. \ref{3ToyMod_langevin1} and \ref{3ToyMod_langevin2} in the deterministic case $\Theta = 0$ 
 
 
 \begin{align}
+    \label{3ToyMod_athermal_q1}
     \frac{\mathrm{d}q_1}{\mathrm{d}t} & = -\mu_{11} \phi'(q_1) - \frac{\mu_{12}}{\kappa}q_2~, \\
-    \frac{\mathrm{d}q_2}{\mathrm{d}t} & = -\mu_{12} \phi'(q_1) - \frac{\mu_{22}}{\kappa}q_2
+    \frac{\mathrm{d}q_2}{\mathrm{d}t} & = -\mu_{12} \phi'(q_1) - \frac{\mu_{22}}{\kappa}q_2~. 
 \end{align}
 
+We may then integrate to express $q_2$ as
 
-% Marginal, non rigorous
 \begin{equation}
-    P_\mathrm{meq} (q_1) = \frac{\exp[-\beta \phi(q_1)}{Z_-}~,
+    q_2 = - \frac{\kappa \mu_{12}}{\mu_{22}} \left( 1 + \frac{\kappa}{\mu_22} \frac{\mathrm{d}}{\mathrm{d}t}\right)^{-1} \phi'(q_1)~.
 \end{equation}
 
-%normalisation
+
+In the small $\kappa$ limit, we then expand the right-hand bracket term, taking into account the chain rule
 \begin{equation}
-    Z_\pm = \int_{0}^{\lambda} \mathrm{d}q \exp [\pm \beta \phi(q)]~,
+    q_2 \simeq - \frac{\kappa \mu_{12}}{\mu_{22}} \left[ \phi'(q_1) - \frac{\kappa}{\mu_{22}}\phi''(q_1) \frac{\mathrm{d}q_1}{\mathrm{d}t} + O(\tau_2^2)\right]~.
 \end{equation}
 
-% Re-expressing q2 
-\begin{equation}
-    q_2 = - \frac{\kappa \mu_{12}}{\mu_{22}} \left( 1 + \frac{\kappa}{\mu_22} \frac{\mathrm{d}}{\mathrm{d}t}\right)^{-1} \phi'(q_1)
-\end{equation}
+Here, we note that $\tau_2$ is the characteristic relaxation time of the harmonic trapping corresponding to the membrane elasticity, as $\tau_2 = \frac{\kappa}{\mu_{22}}$. Now, substituting this new expression for $q_2$ in Eq. \ref{3ToyMod_athermal_q1}, we obtain
 
-% Operator expansion and chain rule
-\begin{equation}
-    q_2 \simeq - \frac{\kappa \mu_{12}}{\mu_{22}} \left[ \phi'(q_1) - \frac{\kappa}{\mu_22}\phi''(q_1) \frac{\mathrm{d}q_1}{\mathrm{d}t} + O(\tau_2^2)\right]
-\end{equation}
-
-%substitution in s3 langevin no noise lalilalalala
 \begin{equation}
      \frac{\mathrm{d}q_1}{\mathrm{d}t} = - \left( \mu_{11} - \frac{\mu_{12}^2}{\mu_{22}}\right) \phi'(q_1(t)) - \frac{\kappa \mu_{12}^2}{\mu_{22}^2} \phi''(q1(t)) \frac{\mathrm{d}q_1}{\mathrm{d}t}~,
 \end{equation}
 
-%mu e
+which we can reexpress as
 
 \begin{equation}
     \frac{\mathrm{d}q_1}{\mathrm{d}t} = -\mu_\mathrm{e}(q_1)\phi'(q_1)~,
+    \label{3ToyMod_q1mue}
 \end{equation}
+
+where $\mu_\mathrm{e}$ is a dressed mobility with expression
 
 \begin{equation}
-    \mu_\mathrm{e} = \frac{\mu_{11}\mu_{22} - \mu_{12}^2}{\mu_{22}\left( 1 + \frac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{22}^2}\right)}
+    \mu_\mathrm{e} = \frac{\mu_{11}\mu_{22} - \mu_{12}^2}{\mu_{22}\left( 1 + \frac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{22}^2}\right)}~.
+\end{equation}
+
+Remembering that $\mathbf{\Gamma} = \mathbf{M}^{-1}$, 
+
+\begin{equation}
+    \mu_\mathrm{e} = \frac{1}{\gamma_{11}\left( 1 + \frac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{11}^2}\right)}~.
 \end{equation}
 
 
+Now, we can avoid reexpressing the noise should be added to Eq. \ref{3ToyMod_q1mue} for the thermal case by working directly with Fokker-Planck formalism. This formalism is introduced in its elementary form at the beginning of my thesis, and developed for more complex cases in Chapter 2. \textcolor{red}{CHECK CHAPT NR AT THE END OF THE REDACTION HERE} Doing such a thing is not rigorous, as I previously mentioned, because the effective stochastic process has not been derived. Eliminating fast variables in Eq. \ref{3ToyMod_q1mue} typically introduces non-trivial corrections. However, since we assume separation of timescales, the effective slow process still permits the writing of a uniquely-defined Fokker-Plank equation. 
 
-%New foffer planck
+This Fokker-Plank equation reads
 
 \begin{equation}
     \frac{\partial P_1 (q_1, t)}{\partial t} = \frac{\partial}{\partial q_1} \mu_\mathrm{e}(q_1) \left[ k_\mathrm{B}\Theta \frac{\partial P_1 (q_1, t)}{\partial q_1} + \phi'(q_1)P_1(q_1, t)\right]
 \end{equation}
 
 
-%LJ formula
+and, noting that the time derivative of the probability density function $P_1(q_1, t)$ can be expressed in terms of probability flux $J(q_1, t)$,
+
 
 \begin{equation}
-    D^* = \frac{\lambda^2}{\int_{0}^{\lambda}\mathrm{d}q \frac{\exp[\beta \phi(q)]}{D_\mathrm{e}} \int_{0}^{\lambda} \mathrm{d}q \exp[-\beta \phi(q)]}
+    \frac{\partial P_1(q_1, t)}{\partial t} = -\frac{\partial J}{\partial q_1~.}
+\end{equation}
+
+This allows us to write
+
+\begin{equation}
+    J(q_1, t) = -D_\mathrm{e}(q_1) \frac{\partial}{\partial q_1} P_1(q_1, t) - \mu_\mathrm{e} \phi'(q_1) P_1(q_1, t)~,
 \end{equation}
 
 
-%full de
+where $D_\mathrm{e} = k_\mathrm{B}\Theta$. The above equation can be rewritten 
+
+\begin{equation}
+    J = - D_\mathrm{e}(q_1)\exp\left[-\beta \phi(q_1)\right] \frac{\mathrm{d}}{\mathrm{d}q} \left\{\exp\left[\beta \phi(q_1)\right]P_1 (q_1, t)\right\}
+\end{equation}
+
+with $\beta = \frac{1}{k_\mathrm{B}\Theta}$.
+
+Now, we tilt the potential by adding a small force $F$, which gives a new potential $U(q_1)$
+
+\begin{equation}
+    U(q_1) = \phi(q_1) - Fq_1~.
+\end{equation}
+
+Then, the current equation can be rewritten taking account this new force, and gives
+
+\begin{equation}
+    \frac{\mathrm{d}}{\mathrm{d}q_1} \left\{ \exp[\beta U(q_1)] P(q_1, t)\right\} = - \frac{J(q_1, t)}{D_\mathrm{e}(q_1)} \exp[\beta U(q_1)]~.
+\end{equation}
+
+We can then integrate over a period $\lambda$, and, using periodicity, we retrieve
+
+\begin{equation}
+    P_1(q_1, t) = \frac{J(q_1) \exp[-\beta U(q_1)]}{1 - \exp(-\beta F \lambda)} \int_{q_1}^{q_1 + \lambda} \frac{\exp[\beta U(q)]}{D_\mathrm{e}(q)}\mathrm{d}q~.
+\end{equation}
+
+\textcolor{red}{check J(q, t) or just q.}
+
+By essence, $P_1(q_1, t)$ is normalised
+
+\begin{equation}
+    \int_{0}^{\lambda}P_1(q_1)\mathrm{d}q_1 = 1~,
+\end{equation}
+
+and thus we retrieve for $J$
+
+\begin{equation}
+    J(q_1) = \frac{1 - \exp[-\beta F \lambda]}{\int_{0}^{\lambda} \exp[-\beta U(q)]\mathrm{d}q \int_{q}^{q+\lambda} \frac{\exp[\beta U(q)]}{D_\mathrm{e}(q)}\mathrm{d}q}~.
+\end{equation}
+
+
+In the small force limit $F \to 0$,
+
+\begin{equation}
+    1 - \exp(-\beta F \lambda)  \simeq \beta F \lambda~,
+\end{equation}
+
+which, to leading order in $F$, gives
+
+\begin{equation}
+    J(q_1) = \frac{\beta F \lambda}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)] \mathrm{d}q_1 \int_{0}^{\lambda} \frac{\exp[\beta \phi(q_1)]}{D_\mathrm{e}(q_1)}\mathrm{d}q_1}~.
+\end{equation}
+
+Finally, we note that the drift velocity should read $v = J(q_1) \lambda$, and that the effective diffusion coefficient over $\lambda$ should be 
+
+\begin{equation}
+    D^* = \frac{k_\mathrm{B}\Theta v}{F} = \frac{\lambda^2}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)]\mathrm{d}q_1 \int_{0}^{\lambda} \frac{\exp(\beta \phi(q_1))}{D_\mathrm{e}(q_1)}\mathrm{d}q_1}~,
+\end{equation}
+
+which is the generalised Lifson-Jackson formula. \textcolor{red}{cite.}
+
+
+Finally, we replace $D_\mathrm{e}(q_1)$ in the expression 
+
+
 \begin{equation}
     D^* = \frac{k_\mathrm{B}\Theta\lambda^2}{\gamma_{11}\int_{0}^{\lambda} \mathrm{d}q \exp[\beta \phi(q)] \left(1 - \frac{\kappa \gamma_{12}^2 \phi'^2(q)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{\lambda} \mathrm{d}q \exp[-\beta \phi(q)]}
 \end{equation}
 
 
-\textcolor{red}{here.}
+And, by expansion in very small $\kappa$, and setting $\phi(q_1) = \Delta U \phi(\frac{q_1}{\lambda})$, where $\Delta U$ is the amplitude of the periodic trap
+
 \begin{equation}
-    D^* = \frac{k_\mathrm{B}\Theta}{\gamma_{11}\int_{0}^{1} \mathrm{d}p \exp[\beta\Delta U \psi(p)] \left(1 - \frac{\kappa \gamma_{12}^2 \Delta U^2\psi'^2(p)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{1} \mathrm{d}p \exp[-\beta \Delta U\psi(p)]}
+    D^* = \frac{k_\mathrm{B}\Theta}{\gamma_{11}\int_{0}^{1} \mathrm{d}p \exp[\beta\Delta U \psi(p)] \left(1 - \frac{\kappa \gamma_{12}^2 \Delta U^2\psi'^2(p)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{1} \mathrm{d}p \exp[-\beta \Delta U\psi(p)]}~.
 \end{equation}
 
+\textcolor{blue}{here.}
 
 
 
