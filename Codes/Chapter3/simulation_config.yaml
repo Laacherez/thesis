@@ -1,0 +1,23 @@
+base_output_dir: ./out
+log_dir: ./logs
+param_dir: ./params
+
+mu11: [38.65181466]
+mu12: [38.26794643] 
+mu22: [38.65181466]
+ks:   [1e-3, 3e-3, 1e-2, 3e-2]
+alphas: [2.7]
+ls: [.5]
+n_taskss: [10]
+trajectory_per_tasks: [3]   # only used if use_convergence: false
+
+save_every: 10
+max_workers: 10
+
+# Convergence controls
+use_convergence: true
+tol: 0.01
+check_every: 1
+patience: 3
+min_trajectories: 2
+max_trajectories: 10000
