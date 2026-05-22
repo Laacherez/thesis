@@ -1,15 +1,15 @@
-\chapter{Brownian Motion in deep lubrication}
+\chapter{Hydrodynamic interactions between two colloids near a boundary}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} 
 
-When considering Brownian suspensions, one must remain aware of hydrodynamic interactions at play in the system. Indeed, even at long range, hydrodynamics play a strong role on the behaviour of colloids diffusing in the fluid. Thus, strong care must be taken to ensure that these interactions are accounted for at every range, including the sub-radius range, when a colloid is either close to a confining plane or another colloid. 
-Together, we will see that typically, excellent approximations exist for the so-called far-field and moderate-field regimes, but that the near-field regime requires extra care and involves much more complex physics. We will begin with a full development of the diffusion of a colloid over a hard, infinite boundary, and demonstrate that there exist numerous pitfalls in the formalisation of such a problem. We will then move on to the case of two colloids in a bulk fluid, and present different methods with their respective ranges of validity to do so. Following these two cases, we will follow an experimental study which attempts to formalise the coupling between the wall-colloid and the colloid-colloid effects. Finally, we will discuss how we may go beyond this study, in the deep-lubricated regime, and show how our numerical results compare to the previous study.
+Even at long range, hydrodynamics play a strong role on the behaviour of colloids diffusing in a fluid. Thus, care must be taken to ensure that hydrodynamic interactions are accounted for at every range, including the short range, \emph{i.e.} when a colloid is either close to a boundary or to another colloid. 
+Excellent approximations exist for the far-field and moderate-field regimes. However, the near-field regime requires extra care and involves much more complex physics. We begin with a full description of the diffusion of a colloid over a hard, infinite boundary, and demonstrate that there exist numerous pitfalls in the formalisation of such a problem. We then move on to the case of two colloids in a bulk fluid, and present different methods with their respective ranges of validity to do so. Following these two cases, we follow an experimental study which attempts to formalise the coupling between the wall-colloid and the colloid-colloid effects. Finally, we discuss how we may go beyond this study, in the deep-lubricated regime, and show how our numerical results compare to the previous study.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Colloid-plane lubrication theory}
-First, we wish to understand the influence of boundary below a colloid on the diffusion of this colloid. We take an infinite silica plane, which we will take normal to the vertical $z$ axis, laying at $z=0$. Over that plane is a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$ with $k_\mathrm{B}$ Boltzmann's constant. As per usual Stokesian assumptions, we will take the fluid as incompressible.
+First, we wish to understand the influence of boundary below a colloid on the diffusion of this colloid. We take an infinite silica plane, which we take normal to the vertical $z$ axis, laying at $z=0$. Over that plane is a fluid of density $\rho$, viscosity $\eta$, and thermal energy $k_\mathrm{B} T$ with $k_\mathrm{B}$ Boltzmann's constant. As per usual Stokesian assumptions, we take the fluid as incompressible.
 
-In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. Due to the no-slip boundary conditions at contact with the plane and the colloid's surface, we must modify the effective viscosity of the fluid as the colloid evolves in the $z$ direction. This correction brings not only inhomogeneity along the $z$-axis but also anisotropy, as the $x$ and $y$ components of the friction coefficient will differ from the $z$ component.
+In that fluid, we now submerge a colloidal silica particle of radius $a$, of the micron scale. Due to the no-slip boundary conditions at contact with the plane and the colloid's surface, we must modify the effective viscosity of the fluid as the colloid evolves in the $z$ direction. This correction brings not only inhomogeneity along the $z$-axis but also anisotropy, as the $x$ and $y$ components of the friction coefficient differ from the $z$ component.
 
 
 In his seminal work\cite{brenner_slow_1961}, Brenner derives the exact expression for the effective viscosity felt by a sphere moving perpendicularly to a plane wall, $\eta_\perp(z)$, as
@@ -19,7 +19,7 @@ In his seminal work\cite{brenner_slow_1961}, Brenner derives the exact expressio
     \eta_\perp (z) = \eta \frac{4}{3} \sinh(\alpha) \sum_{n=1}^{\infty} \frac{n(n+1)}{(2n-1)(2n+3)} \left[ \frac{2 \sinh((2n+1)\alpha) + (2n+1) \sinh(2\alpha)}{4 \sinh^2((n+\frac{1}{2})\alpha) - (2n+1)^2 \sinh^2(\alpha)} - 1 \right]~,
 \end{equation}
 
-with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner obtains the effective viscosity from full Stokes derivations, it is worth noting that this expression is exact and valid for all values of $z/a > 1$, that is to say up until colloid/plane contact. However, for the sake of efficient numerical computations later on, we will avoid infinite-series computations and prefer the use of Padé approximants \cite{BakerGravesMorris_1996}, which were computed by Honig \cite{Honig_1971}, Bevan and Prieve \cite{Bevan_2000} as
+with $\alpha = \cosh^{-1} \left( \frac{z}{a} \right)$. Because Brenner obtains the effective viscosity from full Stokes derivations, it is worth noting that this expression is exact and valid for all values of $z/a > 1$, that is to say up until colloid/plane contact. However, for the sake of efficient numerical computations later on, we avoid infinite-series computations and prefer the use of Padé approximants \cite{BakerGravesMorris_1996}, which were computed by Honig \cite{Honig_1971}, Bevan and Prieve \cite{Bevan_2000} as
 
 
 \begin{equation}
@@ -41,7 +41,7 @@ These expressions suffice for the simulation of a colloid over an infinite plane
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Summary of potentials in the system}
 
-Furthermore, in order to write the correct overdamped Langevin equation for a simulation, we recall that the colloid is also subject to a number of forces, which we will now carefully enumerate as they will be present throughout the remainder parts of this chapter.
+Furthermore, in order to write the correct overdamped Langevin equation for a simulation, we recall that the colloid is also subject to a number of forces, which we now carefully enumerate as they will be present throughout the remainder parts of this chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Gravitational potential and buoyant mass}
 
@@ -75,7 +75,7 @@ where $l_\mathrm{B}$ is Boltzmann's length, defined as $l_\mathrm{B} = \frac{k_\
 \end{figure}
 Because of the amphoteric nature of silica, both the infinite place and the colloid surfaces are able to ionise when in contact with water (Fig. \ref{double_layer}). The surfaces themselves become negatively charged, which in turn attract adsorb ions in contact with the surface, in a dense and tightly bound Stern layer. Around this plane, a mobile, ionic "atmosphere" screens the electric potential of the colloid over distance with a characteristic length $l_\mathrm{D}$, for which we provide the derivation below.
 This diffuse layer, existing for both surfaces at play in the system, is responsible for the electrostatic repulsion between the two bodies (plane and colloid). 
-It is also worth mentioning, for the sake of the following derivation of the electronic interaction potential, that within the diffuse layer exists the so-called Slipping plane. This plane separates the fluid that is dragged by the colloid from the fluid that flows around it. Experimentally speaking, this is where one will measure the electrostatic potential of a surface, the $\zeta$ potential.
+It is also worth mentioning, for the sake of the following derivation of the electronic interaction potential, that within the diffuse layer exists the so-called Slipping plane. This plane separates the fluid that is dragged by the colloid from the fluid that flows around it. Experimentally speaking, this is where one measures the electrostatic potential of a surface, the $\zeta$ potential.
 
 At thermodynamic equilibrium, the local ion concentration in the diffuse layer $c_i(\vv{r})$ of a given species should follow the Boltzmann distribution
 
@@ -100,7 +100,7 @@ Thus, combining the above expressions, we get
     \label{Psi_full_equation}
 \end{equation}
 
-We will only draw our interest to sufficiently dilute solutions in terms of electrolyte concentration $[NaCl]$. In that case, we may Taylor expand the exponential term to obtain 
+We only draw our interest to sufficiently dilute solutions in terms of electrolyte concentration $[NaCl]$. In that case, we may Taylor expand the exponential term to obtain 
 
 \begin{equation}
     \nabla^2 \psi(\vv{r}) + \frac{e}{\varepsilon} \sum_i z_i c^\infty_i  \left(1 - \frac{z_i e \psi(\vv{r})}{k_\mathrm{B}T} \right) = 0~.
@@ -188,7 +188,7 @@ where
 
 
 
-We will furthermore neglect the attractive Van der Waals interactions, which in our cases of study only play a role within a few nanometers, whereas the repulsive interactions take place up to a few tens of nanometers.
+We furthermore neglect the attractive Van der Waals interactions, which in our cases of study only play a role within a few nanometers, whereas the repulsive interactions take place up to a few tens of nanometers.
 
 
 
@@ -225,8 +225,8 @@ This distribution should be normalised, hence the $\frac{1}{Z}$ factor. It is pa
 
 \subsubsection{Fokker-Plank equation with multiplicative noise}
 
-Now, in the case of an inhomogeneous and anisotropic diffusion coefficient, the noise in our diffusion equation cannot simply be treated as a Gaussian white noise anymore. Indeed, because its amplitude depends on the diffusivity, and because the diffusivity is neither homogeneous nor isotropic anymore, we will need to include a so-called multiplicative noise in the Langevin equation.
-This, as we will see, raises the question of the integration of the multiplicative noise, and the intent of the following derivation is to demonstrate the care that must be taken to ensure we obey detailed balance and do not introduce unphysicality by honest mistake.
+Now, in the case of an inhomogeneous and anisotropic diffusion coefficient, the noise in our diffusion equation cannot simply be treated as a Gaussian white noise anymore. Indeed, because its amplitude depends on the diffusivity, and because the diffusivity is neither homogeneous nor isotropic anymore, we need to include a so-called multiplicative noise in the Langevin equation.
+This raises the question of the integration of the multiplicative noise, and the intent of the following derivation is to demonstrate the care that must be taken to ensure we obey detailed balance and do not introduce unphysicality by honest mistake.
 
 
 We begin by taking the following Langevin equation (See the Introduction for its formal presentation), but modify the second term in the right-hand side to include a space-dependent amplitude.
@@ -260,7 +260,7 @@ with $\Delta W(t)$ the Wiener increment, as
 \end{equation}
 
 
-where $\alpha$ encodes where in the time step we want to evaluate the integral. We will need to choose a value for $\alpha$ between $0$ (left endpoint) and $1$ (right endpoint). Of course, conventions for such integrals exist \cite{karatzas_brownian_1991}:
+where $\alpha$ encodes where in the time step we want to evaluate the integral. We need to choose a value for $\alpha$ between $0$ (left endpoint) and $1$ (right endpoint). Of course, conventions for such integrals exist \cite{karatzas_brownian_1991}:
 
 \begin{enumerate}
 \item{The Itô convention:} $\alpha = 0$; $\int_{t}^{t+\Delta t} g(X_s)\mathrm{d}B_s \simeq g(X_t)\Delta W$. The system reacts to the noise, there is no feedback within a single timestep. Mathematically, the SDE becomes a \emph{martingale}
@@ -414,7 +414,7 @@ v_\mathrm{stochastic~drift} = 2D_0a\frac{2a^2 + 12 az + 21 z^2}{(2a^2 + 9az + z^
 \label{final_stochastic_drift}
 \end{equation}
 
-In the latter parts of this chapter, I will use an algorithm that is specifically made to handle Brownian motion in confined geometries. It is worth keeping in mind the present derivation holds for this algorithm, which is why I deemed it relevant to be included in this thesis.
+In the latter parts of this chapter, I use an algorithm that is specifically made to handle Brownian motion in confined geometries. It is worth keeping in mind the present derivation holds for this algorithm, which is why I deemed it relevant to be included in this thesis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -448,7 +448,7 @@ We then carefully choose a time step such that ... \textcolor{red}{Reference the
 
 \subsection{Colloid-colloid lubrication theory}
 
-Colloids displace fluid when they diffuse. Intuitively, it is very easy to understand that, if you were to the place two colloids or more in an otherwise unbounded fluid, their dynamics should couple in \emph{some way}. Naturally, this question has been investigated through and throughout already, and I will start by presenting the problem in terms of mobility $\mathbf{M}$ instead of diffusion. I will explain how Oseen formalism \cite{Oseen_1927} can be used to probe at this coupling. I'll, however, mitigate the accuracy of the method, and present a second way of computing more accurately (and more expensively) the same quantities.
+Colloids displace fluid when they diffuse. Intuitively, it is very easy to understand that, if you were to the place two colloids or more in an otherwise unbounded fluid, their dynamics should couple in \emph{some way}. Naturally, this question has been investigated through and throughout already, and I start by presenting the problem in terms of mobility $\mathbf{M}$ instead of diffusion. I explain how Oseen formalism \cite{Oseen_1927} can be used to probe at this coupling. I'll, however, mitigate the accuracy of the method, and present a second way of computing more accurately (and more expensively) the same quantities.
 
 \subsubsection{The mobility problem}
 
@@ -504,7 +504,7 @@ In that case, the velocity field $\bm{u(\bm{r})}$ is written
     \label{Kim_U}
 \end{equation}
 
-where $\bm{G}$ is the Oseen tensor. Because $\bm{u}(\bm{r})$, is the fundamental solution of the Stokes equation (for a point force, that is), it is referred to as a "Stokeslet" \cite{kim_microhydrodynamics_2005}, and the Oseen tensor $\bm{G}(\bm(r) - \bm{r}_1)$ is the Green's function to the Stokes equations. We will, in all of the following derivations, not take into account rotation of the colloids, that we will consider as perfect spheres. We will, however, keep track of their orientation anyway, for the sake of the derivation and later on to check numerical accuracy. With this, we may now express the flow field generated for a continuous force in space as the superposition of Green's functions
+where $\bm{G}$ is the Oseen tensor. Because $\bm{u}(\bm{r})$, is the fundamental solution of the Stokes equation (for a point force, that is), it is referred to as a "Stokeslet" \cite{kim_microhydrodynamics_2005}, and the Oseen tensor $\bm{G}(\bm(r) - \bm{r}_1)$ is the Green's function to the Stokes equations. We do not take into account rotation of the colloids, that we consider as perfect spheres. We however keep track of their orientation anyway, for the sake of the derivation and later on to check numerical accuracy. With this, we may now express the flow field generated for a continuous force in space as the superposition of Green's functions
 
 \begin{equation}
     \bm{u}(\bm{r}) = \int \bm{G}(\bm{r} - \bm{r'}) \cdot \bm{f}(\bm{r'}) \mathrm{d}^3 r'~.
@@ -559,7 +559,7 @@ where positive and negative corrections correspond respectively to the collectiv
 
 Now, as I discusse in this subsection, the Oseen approximation does not work for near-field interactions. Referring specifically to Eq. \ref{Oseen_dufresne_crossdifs}, our expressions are only valid down to $r \geq 10 a$. Beyond that limit, the approximation becomes first incorrect, and then unphysical, with negative diffusion coefficients arising.
 
-Luckily, because of its construction, the Oseen approximation is actually the first order of a more robust correction, which I will detail in the next subsection.
+Luckily, because of its construction, the Oseen approximation is actually the first order of a more robust correction, which I detail in the next subsection.
 
 
 \subsubsection{The Rotne-Prager-Yamakawa tensor}
@@ -570,7 +570,7 @@ To remedy the issues of the Oseen approximations mentioned above, we introduce t
 \end{equation}
 
 
-This expression also ensures positive-definiteness of the mobility tensor. We will see, later down, that it is usedi n a modified form to account for the existence of boundaries in the fluid.
+This expression also ensures positive-definiteness of the mobility tensor. We will see, later down, that it is used in a modified form to account for the existence of boundaries in the fluid.
 
 
 \textcolor{green}{Should I detail this more guys ? I feel like, compared to the rest of my derivations, it is a little bit hollow, but on the other side I have not exactly derived it ever, nor have I felt the need to.}
@@ -662,7 +662,7 @@ with $\xi = 4h^2 / r^2$ and up to $\mathcal{O} \left( \frac{a^3}{r^3}\right)$ an
 Furthermore, as noted by the authors, in the very far-field regime, the Oseen approximations should be recovered numerically and experimentally, whereas they expect the above expressions to hold in the very near-field regime as the wall hinders coupling between colloid motions. 
 
 
-In the following parts, we will go about confirming the above predictions numerically, but we will push the study much deeper into the lubrication regimes to investigate its validity once we cannot ignore finite-size effects anymore in the lubrication approximations.
+In the following parts, we confirm the above predictions numerically, but we push the study much deeper into the lubrication regimes to investigate its validity once we cannot ignore finite-size effects anymore in the lubrication approximations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulating dense suspensions in close confinement}
 Naturally, researchers have been pondering on how to simulate dense Brownian suspensions for a few decades already \cite{Batchelor_1976}. However, the numerical complexity of such a method (and namely, how to efficiently solve for a multiplicative noise and, a fortiori, how to compute efficiently the square root of a diffusion or mobility tensor without computational cost blowups)...
@@ -676,7 +676,7 @@ The lubrication-corrected version of the RigidMultiBlobsWall (RBW) algorithm \ci
     \item In the near-field, to replace the RPY approximation by subtraction of its contribution and addition of asymptotical corrections to the mobility matrix.
 \end{itemize}
 
-In an effort of convenience, because the resistance matrix is additive, we will introduce it as $\bm{R} = \bm{M}^{-1}$ the inverse of the mobility matrix.
+In an effort of convenience, because the resistance matrix is additive, we introduce it as $\bm{R} = \bm{M}^{-1}$ the inverse of the mobility matrix.
 
 We take again a suspension of N colloids, and enforce a no-slip boundary below on the $z=0$ plane. Formally, we write the new, corrected mobility matrix of the whole system as
 

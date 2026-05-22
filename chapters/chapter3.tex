@@ -15,7 +15,7 @@ Because of the level of complexity of such a study, I present in this chapter a 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/chapter3/toy_model_figure_1.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/chapter3/toy_model_figure_1.pdf}
     \caption{Representation of the system. A Brownian colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled locally as a second Brownian colloid (red) subject to a harmonic potential of inverse stiffness (or \emph{compliance}) $\kappa$. This membrane is coupled to the colloid of interest through an indirect, hydrodynamic-like coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-friction $\gamma_{11}$ and $\gamma_{22}$, respectively.}
     \label{toy_model_figure_1}
 
@@ -258,15 +258,18 @@ The interested reader can find a minimal version of a trajectory generation code
 
 I first generate trajectories of the two coupled Brownian colloids using Eqs. \ref{q1_discretized} and \ref{q2_discretized}, for a given set of parameters. A sample of a single trajectory is shown in Fig. \ref{Trajectories}. We can see that the membrane fluctuates around its equilibrium position in $q_2 = 0$, whereas the Brownian colloid is trapped at short times within a local minimum, and escapes through random thermal fluctuations at longer times to explore space. This is a first verification that the simulations behave as expected. Indeed, it is not unusual for Brownian simulations to blowup in the case of an unfortuitous dimensionalisation of the system, and this issue is almost always imputable to a too-large time step. We have already discussed this matter in the beginning of the manuscript. 
 
-
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{figures/chapter3/Trajectories.pdf}
+    \includegraphics[width=0.9\textwidth]{figures/chapter3/Trajectories.pdf}
     \caption{Trajectories of the Brownian colloid (blue) and the membrane (red) for $\kappa = 0.01$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$ and $\gamma_{12} = 0.8$, $\tau = 10^{-4}$. The membrane noticeably fluctuates around its equilibrium position in $q_2 = 0$, whereas the colloid is trapped at short times within a local minimum, and escapes through random thermal fluctuations at longer times to explore available space. }
     \label{Trajectories}
 \end{figure}
 
+
 We verify the behaviour of the system at equilibrium by sampling the probability density function of $q_1$ and $q_2$ from the generated trajectories, and comparing them to the theoretical prediction from the Gibbs-Boltzmann distribution (Eq. \ref{P_eq}). This is shown in Fig. \ref{Peq_q1q2}. We can see that the sampled probability density functions (histograms) and theoretical prediction from the Gibbs-Boltzmann distribution (solid lines, Eq. \ref{P_eq}) are in perfect agreement, even for low statistics (a single binned trajectory of $10^8$ points suffices to reach a good match between theory and numerics).
+
+
+
 
 The sampled probability distribution of $q_1$ follows the expected periodic shape, whereas the one of $q_2$ follows the expected Gaussian shape predicted by Eq. \ref{P_eq}. This is a second verification that the simulations are working as expected, and that we are correctly sampling the equilibrium distribution of the system.
 
@@ -389,7 +392,7 @@ With these values, the adimentionalised compliance $\epsilon$ falls exactly in t
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/chapter3/bio_values.pdf}
+    \includegraphics[width=1\textwidth]{figures/chapter3/bio_values.pdf}
     \caption{Estimation of the relative enhancement of the long-time diffusion coefficient of a Brownian colloid of radius $a=100\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}T$ and spatial period $\lambda = 100 \mathrm{nm}$ at a distance $d = 10 \mathrm{nm}$ from membrane of elastic modulus $E = 1 \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\mu_{12}$ is estimated using Oseen's model. The two asymptotes of the very rigid $\epsilon \to 0$ and very soft $\epsilon \to \infty$ are shown in dash-dotted cyan and blue lines respectively. For this system, the expected value of the relative enhancement of the long-time diffusion coefficient of the Brownian colloid is of about $\frac{\Delta D^*}{D^*} \approx 100\%$.}
     \label{biovalues}
 \end{figure}

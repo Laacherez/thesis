@@ -2372,24 +2372,9 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">bibliography/references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">sekimoto1993mechanism</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Beaucourt2004</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">skotheim_soft_2004</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">Snoeijer2013</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">urzay_elastohydrodynamic_2007</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">Saintyves2016</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">Davies2018</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Rallabandi2018</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Vialar2019</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">zhang2020direct</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Sheikh2023</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">fares_observation_2024</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">lacherez_enhanced_2025</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">hai2008</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">pav2008</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">LifsonJackson</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">millan_numerical_2023</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">gue2015</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">pedlosky_geophysical_1987</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">anderson_aerodynamics_2016</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">butt_physics_2024</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

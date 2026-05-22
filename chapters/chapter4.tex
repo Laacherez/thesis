@@ -1,0 +1,40 @@
+\chapter{Brownian motion in fluid flows}
+
+
+\section{Introduction}
+Fluid flows are ubiquitous in many biological settings. The study of fluid dynamics provides insights on multiple ranges of applications.
+Oceanic currents and large-scale weather phenomena \cite{pedlosky_geophysical_1987}, the lift of an airplane foil \cite{anderson_aerodynamics_2016}, surfing \cite{butt_physics_2024} and drug biodisponibility all rely at least partly on a range of application of fluid dynamics.
+
+We commonly use the Reynolds number $R_\mathrm{e}$ to predict the behaviour of a fluid. This number is a ratio between inertial and viscous forces in the fluid
+\begin{equation}
+    R_\mathrm{e} = \frac{\rho U L}{\eta}~,
+    \label{Reynolds_number}
+\end{equation}
+where $\rho$ is the fluid's density, $U$ is a characteristic velocity, $L$ is a characteristic length and $\eta$ is the fluid's dynamic viscosity. Turbulence in a flow occurs at very high Reynolds number $R_\mathrm{e} \gg 1$, whereas a very small Reynolds number $R_\mathrm{e}\ll 1 $ is considered laminar, with a smooth and constant profile. A very classic example is that of cigarette smoke (Fig. \ref{ciggy}). The smoke exists the cigarette's tip at very low velocity. Higher up, the smoke rises much faster and the plume is wider. By taking air density at room temperture $\rho_\mathrm{air} = 1.2 \mathrm{kg}.\mathrm{m}^{-3}$, viscosity at about $\eta_\mathrm{air} = 1.8 \mathrm{Pa.s}$, and a smoke characteristic velocity $U_\mathrm{smoke} = 1\mathrm{cm}.\mathrm{s}^{-1}$ and characteristic plume width $U_\mathrm{smoke} = 1 \mathrm{mm}$, we can estimate the first regime at about $R_\mathrm{e} = 0.5$. 
+
+I then want to say that I am interested here in low re flows, becuse they shape the world of microfluidics and have many biological applications.
+Then, I move to solutions in flows and why they are important to understant.
+I give the different parts of the chapter.
+
+\section{Taylor-Aris dispersion}
+I introduce the classical Taylor-Aris dispersion theory to explain the behaviour of a briwnian solution in a fluid flow. 
+I specify that e work with a perfect gaz solution, and that colloid interactions will be ignored.
+\subsection{Theory}
+I give here first the equations, the important quantities (peclet number, diffusion, dispersion). 
+
+I give all the expected results and profiles and figures
+
+\subsection{Investigating the diffusion of a Brownian solute in a Poiseuille flow normal to the flow direction}
+I explain the issues the Paris team were facing.
+I propose my numerical solution and recall the use of the hydrotools code.
+
+
+
+\subsubsection{Description of the setup}
+I describe the paris experimental setup.
+
+\subsubsection{Numerical methods}
+I briefly present my code, but mostly the parametrisation and argumentation for the huge gravity.
+
+\subsubsection{Results}
+I conclude on the paris project and why hydrodynamics are not at pplay there.
