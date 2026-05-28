@@ -2375,6 +2375,14 @@
     <bcf:citekey order="1" intorder="1">pedlosky_geophysical_1987</bcf:citekey>
     <bcf:citekey order="2" intorder="1">anderson_aerodynamics_2016</bcf:citekey>
     <bcf:citekey order="3" intorder="1">butt_physics_2024</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">gunny_near-surface_2025</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">fish_tirf_2009</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">vilquin_time_2021</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">vilquin_time_2021</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">einstein_molekuldimensionen_1906</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">gunny_near-surface_2025</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">gunny_near-surface_2025</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">sprinkle_driven_2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

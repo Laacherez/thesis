@@ -5,36 +5,197 @@
 Fluid flows are ubiquitous in many biological settings. The study of fluid dynamics provides insights on multiple ranges of applications.
 Oceanic currents and large-scale weather phenomena \cite{pedlosky_geophysical_1987}, the lift of an airplane foil \cite{anderson_aerodynamics_2016}, surfing \cite{butt_physics_2024} and drug biodisponibility all rely at least partly on a range of application of fluid dynamics.
 
+\subsection{The Reynolds number}
 We commonly use the Reynolds number $R_\mathrm{e}$ to predict the behaviour of a fluid. This number is a ratio between inertial and viscous forces in the fluid
 \begin{equation}
     R_\mathrm{e} = \frac{\rho U L}{\eta}~,
     \label{Reynolds_number}
 \end{equation}
-where $\rho$ is the fluid's density, $U$ is a characteristic velocity, $L$ is a characteristic length and $\eta$ is the fluid's dynamic viscosity. Turbulence in a flow occurs at very high Reynolds number $R_\mathrm{e} \gg 1$, whereas a very small Reynolds number $R_\mathrm{e}\ll 1 $ is considered laminar, with a smooth and constant profile. A very classic example is that of cigarette smoke (Fig. \ref{ciggy}). The smoke exists the cigarette's tip at very low velocity. Higher up, the smoke rises much faster and the plume is wider. By taking air density at room temperture $\rho_\mathrm{air} = 1.2 \mathrm{kg}.\mathrm{m}^{-3}$, viscosity at about $\eta_\mathrm{air} = 1.8 \mathrm{Pa.s}$, and a smoke characteristic velocity $U_\mathrm{smoke} = 1\mathrm{cm}.\mathrm{s}^{-1}$ and characteristic plume width $U_\mathrm{smoke} = 1 \mathrm{mm}$, we can estimate the first regime at about $R_\mathrm{e} = 0.5$. 
+where $\rho$ is the fluid's density, $U$ is a characteristic velocity, $L$ is a characteristic length and $\eta$ is the fluid's dynamic viscosity. Turbulence in a flow occurs at very high Reynolds number $R_\mathrm{e} \gg 1$, whereas a very small Reynolds number $R_\mathrm{e}\ll 1 $ is considered laminar, with a layered and constant profile. A very classic example is that of cigarette smoke (Fig. \ref{ciggy}). The smoke exists the cigarette's tip at very low velocity. By taking air density at room temperature $\rho_\mathrm{air} = 1.2 \mathrm{kg}.\mathrm{m}^{-3}$, viscosity at about $\eta_\mathrm{air} = 1.8 \mathrm{Pa.s}$, and a smoke characteristic velocity $U_\mathrm{smoke} = 1\mathrm{cm}.\mathrm{s}^{-1}$ and characteristic plume width $L_\mathrm{smoke} = 1 \mathrm{mm}$, we can estimate the first regime at about $R_\mathrm{e} = 0.5$. Higher up, the smoke rises much faster and the plume is wider, with a characteristic speed of $U_\mathrm{smoke} = 10 \mathrm{cm}.\mathrm{s}^{-1}$ and a  characteristic width of about $L_\mathrm{smoke} = 2 \mathrm{cm}$, the ratio gives $R_\mathrm{e} \approx 100$. Perturbations are suppressed at low intensity due to viscous effects. As the speed rises, perturbations can no longer be damped, and the typical turbulences arise.
 
-I then want to say that I am interested here in low re flows, becuse they shape the world of microfluidics and have many biological applications.
-Then, I move to solutions in flows and why they are important to understant.
-I give the different parts of the chapter.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/chapter4/ciggy.jpg}
+    \caption{Smoke rising from a lit cigarette tip. At short distances from the tip, the smoke plume is narrow and the velocity low enough for the flow to be considered laminar. Higher up, the plume is wider and the velocity higher; the flow transitions to turbulent. Source: Physics Stack Exchange.}
+    \label{ciggy}
+\end{figure}
+Most microfluidic experiments and simulations are conducted in the low Reynolds regime. This regime, thought more intuitive, can already showcae very interesting phenomena. 
+
+In the framework of this thesis, I am interested in understanding flow effects on Brownian motion. Specifically, one question has already been very well investigated in the last century: what happens to a Brownian solute once it is advected by a low-Reynolds, viscous flow? This Chapter first introduces the classical Taylor-Aris theory, developed to predict the dispersion of a Brownian solute under such flow. Then, I present an adjacent unpublished work carried out in collaboration with Joshua Mc. Graw, Blaise Delmotte and their respective groups, investigating hydrodynamic interactions in a dilute Brownian solute under flow advection. 
+
 
 \section{Taylor-Aris dispersion}
-I introduce the classical Taylor-Aris dispersion theory to explain the behaviour of a briwnian solution in a fluid flow. 
-I specify that e work with a perfect gaz solution, and that colloid interactions will be ignored.
-\subsection{Theory}
-I give here first the equations, the important quantities (peclet number, diffusion, dispersion). 
+We turn our focus to the study of the evolution of a Brownian solute's concentration when advected by a viscous flow (Fig. \label{figTaylorAris}). 
 
-I give all the expected results and profiles and figures
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/chapter4/chap4fig1.pdf}
+    \caption{A plug of Brownian solute (darker blue) is injected in a microchannel of width $2W$. It is then advected by a viscous flow. Because of no-slip conditions at the walls (grey), the flow takes a parabolic, or Poiseuille, shape. At short times, the plug of solute takes the shape of the flow. However, because of thermal fluctuations, the plug diffuses across streamlines. This averages out the parabolic profile of the solute cross-section wise. At long times, the concentration profile of the solute resumes a homogeneous shape, with a larger width. This broadening of the width of the plug is quantified by the dispersion coefficient which is computed from Eq. \ref{Taylor-Aris}. }
+    \label{figTaylorAris}
+\end{figure}
+We consider a microchannel of width $2W$. Fluid in that channel is advected by a unidirectional flow $u(y)\mathbf e_x$, and takes a characteristic Poiseuille (or parabolic shape) from the no-slip conditions at contact with the channel walls. A solute of concentration $c(x,y,t)$ and bulk diffusivity $D_0$ is injected in that microchannel. It obeys the advection-diffusion equation
+\begin{equation}
+    \partial_t c + u(y)\partial_x c
+    =
+    D_0\left(\partial_x^2 c+\partial_y^2 c\right)~.
+\end{equation}
+We decompose
+\begin{equation}
+    c(x,y,t)=\bar c(x,t)+c'(x,y,t),
+\end{equation}
+where $\bar c$ is the cross-sectional average and $c'$ is a small transverse correction induced by the shear. At times longer than the transverse diffusion time $\tau_\mathrm{D} = (2W)^2/D_0$, the concentration is
+ equilibrated across the channel width. Solving for this correction and averaging over the transverse coordinate gives an effective one-dimensional advection-diffusion equation
+\begin{equation}
+    \partial_t \bar c + \bar u\,\partial_x \bar c
+    =
+    D_\mathrm{eff}\partial_x^2 \bar c~.
+\end{equation}
+For a two-dimensional planar Poiseuille flow between plates separated by $2W$,
+\begin{equation}
+    u(y)=\frac{3}{2}\bar u\left(1-\frac{y^2}{W^2}\right)~,
+    \qquad -W<y<W,
+\end{equation}
+the effective dispersion coefficient  $D_{\mathrm{eff}}$ is then
+\begin{equation}
+    D_{\mathrm{eff}}
+    =
+    D_0+\alpha\frac{\bar u^2 W^2}{D_0}~.
+\end{equation}
+The $\alpha$ factor arises from channel geometry and varies with its configuration. From there, we can identify a new adimensionalised quantity, the Péclet number $P_\mathrm{e}$
+\begin{equation}
+    P_\mathrm{e} = \frac{\bar u W}{D_0}~,
+\end{equation}
+which compares advective to diffusive behaviour in the solute. Finally, we can write
+\begin{equation}
+    D_\mathrm{eff} =D_0 \left( 1+\alpha P_\mathrm{e}^2 \right)~,
+    \label{Taylor-Aris}
+\end{equation}
+which is the classical Taylor-Aris formula.  In simple words, this formula relates the dispersion of a Brownian solute in a microchannel of given width to the average fluid velocity for times beyond $\tau_\mathrm{D}$. This means that, for low enough Péclet numbers, the dispersion should be minimal, but that beyond $P_\mathrm{e} > 1$, dispersion should become dominant over classical free diffusion $D_0$ (Fig. \ref{DeffD0}). It is worth to note that, while I chose to speak in terms of concentration, the same phenomenon applies for a single colloid in a viscous flow.
 
-\subsection{Investigating the diffusion of a Brownian solute in a Poiseuille flow normal to the flow direction}
-I explain the issues the Paris team were facing.
-I propose my numerical solution and recall the use of the hydrotools code.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/chapter4/DeffD0.pdf}
+    \caption{Predicted renormalised dispersion $D_\mathrm{eff}/D0$ against Péclet number squared $P_\mathrm{e}^2$ computed from Eq. \ref{Taylor-Aris}. At small $P_\mathrm{e}$, $D_\mathrm{eff}/D0$ remains around 1, meaning that the dispersion effect due to advection is barely noticeable. It then crosses over around $P_\mathrm{e}^2 = 1$ to a second regime which is linear in $P_\mathrm{e}^2$.}
+    \label{DeffD0}
+\end{figure}
+
+\section{Hydrodynamic interactions in an advected solute}
+The reason I became personally interested in flow effects on Brownian motion in the first place is thanks to Masoodah Gunny (ESPCI) and her thesis supervisors Alexandre Vilquin and Joshua McGraw. Their group focuses among other thematiques on the problem of Taylor-Aris dispersion near the solid-liquid interface. Specifically, they wonder in this project whether the volume fraction of a solute in a flow can influence the diffusion of this solute, even a very low density (this is akin to an ideal gas limit). Because this problem is highly nontrivial from experimental standpoint, their group together with Blaise Delmotte (LadHyX) suggested I conduct numerical simulations to replicate their system while in control of every parameter and interaction. I present here briefly their experimental protocol, their problematique and the results of our collaboration. 
+
+\subsection{Experimental aspects}
+This part of the Chapter is largely based on Masoodah Gunny's PhD thesis manuscript \cite{gunny_near-surface_2025}. 
+
+Experiments are carried out with silica beads of radius $a=55\mathrm{nm}$ in salted water of concentration $[\mathrm{NaCl}] = 5.4-54\, \mathrm{mg.L}^{-1}$ (with corresponding Debye lengths $l_\mathrm{D} = 35-10 \, \mathrm{nm}$). The solution is then injected in a microfluidic channel setup of length $L = 8.8\,\mathrm{cm}$, width $W = 180\,  \upmu \mathrm{ m}$ and thickness $H = 20 \upmu  \mathrm{m}$. A pressure gradient $\Delta P$ is then applied between the entrance and exit of the channel to start the flowing. Very close to the wall, we can approximate the Poiseuille profile of the flow in the microchannel as a linear shear $\gamma$ (Fig. \label{alex}), and we take the shear rate $\dot\gamma$ as $\dot\gamma = \frac{H}{2\eta}\Delta P$ with $\eta$ the fluid's viscosity. We are interested in individual colloid behaviour, and thus need an imaging technique that allows for the visualisation of individual colloids rather than a global concentration profile.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter4/setup.pdf}
+    \caption{TIRFM experimental principle. An incident beam hits the interface with an angle $\theta > \theta_\mathrm{c}$. It is almost entirely reflected away from the interface. A small portion of the beam, however, does penetrate the sample in the form of an evanescent wave. The colloids in the sample can be visualised owing to their fluorescence when they are illuminated by the evanescent wave and their altitude is then recovered from the light intensity they emit.}
+    \label{setup}
+\end{figure}
+Imaging is done by Total Internal Reflection Microscopy (TIRFM) \cite{fish_tirf_2009} (Fig. \ref{setup}). TIRFM has the advantage of being a minimally disruptive, sub-wavelength imaging technique which still gives information on the three coordinate of a colloid's position within observation range. The principle of TIRFM relies on evanescence to collect information on the colloid's altitude. An incident laser beam hits the wall of the microchannel with incident angle $\theta$. This angle must obey
+\begin{equation}
+    \theta > \theta_\mathrm{c}~,
+\end{equation}
+where $\theta_\mathrm{c}$ is the critical angle above which no refraction is permitted, as
+\begin{equation}
+    \theta_\mathrm{c} = \sin^{-1}\left(\frac{n_1}{n_2}\right)~,
+\end{equation}
+with $n_1$ and $n_2$ the optical index of the water solution and the solid medium, respectively, and $n_1<n_2$. Like this, refraction is prohibited, and almost all incident light is reflected. However, we know from Maxwell's equations that electromagnetic fields must remain continuous at the interface between the two media. Thus, the field must not end abruptly, but rather fade into a non-propagating electromagnetic field, which we call the evanescent wave. The penetration depth $d$ of this wave is fairly limited, at about two colloid radii, and is given by
+\begin{equation}
+    d = \frac{\lambda_0}{4 \pi \sqrt{n_1^2 \sin^2\theta - n_2^2}}~,
+\end{equation}
+where $\lambda_0$ is the vacuum wavelength of the laser. This field then excites fluorescent molecules at the surface of the colloids, and we retrieve the emitted light. We can infer the distance between a colloid and the interface $z$ from the intensity a colloid emits, as
+\begin{equation}
+    I(z) = I_0 \exp \left(\frac{-z}{d}\right)~,
+\end{equation}
+where $I_0$ is the maximal intensity at the interface.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/chapter4/alex.pdf}
+    \caption{Scheme of the Taylor-dispersion TIRFM setup. (a) Two colloids of radius $a=55\, \mathrm{nm}$ are advected by a shear flow of shear rate $\dot\gamma$. As they penetrate the evanescent field, they fluoresce and their positions in all three dimensions are recovered. (b) Experimental images for a single colloid. A succession of frames taken with lag time $\tau = 12.5\, \mathrm{ms}$ is shown. Intensity profiles are represented in red and blue dots with Gaussian fits. The linked trajectory of the colloid is represented in a grey dashed line. Adapted from \cite{vilquin_time_2021}.}
+    \label{alex}
+\end{figure}
 
 
 
-\subsubsection{Description of the setup}
-I describe the paris experimental setup.
+Snapshots of the solution under advection are taken with a camera. Trajectories are then linked from individual successive frames. From the trajectories, displacement distributions are computed, and the transverse diffusion coefficient is then defined as
+\begin{equation}
+    D_y = \frac{\sigma_y^2}{2 \tau}~,
+    \label{wrong}
+\end{equation}
+where $\sigma^2$ is the variance of the distribution of displacements in the $y$-direction (along the channel's wall, perpendicular to the flow), and $\tau$ is the time step between two consecutive frames, and is taken as $\tau = 1\, \mathrm{ms}$.
+
+Then, solutions of various concentrations of silica colloids in salted water are tested. It is more intelligible to speak in terms of volume fraction $\phi$ rather than concentration from there on. We define the volume fraction as
+\begin{equation}
+    \phi = \frac{N4/3 \pi a^3}{WLH}~,
+\end{equation}
+where $N$ is the total number of colloids in solution. The transverse diffusion coefficients $D_y$ computed from Eq. \ref{wrong} are then recovered for various values of $\phi \in [5 \times 10^{-6} ; 4\times10^{-5}]$ and $\dot\gamma$ and shown in Fig. \ref{nope!!!nope!!!!!!!!!}.
+
+Because we work with extremely dilute solutions (below the limit of $\phi = 0.05$ above which the viscosity of the fluid becomes dependant on particle concentration \cite{einstein_molekuldimensionen_1906}). Furthermore, as hydrodynamic interactions decay in $\propto 1/r$ inter-colloid, and $\propto 1/r^3$ between a colloid and a wall, we should not expect any visible change on the dynamics of the system within that rang of volume fraction. However, experimental results seem to point towards a shear rate and volume fraction dependence on $D_y$. Indeed, for high enough volume fractions ($\phi = 3.7 \times 10 ^{-5}$, or $0.000037\%$ of total volume occupied by colloids), $D_y$ becomes larger than the bulk diffusion coefficient $D_0$ at $D_0 = 3.9\, \upmu \mathrm{m^2.s}^{-1}$, and this effect is exacerbated by higher shear rates.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{figures/chapter4/dy_masoodah.pdf}
+    \caption{Transverse diffusion coefficients computed for $\phi =  5.4 \times 10^{-6}$ (top) and $\phi = 3.7 \times 10 ^{-5}$ (bottom) and for various pressure gradients $\Delta P$ or equivalent shear rates $\dot\gamma$ (in colours). Left panels show the diffusion at binned heights $z$ above the channel wall. We notice a strong dependence of $D_y$ on $z$ in both cases, with a drop in diffusion as the colloid diffuses closer to the wall, which is to be expected from Brenner and Faxen's laws. However, once the colloid moves away from the wall, $D_y$ picks up and may even reach higher values than the bulk value $D_0 = 3.9 \upmu \mathrm{m}^2.\mathrm{s}^{-1}$ (in horizontal dashed lines). This effect seems even more noticeable with higher $\dot\gamma$, as shown on the bottom right panel, where $D^{\infty}_y$ indicates the diffusion coefficient very far from wall interactions. Adapted from \cite{gunny_near-surface_2025}.}
+    \label{nope!!!nope!!!!!!!!!}
+\end{figure}
+
+
+As puzzling as this result is, there are a few potential causes that can easily be ruled out by carrying out numerical simulations. This has already been done for the case of electrostatic interactions by Élodie Millan as one of her thesis projects.
+
+
+
+
 
 \subsubsection{Numerical methods}
-I briefly present my code, but mostly the parametrisation and argumentation for the huge gravity.
+I am responsible on this project for the numerical verification of experimental data. That task involves reproducing the TIRFM setup numerically, generate trajectories in the very same conditions and extract similar quantities from these trajectories. 
+
+As our collaborators in ESPCI hypothesised a hydrodynamic effect causing the enhancement in transverse diffusion $D_y$, I conduct all the forthcoming simulations using the RigidBlobWalls \cite{sprinkle_driven_2020} again. This package, as a reminder, is optimised for the simulation of
+colloids in solution, and allows both wall effects and shear flows.  
+
+
+
+Simply put, a simulation has four main steps:
+
+
+\textbf{Parametrisation.} The user provides the physical and simulation parameters. This is done using the \texttt{inputfile.dat} and \texttt{parameters.py} scripts. I chose to keep the structure of \texttt{inputfile.dat} unchanged from the original version written by the creators in order to ensure a form of backward compatibility. The \texttt{parameters.py} script then reads \texttt{inputfile.dat} to convert, calculate, and pass parameters to the other scripts.
+
+As we discussed in the previous paragraphs, the two key quantities we must have full control over are the shear rate $\dot\gamma$ and the volume fraction $\phi$. The former is simply given as an input to the code in \texttt{inputfile.dat}, whereas the latter must be input indirectly in the form of total number $N$ of \emph{blobs}, which in this case are equivalent to colloids. 
+
+
+
+\textbf{Initialisation.} \texttt{sample\_initial\_positions\_gb.py} reads from \texttt{parameters.py} the array of $\phi$ values to be probed. 
+The volume fraction is actually ill-defined in our system if considered without care. Indeed, the simulation code is built to either work in triply periodic boundaries, or doubly periodic in $(x, y)$ and half-infinite in $z$ with a confining plane at $z=0$. This means that, without proper care on the thermalisation of the system, colloids will end up settling after some simulation time to whichever position is preferential for the Gibbs-Boltzmann distribution, balancing thermal fluctuations and sedimentation. 
+
+A first possible idea would be to simulate the whole system with the same exact parameters as the experiments use. However, with a simple estimate, a simulation box with dimensions taken from the TIRFM observation window  ($22 \upmu \mathrm{m}$ sides) and channel height $20 \upmu \mathrm{m}$ and a volume fraction of $\phi = 4\times 10^{-4}$ would require 
+
+It creates, in the current working directory, a new directory for each value of $\phi$. In each new directory, it writes all the simulation scripts. Finally, and most importantly, it computes the initial colloid positions within the simulation box from the Gibbs--Boltzmann distribution using a simple exclusion algorithm, and writes them to \texttt{sphere\_array.clones}. This script can also be used to verify that the Gibbs--Boltzmann distribution is respected and that the system is properly thermalised.
+
+
+
+Simulation. The script \texttt{multi\_bodies.py} calls the entire simulation pipeline and launches the shear flow on the pre-thermalised colloidal suspension. It writes the trajectories at each time step to \texttt{run\_blobs.sphere\_array.config}. Other relevant simulation data, such as failed iterations and total computation time, are written to auxiliary output files.
+
+Data treatment. From the trajectories stored in \texttt{run\_blobs.sphere\_array.config}, the trajectories are parsed and the particle displacements are computed. Diffusion quantities are then extracted from the MSD if, and only if, a diffusive regime is identified, namely beyond the transverse diffusion time $\tau_\mathrm{D}$ and when the log--log fits yield a time exponent equal to 1.
+
+
+
+
+
+
+Hoq do i do the simulations
+Initialisation lB box and Npart
+Simulation
+
+Data treatment
+Conclusion
+
+All parametrisation, initialisation, simulation and treatment codes are available on appendix as well as on my personal GitHub page. 
 
 \subsubsection{Results}
 I conclude on the paris project and why hydrodynamics are not at pplay there.
