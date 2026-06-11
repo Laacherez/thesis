@@ -18,188 +18,631 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global/global}
-    \entry{anderson_aerodynamics_2016}{book}{}{}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{kim_microhydrodynamics_2005}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=20b4de09eb2c0f6fbdf0febbafea948d}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b0a1711818b52e7f69a8e7bc3a64c371}{%
+           family={Karrila},
+           familyi={K\bibinitperiod},
+           given={S.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Dover}%
+      }
+      \strng{namehash}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{fullhash}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{fullhashraw}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{bibnamehash}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{authorbibnamehash}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{authornamehash}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{authorfullhash}{5e3e989ba07e8d380271672657b8bf62}
+      \strng{authorfullhashraw}{5e3e989ba07e8d380271672657b8bf62}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Microhydrodynamics: Principles and Selected Applications}
+      \field{year}{2005}
+    \endentry
+    \entry{Batchelor_1976}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=0d7080711db4e5e2feabab32a6988a32}{%
-           family={Anderson},
-           familyi={A\bibinitperiod},
+        {{hash=c9981a4cb1fa67e9638e3e167ac5cb2b}{%
+           family={Batchelor},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi K.},
+           giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{fullhash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{fullhashraw}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{bibnamehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authorbibnamehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authornamehash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authorfullhash}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \strng{authorfullhashraw}{c9981a4cb1fa67e9638e3e167ac5cb2b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Fluid Mechanics}
+      \field{number}{1}
+      \field{title}{Brownian diffusion of particles with hydrodynamic interaction}
+      \field{volume}{74}
+      \field{year}{1976}
+      \field{pages}{1\bibrangedash 29}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1017/S0022112076001663
+      \endverb
+    \endentry
+    \entry{brenner_slow_1961}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=7ed117964de0d4434ace5135a56bb2d2}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{fullhash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{fullhashraw}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{bibnamehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authorbibnamehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authornamehash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authorfullhash}{7ed117964de0d4434ace5135a56bb2d2}
+      \strng{authorfullhashraw}{7ed117964de0d4434ace5135a56bb2d2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chemical Engineering Science}
+      \field{number}{3}
+      \field{title}{The slow motion of a sphere through a viscous fluid towards a plane surface}
+      \field{volume}{16}
+      \field{year}{1961}
+      \field{pages}{242\bibrangedash 251}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/0009-2509(61)80035-3
+      \endverb
+    \endentry
+    \entry{JeffreyOnishi1984}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6c920045bcf3d52fc14f7f7857a5a8fa}{%
+           family={Jeffrey},
+           familyi={J\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=daf1f08b3feeedf3d5671c7cdfcc606a}{%
+           family={Onishi},
+           familyi={O\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{fullhash}{b50dc68064505d045d0e35df478601f3}
+      \strng{fullhashraw}{b50dc68064505d045d0e35df478601f3}
+      \strng{bibnamehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authorbibnamehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authornamehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authorfullhash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authorfullhashraw}{b50dc68064505d045d0e35df478601f3}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Fluid Mechanics}
+      \field{title}{Calculation of the resistance and mobility functions for two unequal rigid spheres in low-{Reynolds}-number flow}
+      \field{volume}{139}
+      \field{year}{1984}
+      \field{pages}{261\bibrangedash 290}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.1017/S0022112084000355
+      \endverb
+    \endentry
+    \entry{JeffreyOnishi1984a}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6c920045bcf3d52fc14f7f7857a5a8fa}{%
+           family={Jeffrey},
+           familyi={J\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=daf1f08b3feeedf3d5671c7cdfcc606a}{%
+           family={Onishi},
+           familyi={O\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{fullhash}{b50dc68064505d045d0e35df478601f3}
+      \strng{fullhashraw}{b50dc68064505d045d0e35df478601f3}
+      \strng{bibnamehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authorbibnamehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authornamehash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authorfullhash}{b50dc68064505d045d0e35df478601f3}
+      \strng{authorfullhashraw}{b50dc68064505d045d0e35df478601f3}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift für Angewandte Mathematik und Physik}
+      \field{title}{The forces and couples acting on two nearly touching spheres in low-{Reynolds}-number flow}
+      \field{volume}{35}
+      \field{year}{1984}
+      \field{pages}{634\bibrangedash 641}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/BF00952109
+      \endverb
+    \endentry
+    \entry{Dufresne_2000}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=0f944d1593cefa30432030f0ee1e2891}{%
+           family={Dufresne},
+           familyi={D\bibinitperiod},
+           given={E.\bibnamedelimi R.},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=40b290aea24c34ea35ed46b4f089e1b8}{%
+           family={Squires},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=2253de395e0805b05666e03159bf7261}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2287c9de77251cabc9b523adea2f4b88}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={D.\bibnamedelimi G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{fullhash}{4094395bc24680fa1fdaf1d6681381af}
+      \strng{fullhashraw}{4094395bc24680fa1fdaf1d6681381af}
+      \strng{bibnamehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{authorbibnamehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{authornamehash}{9ba91bee606f47a6ec2a54a2737b67b8}
+      \strng{authorfullhash}{4094395bc24680fa1fdaf1d6681381af}
+      \strng{authorfullhashraw}{4094395bc24680fa1fdaf1d6681381af}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{15}
+      \field{title}{Hydrodynamic coupling of two {Brownian} spheres to a planar surface}
+      \field{volume}{85}
+      \field{year}{2000}
+      \field{pages}{3317\bibrangedash 3320}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.85.3317
+      \endverb
+    \endentry
+    \entry{BakerGravesMorris_1996}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=8dbfeef9673a1811e4a7bce2b0539419}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           suffix={G.\bibnamedelimi A.},
+           suffixi={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ce24412b6f49f5705f89b254e79797fd}{%
+           family={Graves-Morris},
+           familyi={G\bibinithyphendelim M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{fullhash}{b17157effa5d2451cdade0792cabd320}
+      \strng{fullhashraw}{b17157effa5d2451cdade0792cabd320}
+      \strng{bibnamehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authorbibnamehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authornamehash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authorfullhash}{b17157effa5d2451cdade0792cabd320}
+      \strng{authorfullhashraw}{b17157effa5d2451cdade0792cabd320}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{series}{Encyclopedia of Mathematics and its Applications}
+      \field{title}{{Padé} Approximants}
+      \field{volume}{59}
+      \field{year}{1996}
+    \endentry
+    \entry{Honig_1971}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=fcf0b4dbda8400f6ff4753f29117af1d}{%
+           family={Honig},
+           familyi={H\bibinitperiod},
+           given={E.\bibnamedelimi P.},
+           giveni={E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2a81dd011a6040ea8497e49a6280f81f}{%
+           family={Roebersen},
+           familyi={R\bibinitperiod},
+           given={G.\bibnamedelimi J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=bce97405c77a61c290e06382375759c3}{%
+           family={Wiersema},
+           familyi={W\bibinitperiod},
+           given={P.\bibnamedelimi H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{fullhash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{fullhashraw}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{bibnamehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authorbibnamehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authornamehash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authorfullhash}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \strng{authorfullhashraw}{db0ba9f3fc02cf3ad8c35b64836e1c8c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Colloid and Interface Science}
+      \field{title}{Effect of hydrodynamic interaction on the coagulation rate of hydrophobic colloids}
+      \field{volume}{36}
+      \field{year}{1971}
+      \field{pages}{97\bibrangedash 109}
+      \range{pages}{13}
+    \endentry
+    \entry{Bevan_2000}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=45aa00a9d145157102312edc65786bc9}{%
+           family={Bevan},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3aba508e6d6e408a49d99c547ad12f0b}{%
+           family={Prieve},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{fullhash}{522aa3347a767d888fabea7a32c040de}
+      \strng{fullhashraw}{522aa3347a767d888fabea7a32c040de}
+      \strng{bibnamehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authorbibnamehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authornamehash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authorfullhash}{522aa3347a767d888fabea7a32c040de}
+      \strng{authorfullhashraw}{522aa3347a767d888fabea7a32c040de}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Physics}
+      \field{title}{Hindered diffusion of colloidal particles very near to a wall: revisited}
+      \field{volume}{113}
+      \field{year}{2000}
+      \field{pages}{1228\bibrangedash 1236}
+      \range{pages}{9}
+    \endentry
+    \entry{Faxen_1924}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6191e3ea613df7f0a6bb457bcb28afa6}{%
+           family={Faxén},
+           familyi={F\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{fullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{fullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{bibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorbibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authornamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorfullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorfullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Arkiv for Matematik, Astronomi och Fysik}
+      \field{title}{Fredholm integral equations of hydrodynamics of liquids {I}}
+      \field{volume}{18}
+      \field{year}{1924}
+      \field{pages}{29\bibrangedash 32}
+      \range{pages}{4}
+    \endentry
+    \entry{burden_numerical_2015}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=fd1fdecbb7b3fc967e3a67f5e433d8c2}{%
+           family={Burden},
+           familyi={B\bibinitperiod},
+           given={R.\bibnamedelimi L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=4b638efeb09e467b34820b166a09d078}{%
+           family={Faires},
+           familyi={F\bibinitperiod},
            given={J.\bibnamedelimi D.},
            giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {McGraw-Hill Education}%
+        {Brooks/Cole Cengage Learning}%
       }
-      \strng{namehash}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{fullhash}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{fullhashraw}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{bibnamehash}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{authorbibnamehash}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{authornamehash}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{authorfullhash}{0d7080711db4e5e2feabab32a6988a32}
-      \strng{authorfullhashraw}{0d7080711db4e5e2feabab32a6988a32}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \strng{namehash}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{fullhash}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{fullhashraw}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{bibnamehash}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{authorbibnamehash}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{authornamehash}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{authorfullhash}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \strng{authorfullhashraw}{dba4adbcad5c917bfa5b4c2bd01e0397}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{7}
-      \field{title}{Fundamentals of Aerodynamics}
-      \field{year}{2016}
+      \field{edition}{10}
+      \field{title}{Numerical Analysis}
+      \field{year}{2015}
     \endentry
-    \entry{butt_physics_2024}{book}{}{}
+    \entry{karatzas_brownian_1991}{book}{}{}
       \name{author}{2}{}{%
-        {{hash=70703b9f37850cce32766bb73765c94d}{%
-           family={Butt},
-           familyi={B\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=fb213573b0642c44ac6f98b2ea05133f}{%
-           family={Russell},
-           familyi={R\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {CRC Press}%
-      }
-      \strng{namehash}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{fullhash}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{fullhashraw}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{bibnamehash}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{authorbibnamehash}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{authornamehash}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{authorfullhash}{e8eefc549d8b017c06b133de72d725cd}
-      \strng{authorfullhashraw}{e8eefc549d8b017c06b133de72d725cd}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{2}
-      \field{title}{The Physics of Surfing}
-      \field{year}{2024}
-    \endentry
-    \entry{einstein_molekuldimensionen_1906}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=29a34a00e610eaed35baff40f473278f}{%
-           family={Einstein},
-           familyi={E\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{29a34a00e610eaed35baff40f473278f}
-      \strng{fullhash}{29a34a00e610eaed35baff40f473278f}
-      \strng{fullhashraw}{29a34a00e610eaed35baff40f473278f}
-      \strng{bibnamehash}{29a34a00e610eaed35baff40f473278f}
-      \strng{authorbibnamehash}{29a34a00e610eaed35baff40f473278f}
-      \strng{authornamehash}{29a34a00e610eaed35baff40f473278f}
-      \strng{authorfullhash}{29a34a00e610eaed35baff40f473278f}
-      \strng{authorfullhashraw}{29a34a00e610eaed35baff40f473278f}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annalen der Physik}
-      \field{number}{2}
-      \field{title}{Eine neue Bestimmung der Moleküldimensionen}
-      \field{volume}{324}
-      \field{year}{1906}
-      \field{pages}{289\bibrangedash 306}
-      \range{pages}{18}
-      \verb{doi}
-      \verb 10.1002/andp.19063240204
-      \endverb
-    \endentry
-    \entry{fish_tirf_2009}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=782c83849f1536035dafe510c9cf47ab}{%
-           family={Fish},
-           familyi={F\bibinitperiod},
-           given={K.\bibnamedelimi N.},
-           giveni={K\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-      }
-      \strng{namehash}{782c83849f1536035dafe510c9cf47ab}
-      \strng{fullhash}{782c83849f1536035dafe510c9cf47ab}
-      \strng{fullhashraw}{782c83849f1536035dafe510c9cf47ab}
-      \strng{bibnamehash}{782c83849f1536035dafe510c9cf47ab}
-      \strng{authorbibnamehash}{782c83849f1536035dafe510c9cf47ab}
-      \strng{authornamehash}{782c83849f1536035dafe510c9cf47ab}
-      \strng{authorfullhash}{782c83849f1536035dafe510c9cf47ab}
-      \strng{authorfullhashraw}{782c83849f1536035dafe510c9cf47ab}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Current Protocols in Cytometry}
-      \field{month}{10}
-      \field{title}{Total internal reflection fluorescence ({TIRF}) microscopy}
-      \field{year}{2009}
-      \field{pages}{12.18.1\bibrangedash 12.18.13}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1002/0471142956.cy1218s50
-      \endverb
-    \endentry
-    \entry{gunny_near-surface_2025}{thesis}{}{}
-      \name{author}{1}{}{%
-        {{hash=28ab0492ddef351940e57c793a866502}{%
-           family={Gunny},
-           familyi={G\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Université Paris-Saclay}%
-      }
-      \strng{namehash}{28ab0492ddef351940e57c793a866502}
-      \strng{fullhash}{28ab0492ddef351940e57c793a866502}
-      \strng{fullhashraw}{28ab0492ddef351940e57c793a866502}
-      \strng{bibnamehash}{28ab0492ddef351940e57c793a866502}
-      \strng{authorbibnamehash}{28ab0492ddef351940e57c793a866502}
-      \strng{authornamehash}{28ab0492ddef351940e57c793a866502}
-      \strng{authorfullhash}{28ab0492ddef351940e57c793a866502}
-      \strng{authorfullhashraw}{28ab0492ddef351940e57c793a866502}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Near-surface colloidal hydrodynamics: From wall slip in complex fluids to soft {Taylor} dispersion}
-      \field{type}{phdthesis}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://pastel.hal.science/tel-05603445
-      \endverb
-      \verb{url}
-      \verb https://pastel.hal.science/tel-05603445
-      \endverb
-    \endentry
-    \entry{pedlosky_geophysical_1987}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=eb00690b18fae5d777518b572da81519}{%
-           family={Pedlosky},
-           familyi={P\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {New York}%
+        {{hash=50d95f491dea9f7ec2a891ffaaef0f4c}{%
+           family={Karatzas},
+           familyi={K\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=5febe181cb6182901e182c6fbdcdd80a}{%
+           family={Shreve},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{eb00690b18fae5d777518b572da81519}
-      \strng{fullhash}{eb00690b18fae5d777518b572da81519}
-      \strng{fullhashraw}{eb00690b18fae5d777518b572da81519}
-      \strng{bibnamehash}{eb00690b18fae5d777518b572da81519}
-      \strng{authorbibnamehash}{eb00690b18fae5d777518b572da81519}
-      \strng{authornamehash}{eb00690b18fae5d777518b572da81519}
-      \strng{authorfullhash}{eb00690b18fae5d777518b572da81519}
-      \strng{authorfullhashraw}{eb00690b18fae5d777518b572da81519}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \strng{namehash}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{fullhash}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{fullhashraw}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{bibnamehash}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{authorbibnamehash}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{authornamehash}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{authorfullhash}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \strng{authorfullhashraw}{0d6a530d89b491581dc7bfdcc8c10c48}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Geophysical Fluid Dynamics}
-      \field{year}{1987}
+      \field{edition}{2}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Brownian Motion and Stochastic Calculus}
+      \field{volume}{113}
+      \field{year}{1991}
+    \endentry
+    \entry{oatml_ito_strat_2022}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=15cd73dee708f7270010e36377a40f73}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{15cd73dee708f7270010e36377a40f73}
+      \strng{fullhash}{15cd73dee708f7270010e36377a40f73}
+      \strng{fullhashraw}{15cd73dee708f7270010e36377a40f73}
+      \strng{bibnamehash}{15cd73dee708f7270010e36377a40f73}
+      \strng{authorbibnamehash}{15cd73dee708f7270010e36377a40f73}
+      \strng{authornamehash}{15cd73dee708f7270010e36377a40f73}
+      \strng{authorfullhash}{15cd73dee708f7270010e36377a40f73}
+      \strng{authorfullhashraw}{15cd73dee708f7270010e36377a40f73}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{note}{Oxford Applied and Theoretical Machine Learning Group blog}
+      \field{title}{Itô and Stratonovich: a guide for the perplexed}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://oatml.cs.ox.ac.uk/blog/2022/03/22/ito-strat.html
+      \endverb
+      \verb{url}
+      \verb https://oatml.cs.ox.ac.uk/blog/2022/03/22/ito-strat.html
+      \endverb
+    \endentry
+    \entry{maxime_thesis}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=fb76ade9ee578e0fc64e3de54ecd58f1}{%
+           family={Lavaud},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université de Bordeaux}%
+      }
+      \strng{namehash}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{fullhash}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{fullhashraw}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{bibnamehash}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{authorbibnamehash}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{authornamehash}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{authorfullhash}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \strng{authorfullhashraw}{fb76ade9ee578e0fc64e3de54ecd58f1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Confined Brownian Motion}
+      \field{type}{phdthesis}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://theses.hal.science/tel-03517113
+      \endverb
+      \verb{url}
+      \verb https://theses.hal.science/tel-03517113
+      \endverb
+    \endentry
+    \entry{elodie_thesis}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=07a45c382fde84d45a945c42f048e4d3}{%
+           family={Millan},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université de Bordeaux}%
+      }
+      \strng{namehash}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{fullhash}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{fullhashraw}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{bibnamehash}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{authorbibnamehash}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{authornamehash}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{authorfullhash}{07a45c382fde84d45a945c42f048e4d3}
+      \strng{authorfullhashraw}{07a45c382fde84d45a945c42f048e4d3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Simulations numériques du mouvement brownien confiné}
+      \field{type}{phdthesis}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://theses.hal.science/tel-04583730v1
+      \endverb
+      \verb{url}
+      \verb https://theses.hal.science/tel-04583730v1
+      \endverb
+    \endentry
+    \entry{cython_website}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=2f7dd026d76226b10961db2652bd836c}{%
+           family={{Cython Developers}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f7dd026d76226b10961db2652bd836c}
+      \strng{fullhash}{2f7dd026d76226b10961db2652bd836c}
+      \strng{fullhashraw}{2f7dd026d76226b10961db2652bd836c}
+      \strng{bibnamehash}{2f7dd026d76226b10961db2652bd836c}
+      \strng{authorbibnamehash}{2f7dd026d76226b10961db2652bd836c}
+      \strng{authornamehash}{2f7dd026d76226b10961db2652bd836c}
+      \strng{authorfullhash}{2f7dd026d76226b10961db2652bd836c}
+      \strng{authorfullhashraw}{2f7dd026d76226b10961db2652bd836c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://cython.org}}
+      \field{title}{Cython: C-Extensions for Python}
+      \field{year}{2024}
+    \endentry
+    \entry{Oseen_1927}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b301872d87f37e159237a92c47853a7a}{%
+           family={Oseen},
+           familyi={O\bibinitperiod},
+           given={C.\bibnamedelimi W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leipzig}%
+      }
+      \list{publisher}{1}{%
+        {Akademische Verlagsgesellschaft}%
+      }
+      \strng{namehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{fullhash}{b301872d87f37e159237a92c47853a7a}
+      \strng{fullhashraw}{b301872d87f37e159237a92c47853a7a}
+      \strng{bibnamehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authorbibnamehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authornamehash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authorfullhash}{b301872d87f37e159237a92c47853a7a}
+      \strng{authorfullhashraw}{b301872d87f37e159237a92c47853a7a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neuere Methoden und Ergebnisse in der Hydrodynamik}
+      \field{year}{1927}
+    \endentry
+    \entry{happel_low_1973}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=0a48f38d02c1ac3f6b3b4e83cdf82eb3}{%
+           family={Happel},
+           familyi={H\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7ed117964de0d4434ace5135a56bb2d2}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Leyden}%
+      }
+      \list{publisher}{1}{%
+        {Noordhoff}%
+      }
+      \strng{namehash}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{fullhash}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{fullhashraw}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{bibnamehash}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{authorbibnamehash}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{authornamehash}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{authorfullhash}{2e6e0387961ca64fcda412b402af2c2b}
+      \strng{authorfullhashraw}{2e6e0387961ca64fcda412b402af2c2b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Low Reynolds Number Hydrodynamics}
+      \field{year}{1973}
+    \endentry
+    \entry{Blake_1971}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1c99995c753900532fb241b048045917}{%
+           family={Blake},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c99995c753900532fb241b048045917}
+      \strng{fullhash}{1c99995c753900532fb241b048045917}
+      \strng{fullhashraw}{1c99995c753900532fb241b048045917}
+      \strng{bibnamehash}{1c99995c753900532fb241b048045917}
+      \strng{authorbibnamehash}{1c99995c753900532fb241b048045917}
+      \strng{authornamehash}{1c99995c753900532fb241b048045917}
+      \strng{authorfullhash}{1c99995c753900532fb241b048045917}
+      \strng{authorfullhashraw}{1c99995c753900532fb241b048045917}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Proceedings of the Cambridge Philosophical Society}
+      \field{number}{2}
+      \field{title}{A note on the image system for a {Stokeslet} in a no-slip boundary}
+      \field{volume}{70}
+      \field{year}{1971}
+      \field{pages}{303\bibrangedash 310}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1017/S0305004100049902
+      \endverb
     \endentry
     \entry{sprinkle_driven_2020}{article}{}{}
       \name{author}{5}{}{%
@@ -239,8 +682,8 @@
       \strng{authornamehash}{55c397327aca244894f6acbe801c9ad8}
       \strng{authorfullhash}{769a54096f4f15a3da40eaec73dff72e}
       \strng{authorfullhashraw}{769a54096f4f15a3da40eaec73dff72e}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Soft Matter}
@@ -251,6 +694,1403 @@
       \range{pages}{20}
       \verb{doi}
       \verb 10.1039/D0SM00879F
+      \endverb
+    \endentry
+    \entry{sekimoto1993mechanism}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=08f3235252999d46560dd40ae0d36c16}{%
+           family={Sekimoto},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2d38cf2457d960812363ec6fa29b1dc5}{%
+           family={Leibler},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{fullhash}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{fullhashraw}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{bibnamehash}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{authorbibnamehash}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{authornamehash}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{authorfullhash}{23a8540e998b8657c32d45c34dcc3929}
+      \strng{authorfullhashraw}{23a8540e998b8657c32d45c34dcc3929}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Europhysics Letters}
+      \field{number}{2}
+      \field{title}{A mechanism for shear thickening of polymer-bearing surfaces: elasto-hydrodynamic coupling}
+      \field{volume}{23}
+      \field{year}{1993}
+      \field{pages}{113}
+      \range{pages}{1}
+    \endentry
+    \entry{Beaucourt2004}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=bd75d2a1b3514d57572c4dfa1121e228}{%
+           family={Beaucourt},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b0a4c73f94646ce13bb669e4fd8e685a}{%
+           family={Biben},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9fb0a3f8bcc6b32e8b6b3ffbf93a5b64}{%
+           family={Misbah},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{fullhash}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{fullhashraw}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{bibnamehash}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{authorbibnamehash}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{authornamehash}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{authorfullhash}{41fd15734e1170e2058a098c98cbdb51}
+      \strng{authorfullhashraw}{41fd15734e1170e2058a098c98cbdb51}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Europhysics Letters}
+      \field{title}{Optimal lift force on vesicles near a compressible substrate}
+      \field{volume}{67}
+      \field{year}{2004}
+      \field{pages}{676}
+      \range{pages}{1}
+    \endentry
+    \entry{skotheim_soft_2004}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e3961a6657b339bd129e7b6ccf2ebc03}{%
+           family={Skotheim},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=449ad28c3a34dc0f99d209e3e18de0cf}{%
+           family={Mahadevan},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{346037f3ace65760b1074f67ec4314c8}
+      \strng{fullhash}{346037f3ace65760b1074f67ec4314c8}
+      \strng{fullhashraw}{346037f3ace65760b1074f67ec4314c8}
+      \strng{bibnamehash}{346037f3ace65760b1074f67ec4314c8}
+      \strng{authorbibnamehash}{346037f3ace65760b1074f67ec4314c8}
+      \strng{authornamehash}{346037f3ace65760b1074f67ec4314c8}
+      \strng{authorfullhash}{346037f3ace65760b1074f67ec4314c8}
+      \strng{authorfullhashraw}{346037f3ace65760b1074f67ec4314c8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{24}
+      \field{title}{Soft lubrication}
+      \field{volume}{92}
+      \field{year}{2004}
+      \field{pages}{245509}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.92.245509
+      \endverb
+    \endentry
+    \entry{Snoeijer2013}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6be088b19981269f0d481ac94c2f5d63}{%
+           family={Snoeijer},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=73b9dcae246e072f5f8e6b0bf4bcb327}{%
+           family={Eggers},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b52d2f40ef0da42104ea8d8cd0d35621}{%
+           family={Venner},
+           familyi={V\bibinitperiod},
+           given={C.\bibnamedelimi H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{baa29d2e449ed46052c23a03021b9729}
+      \strng{fullhash}{baa29d2e449ed46052c23a03021b9729}
+      \strng{fullhashraw}{baa29d2e449ed46052c23a03021b9729}
+      \strng{bibnamehash}{baa29d2e449ed46052c23a03021b9729}
+      \strng{authorbibnamehash}{baa29d2e449ed46052c23a03021b9729}
+      \strng{authornamehash}{baa29d2e449ed46052c23a03021b9729}
+      \strng{authorfullhash}{baa29d2e449ed46052c23a03021b9729}
+      \strng{authorfullhashraw}{baa29d2e449ed46052c23a03021b9729}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physics of Fluids}
+      \field{number}{10}
+      \field{title}{Similarity theory of lubricated {Hertzian} contacts}
+      \field{volume}{25}
+      \field{year}{2013}
+      \field{pages}{101705}
+      \range{pages}{1}
+    \endentry
+    \entry{urzay_elastohydrodynamic_2007}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=49b6e4ff29bafa09c38beef5811632ff}{%
+           family={Urzay},
+           familyi={U\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=28ffc0163cfd77ed1a7ea366290c2a42}{%
+           family={Llewellyn\bibnamedelima Smith},
+           familyi={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={S.\bibnamedelimi G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=4b526c9280d3192caed93623fb872571}{%
+           family={Glover},
+           familyi={G\bibinitperiod},
+           given={B.\bibnamedelimi J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{fullhash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{fullhashraw}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{bibnamehash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{authorbibnamehash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{authornamehash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{authorfullhash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \strng{authorfullhashraw}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physics of Fluids}
+      \field{number}{10}
+      \field{title}{The elastohydrodynamic force on a sphere near a soft wall}
+      \field{volume}{19}
+      \field{year}{2007}
+      \field{pages}{103106}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.2799148
+      \endverb
+    \endentry
+    \entry{Saintyves2016}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=df392b043698e7d3a06efe4a6789b3c0}{%
+           family={Saintyves},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a4b7ff8174842dfa6a7e193a074cd285}{%
+           family={Jules},
+           familyi={J\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a6e3336265d9df0976f0f00ea5b20f9c}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=449ad28c3a34dc0f99d209e3e18de0cf}{%
+           family={Mahadevan},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f090d735ae2f6e7382c06d41830b6d5e}
+      \strng{fullhash}{96da9a679df50799f3fb4746264b2415}
+      \strng{fullhashraw}{96da9a679df50799f3fb4746264b2415}
+      \strng{bibnamehash}{f090d735ae2f6e7382c06d41830b6d5e}
+      \strng{authorbibnamehash}{f090d735ae2f6e7382c06d41830b6d5e}
+      \strng{authornamehash}{f090d735ae2f6e7382c06d41830b6d5e}
+      \strng{authorfullhash}{96da9a679df50799f3fb4746264b2415}
+      \strng{authorfullhashraw}{96da9a679df50799f3fb4746264b2415}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{21}
+      \field{title}{Self-sustained lift and low friction via soft lubrication}
+      \field{volume}{113}
+      \field{year}{2016}
+      \field{pages}{5847\bibrangedash 5849}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1073/pnas.1525462113
+      \endverb
+    \endentry
+    \entry{Davies2018}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=67b48a183a9092ed03fec93fc950ab04}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={H.\bibnamedelimi S.},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=d6be59911d2f2455efb3c35c325c53e7}{%
+           family={Debarre},
+           familyi={D\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8221c94b5ee2e13cf45d482584aaf765}{%
+           family={El\bibnamedelima Amri},
+           familyi={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d1b5aef5722c59036683dffff0fd5ded}{%
+           family={Verdier},
+           familyi={V\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bc667354af653681849daa241681e24a}{%
+           family={Richter},
+           familyi={R\bibinitperiod},
+           given={R.\bibnamedelimi P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=3733847a11304992a34e456243480a40}{%
+           family={Bureau},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{8ce13f04492e33191e0381aac96f626f}
+      \strng{fullhash}{0e3fca2d2dc57ae05b81d42e0e439d02}
+      \strng{fullhashraw}{0e3fca2d2dc57ae05b81d42e0e439d02}
+      \strng{bibnamehash}{8ce13f04492e33191e0381aac96f626f}
+      \strng{authorbibnamehash}{8ce13f04492e33191e0381aac96f626f}
+      \strng{authornamehash}{8ce13f04492e33191e0381aac96f626f}
+      \strng{authorfullhash}{0e3fca2d2dc57ae05b81d42e0e439d02}
+      \strng{authorfullhashraw}{0e3fca2d2dc57ae05b81d42e0e439d02}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{19}
+      \field{title}{Elastohydrodynamic lift at a soft wall}
+      \field{volume}{120}
+      \field{year}{2018}
+      \field{pages}{198001}
+      \range{pages}{1}
+    \endentry
+    \entry{Rallabandi2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=072d6ceeae7919a83733c276ff459a81}{%
+           family={Rallabandi},
+           familyi={R\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=33ef7d7536b2288dcb51b741c4d59511}{%
+           family={Oppenheimer},
+           familyi={O\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=27fc8b4d1aa77592f1604faa148f65a3}{%
+           family={Zion},
+           familyi={Z\bibinitperiod},
+           given={M.\bibnamedelimi Y.\bibnamedelimi B.},
+           giveni={M\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=b26fee20d451c3e59c7f492184c58076}{%
+           family={Stone},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9d29597e4480adef6ec3deb6bb4e71b}
+      \strng{fullhash}{7436357f81d0f535e2db38c46e3ce350}
+      \strng{fullhashraw}{7436357f81d0f535e2db38c46e3ce350}
+      \strng{bibnamehash}{c9d29597e4480adef6ec3deb6bb4e71b}
+      \strng{authorbibnamehash}{c9d29597e4480adef6ec3deb6bb4e71b}
+      \strng{authornamehash}{c9d29597e4480adef6ec3deb6bb4e71b}
+      \strng{authorfullhash}{7436357f81d0f535e2db38c46e3ce350}
+      \strng{authorfullhashraw}{7436357f81d0f535e2db38c46e3ce350}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Physics}
+      \field{title}{Membrane-induced hydroelastic migration of a particle surfing its own wave}
+      \field{volume}{14}
+      \field{year}{2018}
+      \field{pages}{1211}
+      \range{pages}{1}
+    \endentry
+    \entry{Vialar2019}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=b1892b95e1f6f64afd0f85b4477b0e90}{%
+           family={Vialar},
+           familyi={V\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8e95231ec8703beddf44eed6a3be079d}{%
+           family={Merzeau},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ee64b2472215ab944804bec6494a825b}{%
+           family={Giasson},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ba23b017850a9f68816fdc6b0ff6e72f}{%
+           family={Drummond},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2063cf88d88eee3bb13d1bc71c4fe140}
+      \strng{fullhash}{d646442b621d4b6ca7f6fdd8d052d156}
+      \strng{fullhashraw}{d646442b621d4b6ca7f6fdd8d052d156}
+      \strng{bibnamehash}{2063cf88d88eee3bb13d1bc71c4fe140}
+      \strng{authorbibnamehash}{2063cf88d88eee3bb13d1bc71c4fe140}
+      \strng{authornamehash}{2063cf88d88eee3bb13d1bc71c4fe140}
+      \strng{authorfullhash}{d646442b621d4b6ca7f6fdd8d052d156}
+      \strng{authorfullhashraw}{d646442b621d4b6ca7f6fdd8d052d156}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Langmuir}
+      \field{number}{48}
+      \field{title}{Compliant surfaces under shear: elastohydrodynamic lift force}
+      \field{volume}{35}
+      \field{year}{2019}
+      \field{pages}{15605\bibrangedash 15613}
+      \range{pages}{9}
+    \endentry
+    \entry{zhang2020direct}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=5ee5d3d5470ac29a2e7c8df70ed54725}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9d6c0e7dc9284e600c988fb144add3f4}{%
+           family={Bertin},
+           familyi={B\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=06d331b01f0986874a3608b30e6c399a}{%
+           family={Arshad},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=39df0131476ff2d91a7b95aa881d8f03}{%
+           family={Raphaël},
+           familyi={R\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a6e3336265d9df0976f0f00ea5b20f9c}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=71c60f9db02d162ee150a7ba9a83ce9d}{%
+           family={Maali},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d68f9635b7c1db697e909162e2280d3}
+      \strng{fullhash}{ce27e61aab6352abf86367c69856ece1}
+      \strng{fullhashraw}{ce27e61aab6352abf86367c69856ece1}
+      \strng{bibnamehash}{9d68f9635b7c1db697e909162e2280d3}
+      \strng{authorbibnamehash}{9d68f9635b7c1db697e909162e2280d3}
+      \strng{authornamehash}{9d68f9635b7c1db697e909162e2280d3}
+      \strng{authorfullhash}{ce27e61aab6352abf86367c69856ece1}
+      \strng{authorfullhashraw}{ce27e61aab6352abf86367c69856ece1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{5}
+      \field{title}{Direct measurement of the elastohydrodynamic lift force at the nanoscale}
+      \field{volume}{124}
+      \field{year}{2020}
+      \field{pages}{054502}
+      \range{pages}{1}
+    \endentry
+    \entry{Sheikh2023}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=a3d7a31ebd621b08a87aa3ce5f826ab9}{%
+           family={Sheikh},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2d66398f9d533253bee0b87fcb3ef5af}{%
+           family={Lonetti},
+           familyi={L\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0eff4c6f262a287cbbecee62fd62b8a1}{%
+           family={Touche},
+           familyi={T\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=dc40de23024832c402afd5b960705dd1}{%
+           family={Mohammadi},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ae6f64f7b429f6425fbe070323390f1b}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=80bc239699f42648834900eb6248eb1e}{%
+           family={Abbas},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc16921f75deb39cd203663938f3aedb}
+      \strng{fullhash}{e86bc917505914b6c189fdac84132bff}
+      \strng{fullhashraw}{e86bc917505914b6c189fdac84132bff}
+      \strng{bibnamehash}{dc16921f75deb39cd203663938f3aedb}
+      \strng{authorbibnamehash}{dc16921f75deb39cd203663938f3aedb}
+      \strng{authornamehash}{dc16921f75deb39cd203663938f3aedb}
+      \strng{authorfullhash}{e86bc917505914b6c189fdac84132bff}
+      \strng{authorfullhashraw}{e86bc917505914b6c189fdac84132bff}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Physics}
+      \field{number}{24}
+      \field{title}{Brownian motion of soft particles near a fluctuating lipid bilayer}
+      \field{volume}{159}
+      \field{year}{2023}
+    \endentry
+    \entry{fares_observation_2024}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=ebb250b84cd287233f443634a8c295a3}{%
+           family={Fares},
+           familyi={F\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=fb76ade9ee578e0fc64e3de54ecd58f1}{%
+           family={Lavaud},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5ee5d3d5470ac29a2e7c8df70ed54725}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7ed88e28d24c2a5b1d2943a8b89aa4c3}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ba985874b9bf9f5699529830d2c3f4bc}{%
+           family={Amarouchene},
+           familyi={A\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a6e3336265d9df0976f0f00ea5b20f9c}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{527b0b35b75f41d3b66be6be22b78de6}
+      \strng{fullhash}{6f913debd4efd68f024c9305b79edf61}
+      \strng{fullhashraw}{6f913debd4efd68f024c9305b79edf61}
+      \strng{bibnamehash}{527b0b35b75f41d3b66be6be22b78de6}
+      \strng{authorbibnamehash}{527b0b35b75f41d3b66be6be22b78de6}
+      \strng{authornamehash}{527b0b35b75f41d3b66be6be22b78de6}
+      \strng{authorfullhash}{6f913debd4efd68f024c9305b79edf61}
+      \strng{authorfullhashraw}{6f913debd4efd68f024c9305b79edf61}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences of the United States of America}
+      \field{number}{42}
+      \field{title}{Observation of {Brownian} elastohydrodynamic forces acting on confined soft colloids}
+      \field{volume}{121}
+      \field{year}{2024}
+      \field{pages}{e2411956121}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1073/pnas.2411956121
+      \endverb
+    \endentry
+    \entry{lacherez_enhanced_2025}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=dbb2da275f16afacf557db0a62e07e25}{%
+           family={Lacherez},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fb76ade9ee578e0fc64e3de54ecd58f1}{%
+           family={Lavaud},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ba985874b9bf9f5699529830d2c3f4bc}{%
+           family={Amarouchene},
+           familyi={A\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=14231595ead4f4856151b86fb6b0deb5}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={D.\bibnamedelimi S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a6e3336265d9df0976f0f00ea5b20f9c}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2258bbac5d5afe489abc6a4a3227276b}
+      \strng{fullhash}{71252525e1b5c7f39d8cb764ec2faa9f}
+      \strng{fullhashraw}{71252525e1b5c7f39d8cb764ec2faa9f}
+      \strng{bibnamehash}{2258bbac5d5afe489abc6a4a3227276b}
+      \strng{authorbibnamehash}{2258bbac5d5afe489abc6a4a3227276b}
+      \strng{authornamehash}{2258bbac5d5afe489abc6a4a3227276b}
+      \strng{authorfullhash}{71252525e1b5c7f39d8cb764ec2faa9f}
+      \strng{authorfullhashraw}{71252525e1b5c7f39d8cb764ec2faa9f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications Physics}
+      \field{title}{Enhanced diffusion over a periodic trap by hydrodynamic coupling to an elastic mode}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{465}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s42005-025-02378-6
+      \endverb
+    \endentry
+    \entry{hai2008}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=55919e6dcf3286d07280bfe04f1f8f88}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bd9186de0bb49fb468a6a01f26904958}{%
+           family={Pavliotis},
+           familyi={P\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{fullhash}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{fullhashraw}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{bibnamehash}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{authorbibnamehash}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{authornamehash}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{authorfullhash}{af59cff5fbdc744b9aaa7b410487728f}
+      \strng{authorfullhashraw}{af59cff5fbdc744b9aaa7b410487728f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Physics}
+      \field{title}{From ballistic to diffusive motion in periodic potentials}
+      \field{volume}{131}
+      \field{year}{2008}
+      \field{pages}{175\bibrangedash 202}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1007/s10955-008-9493-y
+      \endverb
+    \endentry
+    \entry{pav2008}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=bd9186de0bb49fb468a6a01f26904958}{%
+           family={Pavliotis},
+           familyi={P\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=599d2ae442fd39978b50ec5fbe6ed07a}{%
+           family={Vogiannou},
+           familyi={V\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{fullhash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{fullhashraw}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{bibnamehash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{authorbibnamehash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{authornamehash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{authorfullhash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \strng{authorfullhashraw}{bdf4c88736f4a29c4d9c6a957a7e84c3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fluctuation and Noise Letters}
+      \field{number}{2}
+      \field{title}{Diffusive transport in periodic potentials}
+      \field{volume}{8}
+      \field{year}{2008}
+      \field{pages}{L155\bibrangedash L173}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1142/S0219477508004315
+      \endverb
+    \endentry
+    \entry{LifsonJackson}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=0567284945808a94b9596dc9a8d0ca4c}{%
+           family={Lifson},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=736ace2843617bad9111bfebcc8afcb6}{%
+           family={Jackson},
+           familyi={J\bibinitperiod},
+           given={J.\bibnamedelimi L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{90759640014174c43521768476ce6ee3}
+      \strng{fullhash}{90759640014174c43521768476ce6ee3}
+      \strng{fullhashraw}{90759640014174c43521768476ce6ee3}
+      \strng{bibnamehash}{90759640014174c43521768476ce6ee3}
+      \strng{authorbibnamehash}{90759640014174c43521768476ce6ee3}
+      \strng{authornamehash}{90759640014174c43521768476ce6ee3}
+      \strng{authorfullhash}{90759640014174c43521768476ce6ee3}
+      \strng{authorfullhashraw}{90759640014174c43521768476ce6ee3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Physics}
+      \field{number}{9}
+      \field{title}{On the Self‐Diffusion of Ions in a Polyelectrolyte Solution}
+      \field{volume}{36}
+      \field{year}{1962}
+      \field{pages}{2410\bibrangedash 2414}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1063/1.1732899
+      \endverb
+    \endentry
+    \entry{millan_numerical_2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=07a45c382fde84d45a945c42f048e4d3}{%
+           family={Millan},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fb76ade9ee578e0fc64e3de54ecd58f1}{%
+           family={Lavaud},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ba985874b9bf9f5699529830d2c3f4bc}{%
+           family={Amarouchene},
+           familyi={A\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a6e3336265d9df0976f0f00ea5b20f9c}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{01819fa850c9b24f70838928a0986444}
+      \strng{fullhash}{9513dec9477affaf362a896b93d976e5}
+      \strng{fullhashraw}{9513dec9477affaf362a896b93d976e5}
+      \strng{bibnamehash}{01819fa850c9b24f70838928a0986444}
+      \strng{authorbibnamehash}{01819fa850c9b24f70838928a0986444}
+      \strng{authornamehash}{01819fa850c9b24f70838928a0986444}
+      \strng{authorfullhash}{9513dec9477affaf362a896b93d976e5}
+      \strng{authorfullhashraw}{9513dec9477affaf362a896b93d976e5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{European Physical Journal E}
+      \field{month}{3}
+      \field{number}{4}
+      \field{title}{Numerical simulations of confined {Brownian}-yet-non-{Gaussian} motion}
+      \field{volume}{46}
+      \field{year}{2023}
+      \field{pages}{24}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1140/epje/s10189-023-00281-y
+      \endverb
+    \endentry
+    \entry{gue2015}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f08cfebe3c7e29cf4b551c8fc989f640}{%
+           family={Guérin},
+           familyi={G\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=14231595ead4f4856151b86fb6b0deb5}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={D.\bibnamedelimi S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{fullhash}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{fullhashraw}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{bibnamehash}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{authorbibnamehash}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{authornamehash}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{authorfullhash}{4b1962ac848cb91da7cd12cb4cf55269}
+      \strng{authorfullhashraw}{4b1962ac848cb91da7cd12cb4cf55269}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{Kubo formulas for dispersion in heterogeneous periodic nonequilibrium systems}
+      \field{volume}{92}
+      \field{year}{2015}
+      \field{pages}{062103}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevE.92.062103
+      \endverb
+    \endentry
+    \entry{pedlosky_geophysical_1987}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=eb00690b18fae5d777518b572da81519}{%
+           family={Pedlosky},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{eb00690b18fae5d777518b572da81519}
+      \strng{fullhash}{eb00690b18fae5d777518b572da81519}
+      \strng{fullhashraw}{eb00690b18fae5d777518b572da81519}
+      \strng{bibnamehash}{eb00690b18fae5d777518b572da81519}
+      \strng{authorbibnamehash}{eb00690b18fae5d777518b572da81519}
+      \strng{authornamehash}{eb00690b18fae5d777518b572da81519}
+      \strng{authorfullhash}{eb00690b18fae5d777518b572da81519}
+      \strng{authorfullhashraw}{eb00690b18fae5d777518b572da81519}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Geophysical Fluid Dynamics}
+      \field{year}{1987}
+    \endentry
+    \entry{anderson_aerodynamics_2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0d7080711db4e5e2feabab32a6988a32}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \strng{namehash}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{fullhash}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{fullhashraw}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{bibnamehash}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{authorbibnamehash}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{authornamehash}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{authorfullhash}{0d7080711db4e5e2feabab32a6988a32}
+      \strng{authorfullhashraw}{0d7080711db4e5e2feabab32a6988a32}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Fundamentals of Aerodynamics}
+      \field{year}{2016}
+    \endentry
+    \entry{butt_physics_2024}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=70703b9f37850cce32766bb73765c94d}{%
+           family={Butt},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=fb213573b0642c44ac6f98b2ea05133f}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{fullhash}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{fullhashraw}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{bibnamehash}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{authorbibnamehash}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{authornamehash}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{authorfullhash}{e8eefc549d8b017c06b133de72d725cd}
+      \strng{authorfullhashraw}{e8eefc549d8b017c06b133de72d725cd}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{The Physics of Surfing}
+      \field{year}{2024}
+    \endentry
+    \entry{purcell_life_1977}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6c864a5d1f1695b310d2cab6b3a8dd37}{%
+           family={Purcell},
+           familyi={P\bibinitperiod},
+           given={E.\bibnamedelimi M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{fullhash}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{fullhashraw}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{bibnamehash}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{authorbibnamehash}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{authornamehash}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{authorfullhash}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \strng{authorfullhashraw}{6c864a5d1f1695b310d2cab6b3a8dd37}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Physics}
+      \field{number}{1}
+      \field{title}{Life at low {Reynolds} number}
+      \field{volume}{45}
+      \field{year}{1977}
+      \field{pages}{3\bibrangedash 11}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1119/1.10903
+      \endverb
+    \endentry
+    \entry{squires_microfluidics_2005}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=40b290aea24c34ea35ed46b4f089e1b8}{%
+           family={Squires},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f6e694ce68b55172be7ba47ca6bbcfcf}{%
+           family={Quake},
+           familyi={Q\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{fullhash}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{fullhashraw}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{bibnamehash}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{authorbibnamehash}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{authornamehash}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{authorfullhash}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \strng{authorfullhashraw}{19d95a0fafdc3a2ebf4c5e94b1265af3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{number}{3}
+      \field{title}{Microfluidics: Fluid physics at the nanoliter scale}
+      \field{volume}{77}
+      \field{year}{2005}
+      \field{pages}{977\bibrangedash 1026}
+      \range{pages}{50}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.77.977
+      \endverb
+    \endentry
+    \entry{taylor_dispersion_1953}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e1add561442a8ce4fa2539bcbb9a74cf}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={G.\bibnamedelimi I.},
+           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{fullhash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{fullhashraw}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{bibnamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorbibnamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authornamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorfullhash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorfullhashraw}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Royal Society of London A}
+      \field{number}{1137}
+      \field{title}{Dispersion of soluble matter in solvent flowing slowly through a tube}
+      \field{volume}{219}
+      \field{year}{1953}
+      \field{pages}{186\bibrangedash 203}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1098/rspa.1953.0139
+      \endverb
+    \endentry
+    \entry{taylor_turbulent_1954}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e1add561442a8ce4fa2539bcbb9a74cf}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={G.\bibnamedelimi I.},
+           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{fullhash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{fullhashraw}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{bibnamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorbibnamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authornamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorfullhash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorfullhashraw}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Royal Society of London A}
+      \field{number}{1155}
+      \field{title}{The dispersion of matter in turbulent flow through a pipe}
+      \field{volume}{223}
+      \field{year}{1954}
+      \field{pages}{446\bibrangedash 468}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1098/rspa.1954.0130
+      \endverb
+    \endentry
+    \entry{taylor_conditions_1954}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e1add561442a8ce4fa2539bcbb9a74cf}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={G.\bibnamedelimi I.},
+           giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{fullhash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{fullhashraw}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{bibnamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorbibnamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authornamehash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorfullhash}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \strng{authorfullhashraw}{e1add561442a8ce4fa2539bcbb9a74cf}
+      \field{extraname}{3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Royal Society of London A}
+      \field{number}{1163}
+      \field{title}{Conditions under which dispersion of a solute in a stream of solvent can be used to measure molecular diffusion}
+      \field{volume}{225}
+      \field{year}{1954}
+      \field{pages}{473\bibrangedash 477}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1098/rspa.1954.0216
+      \endverb
+    \endentry
+    \entry{aris_dispersion_1956}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=09b1dc1f1719f675b22c40ca8f3a5b11}{%
+           family={Aris},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{fullhash}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{fullhashraw}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{bibnamehash}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{authorbibnamehash}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{authornamehash}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{authorfullhash}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \strng{authorfullhashraw}{09b1dc1f1719f675b22c40ca8f3a5b11}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Royal Society of London A}
+      \field{number}{1200}
+      \field{title}{On the dispersion of a solute in a fluid flowing through a tube}
+      \field{volume}{235}
+      \field{year}{1956}
+      \field{pages}{67\bibrangedash 77}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1098/rspa.1956.0065
+      \endverb
+    \endentry
+    \entry{vedel_transient_2012}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=633cceda19bdb412634fb7c310719437}{%
+           family={Vedel},
+           familyi={V\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0d02fb47eefac71b71388526e5f21e2c}{%
+           family={Bruus},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{fullhash}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{fullhashraw}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{bibnamehash}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{authorbibnamehash}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{authornamehash}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{authorfullhash}{b51e544da1062cefec767d1ac23a5f5c}
+      \strng{authorfullhashraw}{b51e544da1062cefec767d1ac23a5f5c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Fluid Mechanics}
+      \field{title}{Transient {Taylor}--{Aris} dispersion for time-dependent flows in straight channels}
+      \field{volume}{691}
+      \field{year}{2012}
+      \field{pages}{95\bibrangedash 122}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1017/jfm.2011.444
+      \endverb
+    \endentry
+    \entry{lee_taylor_2014}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a38fe2282e0ae708270c02346a36d08f}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1d09348a928307d5a5b4721dc067f7ff}{%
+           family={Tripathi},
+           familyi={T\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d302d17727e6d3d9fe051007a1467c7e}{%
+           family={Chauhan},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{fullhash}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{fullhashraw}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{bibnamehash}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{authorbibnamehash}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{authornamehash}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{authorfullhash}{4c9684d0634a01bbb13152c6320c493d}
+      \strng{authorfullhashraw}{4c9684d0634a01bbb13152c6320c493d}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chemical Engineering Science}
+      \field{title}{{Taylor} dispersion in oscillatory flow in rectangular channels}
+      \field{volume}{117}
+      \field{year}{2014}
+      \field{pages}{183\bibrangedash 197}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.ces.2014.06.047
+      \endverb
+    \endentry
+    \entry{cottet_mixtures_2007}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=4259e02e04c16bf700dbd633cff883b2}{%
+           family={Cottet},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=13a2588a12e29b148ffb2a323ac0e984}{%
+           family={Biron},
+           familyi={B\bibinitperiod},
+           given={J.-P.},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=cfb77c17fbc439b7d9668f91d8bf0a91}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{fullhash}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{fullhashraw}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{bibnamehash}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{authorbibnamehash}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{authornamehash}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{authorfullhash}{a1d0649220ce6394193aa78e69a522c0}
+      \strng{authorfullhashraw}{a1d0649220ce6394193aa78e69a522c0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Analytical Chemistry}
+      \field{number}{23}
+      \field{title}{{Taylor} dispersion analysis of mixtures}
+      \field{volume}{79}
+      \field{year}{2007}
+      \field{pages}{9066\bibrangedash 9073}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1021/ac071462j
+      \endverb
+    \endentry
+    \entry{cottet_individual_2010}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=4259e02e04c16bf700dbd633cff883b2}{%
+           family={Cottet},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=13a2588a12e29b148ffb2a323ac0e984}{%
+           family={Biron},
+           familyi={B\bibinitperiod},
+           given={J.-P.},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=4d3b63e5104cf1d8fcbb22ed37b62058}{%
+           family={Cipelletti},
+           familyi={C\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8808fde18cca648f3eaf68831e54bc1d}{%
+           family={Matmour},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cfb77c17fbc439b7d9668f91d8bf0a91}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca73087daa96986a124fa7781cc07b70}
+      \strng{fullhash}{8f53565f3372180322691a58882f0908}
+      \strng{fullhashraw}{8f53565f3372180322691a58882f0908}
+      \strng{bibnamehash}{ca73087daa96986a124fa7781cc07b70}
+      \strng{authorbibnamehash}{ca73087daa96986a124fa7781cc07b70}
+      \strng{authornamehash}{ca73087daa96986a124fa7781cc07b70}
+      \strng{authorfullhash}{8f53565f3372180322691a58882f0908}
+      \strng{authorfullhashraw}{8f53565f3372180322691a58882f0908}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Analytical Chemistry}
+      \field{number}{5}
+      \field{title}{Determination of individual diffusion coefficients in evolving binary mixtures by {Taylor} dispersion analysis: application to the monitoring of polymer reaction}
+      \field{volume}{82}
+      \field{year}{2010}
+      \field{pages}{1793\bibrangedash 1802}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1021/ac902338c
+      \endverb
+    \endentry
+    \entry{cipelletti_polydispersity_2014}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=4d3b63e5104cf1d8fcbb22ed37b62058}{%
+           family={Cipelletti},
+           familyi={C\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=13a2588a12e29b148ffb2a323ac0e984}{%
+           family={Biron},
+           familyi={B\bibinitperiod},
+           given={J.-P.},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=cfb77c17fbc439b7d9668f91d8bf0a91}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4259e02e04c16bf700dbd633cff883b2}{%
+           family={Cottet},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa67d91a0a197006d4d5655795c122a9}
+      \strng{fullhash}{4682220203ebd1a44b75e90d7b619596}
+      \strng{fullhashraw}{4682220203ebd1a44b75e90d7b619596}
+      \strng{bibnamehash}{fa67d91a0a197006d4d5655795c122a9}
+      \strng{authorbibnamehash}{fa67d91a0a197006d4d5655795c122a9}
+      \strng{authornamehash}{fa67d91a0a197006d4d5655795c122a9}
+      \strng{authorfullhash}{4682220203ebd1a44b75e90d7b619596}
+      \strng{authorfullhashraw}{4682220203ebd1a44b75e90d7b619596}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Analytical Chemistry}
+      \field{number}{13}
+      \field{title}{Polydispersity analysis of {Taylor} dispersion data: the cumulant method}
+      \field{volume}{86}
+      \field{year}{2014}
+      \field{pages}{6471\bibrangedash 6478}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1021/ac5008484
+      \endverb
+    \endentry
+    \entry{lesaux_size-based_2008}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5ab96295dfaa03595ff168fcce47eafd}{%
+           family={Le\bibnamedelima Saux},
+           familyi={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4259e02e04c16bf700dbd633cff883b2}{%
+           family={Cottet},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{fullhash}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{fullhashraw}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{bibnamehash}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{authorbibnamehash}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{authornamehash}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{authorfullhash}{c0bc537a67d4be624b228c4b205c1d7c}
+      \strng{authorfullhashraw}{c0bc537a67d4be624b228c4b205c1d7c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Analytical Chemistry}
+      \field{number}{5}
+      \field{title}{Size-based characterization by the coupling of capillary electrophoresis to {Taylor} dispersion analysis}
+      \field{volume}{80}
+      \field{year}{2008}
+      \field{pages}{1829\bibrangedash 1832}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1021/ac702250f
+      \endverb
+    \endentry
+    \entry{lagoin_enhanced_2025}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=d85a4feacd5f799f5782700feb8d2d42}{%
+           family={Lagoin},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dbb2da275f16afacf557db0a62e07e25}{%
+           family={Lacherez},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=87938f6edbcfc2d27e1fe73badf892e5}{%
+           family={Tournemire},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=7d0cee4965cebddd56d5b41ff98ac54a}{%
+           family={Badr},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ba985874b9bf9f5699529830d2c3f4bc}{%
+           family={Amarouchene},
+           familyi={A\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=abac2764ff3efb0837853ff1edd3361d}{%
+           family={Allard},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a6e3336265d9df0976f0f00ea5b20f9c}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa5ef693c61b0f911a2919a7ccce8d07}
+      \strng{fullhash}{9fe1cb0c9fcf7a5b0c16451ec42385f2}
+      \strng{fullhashraw}{9fe1cb0c9fcf7a5b0c16451ec42385f2}
+      \strng{bibnamehash}{fa5ef693c61b0f911a2919a7ccce8d07}
+      \strng{authorbibnamehash}{fa5ef693c61b0f911a2919a7ccce8d07}
+      \strng{authornamehash}{fa5ef693c61b0f911a2919a7ccce8d07}
+      \strng{authorfullhash}{9fe1cb0c9fcf7a5b0c16451ec42385f2}
+      \strng{authorfullhashraw}{9fe1cb0c9fcf7a5b0c16451ec42385f2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences of the United States of America}
+      \field{number}{50}
+      \field{title}{Enhanced dispersion of active microswimmers in confined flows}
+      \field{volume}{122}
+      \field{year}{2025}
+      \field{pages}{e2519691122}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1073/pnas.2519691122
+      \endverb
+    \endentry
+    \entry{gunny_near-surface_2025}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=28ab0492ddef351940e57c793a866502}{%
+           family={Gunny},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université Paris-Saclay}%
+      }
+      \strng{namehash}{28ab0492ddef351940e57c793a866502}
+      \strng{fullhash}{28ab0492ddef351940e57c793a866502}
+      \strng{fullhashraw}{28ab0492ddef351940e57c793a866502}
+      \strng{bibnamehash}{28ab0492ddef351940e57c793a866502}
+      \strng{authorbibnamehash}{28ab0492ddef351940e57c793a866502}
+      \strng{authornamehash}{28ab0492ddef351940e57c793a866502}
+      \strng{authorfullhash}{28ab0492ddef351940e57c793a866502}
+      \strng{authorfullhashraw}{28ab0492ddef351940e57c793a866502}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Near-surface colloidal hydrodynamics: From wall slip in complex fluids to soft {Taylor} dispersion}
+      \field{type}{phdthesis}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://pastel.hal.science/tel-05603445
+      \endverb
+      \verb{url}
+      \verb https://pastel.hal.science/tel-05603445
       \endverb
     \endentry
     \entry{vilquin_time_2021}{article}{}{}
@@ -304,8 +2144,8 @@
       \strng{authornamehash}{3a6e6360d8208bc2800730d961c3ac04}
       \strng{authorfullhash}{c8bfc823b977a12e78f5e2bf3681f7af}
       \strng{authorfullhashraw}{c8bfc823b977a12e78f5e2bf3681f7af}
-      \field{sortinit}{V}
-      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Fluids}
@@ -317,6 +2157,398 @@
       \range{pages}{1}
       \verb{doi}
       \verb 10.1103/PhysRevFluids.6.064201
+      \endverb
+    \endentry
+    \entry{fish_tirf_2009}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=782c83849f1536035dafe510c9cf47ab}{%
+           family={Fish},
+           familyi={F\bibinitperiod},
+           given={K.\bibnamedelimi N.},
+           giveni={K\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{782c83849f1536035dafe510c9cf47ab}
+      \strng{fullhash}{782c83849f1536035dafe510c9cf47ab}
+      \strng{fullhashraw}{782c83849f1536035dafe510c9cf47ab}
+      \strng{bibnamehash}{782c83849f1536035dafe510c9cf47ab}
+      \strng{authorbibnamehash}{782c83849f1536035dafe510c9cf47ab}
+      \strng{authornamehash}{782c83849f1536035dafe510c9cf47ab}
+      \strng{authorfullhash}{782c83849f1536035dafe510c9cf47ab}
+      \strng{authorfullhashraw}{782c83849f1536035dafe510c9cf47ab}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Current Protocols in Cytometry}
+      \field{month}{10}
+      \field{title}{Total internal reflection fluorescence ({TIRF}) microscopy}
+      \field{year}{2009}
+      \field{pages}{12.18.1\bibrangedash 12.18.13}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/0471142956.cy1218s50
+      \endverb
+    \endentry
+    \entry{einstein_molekuldimensionen_1906}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=29a34a00e610eaed35baff40f473278f}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{29a34a00e610eaed35baff40f473278f}
+      \strng{fullhash}{29a34a00e610eaed35baff40f473278f}
+      \strng{fullhashraw}{29a34a00e610eaed35baff40f473278f}
+      \strng{bibnamehash}{29a34a00e610eaed35baff40f473278f}
+      \strng{authorbibnamehash}{29a34a00e610eaed35baff40f473278f}
+      \strng{authornamehash}{29a34a00e610eaed35baff40f473278f}
+      \strng{authorfullhash}{29a34a00e610eaed35baff40f473278f}
+      \strng{authorfullhashraw}{29a34a00e610eaed35baff40f473278f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{number}{2}
+      \field{title}{Eine neue Bestimmung der Moleküldimensionen}
+      \field{volume}{324}
+      \field{year}{1906}
+      \field{pages}{289\bibrangedash 306}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1002/andp.19063240204
+      \endverb
+    \endentry
+    \entry{prost_active_2009}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ec25a1252970f8413805a131d1d67a02}{%
+           family={Prost},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fb8a2544ab82d0bcf385bf39b69b793c}{%
+           family={Jülicher},
+           familyi={J\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=70a5f182a51543540ee349cc7ed663eb}{%
+           family={Joanny},
+           familyi={J\bibinitperiod},
+           given={J.-F.},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{fullhash}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{fullhashraw}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{bibnamehash}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{authorbibnamehash}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{authornamehash}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{authorfullhash}{12f555aab525262d54a3e582a8c8cc37}
+      \strng{authorfullhashraw}{12f555aab525262d54a3e582a8c8cc37}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Physics}
+      \field{number}{2}
+      \field{title}{Active gel physics}
+      \field{volume}{5}
+      \field{year}{2009}
+      \field{pages}{111\bibrangedash 117}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1038/nphys1207
+      \endverb
+    \endentry
+    \entry{ramaswamy_active_2010}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=a0e01eea971ffc311defac475635dfce}{%
+           family={Ramaswamy},
+           familyi={R\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0e01eea971ffc311defac475635dfce}
+      \strng{fullhash}{a0e01eea971ffc311defac475635dfce}
+      \strng{fullhashraw}{a0e01eea971ffc311defac475635dfce}
+      \strng{bibnamehash}{a0e01eea971ffc311defac475635dfce}
+      \strng{authorbibnamehash}{a0e01eea971ffc311defac475635dfce}
+      \strng{authornamehash}{a0e01eea971ffc311defac475635dfce}
+      \strng{authorfullhash}{a0e01eea971ffc311defac475635dfce}
+      \strng{authorfullhashraw}{a0e01eea971ffc311defac475635dfce}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annual Review of Condensed Matter Physics}
+      \field{title}{The mechanics and statistics of active matter}
+      \field{volume}{1}
+      \field{year}{2010}
+      \field{pages}{323\bibrangedash 345}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1146/annurev-conmatphys-070909-104101
+      \endverb
+    \endentry
+    \entry{marchetti_hydrodynamics_2013}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=a951957737d24317ed50b62d6092c2d3}{%
+           family={Marchetti},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=70a5f182a51543540ee349cc7ed663eb}{%
+           family={Joanny},
+           familyi={J\bibinitperiod},
+           given={J.-F.},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=a0e01eea971ffc311defac475635dfce}{%
+           family={Ramaswamy},
+           familyi={R\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5102f5cafd26a9ce97ef067a2ab8d33c}{%
+           family={Liverpool},
+           familyi={L\bibinitperiod},
+           given={T.\bibnamedelimi B.},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=ec25a1252970f8413805a131d1d67a02}{%
+           family={Prost},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8731f5906a155c09a82ed5b72271da7a}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ce95dce311fe4f345f75af481000c532}{%
+           family={Simha},
+           familyi={S\bibinitperiod},
+           given={R.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c66ab6efdded0fb43f4ce70b8b2e0c4}
+      \strng{fullhash}{e7da84dfb7a798f7759435a916652c08}
+      \strng{fullhashraw}{e7da84dfb7a798f7759435a916652c08}
+      \strng{bibnamehash}{7c66ab6efdded0fb43f4ce70b8b2e0c4}
+      \strng{authorbibnamehash}{7c66ab6efdded0fb43f4ce70b8b2e0c4}
+      \strng{authornamehash}{7c66ab6efdded0fb43f4ce70b8b2e0c4}
+      \strng{authorfullhash}{e7da84dfb7a798f7759435a916652c08}
+      \strng{authorfullhashraw}{e7da84dfb7a798f7759435a916652c08}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{number}{3}
+      \field{title}{Hydrodynamics of soft active matter}
+      \field{volume}{85}
+      \field{year}{2013}
+      \field{pages}{1143\bibrangedash 1189}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.85.1143
+      \endverb
+    \endentry
+    \entry{bechinger_active_2016}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=0eb1c87712444d076503ddbae94ad5a1}{%
+           family={Bechinger},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4ff020421579440949d3aad6d6ea2328}{%
+           family={Di\bibnamedelima Leonardo},
+           familyi={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fc1185d4bc9011e94c13b70b6ea002c2}{%
+           family={Löwen},
+           familyi={L\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=386333bfec54741286fc6234be4df5ca}{%
+           family={Reichhardt},
+           familyi={R\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e85abae53eb2671eb4dca3b7ea2314f5}{%
+           family={Volpe},
+           familyi={V\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e85abae53eb2671eb4dca3b7ea2314f5}{%
+           family={Volpe},
+           familyi={V\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0e154aff20cc9605e874bfcb8b1c8eee}
+      \strng{fullhash}{dd9076f6a40a440d09e25f51849f72b3}
+      \strng{fullhashraw}{dd9076f6a40a440d09e25f51849f72b3}
+      \strng{bibnamehash}{0e154aff20cc9605e874bfcb8b1c8eee}
+      \strng{authorbibnamehash}{0e154aff20cc9605e874bfcb8b1c8eee}
+      \strng{authornamehash}{0e154aff20cc9605e874bfcb8b1c8eee}
+      \strng{authorfullhash}{dd9076f6a40a440d09e25f51849f72b3}
+      \strng{authorfullhashraw}{dd9076f6a40a440d09e25f51849f72b3}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{number}{4}
+      \field{title}{Active particles in complex and crowded environments}
+      \field{volume}{88}
+      \field{year}{2016}
+      \field{pages}{045006}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.88.045006
+      \endverb
+    \endentry
+    \entry{palacci_living_2013}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=43437fadf08eafd179706d7b7a68ea59}{%
+           family={Palacci},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=90b217264118856e102dfdb5b5a076d7}{%
+           family={Sacanna},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=70f7fc564d3dfac2e09a69c9ad8a8b82}{%
+           family={Steinberg},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=f64be81144aeeeda6a2d88c5b278dae6}{%
+           family={Pine},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=df960f60bb8e1d7153fa0f4244da4699}{%
+           family={Chaikin},
+           familyi={C\bibinitperiod},
+           given={P.\bibnamedelimi M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3f68959845fda656d89b62e257a748e}
+      \strng{fullhash}{ff18072e2808b46c6578380b2da60e3e}
+      \strng{fullhashraw}{ff18072e2808b46c6578380b2da60e3e}
+      \strng{bibnamehash}{f3f68959845fda656d89b62e257a748e}
+      \strng{authorbibnamehash}{f3f68959845fda656d89b62e257a748e}
+      \strng{authornamehash}{f3f68959845fda656d89b62e257a748e}
+      \strng{authorfullhash}{ff18072e2808b46c6578380b2da60e3e}
+      \strng{authorfullhashraw}{ff18072e2808b46c6578380b2da60e3e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{6122}
+      \field{title}{Living crystals of light-activated colloidal surfers}
+      \field{volume}{339}
+      \field{year}{2013}
+      \field{pages}{936\bibrangedash 940}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1126/science.1230020
+      \endverb
+    \endentry
+    \entry{toner_hydrodynamics_2005}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=f03c6697623b7d9369708a8be139f595}{%
+           family={Toner},
+           familyi={T\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=feb0445dad620c3f3a79b2eab8281463}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a0e01eea971ffc311defac475635dfce}{%
+           family={Ramaswamy},
+           familyi={R\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{41a6c763148364ec210089e4925f9524}
+      \strng{fullhash}{41a6c763148364ec210089e4925f9524}
+      \strng{fullhashraw}{41a6c763148364ec210089e4925f9524}
+      \strng{bibnamehash}{41a6c763148364ec210089e4925f9524}
+      \strng{authorbibnamehash}{41a6c763148364ec210089e4925f9524}
+      \strng{authornamehash}{41a6c763148364ec210089e4925f9524}
+      \strng{authorfullhash}{41a6c763148364ec210089e4925f9524}
+      \strng{authorfullhashraw}{41a6c763148364ec210089e4925f9524}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Physics}
+      \field{number}{1}
+      \field{title}{Hydrodynamics and phases of flocks}
+      \field{volume}{318}
+      \field{year}{2005}
+      \field{pages}{170\bibrangedash 244}
+      \range{pages}{75}
+      \verb{doi}
+      \verb 10.1016/j.aop.2005.04.011
+      \endverb
+    \endentry
+    \entry{vicsek_novel_1995}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=6ff3ec138429f2256e549ddfd9eac966}{%
+           family={Vicsek},
+           familyi={V\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0dec4b3325168c0b4193c2f1142cb9b9}{%
+           family={Czirók},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c42db23a274c24d7df32313c378d1dcd}{%
+           family={Ben-Jacob},
+           familyi={B\bibinithyphendelim J\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=43dcab1bd2c96c2a9b4cdfbe5c9617ad}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=d894eff4d1ba95c20f175705b22a7d82}{%
+           family={Shochet},
+           familyi={S\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{020aecfedfe0b785677c1cf302373d81}
+      \strng{fullhash}{39444ee32eb2bbd53c7a566bd6685b13}
+      \strng{fullhashraw}{39444ee32eb2bbd53c7a566bd6685b13}
+      \strng{bibnamehash}{020aecfedfe0b785677c1cf302373d81}
+      \strng{authorbibnamehash}{020aecfedfe0b785677c1cf302373d81}
+      \strng{authornamehash}{020aecfedfe0b785677c1cf302373d81}
+      \strng{authorfullhash}{39444ee32eb2bbd53c7a566bd6685b13}
+      \strng{authorfullhashraw}{39444ee32eb2bbd53c7a566bd6685b13}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{6}
+      \field{title}{Novel type of phase transition in a system of self-driven particles}
+      \field{volume}{75}
+      \field{year}{1995}
+      \field{pages}{1226\bibrangedash 1229}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.75.1226
       \endverb
     \endentry
   \enddatalist

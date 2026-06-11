@@ -2,8 +2,55 @@
 \usepackage[a4paper]{geometry}
 \usepackage{xcolor}
 
+\usepackage{setspace}
+\usepackage{parskip}
+\setstretch{1.15}
 
 \usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} 
+
+\fancyhead[LE,RO]{\thepage}
+
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\headheight}{15pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\usepackage{tikz}
+\usepackage{eso-pic}
+
+\usepackage{tikz}
+\usepackage{eso-pic}
+
+\newcommand{\chaptertab}{%
+  \AddToShipoutPictureBG{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \ifnum\value{chapter}>0
+        \node[
+          fill=black,
+          text=white,
+          font=\sffamily\bfseries\small,
+          minimum width=0.8cm,
+          minimum height=1.8cm,
+          anchor=east
+        ] at ([yshift={-2.5cm-\value{chapter}*1.9cm}]current page.north east) {\thechapter};
+      \fi
+    \end{tikzpicture}%
+  }%
+}
+
 
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -13,7 +60,6 @@
 
 
 \usepackage{listings}
-\usepackage{xcolor}
 \usepackage{upgreek}
 
 
@@ -31,5 +77,5 @@
 
 \usepackage{esvect}
 \usepackage{bm}
-\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage[backend=biber,style=numeric, sorting=none]{biblatex}
 \addbibresource{bibliography/references.bib}
