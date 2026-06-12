@@ -58,41 +58,106 @@ For comparison purposes, let us recall that a purely passive colloid undergoes t
 D_\mathrm{T} = \frac{k_\mathrm{B}\Theta}{6\pi \eta a}~,
 \label{ThermalD}
 \end{equation}
-where $k_\mathrm{B}\Theta$ is the thermal energy of the bath, $\eta$ the fluid visicosity and $a$ the colloid radius. The rotational diffusion coefficient $D_\mathrm{R}$ is defined as:
+where $k_\mathrm{B}\Theta$ is the thermal energy of the bath, $\eta$ the fluid visicosity and $a$ the colloid radius. The rotational diffusion coefficient $D_\mathrm{R}$, however, is proportional to the colloid's volume:
 \begin{equation}
-D_\mathrm{R} = \frac{k_\mathrm{B}\Theta}{8\pi \eta a^3 = \tau_\mathrm{R}^{-1}}~,
+D_\mathrm{R} = \frac{k_\mathrm{B}\Theta}{8\pi \eta a^3 }= \tau_\mathrm{R}^{-1}~,
 \label{ActiveR}
 \end{equation}
 with $\tau_\mathrm{R}$ a characteristic reorientation timescale.
 
 We have already stated that we can describe the motion of the passive colloid with the following Langevin equations for the overdamped limit:
 
-\begin{align}
-    \frac{\mathrm{d}x}{\mathrm{d}t} &= \sqrt{2D_\mathrm{T}}\xi_x(t) \\
-    \frac{\mathrm{d}y}{\mathrm{d}t} &= \sqrt{2D_\mathrm{T}}\xi_y(t) \\
-    \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~,\\
-    \label{PassiveBrownian}
-\end{align}
-where $\xi_i(t)$ white gaussian noises of correlation $\delta (t)$.
+\begin{equation}
+\label{PassiveBrownian}
+\begin{aligned}
+   \frac{\mathrm{d}x}{\mathrm{d}t} &= \sqrt{2D_\mathrm{T}}\xi_x(t) \\
+   \frac{\mathrm{d}y}{\mathrm{d}t} &= \sqrt{2D_\mathrm{T}}\xi_y(t) \\
+   \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
+\end{aligned}
+\end{equation}
+where $\xi_i(t)$ white Gaussian noises of correlation $\delta (t)$. This process is heavily reliant on the thermal diffusion coefficients $D_\mathrm{T}$ and $D_\mathrm{R}$, which are themselves proportional to temperature and inversely proportional to colloid radius and fluid viscosity. This means that thermal Brownian motion is strongly hindered in the case of larger colloids, where larger means of the order of a few tens of microns. For example, if we take for comparison with later cases a colloid of a size that is comparable to a \emph{Chlamydomonas}, that is to say $a = 10 \upmu \mathrm{m}$, we get $D_\mathrm{T}=2.2\times10^{-3}\upmu \mathrm{m}^2.\mathrm{s}^{-1}$. We interpret that by pure thermal diffusion, a colloid of this size would need tens of hours to explore an area equivalent to its own size.
 
-\begin{align}
+Lucky, as we discussed already, swimmers circumvent this limitation by collecting energy from their surroundings to self propel amongst other strategies. A very simple model used to represent a swimmer with an ability to self-propel with a given velocity $\vec{v}$ is the Active Brownian Particle (APB) model. We describe this model with the following Langevin equations:
+\begin{equation}
+\begin{aligned}
+    \label{ActiveBrownian}
     \frac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D_\mathrm{T}}\xi_x(t)\\
     \frac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D_\mathrm{T}}\xi_y(t)\\
-    \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~,\\
-    \label{ActiveBrownian}
-\end{align}
+    \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
+\end{aligned}
+\end{equation}
+We notice that the swimmer is still undergoing thermal diffusion for the rotational degree of freedom, with a characteristic time $\tau_\mathrm{R}$ after which the swimmer "forgets" in which direction it was heading. This memory effect can be noticed at very short times 
+
 
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter5/compaABP_PBP.pdf}
-    \caption{}
+    \caption{Comparison of passive and active Brownian colloid trajectories. Panels \textbf{a)} and \textbf{c)}: Twenty stacked trajectories obtained from discretising Eqs. \ref{PassiveBrownian} and \ref{ActiveBrownian} respectively, with $\Delta t = 0.05$, $n_\mathrm{steps} = 5000$, $D_\mathrm{T} = 0.05$, $D_\mathrm{R} = 0.3$, $v = 0.1$, with all units in simulation units. Colours are only used for readability and have no physical meaning. Panels \textbf{c)} and \textbf{d)}: final position of 2000 simulations for the passive and active Brownian particle models, respectively. }
     \label{ABPPBP}
 \end{figure}
 
 
 
+
+
+\begin{tabular}{lccc}
+\hline
+Case & $D_\mathrm{T}$ & Persistence time & $D_\mathrm{eff}$ \\
+\hline
+Passive BM ($a=0.5\,\mu$m) & 0.44 & -- & 0.44 \\
+ABP ($a=0.5\,\mu$m) & 0.44 & 0.77 s & 0.82 \\
+Passive BM ($a=10\,\mu$m) & $2.2\times10^{-2}$ & -- & $2.2\times10^{-2}$ \\
+ABP ($a=10\,\mu$m) & $2.2\times10^{-2}$ & 6250 s & $3.0\times10^3$ \\
+\hline
+\end{tabular}
+
+
+
+
 \subsubsection{Chiral ABPs}
+
+Some microswimmers or clusters of microswimmers have irregular shapes or asymmetrical propulsion mechanisms.
+
+While the ABP translation mechanisms remain unchanged, one can intriduce chiral behaviour in the ABP model by adding a phase in the rotational degree of freedom, as follows:
+\begin{equation}
+\begin{aligned}
+    \label{ActiveBrownian}
+    \frac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D_\mathrm{T}}\xi_x(t)\\
+    \frac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D_\mathrm{T}}\xi_y(t)\\
+    \frac{\mathrm{d}\phi}{\mathrm{d}t} &=\omega  \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
+\end{aligned}
+\end{equation}
+It is therefore possible to play with the phase to obtain different behaviours, from shrinking spirals to circles to expanding spirals for the two-dimensional case.
+
+Helical motion can be described using a three-dimensional ABP model, such as
+\begin{align}
+\frac{\mathrm d \mathbf r}{\mathrm dt} &= v \mathbf{n} + \sqrt{2D_t}\,\boldsymbol{\xi_\mathrm{T}}(t),\\
+\frac{\mathrm d \mathbf n}{\mathrm dt} &= \boldsymbol{\Omega}\times\mathbf{n}+ \sqrt{2D_r}\,
+\boldsymbol{\xi_\mathrm{R}}(t)\times\mathbf{n},
+\label{3d_helical}
+\end{align}
+
+with $\mathbf{r}$ the position vector $ \mathbf{r} = (x,y,z)$, and $\mathbf{n}$ the orientation vector, which must be normalised, as $ \mathbf{n} = (n_x,n_y,n_z),~ |\mathbf{n}| = 1~$, and $\boldsymbol{\Omega}$ is the angular velocity vector defined as
+
+\begin{equation}
+\boldsymbol{\Omega}=\omega\,\mathbf e_z=
+\begin{pmatrix}
+0\\
+0\\
+\omega
+\end{pmatrix}~,
+\end{equation}
+for a rotation about the $z$ axis (Fig. \ref{Traj_helical}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{figures/chapter5/helical.pdf}
+    \caption{Simulated trajectories from the discretised Eqs. \ref{3d_helical}. \textbf{a)} Full trajectory for $n_\mathrm{steps}=80000$, $\Delta T = 0.01$, $D_\mathrm{T} = 0.005$, $D_\mathrm{R} = 0.01$, $v = 1.0$, $\boldsymbol\Omega = 1.0$ and $\omega = \frac{\pi}{12}$. All units are in simulation units. }
+    \label{Traj_helical}
+\end{figure}
+
+
 \subsection{Run-and-tumble}
 
 
