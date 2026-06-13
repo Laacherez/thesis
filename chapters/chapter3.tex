@@ -18,7 +18,7 @@ Because of the level of complexity of such a study, I present in this chapter a 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/chapter3/toy_model_figure_1.pdf}
-    \caption{Representation of the system. A Brownian colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled locally as a second Brownian colloid (red) subject to a harmonic potential of inverse stiffness (or \emph{compliance}) $\kappa$. This membrane is coupled to the colloid of interest through an indirect, hydrodynamic-like coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-friction $\gamma_{11}$ and $\gamma_{22}$, respectively.}
+    \caption[Schematic representation of a toy model for Brownian motion in soft, fluctuating confinement.]{Representation of the system. A Brownian colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled locally as a second Brownian colloid (red) subject to a harmonic potential of inverse stiffness (or \emph{compliance}) $\kappa$. This membrane is coupled to the colloid of interest through an indirect, hydrodynamic-like coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-friction $\gamma_{11}$ and $\gamma_{22}$, respectively.}
     \label{toy_model_figure_1}
 
 \end{figure}
@@ -263,7 +263,7 @@ I first generate trajectories of the two coupled Brownian colloids using Eqs. \r
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{figures/chapter3/Trajectories.pdf}
-    \caption{Trajectories of the Brownian colloid (blue) and the membrane (red) for $\kappa = 0.01$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$ and $\gamma_{12} = 0.8$, $\tau = 10^{-4}$. The membrane noticeably fluctuates around its equilibrium position in $q_2 = 0$, whereas the colloid is trapped at short times within a local minimum, and escapes through random thermal fluctuations at longer times to explore available space. }
+    \caption[Trajectories computed by numerical simulations of the toy model.]{Trajectories of the Brownian colloid (blue) and the membrane (red) for $\kappa = 0.01$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$ and $\gamma_{12} = 0.8$, $\tau = 10^{-4}$. The membrane noticeably fluctuates around its equilibrium position in $q_2 = 0$, whereas the colloid is trapped at short times within a local minimum, and escapes through random thermal fluctuations at longer times to explore available space. }
     \label{Trajectories}
 \end{figure}
 
@@ -280,7 +280,7 @@ The sampled probability distribution of $q_1$ follows the expected periodic shap
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/Peq_two_panel.pdf}
-    \caption{Equilibrium probability density function of $q_1$ (top, for $q_1^* = q_1\mod\lambda$) and $q_2$ (bottom) for $\kappa = 0.01$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^7$ points. The sampled probability density functions (histograms) and theoretical prediction from the Gibbs-Boltzmann distribution (Eq. \ref{P_eq}, solid lines) are in perfect agreement, even for a single trajectory of $10^8$ points. }
+    \caption[Equilibrium distributions binned from trajectories.]{Equilibrium probability density function of $q_1$ (top, for $q_1^* = q_1\mod\lambda$) and $q_2$ (bottom) for $\kappa = 0.010$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1.0\times 10^7$ points. The sampled probability density functions (histograms) and theoretical prediction from the Gibbs-Boltzmann distribution (Eq. \ref{P_eq}, solid lines) are in perfect agreement, even for a single trajectory of $10^8$ points. }
     \label{Peq_q1q2}
 \end{figure}
 
@@ -338,7 +338,7 @@ It then falls into a slow crossover to reach a second diffusive regime of effect
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/MSD_q1.pdf}
-    \caption{Mean-Squared Displacement of $q_1$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. At small timelags $\Delta t < \tau_1$, the Brownian colloid presents a diffusion constant $D_\mathrm{m}$ (Eq. \ref{D_m}, in blue dashes) which corresponds to a bulk, free diffusivity inside a local minimum of the potential $\phi(q_1)$. It then slowly crosses over to a second diffusive regime for $\Delta t > \tau^*$ with diffusion constant $D^*$ (Eq. \ref{D_star_compliant}, in blue dashdot). The dotted blue line indicates the expected long-time diffusion coefficient in the very rigid limit $\kappa \to 0$ (Eq. \ref{D_star} for $\kappa = 0$), which is smaller, as expected. }
+    \caption[Mean-Squared Displacements computed from simulated trajectories of the mode $q_1$.]{Mean-Squared Displacement of $q_1$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. At small timelags $\Delta t < \tau_1$, the Brownian colloid presents a diffusion constant $D_\mathrm{m}$ (Eq. \ref{D_m}, in blue dashes) which corresponds to a bulk, free diffusivity inside a local minimum of the potential $\phi(q_1)$. It then slowly crosses over to a second diffusive regime for $\Delta t > \tau^*$ with diffusion constant $D^*$ (Eq. \ref{D_star_compliant}, in blue dashdot). The dotted blue line indicates the expected long-time diffusion coefficient in the very rigid limit $\kappa \to 0$ (Eq. \ref{D_star} for $\kappa = 0$), which is smaller, as expected. }
     \label{MSD_q1}
 \end{figure}
 
@@ -352,7 +352,7 @@ and then crosses over to a confined regime at long times $\Delta t > \tau_2$ due
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/MSD_q2.pdf}
-    \caption{Mean-Squared Displacement of $q_2$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. At small timelags $\Delta t < \tau_2$, the membrane presents a diffusion constant $D_\mathrm{2}$ (Eq. \ref{D_2}, in red dashes) which corresponds to a bulk, free diffusivity inside the minimum of the harmonic potential. It then slowly crosses over to a second diffusive regime for $\Delta t > \tau^2$ with constant MSD. The dotted red line indicates the expected plateau value for the long-time MSD at $2 k_\mathrm{B}\Theta \kappa$. }
+    \caption[Mean-Squared Displacements computed from simulated trajectories of the mode $q_2$.]{Mean-Squared Displacement of $q_2$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. At small timelags $\Delta t < \tau_2$, the membrane presents a diffusion constant $D_\mathrm{2}$ (Eq. \ref{D_2}, in red dashes) which corresponds to a bulk, free diffusivity inside the minimum of the harmonic potential. It then slowly crosses over to a second diffusive regime for $\Delta t > \tau^2$ with constant MSD. The dotted red line indicates the expected plateau value for the long-time MSD at $2 k_\mathrm{B}\Theta \kappa$. }
     \label{MSD_q2}
 \end{figure}
 
@@ -361,7 +361,7 @@ and then crosses over to a confined regime at long times $\Delta t > \tau_2$ due
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/Final_plot.pdf}
-    \caption{Augmentation factor $\frac{\Delta D^*(\epsilon)}{D^*}$ as a function of the coupling parameter $\epsilon$ for $\Delta U = 3.0 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\mu_{11} = 1$, $\mu_{22} = 1$, $\mu_{12} = 0.85$. The numerical results (blue dots) are in perfect agreement with the expected theoretical augmentation factors in the asymptotical regions $\epsilon \to 0$ and $\epsilon \to \infty$ (dash-dotted lines) of Eqs. as well as the crossover region, which is accessed by solving the full two-dimensional Kubo problem (solid black line).}
+    \caption[Expected enhancement of the diffusion of a Brownian colloid trapped near a soft, fluctuating membrane. Comparison of theoretical asymptotes, Kubo analytical solution and numerical simulation.]{Augmentation factor $\frac{\Delta D^*(\epsilon)}{D^*}$ as a function of the coupling parameter $\epsilon$ for $\Delta U = 3.0 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\mu_{11} = 1$, $\mu_{22} = 1$, $\mu_{12} = 0.85$. The numerical results (blue dots) are in perfect agreement with the expected theoretical augmentation factors in the asymptotical regions $\epsilon \to 0$ and $\epsilon \to \infty$ (dash-dotted lines) of Eqs. as well as the crossover region, which is accessed by solving the full two-dimensional Kubo problem (solid black line).}
     \label{Final_plot}
 \end{figure}
 We can finally infer all diffusion coefficients by performing affine fits of the MSDs in the diffusive regimes, remembering that in the diffusive regime
@@ -395,14 +395,14 @@ With these values, the adimentionalised compliance $\epsilon$ falls exactly in t
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter3/bio_values.pdf}
-    \caption{Estimation of the relative enhancement of the long-time diffusion coefficient of a Brownian colloid of radius $a=100\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}T$ and spatial period $\lambda = 100 \mathrm{nm}$ at a distance $d = 10 \mathrm{nm}$ from membrane of elastic modulus $E = 1 \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\mu_{12}$ is estimated using Oseen's model. The two asymptotes of the very rigid $\epsilon \to 0$ and very soft $\epsilon \to \infty$ are shown in dash-dotted cyan and blue lines respectively. For this system, the expected value of the relative enhancement of the long-time diffusion coefficient of the Brownian colloid is of about $\frac{\Delta D^*}{D^*} \approx 100\%$.}
+    \caption[Application of the toy model with biologically plausible values to estimate the effect of softness on a real system.]{Estimation of the relative enhancement of the long-time diffusion coefficient of a Brownian colloid of radius $a=100\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}T$ and spatial period $\lambda = 100 \mathrm{nm}$ at a distance $d = 10 \mathrm{nm}$ from membrane of elastic modulus $E = 1 \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\mu_{12}$ is estimated using Oseen's model. The two asymptotes of the very rigid $\epsilon \to 0$ and very soft $\epsilon \to \infty$ are shown in dash-dotted cyan and blue lines respectively. For this system, the expected value of the relative enhancement of the long-time diffusion coefficient of the Brownian colloid is of about $\frac{\Delta D^*}{D^*} \approx 100\%$.}
     \label{biovalues}
 \end{figure}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion and perspectives on the chapter}
+\section{Take-home message}
 
 In this Chapter, we have exposed the novelty of the field of stochastic elastohydrodynamics. We have developed a toy model with elementary ingredients which encompasses qualitatively the physics of a Brownian colloid diffusing nearby a soft membrane. We have then developed a theoretical framework to predict the long-time diffusion coefficient of the Brownian colloid as a function of the compliance of the membrane, and we have implemented numerical simulations to verify these predictions. We have found that the coupling of the membrane to the Brownian colloid always increases its long-time diffusion constant given the framework of our model.
 

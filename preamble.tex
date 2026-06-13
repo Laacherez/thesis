@@ -6,6 +6,8 @@
 \usepackage{parskip}
 \setstretch{1.15}
 
+\usepackage[nottoc]{tocbibind} % Add list of fig to TOC
+
 \usepackage{fancyhdr}
 
 \pagestyle{fancy}
@@ -49,10 +51,10 @@
       \fi
     \end{tikzpicture}%
   }%
-}
+} % Chapter little black thing at the side
 
-
-\usepackage{algorithm}
+\usepackage{longtable} % Table continue across pages
+\usepackage{algorithm} % Code snipsnips
 \usepackage{algpseudocode}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
@@ -73,7 +75,7 @@
     frame=single,
     breaklines=true
 }
-\renewcommand{\lstlistingname}{Snippet}
+\renewcommand{\lstlistingname}{Snippet} % Alternate code snipsnips ? I odnt remember
 
 \usepackage{esvect}
 \usepackage{bm}
