@@ -1,21 +1,21 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[28] biber:342> INFO - === Sat Jun 13, 2026, 18:27:18
-[34] Biber.pm:421> INFO - Reading 'main.bcf'
-[73] Biber.pm:1002> INFO - Found 66 citekeys in bib section 0
-[80] Biber.pm:4487> INFO - Processing section 0
+[30] biber:342> INFO - === Thu Jun 18, 2026, 13:11:55
+[37] Biber.pm:421> INFO - Reading 'main.bcf'
+[72] Biber.pm:1002> INFO - Found 9 citekeys in bib section 0
+[79] Biber.pm:4487> INFO - Processing section 0
 [84] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography/references.bib' for section 0
 [86] bibtex.pm:1713> INFO - LaTeX decoding ...
 [122] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography/references.bib'
-[294] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[294] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[294] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[294] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[313] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[330] bbl.pm:779> INFO - Output to main.bbl
-[330] Biber.pm:132> WARN - Duplicate entry key: 'millan_numerical_2023' in file 'bibliography/references.bib', skipping ...
-[330] Biber.pm:132> WARN - Duplicate entry key: 'gue2015' in file 'bibliography/references.bib', skipping ...
-[330] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_Az2U/33e59b5ca9ec342068223d604c3f8d55_5027.utf8, line 242, warning: 117 characters of junk seen at toplevel
-[330] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_Az2U/33e59b5ca9ec342068223d604c3f8d55_5027.utf8, line 701, warning: 144 characters of junk seen at toplevel
-[330] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_Az2U/33e59b5ca9ec342068223d604c3f8d55_5027.utf8, line 921, warning: 116 characters of junk seen at toplevel
-[330] Biber.pm:134> INFO - WARNINGS: 5
+[169] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[169] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[169] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[169] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[172] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[175] bbl.pm:779> INFO - Output to main.bbl
+[175] Biber.pm:132> WARN - Duplicate entry key: 'millan_numerical_2023' in file 'bibliography/references.bib', skipping ...
+[175] Biber.pm:132> WARN - Duplicate entry key: 'gue2015' in file 'bibliography/references.bib', skipping ...
+[175] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_EgEn/33e59b5ca9ec342068223d604c3f8d55_20397.utf8, line 242, warning: 117 characters of junk seen at toplevel
+[175] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_EgEn/33e59b5ca9ec342068223d604c3f8d55_20397.utf8, line 701, warning: 144 characters of junk seen at toplevel
+[175] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_EgEn/33e59b5ca9ec342068223d604c3f8d55_20397.utf8, line 921, warning: 116 characters of junk seen at toplevel
+[175] Biber.pm:134> INFO - WARNINGS: 5
