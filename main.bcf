@@ -2373,18 +2373,42 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">prost_active_2009</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">ramaswamy_active_2010</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">marchetti_hydrodynamics_2013</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">bechinger_active_2016</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">marchetti_hydrodynamics_2013</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">palacci_living_2013</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">prost_active_2009</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">toner_hydrodynamics_2005</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">vicsek_novel_1995</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">bechinger_active_2016</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">bechinger_active_2016</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">lighthill1952squirming</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Blake_1971</bcf:citekey>
+    <bcf:citekey order="1" intorder="2">ramaswamy_active_2010</bcf:citekey>
+    <bcf:citekey order="1" intorder="3">marchetti_hydrodynamics_2013</bcf:citekey>
+    <bcf:citekey order="1" intorder="4">bechinger_active_2016</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">marchetti_hydrodynamics_2013</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">palacci_living_2013</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">prost_active_2009</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">toner_hydrodynamics_2005</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">vicsek_novel_1995</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">bechinger_active_2016</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">polin2009chlamydomonas</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">sineshchekov2002rhodopsins</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">bennett2015steering</bcf:citekey>
+    <bcf:citekey order="9" intorder="3">ueki2016eyespot</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">polin2009chlamydomonas</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">bloodgood1981gliding</bcf:citekey>
+    <bcf:citekey order="11" intorder="2">kreis2018adhesion</bcf:citekey>
+    <bcf:citekey order="11" intorder="3">shih2013intraflagellar</bcf:citekey>
+    <bcf:citekey order="11" intorder="4">till2022gliding</bcf:citekey>
+    <bcf:citekey order="11" intorder="5">fares_intraciliary_2025</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">franke1990galvanotaxis</bcf:citekey>
+    <bcf:citekey order="12" intorder="2">howse2007selfmotile</bcf:citekey>
+    <bcf:citekey order="12" intorder="3">martens2012probability</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">vanteeffelen2008brownian</bcf:citekey>
+    <bcf:citekey order="13" intorder="2">mijalkov2013sorting</bcf:citekey>
+    <bcf:citekey order="13" intorder="3">volpe2014simulation</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">berg1979movement</bcf:citekey>
+    <bcf:citekey order="14" intorder="2">schnitzer1990strategies</bcf:citekey>
+    <bcf:citekey order="14" intorder="3">berg2004ecoli</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">lighthill1952squirming</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">Blake_1971</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">hill2002taylor</bcf:citekey>
+    <bcf:citekey order="17" intorder="2">manela2003generalized</bcf:citekey>
+    <bcf:citekey order="17" intorder="3">bees2010dispersion</bcf:citekey>
+    <bcf:citekey order="17" intorder="4">bearon2012biased</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">jiang2019dispersion</bcf:citekey>
+    <bcf:citekey order="18" intorder="2">peng2020upstream</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
