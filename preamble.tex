@@ -1,12 +1,47 @@
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper]{geometry}
+\usepackage[
+  a4paper,
+  inner=2.8cm,
+  outer=2.2cm,
+  top=2.5cm,
+  bottom=2.7cm,
+  includehead
+]{geometry}
+\setlength{\headheight}{14pt}
+
+\newcommand{\currentpublicationtitle}{}
+
+\newcommand{\publicationsection}[1]{%
+  \clearpage
+  \refstepcounter{section}%
+  \renewcommand{\currentpublicationtitle}{#1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \markright{\thesection\quad #1}%
+}
+
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\includepublicationpdf}[2][]{%
+  \includepdf[
+    pages=-,
+    scale=0.85,
+    pagecommand={%
+      \thispagestyle{fancy}%
+      \markright{\thesection\quad \currentpublicationtitle}%
+    },
+    #1
+  ]{#2}%
+}
+
 \usepackage{xcolor}
 
 \usepackage{setspace}
 \usepackage{parskip}
-\setstretch{1.15}
+\setstretch{1.12}
 
 \usepackage[nottoc]{tocbibind} % Add list of fig to TOC
+\usepackage{pdfpages}
 
 \usepackage{fancyhdr}
 
@@ -18,20 +53,13 @@
 \fancyhead[RE]{\nouppercase{\leftmark}}
 \fancyhead[LO]{\nouppercase{\rightmark}}
 
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\setlength{\headheight}{15pt}
 
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyhead[LE,RO]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\headrulewidth}{0.3pt}
   \renewcommand{\footrulewidth}{0pt}
 }
-
-\usepackage{tikz}
-\usepackage{eso-pic}
 
 \usepackage{tikz}
 \usepackage{eso-pic}

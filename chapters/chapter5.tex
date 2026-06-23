@@ -1,25 +1,18 @@
-
-
-
-
 \chapter{Activity in Brownian Motion}
 
 \section{Introduction}
-The final part of this manuscript is dedicated to the study of active matter and its interplay with Brownian motion. This subject was actually the motivation for my PhD thesis, and the first part of this Chapter presents my first introduction to the field of active matter. I begin with a full introduction to what active matter means, and how it is typically modeled. 
-
-The second part, which came much later in my PhD, treats the problem of active Taylor-Aris dispersion. The notion of Taylor-Aris dispersion is described in the previous Chapter. For the sake of clarity, I thus invite the reader to consult its developments before reading this part. We conducted this work in tandem with Marc Lagoin, Guirec de Tournemire, Ahmad Badr and Antoine Allard, and published it in PNAS. 
+The final part of this manuscript is dedicated to the study of active matter and their interplay with external fluid flows. This subject was actually the motivation for my PhD thesis, and the first part of this Chapter presents my first introduction to the field of active matter. The end of this Chapter treats the problem of active Taylor-Aris dispersion. The notion of Taylor-Aris dispersion is described in Chapter 4. For the sake of clarity, I thus invite the reader to consult its developments before reading this part. We conducted this work in tandem with Marc Lagoin, Guirec de Tournemire, Ahmad Badr and Antoine Allard. 
 \subsection{Activity}
 
 Authors define active matter as one or both of the following:
 
 \begin{enumerate}
-    \item "energy-consuming particles" : individual units that extract free energy from internal or external sources and convert it to motion, forces, or mechanical stresses (this is the definition I use in this manuscript). This work is not necessarily expressed in the form of self-propelling \cite{prost_active_2009, ramaswamy_active_2010, marchetti_hydrodynamics_2013, bechinger_active_2016}. They are thus inherently out-of-equilibrium systems;
-    \item "interacting particles" : individual self-propelled units which interact locally and exhibit emergent, collective behaviour, such as 
-    hydrodynamic interactions (swimming microorganisms, squirmers, active droplets...)\cite{marchetti_hydrodynamics_2013}, phoretic interactions (catalytic Janus colloids, some chemotactic bacteria...)\cite{palacci_living_2013}, mechanical force transmission (cellular tissue, cytoskeleton, active gels...)\cite{prost_active_2009}, and even social interactions (human crowds, bird flocks, fish schools, autonomous drones...)\cite{toner_hydrodynamics_2005}, to only cite a few. Some of these interactions can be accurately represented with minimal models, which approximate them as alignment interactions with some noise, such as the Vicsek model \cite{vicsek_novel_1995}. Certain authors distinguish these instances of interacting active matter from the first I mentioned \cite{bechinger_active_2016}.
+    \item ``energy-consuming particles'' : individual units that extract free energy from internal or external sources and convert it to motion, forces, or mechanical stresses \cite{prost_active_2009, ramaswamy_active_2010, marchetti_hydrodynamics_2013, bechinger_active_2016}. They are thus inherently out-of-equilibrium systems;
+    \item ``interacting particles'' : individual self-propelled units which interact locally and exhibit emergent, collective behaviours, such as through hydrodynamic interactions (swimming microorganisms, squirmers, active droplets...)\cite{marchetti_hydrodynamics_2013}, phoretic interactions (catalytic Janus colloids, some chemotactic bacteria...)\cite{palacci_living_2013}, mechanical force transmission (cellular tissue, cytoskeleton, active gels...)\cite{prost_active_2009}, and even social interactions (human crowds, bird flocks, fish schools, autonomous drones...)\cite{toner_hydrodynamics_2005}, to only cite a few. Some of these interactions can be accurately represented with minimal models, which approximate them as alignment interactions with some noise, such as the Vicsek model \cite{vicsek_novel_1995}.
 \end{enumerate}
 
 
-Numerous examples of active systems exist, and these systems can be found at any scale (Fig. \ref{Reynolds_sizes}). I find it convenient to not only classify them by size but also by Reynolds number, as most of them will typically use their surrounding energy source to move in space. Interestingly, the definition of active matter is loose enough to even include human beings, robots and even large aircrafts.  This thesis articulates around notions of small systems, and I thus refer to these systems form there on.
+Numerous examples of active systems exist, and these systems can be found at any scale (Fig. \ref{Reynolds_sizes}). It is essential to not only classify them by size but also by Reynolds number. Interestingly, the definition of active matter is loose enough to even include human beings, robots and even large aircrafts.  This thesis articulates around notions of small systems, and I thus restrict my arguments to these systems from there on.
 
 \begin{figure}
     \centering
@@ -30,16 +23,16 @@ Numerous examples of active systems exist, and these systems can be found at any
 
 
 \subsection{\emph{Chlamydomonas reinhardtii} as a model swimmer}
-A particularly convenient experimental model of a biological microswimmer is the unicellular green alga \emph{Chlamydomonas reinhardtii} (Fig. \ref{chlamy_img}) \cite{polin2009chlamydomonas}. These tiny algae are the system we use in the study at the end of this Chapter. They measure only a few tens of microns at most. However, through the beating of their anterior flagella, they self-propel in a fluid at surprisingly high speeds of ten body lengths per second. Yet, this is not sufficient for \emph{Chlamydomonas} to be considered high-Reynolds systems ($R_\mathrm{e} \gg 1$), as they typically reach a Reynolds number of about $R_\mathrm{e} = 1 \times 10 ^{-4}$. They thus still evolve in a very viscous medium. 
+A particularly convenient experimental model of a biological microswimmer is the unicellular green alga \emph{Chlamydomonas reinhardtii} (Fig. \ref{chlamy_img}) \cite{polin2009chlamydomonas}. This tiny alga is the system we use in the study at the end of this Chapter. It measures only a few tens of microns at most. However, through the beating of its anterior flagella, it self-propels in a fluid at surprisingly high speeds of ten body lengths per second. Yet, this is not sufficient for \emph{Chlamydomonas} to be considered high-Reynolds systems ($\mathrm{R_e} \gg 1$), as it typically reaches a Reynolds number of about $\mathrm{R_e} = 1 \times 10 ^{-4}$. It thus still evolves in a very viscous medium. 
 
 \begin{figure}
     \centering
     \includegraphics[width=.4\textwidth]{figures/chapter5/chlamy.pdf}
-    \caption[Experimental setup for the study of Active Taylor Dispersion.]{Photograph of a \emph{Chlamydomonas reinhardtii} alga taken by Ahmad Badr and Nicolas Fares in our experimental rooms. The body and the flagella each measure about $10 \upmu \mathrm{m}$. The alga also features an eyespot which allows it to sense incoming light and adapt.}
+    \caption[Experimental setup for the study of Active Taylor Dispersion.]{Photograph of a \emph{Chlamydomonas reinhardtii} alga taken by Ahmad Badr and Nicolas Fares in our experimental rooms. The body and the flagella each measure about $10 \upmu \, \mathrm{m}$. The alga also features an eyespot which allows it to sense incoming light and adapt.}
     \label{chlamy_img}
 \end{figure}
 
-Furthermore, \emph{Chlamydomonas reinhardtii} can orient towards or away from light sources by phototaxis, a response mediated by and "eye spot" rhodopsin photoreceptor and controlled by both light intensity and directional sensing \cite{sineshchekov2002rhodopsins,bennett2015steering,ueki2016eyespot}. In the absence of a directional light signal, its swimming can display run-and-tumble-like dynamics, with random switches between straight swimming and abrupt reorientation events \cite{polin2009chlamydomonas}. Under appropriate illumination and near a solid boundary, cells instead attach through their flagella and perform surface gliding, driven by flagellar surface transport instead ordinary swimming \cite{bloodgood1981gliding,kreis2018adhesion,shih2013intraflagellar,till2022gliding,fares_intraciliary_2025}. Because of this simple geometry and well established and studied behaviour, \emph{Chlamydomonas} has become a standard model system for active matter in fluids. 
+Furthermore, \emph{Chlamydomonas reinhardtii} can orient towards or away from light sources by phototaxis, a response mediated by an ``eye spot'' rhodopsin photoreceptor, and controlled by both light intensity and directional sensing \cite{sineshchekov2002rhodopsins,bennett2015steering,ueki2016eyespot}. In the absence of a directional light signal, its swimming can display run-and-tumble-like dynamics, with random switches between straight swimming and abrupt reorientation events \cite{polin2009chlamydomonas}. Under blue light and near a solid boundary, cells instead attach through their flagella and perform surface gliding, driven by flagellar surface transport instead of ordinary swimming \cite{bloodgood1981gliding,kreis2018adhesion,shih2013intraflagellar,till2022gliding,fares_intraciliary_2025}. Because of its simple geometry and well established and studied behaviour, \emph{Chlamydomonas} is a standard model system for active matter in fluids. 
 
 
 
@@ -48,33 +41,33 @@ Multiple models exist to study active matter. I describe here the ones I have co
 I also provide in appendix and on the GitHub repository \textcolor{red}{ADD GITHUB} a simple Jupyter file to simulate Active Brownian Particles (ABP), Run-And-Tumble particles (RTP) and to compare them to the passive case. This file also contains a very small exploration of chiral ABP.
 
 \subsection{Active Brownian Particles}
-For comparison purposes, let us recall that a purely passive colloid undergoes thermal diffusion. This thermal diffusion affects both the translational degrees of freedom ($x$ and $y$ for a two-dimensional case) and the rotational degree of freedoms ($\phi$ for a two-dimensional case). We define from the Stokes-Einstein relation the translational thermal diffusion coefficient $D$ as:
+The thermal diffusion of a colloid affects both its translational degrees of freedom ($x$ and $y$ for a two-dimensional case) and rotational degree of freedoms ($\phi$ for a two-dimensional case). We recall from the Introduction of this manuscript the classical, passive bulk Brownian particle case. The translational thermal diffusion coefficient $D$ is defined as:
 
 
 \begin{equation}
 D = \frac{k_\mathrm{B}\Theta}{6\pi \eta a}~,
 \label{ThermalD}
 \end{equation}
-where $k_\mathrm{B}\Theta$ is the thermal energy of the bath, $\eta$ the fluid visicosity and $a$ the colloid radius. The rotational diffusion coefficient $D_\mathrm{R}$, however, is proportional to the colloid's volume:
+where $k_\mathrm{B}\Theta$ is the thermal energy of the bath, $\eta$ the fluid visicosity and $a$ the colloid radius. The rotational diffusion coefficient $D_\mathrm{R}$, is inversely proportional to the colloid's volume:
 \begin{equation}
 D_\mathrm{R} = \frac{k_\mathrm{B}\Theta}{8\pi \eta a^3 }= \tau_\mathrm{R}^{-1}~,
 \label{ActiveR}
 \end{equation}
-with $\tau_\mathrm{R}$ a characteristic reorientation timescale.
+with $\tau_\mathrm{R}$ the characteristic reorientation time scale.
 
-We have already stated that we can describe the motion of the passive colloid with the following Langevin equations for the overdamped limit:
+We can describe the motion of the passive colloid with the following Langevin equations in the overdamped limit:
 
 \begin{equation}
 \label{PassiveBrownian}
 \begin{aligned}
    \frac{\mathrm{d}x}{\mathrm{d}t} &= \sqrt{2D}\xi_x(t) \\
    \frac{\mathrm{d}y}{\mathrm{d}t} &= \sqrt{2D}\xi_y(t) \\
-   \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
+   \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~,
 \end{aligned}
 \end{equation}
-where $\xi_i(t)$ white Gaussian noises of correlation $\delta (t)$. This process is heavily reliant on the thermal diffusion coefficients $D$ and $D_\mathrm{R}$, which are themselves proportional to temperature and inversely proportional to colloid radius and fluid viscosity. This means that thermal Brownian motion is strongly hindered in the case of larger colloids, where ``larger'' means of the order of a few tens of microns. For example, if we take for comparison with later cases a colloid of a size that is comparable to a \emph{Chlamydomonas}, that is to say $a = 10 \upmu \mathrm{m}$, we get $D=2.2\times10^{-3}\upmu \mathrm{m}^2.\mathrm{s}^{-1}$. We interpret that by pure thermal diffusion, a colloid of this size would need tens of hours to explore an area equivalent to its own size.
+where $\xi_i(t)$ are Gaussian white noises. This process is heavily reliant on the thermal diffusion coefficients $D$ and $D_\mathrm{R}$. This means that thermal Brownian motion is strongly hindered in the case of larger colloids, where ``large'' means of the order of a few tens of microns. For example, if we take a colloid of a size that is comparable to a \emph{Chlamydomonas}, that is to say $a = 10\,  \upmu  \mathrm{m}$, we get $D=2.2\times10^{-3} \, \upmu  \mathrm{m}^2.\mathrm{s}^{-1}$. This value indicates that by pure thermal diffusion, a colloid of this size would need tens of hours to explore an area equivalent to its own size.
 
-Lucky, as we discussed already, swimmers can circumvent this limitation by collecting energy from their surroundings to self propel with a given velocity $\vec{v}$. A very simple model used to represent this scenario is the ABP model. We describe this model with the following Langevin equations:
+As we discussed already, swimmers can circumvent this limitation by collecting energy from their surroundings to self propel with a given velocity $\mathbf2{v}$. A very simple model used to represent this scenario is the ABP model. We implement this model with the following Langevin equations:
 \begin{equation}
 \begin{aligned}
     \label{ActiveBrownian}
@@ -83,7 +76,7 @@ Lucky, as we discussed already, swimmers can circumvent this limitation by colle
     \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
 \end{aligned}
 \end{equation}
-These equations can then be discretised with a very elementary Euler scheme, and I provide on the thesis' GitHub page a simple code to generate trajectories for this case. 
+These equations can then be discretised with an Euler scheme, and I provide on the thesis' GitHub page a simple code to generate trajectories for this case. 
 \begin{figure}
     \centering
     \includegraphics[width=.45\textwidth]{figures/chapter5/compaABP_PBP.pdf}
@@ -97,7 +90,7 @@ The MSD in that case follows \cite{franke1990galvanotaxis, howse2007selfmotile, 
 \left(D_\mathrm{R} t+e^{-D_\mathrm{R} t}-1\right)}~.
 \label{MSDABP}
 \end{equation}
-We thus expect a thermally diffusing regime at very short timelags with diffusivity $D$, followed by a superdiffusive regime in intermediate times, and finally, after the characteristic timescale $\tau_\mathrm{R}$, a second, higher diffusive regime at very long times with a new effective diffusivity $D_0$, as $D_0 = \frac{v^2}{2D_\mathrm{R}}$ (see Figure \ref{ABPPBP} for a comparison of a passive Brownian colloid and an ABP).
+We thus expect a thermally diffusing regime at very short time lags with diffusivity $D$, followed by a superdiffusive regime in intermediate times, and finally, after the characteristic time scale $\tau_\mathrm{R}$, a second, higher diffusive regime at very long times with a new effective diffusivity $D_0$, as $D_0 = \frac{v^2}{2D_\mathrm{R}}$ (see Figure \ref{ABPPBP} for a comparison of a passive Brownian colloid and an ABP).
 
 
 \textcolor{red}{perhaps change D0 to Deff in all. Check later for homogeneisation.}
@@ -157,7 +150,7 @@ along its instantaneous orientation $\phi(t)$. The position therefore evolves as
     \frac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)~,
 \end{aligned}
 \end{equation}
-which are the same equations as the ABP case. However, the orientation of the particle may suddenly change, usually according to a Poisson process with rate $\lambda$. This change is called a tumble, and happens for instance when a \emph{Chlamydomona} or an \emph{E. coli} desynchronises its flagella. The probability that at least one tumble occurs during a given time $\Delta t$ is
+which are the same equations as the ABP case. However, the orientation of the particle may suddenly change, usually according to a Poisson process with rate $\lambda$. This change is called a tumble, and happens for instance when an \emph{E. coli} bacterium desynchronises its flagella. The probability that at least one tumble occurs during a given time $\Delta t$ is
 \begin{equation}
 P_{\mathrm{tumble}}(\Delta t) = 1-\exp(-\lambda \Delta t)~.
 \end{equation}
@@ -190,7 +183,7 @@ The MSD in that case is given by (see Fig. \ref{MSDcomparatives})
 \end{equation}
 This equation is strictly equivalent to Eq. \ref{MSDABP}, save for a substitution of $\lambda$ with $D_\mathrm{R}$. The MSD is not able to distinguish between processes, and one must turn to other quantities (non-gaussianity, velocity autocorrelation, or even visually by trajectory shape) to properly assess the difference between ABP and RTP processes. 
 
-Now, we can identify two limiting cases for the RTP process: when $\lambda=0$, we naturally retrieve the ABP process. When $D_\mathrm{R}=0$, the motion is a pure run-and-tumble for reorientation comes solely from the active process, with $D_{\mathrm{eff}} =\frac{v_0^2}{2\lambda}$. This is the limit in which we work for the project I present at the end of this Chapter.
+Now, we can identify two limiting cases for the RTP process: when $\lambda=0$, we naturally retrieve the ABP process. When $D_\mathrm{R}=0$, the motion is a pure run-and-tumble for reorientation comes solely from the active process, with $D_{\mathrm{eff}} =\frac{v^2}{2\lambda}$.
 
 
 
@@ -218,7 +211,7 @@ Point-particle models are well suited to identify generic non-equilibrium mechan
 \section{Active Brownian Particles in fluid flows}
 
 \subsection{Context}
-In Chapter 4, I introduce the notion of Taylor-Aris dispersion, originally developed for passive solutions in Poiseuille flows. Extensions of this framework have been developed for biased and gyrotactic swimming microorganisms \cite{hill2002taylor,manela2003generalized,bees2010dispersion,bearon2012biased}, as well as for idealized active particles and active Brownian particles in confined flows \cite{jiang2019dispersion,peng2020upstream}. Our study provides an experimental realization with living \textit{Chlamydomonas reinhardtii} in a confined, sinusoidal Poiseuille flow, which is validated numerically with Langevin simulations.
+In Chapter 4, I introduce the notion of Taylor-Aris dispersion, originally developed for passive solutions in Poiseuille flows. Extensions of this framework have been developed for biased and gyrotactic swimming microorganisms \cite{hill2002taylor,manela2003generalized,bees2010dispersion,bearon2012biased}, as well as for idealized active particles and active Brownian particles in confined flows \cite{jiang2019dispersion,peng2020upstream}. Our study provides an experimental realization with living \textit{Chlamydomonas reinhardtii} in a confined, sinusoidal Poiseuille flow, which is validated numerically with Langevin simulations. Our study was published in the Proceedings of the National Academy of Sciences of the United States of America (PNAS) in 2025 \cite{lagoin_enhanced_2025}.
 
 
 

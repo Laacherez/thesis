@@ -1,0 +1,22 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'main.blg'
+[28] biber:342> INFO - === Tue Jun 23, 2026, 15:22:35
+[34] Biber.pm:421> INFO - Reading 'main.bcf'
+[68] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
+[75] Biber.pm:4487> INFO - Processing section 0
+[79] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography/references.bib' for section 0
+[81] bibtex.pm:1713> INFO - LaTeX decoding ...
+[126] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography/references.bib'
+[145] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[145] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[145] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[145] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[145] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[146] bbl.pm:779> INFO - Output to main.bbl
+[146] Biber.pm:132> WARN - Duplicate entry key: 'millan_numerical_2023' in file 'bibliography/references.bib', skipping ...
+[146] Biber.pm:132> WARN - Duplicate entry key: 'gue2015' in file 'bibliography/references.bib', skipping ...
+[146] Biber.pm:132> WARN - Duplicate entry key: 'polin2009chlamydomonas' in file 'bibliography/references.bib', skipping ...
+[146] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_P_Xn/33e59b5ca9ec342068223d604c3f8d55_59613.utf8, line 242, warning: 117 characters of junk seen at toplevel
+[146] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_P_Xn/33e59b5ca9ec342068223d604c3f8d55_59613.utf8, line 701, warning: 144 characters of junk seen at toplevel
+[146] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_P_Xn/33e59b5ca9ec342068223d604c3f8d55_59613.utf8, line 921, warning: 116 characters of junk seen at toplevel
+[146] Biber.pm:134> INFO - WARNINGS: 6
