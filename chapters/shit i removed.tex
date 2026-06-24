@@ -34,3 +34,18 @@ Once $f$ is known, the effective diffusivity follows from the Kubo formula
 }{\int P_{\mathrm{eq}}(x,y)\,\mathrm{d}x\,\mathrm{d}y}~.
 \label{Kubo_final}
 \end{equation}
+
+
+%%%chapter2
+\subsubsection{Simple Langevin simulation of a confined colloid}
+
+A very usual task in my group, thanks to the theses produced and defended by Maxime Lavaud \cite{maxime_thesis} and Elodie Millan \cite{elodie_thesis}, is to simulate the system I just spent a few pages describing throughly. Thought not strictly part of my doctoral work (it was more of a Master's project under Maxime and Elodie's supervisions), I briefly include it here both to pay my respects to them and to show what can be done with minimal computations and basic code.
+I invite the interested reader to check their theses for ready-to-run, Cython \footnote{Cython refers both to a compiler and a programming language that is based on Pyrex. Owing to its high level of abstraction, Cython is extremely easy to write, maintain and comprehend, all while reaching the optimization capabilities of pure C, C++ or Fortran code. When I developed algorithms myself from scratch, I mostly favoured Python, and implemented computationally heavier loops in Cython.}-compiled codes \cite{cython_website}, and I provide minimal versions here (\textcolor{red}{TODO : make a little jupyterlab for the reader to play around online. Think about whether to make one file per fig or a whole working example with simu and amalysis in the same file like Ryker did for libmobility in zaragoza.}). 
+\begin{align}
+    x_i & = x_{i-1} + \sqrt{2D_\parallel(z_{i-1})\Delta t} w_{x_i}~,\\
+    z_i & = z_{i-1} + \bar{v_d}(z_{i-1}) \Delta t + \sqrt{2D_\perp(z_{i-1})}w_{z_i}~,
+\end{align}
+
+where $w_{x_i}$ and $w_{z_i}$ are two independent Gaussian white noises of zero mean and $\Delta t$ variance, and where $\bar{v_d}(z)$ is the average drift velocity of the colloid at position $z$ as computed in Eq. \ref{final_stochastic_drift}, which includes both deterministic and stochastic contributions as per equation \ref{avg_velocity_stochdrift}.
+
+We then carefully choose a time step such that ... \textcolor{red}{Reference the introductory part. Write this part when I have rewritten the code. to do : -explanation of code, figure of traj, peq, MSD.}

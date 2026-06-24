@@ -6,11 +6,11 @@
 
 In many biological systems, one must not only take into account Brownian behaviours, but also carefully evaluate the effect of the system's or parts of the system's deformability on its dynamics. Indeed, if we take the example of a lipid bilayer, which is a soft and quasi-two-dimensional fluid, the thermal energy $k_\mathrm{B}\Theta$ of the system is sufficient to cause long-wavelength bending fluctuations of the cell membrane, thickness fluctuations, lipid movement within the plane itself, and so forth. Naturally, a neighbouring fluid's motion is then affected by these shape modifications, which can in turn affect the dynamics of a body evolving in that same bath. This coupling is not trivial. 
 
-The coupling between softness and viscous flows, which we will refer to as the elastohydrodynamic (EHD) coupling, has been extensively studied in the deterministic framework. We for example mention the emergence of lift forces near a deformable boundary at low Reynolds numbers, which have been first demonstrated theoretically \cite{sekimoto1993mechanism} \cite{Beaucourt2004}\cite{skotheim_soft_2004} \cite{Snoeijer2013} \cite{urzay_elastohydrodynamic_2007} and then experimentally \cite{Saintyves2016} \cite{Davies2018} \cite{Rallabandi2018} \cite{Vialar2019} \cite{zhang2020direct}.
+The coupling between softness and viscous flows, which we will refer to as the elastohydrodynamic (EHD) coupling, has been extensively studied in the deterministic framework. We for example mention the emergence of lift forces near a deformable boundary at low Reynolds numbers, which have been first demonstrated theoretically ~\cite{sekimoto1993mechanism} ~\cite{Beaucourt2004}~\cite{skotheim_soft_2004} ~\cite{Snoeijer2013} ~\cite{urzay_elastohydrodynamic_2007} and then experimentally ~\cite{Saintyves2016} ~\cite{Davies2018} ~\cite{Rallabandi2018} ~\cite{Vialar2019} ~\cite{zhang2020direct}.
 
-The field of stochastic EHD is still fairly new. Molecular dynamics simulations have been conducted to investigate the anomalous diffusion of a micelle near a lipid bilayer \cite{Sheikh2023}. Another recent study \cite{fares_observation_2024} demonstrated experimentally the emergence of a new, non-conservative force acting upon a Brownian soft colloid near a confining wall. However, we still to this day lack a precise theory to encompass quantitatively the long-time signatures of the coupling between softness, confinement and fluctuations.
+The field of stochastic EHD is still fairly new. Molecular dynamics simulations have been conducted to investigate the anomalous diffusion of a micelle near a lipid bilayer ~\cite{Sheikh2023}. Another recent study ~\cite{fares_observation_2024} demonstrated experimentally the emergence of a new, non-conservative force acting upon a Brownian soft colloid near a confining wall. However, we still to this day lack a precise theory to encompass quantitatively the long-time signatures of the coupling between softness, confinement and fluctuations.
 
-Because of the level of complexity of such a study, I present in this chapter a most simple model, with elementary ingredients, which can still qualitatively capture all the effects we are interested in. This model was published in \emph{Communications Physics} in 2025 \cite{lacherez_enhanced_2025} and the full print and Supplementary Information can be found in appendix of this thesis. In the following sections, I present the theoretical aspects of the model, developed by David S. Dean. I develop the numerical model used to simulate this toy model.  Finally, I show how numerics and theory compare.
+Because of the level of complexity of such a study, I present in this chapter a most simple model, with elementary ingredients, which can still qualitatively capture all the effects we are interested in. This model was published in \emph{Communications Physics} in 2025 ~\cite{lacherez_enhanced_2025} and the full print and Supplementary Information can be found in appendix of this thesis. In the following sections, I present the theoretical aspects of the model, developed by David S. Dean. I develop the numerical model used to simulate this toy model.  Finally, I show how numerics and theory compare.
 
 \section{Toy Model for soft Brownian Motion}
 \subsection{Overview of the Toy Model}
@@ -24,18 +24,18 @@ Because of the level of complexity of such a study, I present in this chapter a 
 \end{figure}
 
 
-From here on, we study a purely one-dimensional case of a Brownian colloid coupled to an elastic and fluctuating membrane (Fig. \ref{toy_model_figure_1}). The Brownian colloid is represented by a first degree of freedom, $q_1$, and is submitted to a periodic trapping potential $\phi(q_1)$ of spatial period $\lambda$ and amplitude $\Delta U$. Throughout this chapter, the Brownian colloid's degree of freedom $q_1$ will be color-coded in blue, and the membrane's degree of freedom $q_2$ in red. We couple to this colloid the toy model version of the membrane. We represent the membrane with a colloid that is submitted in a harmonic potential of energy $\frac{q_2^2}{2\kappa}$, where $\kappa$ is the compliance (or inverse stiffness). It represents the elasticity of the membrane. This second colloid is tracked with the second degree of freedom, $q_2$. 
+From here on, we study a purely one-dimensional case of a Brownian colloid coupled to an elastic and fluctuating membrane (Fig. \ref{toy_model_figure_1}). The Brownian colloid is represented by a first degree of freedom, $q_1$, and is submitted to a periodic trapping potential $\phi(q_1)$ of spatial period $\lambda$ and amplitude $\Delta U$. Throughout this chapter, the Brownian colloid's degree of freedom $q_1$ will be color-coded in blue, and the membrane's degree of freedom $q_2$ in red. We couple to this colloid the toy model version of the membrane. We represent the membrane with a colloid that is submitted in a harmonic potential of energy $q_2^2/(2\kappa)$, where $\kappa$ is the compliance (or inverse stiffness). It represents the elasticity of the membrane. This second colloid is tracked with the second degree of freedom, $q_2$. 
 
 
 
-Both the Brownian colloid and the membrane feel their own self-friction, respectively $\gamma_{11}$ and $\gamma_{22}$. Furthermore, they interact through an indirect, hydrodynamic-like interaction $\gamma_{12}$. This interaction represents the effect of the fluid that is displaced by the motion of the colloid on the membrane, and \emph{vice-versa}. All together, these terms form the friction matrix $\mathbf{\Gamma}$
+Both the Brownian colloid and the membrane feel their own self-friction, respectively $\gamma_{11}$ and $\gamma_{22}$. Furthermore, they interact through an indirect, hydrodynamic-like interaction $\gamma_{12}$. This interaction represents the effect of the fluid that is displaced by the motion of the colloid on the membrane, and \emph{vice-versa}. All together, these terms form the friction matrix $\mat\Gamma$
 \begin{equation}
-    \mathbf{\Gamma} = \begin{pmatrix}
+    \mat{\Gamma} = \begin{pmatrix}
     \gamma_{11} & \gamma_{12} \\
     \gamma_{12} & \gamma_{22}
     \end{pmatrix}
 \end{equation}
-which can be inverted to give the mobility matrix of the system, as $\mathbf{M} = \mathbf{\Gamma}^{-1}$. As per Lorentz's reciprocal theorem, both matrices must be positive definite, and, because their diagonal terms account for the self-friction and self-mobility respectively, $\mu_{11} > 0$ and $\mu_{22} > 0$.   
+which can be inverted to give the mobility matrix of the system, as $\mat{M} = \mat{\Gamma}^{-1}$. As per Lorentz's reciprocal theorem, both matrices must be positive definite, and, because their diagonal terms account for the self-friction and self-mobility respectively, $\mu_{11} > 0$ and $\mu_{22} > 0$.   
 
 We can write the total energy of the system as
 \begin{equation}
@@ -59,7 +59,7 @@ where $\eta_i$ and $\eta_j$ (with $j \in \{1, 2\}$) are Gaussian white noises of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical developments}
 
-The objective of the following developments is to compute the modification to the long-time dynamics of the Brownian colloid diffusing within the sinusoidal trap. The development I choose to present here is not the most rigorous, and corresponds to the very stiff ($\kappa \to 0$) limit of the elastic membrane. The interested reader can find a more rigorous argument based on multiscale analysis \cite{hai2008} \cite{pav2008} in the appendices of this thesis, alongside a second development for the very compliant limit ($\kappa \to \infty$). 
+The objective of the following developments is to compute the modification to the long-time dynamics of the Brownian colloid diffusing within the sinusoidal trap. The development I choose to present here is not the most rigorous, and corresponds to the very stiff ($\kappa \to 0$) limit of the elastic membrane. The interested reader can find a more rigorous argument based on multiscale analysis ~\cite{hai2008} ~\cite{pav2008} in the appendices of this thesis, alongside a second development for the very compliant limit ($\kappa \to \infty$). 
 
 
 We begin by refactoring Eqs. \ref{3ToyMod_langevin1} and \ref{3ToyMod_langevin2} in the deterministic case $\Theta = 0$ 
@@ -80,7 +80,7 @@ In the small $\kappa$ limit, we then expand the right-hand bracket term, taking 
     q_2 \simeq - \frac{\kappa \mu_{12}}{\mu_{22}} \left[ \phi'(q_1) - \frac{\kappa}{\mu_{22}}\phi''(q_1) \frac{\mathrm{d}q_1}{\mathrm{d}t} + O(\tau_2^2)\right]~.
 \end{equation}
 
-Here, we note that $\tau_2$ is the characteristic relaxation time of the harmonic trapping corresponding to the membrane elasticity, as $\tau_2 = \frac{\kappa}{\mu_{22}}$. Now, substituting this new expression for $q_2$ in Eq. \ref{3ToyMod_athermal_q1}, we obtain
+Here, we note that $\tau_2$ is the characteristic relaxation time of the harmonic trapping corresponding to the membrane elasticity, as $\tau_2 = \kappa/\mu_{22}$. Now, substituting this new expression for $q_2$ in Eq. \ref{3ToyMod_athermal_q1}, we obtain
 \begin{equation}
      \frac{\mathrm{d}q_1}{\mathrm{d}t} = - \left( \mu_{11} - \frac{\mu_{12}^2}{\mu_{22}}\right) \phi'(q_1(t)) - \frac{\kappa \mu_{12}^2}{\mu_{22}^2} \phi''(q1(t)) \frac{\mathrm{d}q_1}{\mathrm{d}t}~,
 \end{equation}
@@ -94,7 +94,7 @@ where $\mu_\mathrm{e}$ is a dressed mobility with expression
     \mu_\mathrm{e} = \frac{\mu_{11}\mu_{22} - \mu_{12}^2}{\mu_{22}\left( 1 + \frac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{22}^2}\right)}~.
 \end{equation}
 
-Remembering that $\mathbf{\Gamma} = \mathbf{M}^{-1}$, 
+Remembering that $\mat{\Gamma} = \mat{M}^{-1}$, 
 \begin{equation}
     \mu_\mathrm{e} = \frac{1}{\gamma_{11}\left( 1 + \frac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{11}^2}\right)}~.
 \end{equation}
@@ -154,14 +154,14 @@ Finally, we note that the drift velocity should read $v = J(q_1) \lambda$, and t
 \begin{equation}
     D^* = \frac{k_\mathrm{B}\Theta v}{F} = \frac{\lambda^2}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)]\mathrm{d}q_1 \int_{0}^{\lambda} \frac{\exp(\beta \phi(q_1))}{D_\mathrm{e}(q_1)}\mathrm{d}q_1}~,
 \end{equation}
-which is the generalised Lifson-Jackson formula \cite{LifsonJackson}.
+which is the generalised Lifson-Jackson formula ~\cite{LifsonJackson}.
 
 
 Finally, we replace $D_\mathrm{e}(q_1)$ in the expression 
 \begin{equation}
     D^* = \frac{k_\mathrm{B}\Theta\lambda^2}{\gamma_{11}\int_{0}^{\lambda} \mathrm{d}q \exp[\beta \phi(q)] \left(1 - \frac{\kappa \gamma_{12}^2 \phi'^2(q)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{\lambda} \mathrm{d}q \exp[-\beta \phi(q)]}~.
 \end{equation}
-And, setting $\phi(q_1) = \Delta U \phi(\frac{q_1}{\lambda})$, where $\Delta U$ is the amplitude of the periodic trap
+And, setting $\phi(q_1) = \Delta U \phi\left(\frac{q_1}{\lambda}\right)$, where $\Delta U$ is the amplitude of the periodic trap
 \begin{equation}
     D^* = \frac{k_\mathrm{B}\Theta}{\gamma_{11}\int_{0}^{1} \mathrm{d}p \exp[\beta\Delta U \psi(p)] \left(1 - \frac{\kappa \gamma_{12}^2 \Delta U^2\psi'^2(p)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{1} \mathrm{d}p \exp[-\beta \Delta U\psi(p)]}~.
     \label{D_star}
@@ -204,7 +204,7 @@ where $\xi_i$ is a zero-mean Gaussian random variable, as
 \end{equation}
 We choose to work in terms of mobility instead of friction matrix elements for convenience in the upcoming developments. They are, however, strictly equivalent.
 
-Furthermore, in the rest of this study, we choose $\phi(q_1)$ to be sinusoidal, as $\phi(q_1) = \Delta U \sin\left(\frac{2 \pi q_1}{\lambda}\right)$,
+Furthermore, in the rest of this study, we choose $\phi(q_1)$ to be sinusoidal, as $\phi(q_1) = \Delta U \sin\left(2 \pi q_1/\lambda\right)$,
 with $\Delta U$ the amplitude of the sinusoidal trap. 
 
 \subsection{Time step selection}
@@ -242,7 +242,7 @@ We also need to define an upper bound to the simulation time. We must always rem
 \begin{equation}
     \tau^*(\kappa) = \frac{\lambda^2}{D^*(\kappa)}~.
 \end{equation}
-I choose to run my simulations for a time $T_\mathrm{sim}$ which is much larger than $\tau^*$, as $T_\mathrm{sim} = 100 \tau^*$. This allows me to probe the long-time dynamics of the system, and to extract the effective diffusion coefficient from the mean-squared displacement of the Brownian colloid. This, in turn, sets the computational cost of a simulation, which I can quantify using the total number of iterations in the time loop $N$ as
+I choose to run my simulations for a time $T_\mathrm{sim}$ which is much larger than $\tau^*$, as $T_\mathrm{sim} = 100 \, \tau^*$. This allows me to probe the long-time dynamics of the system, and to extract the effective diffusion coefficient from the mean-squared displacement of the Brownian colloid. This, in turn, sets the computational cost of a simulation, which I can quantify using the total number of iterations in the time loop $N$ as
 \begin{equation}
     N = \left\lfloor \frac{T_\mathrm{sim}}{\Delta t} \right\rfloor = \left\lfloor \frac{100 \tau^*}{\Delta t} \right\rfloor~ .
 \end{equation}
@@ -311,7 +311,7 @@ def MSD(x, lags):
 With a simple estimate looking at the code above, we can see that the computational cost of such a method scales as $O(N^2)$ at worst.
 
 
-In our published work and in similar numerical studies \cite{millan_numerical_2023}, it is more convenient to first compute the \emph{histograms of displacements} at given time lags. We can then simply extract the MSD from the width of the histogram of displacements, as
+In our published work and in similar numerical studies ~\cite{millan_numerical_2023}, it is more convenient to first compute the \emph{histograms of displacements} at given time lags. We can then simply extract the MSD from the width of the histogram of displacements, as
 \begin{equation}
     \mathrm{MSD}(\Delta t) = \sigma^2(\Delta t)~,
 \end{equation}
@@ -361,7 +361,7 @@ and then crosses over to a confined regime at long times $\Delta t > \tau_2$ due
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/Final_plot.pdf}
-    \caption[Expected enhancement of the diffusion of a Brownian colloid trapped near a soft, fluctuating membrane. Comparison of theoretical asymptotes, Kubo analytical solution and numerical simulation.]{Augmentation factor $\frac{\Delta D^*(\epsilon)}{D^*}$ as a function of the coupling parameter $\epsilon$ for $\Delta U = 3.0 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\mu_{11} = 1$, $\mu_{22} = 1$, $\mu_{12} = 0.85$. The numerical results (blue dots) are in perfect agreement with the expected theoretical augmentation factors in the asymptotical regions $\epsilon \to 0$ and $\epsilon \to \infty$ (dash-dotted lines) of Eqs. as well as the crossover region, which is accessed by solving the full two-dimensional Kubo problem (solid black line).}
+    \caption[Expected enhancement of the diffusion of a Brownian colloid trapped near a soft, fluctuating membrane. Comparison of theoretical asymptotes, Kubo analytical solution and numerical simulation.]{Enhancement factor $\Delta D^*(\epsilon)/D^*$ as a function of the coupling parameter $\epsilon$ for $\Delta U = 3.0 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\mu_{11} = 1$, $\mu_{22} = 1$, $\mu_{12} = 0.85$. The numerical results (blue dots) are in perfect agreement with the expected theoretical augmentation factors in the asymptotical regions $\epsilon \to 0$ and $\epsilon \to \infty$ (dash-dotted lines) of Eqs. as well as the crossover region, which is accessed by solving the full two-dimensional Kubo problem (solid black line).}
     \label{Final_plot}
 \end{figure}
 We can finally infer all diffusion coefficients by performing affine fits of the MSDs in the diffusive regimes, remembering that in the diffusive regime
@@ -373,7 +373,7 @@ In log scale, a diffusive regime corresponds to a linear regime with a time expo
 
 For a given set of parameters, we can then compare the effect of a varying compliance of a soft membrane on the long-time diffusion coefficient of a Brownian colloid trapped nearby in a sinusoidal potential (Fig. \ref{Final_plot}). 
 
-We define an augmentation factor $\frac{\Delta D^*(\epsilon)}{D^*}$ as
+We define an augmentation factor $\Delta D^*(\epsilon)/D^*$ as
 \begin{equation}
     \frac{\Delta D^*(\epsilon)}{D^*} = \frac{D^*(\epsilon) - D^*(0)}{D^*(0)}~,
 \end{equation}
@@ -381,21 +381,21 @@ to conveniently compare the coupled to uncoupled case. We notice that numerical 
 
 Around $\epsilon = O(1)$, however, the timescale separation is lost. The particle coordinate and the elastic degree of freedom now relax on comparable timescales, and thus, neither Lifson-Jackson expression is valid.
 
-To access this crossover regime, we solve the full two-dimensional Kubo problem \footnote{for which the interested reader can find the FlexPDE code in appendix of this manuscript.}\cite{gue2015}. All the relevant developments and details on the numerical solution of the Kubo equation can be found in the appendix of this thesis. I will not go into details here, as I did not personally work on that matter. 
+To access this crossover regime, we solve the full two-dimensional Kubo problem \footnote{for which the interested reader can find the FlexPDE code in appendix of this manuscript.}~\cite{gue2015}. All the relevant developments and details on the numerical solution of the Kubo equation can be found in the appendix of this thesis. I will not go into details here, as I did not personally work on that matter. 
 
 This numerical solution does not require assuming either $\epsilon \ll 1$ or $\epsilon \gg 1$, and therefore gives the crossover between the two asymptotic regimes. It is, however, much more tedious to estimate due to the computational cost of solving. 
 
 
-Furthermore, we may input to the model biological values for the parameters. Let us consider a colloid of radius $a = 100 \mathrm{nm}$ at a distance $d = 10 \mathrm{nm}$ from the membrane of elastic modulus $E = 1 \mathrm{kPa}$. The equivalent compliance of the membrane can be found using Hertz's model to give $\kappa = (E \sqrt{ad})^{-1}$. The system is immersed in a fluid of viscosity $\eta = 10^{-3} \mathrm{Pa.s}$, at room temperature $T = 300 \mathrm{K}$. The Brownian colloid is subject to a periodic potential of amplitude $\Delta U = 4k_\mathrm{B} \Theta$ and spatial period $\lambda = a = 100 \mathrm{nm}$.
+Furthermore, we may input to the model biological values for the parameters. Let us consider a colloid of radius $a = 100 \, \mathrm{nm}$ at a distance $d = 10 \, \mathrm{nm}$ from the membrane of elastic modulus $E = 1 \, \mathrm{kPa}$. The equivalent compliance of the membrane can be found using Hertz's model to give $\kappa = (E \sqrt{ad})^{-1}$. The system is immersed in a fluid of viscosity $\eta = 10^{-3}\, \mathrm{Pa.s}$, at room temperature $T = 300 \, \mathrm{K}$. The colloid is subject to a periodic potential of amplitude $\Delta U = 4k_\mathrm{B} \Theta$ and spatial period $\lambda = a = 100\, \mathrm{nm}$.
 
 To recover mobility values, we assume $\mu_{11} = mu_{22} = (6 \pi \eta a)^{-1}$, and assume Oseen's mobility expression for $\mu_{12}$ as $\mu_{12} = (4 \ pi \eta r)^{-1}$, with $r$ the center-to-center distance between the Brownian colloid and the colloid representing the membrane, as $r = 2a + d$. 
 
-With these values, the adimentionalised compliance $\epsilon$ falls exactly in the crossover region where the system is not considered very stiff or very compliant. Still, we may estimate the expected enhancement of the long-time diffusion coefficient by simply plotting these two asymptotes (Fig. \ref{biovalues}) and recover at $\epsilon=0.013$ an expected enhancement of about $\frac{\Delta D^*}{D^*} \approx 100\%$.
+With these values, the adimentionalised compliance $\epsilon$ falls exactly in the crossover region where the system is not considered very stiff or very compliant. Still, we may estimate the expected enhancement of the long-time diffusion coefficient by simply plotting these two asymptotes (Fig. \ref{biovalues}) and recover at $\epsilon=0.013$ an expected enhancement of about $\Delta D^*/D^* \approx 100\%$.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter3/bio_values.pdf}
-    \caption[Application of the toy model with biologically plausible values to estimate the effect of softness on a real system.]{Estimation of the relative enhancement of the long-time diffusion coefficient of a Brownian colloid of radius $a=100\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}T$ and spatial period $\lambda = 100 \mathrm{nm}$ at a distance $d = 10 \mathrm{nm}$ from membrane of elastic modulus $E = 1 \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\mu_{12}$ is estimated using Oseen's model. The two asymptotes of the very rigid $\epsilon \to 0$ and very soft $\epsilon \to \infty$ are shown in dash-dotted cyan and blue lines respectively. For this system, the expected value of the relative enhancement of the long-time diffusion coefficient of the Brownian colloid is of about $\frac{\Delta D^*}{D^*} \approx 100\%$.}
+    \caption[Application of the toy model with biologically plausible values to estimate the effect of softness on a real system.]{Estimation of the relative enhancement of the long-time diffusion coefficient of a Brownian colloid of radius $a=100\,\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}\Theta$ and spatial period $\lambda = 100\, \mathrm{nm}$ at a distance $d = 10\, \mathrm{nm}$ from membrane of elastic modulus $E = 1 \, \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\mu_{12}$ is estimated using Oseen's model. The two asymptotes of the very rigid $\epsilon \to 0$ and very soft $\epsilon \to \infty$ are shown in dash-dotted cyan and blue lines respectively. For this system, the expected value of the relative enhancement of the long-time diffusion coefficient of the Brownian colloid is of about $\Delta D^*/D^* \approx 100\,\%$.}
     \label{biovalues}
 \end{figure}
 
