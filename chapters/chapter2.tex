@@ -332,19 +332,7 @@ with $\Delta W(t)$ the Wiener increment, as:
 \end{equation}
 
 
-where $\alpha$ encodes where in the time step we evaluate the integral. We need to choose a value for $\alpha$ between $0$ (left endpoint) and $1$ (right endpoint). Of course, conventions for such integrals exist ~\cite{karatzas_brownian_1991}:
-
-\begin{enumerate}
-\item{The Itô convention:} $\alpha = 0$; $\int_{t}^{t+\Delta t} g(X_s)\mathrm{d}B_s \simeq g(X_t)\Delta W$. The system reacts to the noise, there is no feedback within a single timestep. Mathematically, the SDE becomes a \emph{martingale}
-\footnote{I was unaware of the reason for using Itô convention over other counterparts prior to writing the manuscript. However, upon reading literature, I understood how practical working with martingales can be. A martingale has a bounded mean, and, given that we know its history up to time $t'< t$, its expected value at $t$ must be $\mathbb{E}\left[M_t | \left\{M_s, s \le t'\right\}\right] = M_{t'}$. In my words, this means that the expected value of a martingale at a given time is the last previously known expected value. 
-The name, however, comes from gambling, a field for which I have exactly zero interest to explore.} 
-This means that the process's evolution depends strictly on the previous time step, and not on the history before this time step. 
-However, no matter how convenient and practical this convention may be, it also entrails a modification, or rather correction to the chain rule of calculus when changing variables. We discuss this further down, as we will be using this convention for our SDE.
-
-\item{The Stratonovich convention:} $\alpha = 1/2$; $\int_{t}^{t+\Delta t} g(X_s)\mathrm{d}B_s \simeq g[(X_t + X_{t + \Delta t})(2)]\Delta W$. Stratonovich proposes a way of circumventing the complexities introduced by Itô's convention in the chain rule, breaking the martignale in the process. We now consider a noise which has a finite, non-zero correlation, but this correlation has a characteristic time that is very small compared to the discretisation time step. I will not detail it as much, as I have not really used this convention and am much less aware of its capabilities and pitfalls.
-\end{enumerate}
-
-Mathematically, it is always possible to identify a Stratonovich process to an Itô process with equivalent solutions. Therefore, it is simply a matter of convenience to choose one over the other. There are, of course, subtleties; and I invite the interested reader to read more on the matter in L. Smith's website ~\cite{oatml_ito_strat_2022} from which I liberally adapted some content within this thesis.
+where $\alpha$ encodes where in the time step we evaluate the integral. We need to choose a value for $\alpha$ between $0$ (left endpoint) and $1$ (right endpoint). 
 We'll, for the sake of the development, keep $\alpha$ as a variable for the time being.
 
 We begin by taking Eq. \ref{Fokker-Plank_mulitplicative_discrete} to order $\Delta t^{1/2}$:

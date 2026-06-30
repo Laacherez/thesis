@@ -10,97 +10,424 @@ I identify as a numerician and use computational tools to conduct my research. M
 
 \subsection{Physics is a group dance}
 
-Serendipitous discoveries are common in physics, thought they sometimes rely on numerous contributors to finally formalise. An example I am particularly fond of is the birth of interfacial physics. Agnes Pockels was a self-taught chemist who, despite not being allowed enrollement at a University, demonstrated a prowess of scientific intuition by noticing during her house duties that the behaviour of water would show modified by the presence of impurities or soap. She then designed a device so as to measure with good reproducibility surface tension. This device is the precursor to the Langmuir-Blodgett through, and her findings and method were acknowledged in Langmuir's Nobel prize-related publications.
+Serendipitous discoveries are common in physics, thought they sometimes rely on numerous contributors to finally formalise. An example I am particularly fond of is the birth of surface physics. Agnes Pockels was a self-taught chemist who, despite not being allowed enrollement at a University, demonstrated a prowess of scientific intuition by noticing during her house duties that the behaviour of water would show modified by the presence of impurities or soap~\cite{pockels1891surface, derrick1982agnes}. She then designed a device so as to measure with good reproducibility surface tension. This device is the precursor to the Langmuir-Blodgett through, and her findings and method were acknowledged in Langmuir's Nobel prize-related publications \cite{langmuir1917liquids}.
 
 The discovery of Brownian motion also falls under the qualification of ``serendipitous''. Over the end of the eighteenth century to the middle of the nineteenth century, Robert Brown, a Scottish botanist, made significant contributions to his field through the use of optical microscopy, a state-of-the-art tool at the time~\cite{pearle_brown_2010}. However, he is mostly known amongst physicists for a discovery which decorrelates completely from his field of work. In 1927, he observed \emph{Clarkia pulchella} pollen grains (Fig. \ref{Clarkia}) with a one-lens microscope. Surely, much could be revealed on the behaviour of pollen by studying its structure closely. He noted that the pollen grains were packed with smaller ``molecules'' (amyloplasts and spherosomes), a common word at the time to qualify a small granule. To his surprise, once submerged in water, the pollen grains released some of these ``molecules''. They seemed to be dancing in what he called an ``oscillatory motion''\footnote{Often in literature and dissemination events, it is improperly said that Brown observed pollen grains moving in water. This is simply not possible, neither it is reported by Brown, as pollen grains are too large to undergo such motion with a sufficient amplitude to be visible with microscopes at the time. We illustrate this quantitatively further down.}. 
-
 \begin{figure}
      \centering
     \label{Clarkia}
-    \includegraphics[width=.8\textwidth]{figures/chapter1/clarkia.pdf}
+    \includegraphics[width=.6\textwidth]{figures/chapter1/clarkia.pdf}
     \caption[\emph{Clarkia pulchella} and its pollen grains.]{\emph{Clarkia pulchella} and its pollen grains. $a)$ Painting of a \emph{Clarkia pulchella} specimen's anatomy by Frederick Pursh. $b)$ \emph{Clarkia} pollen grain under a microscope. $c)$ Bursting grain of pollen. $b)$ and $c)$ adapted from~\cite{pearle_brown_2010}.}
 \end{figure}
 
 
-Brown then repeated the experiment with other essences, and other parts of the specimens he was working on. The dance was still present, although from different sources than the male organelle. He concluded that if the process was alive, it was therefore not related to reproduction; pollen grains were not consciously seeking a mate through their motion. The then-widespread theory of George-Louis Leclerc that living things were built upon ``organic molecules'' seduced him; perhaps this motion could still owe to a living mechanism. The final blow to this theory of ``organic molecules'' with an intrinsic voluntary motion was dealt when he repeated the same observations with ``inert'' mineral dusts. 
+Brown then repeated the experiment with other essences, and other parts of the specimens he was working on. The dance was still present, although from different sources than the male organelle. He concluded that if the process was alive, it was therefore not related to reproduction; pollen grains were not consciously seeking a mate through their motion. The then-widespread theory of George-Louis Leclerc that living things were built upon ``organic molecules'' seduced him; perhaps this motion could still owe to a living mechanism. The final blow to this theory of ``organic molecules'' with an intrinsic voluntary motion was dealt when he repeated the same observations with ``inert'' mineral dusts of similar size. 
 
-This dance of ``molecules'', thought not formalised at the time, came to be known as \emph{``Brownian motion''}. 
+The dance of ``molecules'', thought not formalised at the time, came to be known as \emph{``Brownian motion''}. The theory of Brownian motion only really began to develop in the beginning of the twentieth century, through two fundamental contributions: Albert Einstein's formal description of the atomistic nature of matter in 1905, which was undeniably validated experimentally in 1908 by Jean Perrin and rewarded with a Nobel prize. 
+Einstein subscribed to the hypothesis that matter is not a continuum, and is rather made of elementary and indivisible constituents appropriately called ``atoms''. In the opening of his historical publication on what we now know to be Brownian motion~\cite{einstein_uber_1905}, he stated that ``bodies of microscopically visible size suspended in liquids must, as a result of thermal molecular motion, perform motions of such magnitude that these motions can be easily detected by a microscope''.  He started interpreting a suspension of particles in a fluid not as fundamentally distinct entities from the fluid molecules. Rather, they were larger molecules which still obeyed the same physical laws of the molecular-kinetic theory of heat, previously developed by Maxwell and Boltzmann~\cite{Boltzmann1896, Maxwell1867}. He connected his developments to ordinary diffusion from Fick's law~\cite{Fick1855}, and quantitatively derived the expression for the diffusion coefficient of a dilute suspension of particles in a fluid:
+\begin{equation}
+\boxed{
+    D_0 = \frac{k_\mathrm{B}\Theta}{\gamma}~,
+}
+\label{Eq:Stokes-einstein}
+\end{equation} 
+where $k_\mathrm{B}$ is the Boltzmann constant, $\Theta$ the fluid temperature, and $\gamma$ is the friction coefficient deriving from the Stokes drag ($\gamma = 6 \pi \eta_0 a$ for a perfect sphere of radius $a$ in a fluid of viscosity $\eta_0$). 
+This expression could finally give an estimate of the size of the particle of interest, which was for some cases impossible to do experimentally due to optical limitations. Additionally, it could as well as predict how quickly it would explore space with respect to elapsed time $t$, with the expression of its Mean Squared Displacement (MSD):
+\begin{equation}
+    \boxed{
+    \mathrm{MSD(r)} = 2dD_0t~,}
+\end{equation}
+with $r$ the position of the center of the colloid, and $d$ a factor owing to the dimensionality of the system ($d = 3$ for a three-dimensional problem). A  spherical colloid would thus explore its available space within a simple fluid linearly with respect to elapsed time.
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+Object & Estimated radius $a$ & $D_0$ & 
+$\left\langle \Delta r_{\parallel}^2\right\rangle$ at $60~\mathrm{s}$ &
+$\sqrt{\langle \Delta r_{\parallel}^2\rangle}$ \\
+\midrule
+\textit{Clarkia} pollen grain
+& $50~\upmu\mathrm{m}$
+& $4.4\times 10^{-3}~\upmu\mathrm{m}^2\,\mathrm{s}^{-1}$
+& $1.05~\upmu\mathrm{m}^2$
+& $1.0~\upmu\mathrm{m}$
+\\
+Amyloplast 
+& $3~\upmu\mathrm{m}$
+& $7.3\times 10^{-2}~\upmu\mathrm{m}^2\,\mathrm{s}^{-1}$
+& $17.5~\upmu\mathrm{m}^2$
+& $4.2~\upmu\mathrm{m}$
+\\
+\bottomrule
+\end{tabular}
+\caption{
+Order-of-magnitude comparison of Brownian motion for a whole
+\textit{Clarkia pulchella} pollen grain and for the amyloplasts observed by Brown. The diffusion coefficient is estimated from the
+Stokes-Einstein relation (Eq. \ref{Eq:Stokes-Einstein}), using
+$\Theta=298~\mathrm{K}$ and $\eta=10^{-3}~\mathrm{Pa.s}$.
+The mean-square displacement corresponds to the two-dimensional
+projected motion observed under a microscope,
+$\left\langle \Delta r_{\parallel}^2\right\rangle = 4D_0\Delta t$,
+with $\Delta t=60~\mathrm{s}$.
+}
+\label{tab:brown_clarkia_diffusion}
+\end{table}
 
 
 
-
+Perrin later confirmed Einstein's predictions by designing a whole experimental program~\cite{Perrin1909}. He prepared suspensions of known particles, measured displacements (Fig.~\ref{Perrin_rainbow}), varied particle size, liquid, viscosity, and other parameters, and obtained consistent values of Avogadro's number. The agreement made it impossible to doubt the kinetic theory of Brownian motion.
 
 
 \begin{figure}
      \centering
     \label{Perrin_rainbow}
-    \includegraphics[width=1\textwidth]{figures/chapter1/Perrin_rainbow.pdf}
-    \caption[Observation of the Brownian motion of a colloid in a fluid by Jean Perrin.]{Observation of the random and erratic motion of a colloid in a fluid by Jean Perrin (adapted from ``Mouvement brownien et réalité moléculaire'', 1909).}
+    \includegraphics[width=1\textwidth]{figures/chapter1/Brownian_scheme.pdf}
+    \caption[Observation of the Brownian motion of a colloid in a fluid by Jean Perrin.]{Observation of the random and erratic motion of a colloid in a fluid by Jean Perrin (adapted from ``Mouvement brownien et réalité moléculaire'', 1909). The coarse-grained trajectory of the colloid is represented in a rainbow line.}
 \end{figure}
 
 
 
 \section{Theoretical developments}
-\subsection{The Fokker-Plank equation}
+\label{sec:Theoretical_developments}
+\subsection{Noise amplitude derivation}
+\label{subsec:UDLangevin}
 
+The velocity of a colloid of mass $m$ and friction coefficient $\gamma$ obeys: 
 \begin{equation}
-\mathrm{d}X_t = u(X_t)\mathrm{d}t + g \mathrm{d}B_t~,
-\label{Fokker-Plank}
+    m \frac{\mathrm{d}v}{\mathrm{d}t} = - \gamma v + \xi (t)~,
+    \label{Eq:UDlangevin}
+\end{equation}
+where $\xi(t)=\sqrt{A} \eta(t)$, and $\eta$ is a Gaussian white noise, as $\langle \eta(t) \rangle_t = 0$ and $\langle \eta(t)\eta(t')\rangle_t = \delta(t-t')$. We aim at deriving an expression for $A$, the noise strength. We do so, in this development, by expressing $\mathrm{d}(v^2)$ and identifying $A$ using the equipartition of energy. 
+
+We rewrite Eq. \ref{Eq:UDlangevin} as an Ornstein-Uhlenbeck~\cite{UhlenbeckOrnstein1930} process:
+\begin{equation}
+    \mathrm{d}v = - \lambda v \mathrm{d}t + \sigma \mathrm{d}W_t~,
+    \label{Eq:UDOrstein}
+\end{equation}
+where $\mathrm{d}W_t$ is an increment of a Wiener process with $\mathrm{d}W_t^2 = \mathrm{d}t$, and with $\lambda = \gamma / m$ and $\sigma = \sqrt{A}/m$. Taking the square of the above Eq. \ref{Eq:UDOrstein}:
+\begin{equation}
+    \left(\mathrm{d}v\right)^2 = \left(\lambda v\right)^2\, (\mathrm{d}t)^2 - 2 \lambda \sigma v \mathrm{d}t \, \mathrm{d}W_t + \sigma^2 \mathrm{d}t~.
+\end{equation}
+For $\mathrm{d}t \to 0$, terms of higher order than $\mathcal{O}\mathrm{d}t$ vanish, and we get:
+\begin{equation}
+    \boxed{
+    \left(\mathrm{d}v\right)^2 = \sigma^2 \mathrm{d}t~.}
+    \label{Eq:(dv)^2}
 \end{equation}
 
-where $u(X_t)$ is the drift velocity term, $g$ is the magnitude of the noise, and $\mathrm{d}B_t$ is the increment of a Wiener process.
-
-We now take the average value of a function obeying the PDF $P(X_t, X_0; t)$, which we will call $f(X_t)$. This average value will, by definition, follow~\cite{LeBellac_2004}:
-
+On the other hand, because $\mathrm{d}v$ is a stochastic process, \textcolor{blue}{the Ito formula applies:}
 \begin{equation}
-\langle f(X_t) \rangle = \int f(X_t) P(X_t, X_0; t) \mathrm{d}X_t~,
-\label{avg_f}
+    \mathrm{d}(v^2) = 2v\mathrm{d}v + (\mathrm{d}v)^2~.
+\end{equation}
+Thus,
+\begin{equation}
+\begin{aligned}
+    \mathrm{d}\left(v^2\right) &= -2v^2 \lambda \mathrm{d}t + 2v\sigma \mathrm{d}W_t + \sigma^2 \mathrm{d}t~,\\
+    \frac{\mathrm{d}\langle\left(v^2\right)\rangle}{\mathrm{d}t} &= -2\langle v^2 \rangle \lambda  + \sigma^2~,\\
+    & = -\frac{2 \langle v^2 \rangle \gamma}{m} + \frac{A}{m^2}~,
+\end{aligned}
+\end{equation}
+because $\langle \mathrm{d}W_t \rangle = 0$. 
+
+However, at equilibrium, the variance of the velocity is stationary: 
+\begin{equation}
+    \frac{\mathrm{d}\langle\left(v^2\right)_\mathrm{eq}\rangle}{\mathrm{d}t} = 0~.
+\end{equation}
+Thus, 
+\begin{equation}
+    \langle v^2 \rangle_\mathrm{eq} = \frac{A}{2 \gamma m}~.
+    \label{v2eq_exp1}
+\end{equation}
+Finally, we invoke the theorem on the equipartition of energy:
+\begin{equation}
+    \boxed{\frac{1}{2} m \langle v^2\rangle_\mathrm{eq} = \frac{1}{2} k_\mathrm{B}\Theta}~,
+\end{equation}
+and, comparing to Eq.~\ref{v2eq_exp1}, we finally obtain for $A$:
+\begin{equation}
+    A = 2 \gamma k_\mathrm{B}\Theta~,
+\end{equation}
+which is the noise amplitude of the process described in Eq.~\ref{Eq:UDlangevin}:
+\begin{equation}
+    \langle \xi(t)\xi(t') \rangle = 2 \gamma k_\mathrm{B}\Theta \delta(t-t')~.
 \end{equation}
 
-with the initial condition $P(X_t, X_0; 0) = \delta(X_t - X_0)$, where $\delta$ is the Dirac delta function. Expanding $f(X_t)$ in a Taylor series yields:
-
+\subsection{Ballistic-to-diffusive crossover and overdamped limit}
+With the noise strength, we can now identify the time scale over which the velocity loses memory of its initial value. Starting from the Ornstein-Uhlenbeck form of Eq. \ref{Eq:UDOrstein}, we first consider the deterministic relaxation of the mean velocity. The ensemble average gives
 \begin{equation}
-    f(X_t + \mathrm{d}X_t) = f(X_t) + f'(X_t) \mathrm{d}X_t + \frac{1}{2} f''(X_t) (\mathrm{d}X_t)^2 + \ldots
-    \label{f_expansion}
+    \frac{\mathrm{d}\langle v\rangle}{\mathrm{d}t} = -\lambda \langle v\rangle~,
+\end{equation}
+since $\langle \mathrm{d}W_t\rangle=0$. Therefore,
+\begin{equation}
+    \langle v(t)\rangle = \langle v(0)\rangle e^{-\lambda t} = \langle v(0)\rangle
+    \exp\left(-\frac{t}{\tau_m}\right)~,
+\end{equation}
+where
+\begin{equation}
+    \tau_m=\frac{1}{\lambda}=\frac{m}{\gamma}
+\end{equation}
+is the momentum relaxation time.
+
+More generally, the formal solution of the Ornstein-Uhlenbeck equation is
+\begin{equation}
+    v(t) = v(0)e^{-\lambda t} + \sigma \int_0^t e^{-\lambda(t-s)}\,\mathrm{d}W_s~.
+\end{equation}
+Multiplying by $v(0)$ and averaging gives
+\begin{equation}
+    \langle v(t)v(0)\rangle = \langle v^2(0)\rangle e^{-\lambda t} + \sigma \left\langle v(0) \int_0^t e^{-\lambda(t-s)}\,\mathrm{d}B_s \right\rangle~.
+\end{equation}
+The stochastic integral is independent of the initial velocity and has zero mean, so the second term vanishes. At equilibrium, $\langle v^2(0)\rangle=k_\mathrm{B}\Theta/m$, and thus
+\begin{equation}
+    \boxed{\langle v(t)v(0)\rangle=\frac{k_\mathrm{B}\Theta}{m}\exp\left(-\frac{t}{\tau_m}\right)}~.
+\end{equation}
+This exponential decay of the velocity autocorrelation controls the ballistic-to-diffusive crossover of the mean-square displacement.
+
+Since the displacement is the time integral of the velocity,
+\begin{equation}
+    \Delta x(t)=\int_0^t v(s)\,\mathrm{d}s~,
+\end{equation}
+the MSD is
+\begin{equation}
+    \left\langle \Delta x^2(t)\right\rangle = 2D\left[t-\tau_m \left(1-\exp\left(-\frac{t}{\tau_m}\right)\right) \right]~,
+    \label{Eq:UD_MSD}
+\end{equation}
+where
+\begin{equation}
+    D = \frac{k_\mathrm{B}\Theta}{\gamma}~.
 \end{equation}
 
-Substituting $\mathrm{d}X_t$ from the Fokker-Plank equation and taking the average, we get:
-
+Equation~\ref{Eq:UD_MSD} contains two limiting regimes. At short times lags ($\Delta t\ll \tau_m$), the exponential can be expanded, and the MSD behaves as:
 \begin{equation}
-    \left\langle \frac{\mathrm{d}f(X_t)}{\mathrm{d}t} \right\rangle \simeq  \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2
-    \label{f_avg_evolution}
+    \left\langle \Delta x^2(t)\right\rangle \simeq \frac{k_\mathrm{B}\Theta}{m}\Delta t^2~.
+\end{equation}
+The motion is therefore ballistic. At long times lags ($\Delta t\gg\tau_m$), the exponential term vanishes and the MSD becomes
+\begin{equation}
+    \left\langle \Delta x^2(t)\right\rangle \simeq 2Dt~.
+\end{equation}
+The motion is therefore diffusive. 
+
+For colloids, $\tau_m$ is typically much shorter than the experimental observation time. The velocity can therefore be treated as a
+fast variable and eliminated, leading to the overdamped Langevin equation
+\begin{equation}
+    \gamma \dot{x} = F(x) + \xi(t)~.
+\end{equation}
+Equivalently,
+\begin{equation}
+    \mathrm{d}x=\gamma^{-1} F(x)\,\mathrm{d}t+\sqrt{2D}\,\mathrm{d}W_t~,
+\end{equation}
+with :
+\begin{equation}
+\boxed{
+    D = 
+    \frac{k_\mathrm{B}\Theta}{\gamma}~.}
 \end{equation}
 
-Combining this with the definition of the average value of $f(X_t)$, we can derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$:
-\begin{eqnarray}
-\int \mathrm{d}X_t \frac{\partial f(X_t)}{\partial t} f(X_t) = \frac{\partial f(X_t)}{\partial X_t} u(X_t) + \frac{1}{2}  \frac{\partial^2 f(X_t)}{\partial X_t^2} g^2\\
-= \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t)~,
-\end{eqnarray}
 
-where $G$ is the Generator, defined as $G = u(X_t) \frac{\partial}{\partial X_t} + \frac{1}{2} g^2 \frac{\partial^2}{\partial X_t^2}~$. Taking the adjoint of $G$ as $G^\dagger$, we can rewrite the above equation as:
-\begin{equation}
-    \int \mathrm{d}X_t\, P(X_t, X_0; t) G f(X_t) = \int \mathrm{d}X_t\, f(X_t) G^\dagger P(X_t, X_0; t)~.
-\end{equation}
 
-We can then derive the Fokker-Plank equation for the PDF $P(X_t, X_0; t)$ as:
-\begin{equation}
-    \frac{\partial P(X_t, X_0; t)}{\partial t} = G^\dagger P(X_t, X_0; t) = -\frac{\partial}{\partial X_t} \left( u(X_t) P(X_t, X_0; t) \right) + \frac{1}{2} \frac{\partial^2}{\partial X_t^2} \left( g^2 P(X_t, X_0; t) \right)~.
-\end{equation}
 
-Thus, for a bulk Brownian motion with Langevin equation
+\subsection{Stochastic conventions}
+\label{sec:ito}
+Before deriving the Fokker-Planck equation in the next section, we must choose which convention we use to integrate a stochastic differential equation of the form
 \begin{equation}
-    \frac{\mathrm{d}x}{\mathrm{d}t} = \sqrt{2D_0} \eta(t)~,
-    \label{Langevin_Fokker_plank_bulk}
+    \mathrm{d}X_t = u(X_t)\,\mathrm{d}t + g(X_t)\,\mathrm{d}W_t~.
 \end{equation}
+Brownian trajectories are nowhere-differentiable, so $g(X_t)$ inside the stochastic integral must be chosen carefully. A general way to define it is through an $\alpha$-discretisation:
+\begin{equation}
+    \int_t^{t+\Delta t} g(X_s)\,\mathrm{d}B_s
+    \simeq
+    g\left[(1-\alpha)X_t+\alpha X_{t+\Delta t}\right]\Delta B_t~,
+\end{equation}
+where $\Delta B_t = B_{t+\Delta t}-B_t$. Different values of $\alpha$ correspond to different stochastic conventions~\cite{karatzas_brownian_1991}.
 
-with $x$ the colloid's position, $D_0$ the bulk diffusion coefficient, and $\eta(t)$ a white noise of zero mean and unit variance, we can identify $u(x) = 0$ and $g = \sqrt{2D_0}$, and thus, the Fokker-Plank equation for the PDF of the colloid's position reads:
+The Itô convention corresponds to $\alpha=0$. In this case,
 \begin{equation}
-    \frac{\partial P(x, x_0; t)}{\partial t} = D_0 \frac{\partial^2 P(x, x_0; t)}{\partial x^2}~,
-    \label{Fokker_Plank_bulk_diffusion_equation}
+    \int_t^{t+\Delta t} g(X_s)\,\mathrm{d}B_s
+    \simeq
+    g(X_t)\Delta B_t~.
 \end{equation}
-which is the well-known diffusion equation.
+The noise amplitude is therefore evaluated at the beginning of the time step. This makes the integral non-anticipating, as the integrand depends only on information available before the Brownian increment $\Delta B_t$ is realised. As a result, the stochastic integral
+\begin{equation}
+    \int_0^t g(X_s)\,\mathrm{d}B_s
+\end{equation}
+is a martingale. In particular, the expected future increment is zero. This property is quite useful when averaging: stochastic terms of the form $g(X_t)\,\mathrm{d}W_t$ then have zero mean.
+
+However, the Itô convention modifies the usual chain rule. Since Brownian increments scale as
+\begin{equation}
+    \mathrm{d}W_t \sim \sqrt{\mathrm{d}t}~,
+\end{equation}
+one has the Itô rule
+\begin{equation}
+    (\mathrm{d}W_t)^2 = \mathrm{d}t~.
+\end{equation}
+Therefore, terms of second order in $\mathrm{d}W_t$ contribute at order $\mathrm{d}t$ and cannot be neglected. For a smooth function $f(X_t)$, one obtains Itô's formula:
+\begin{equation}
+    \mathrm{d}f(X_t)=f'(X_t)\,\mathrm{d}X_t+\frac{1}{2}f''(X_t)(\mathrm{d}X_t)^2~.
+\end{equation}
+For the Itô stochastic differential equation
+\begin{equation}
+    \mathrm{d}X_t = u(X_t)\,\mathrm{d}t + g(X_t)\,\mathrm{d}W_t~,
+\end{equation}
+this gives:
+\begin{equation}
+    \mathrm{d}f(X_t)=\left[
+        u(X_t)f'(X_t)+\frac{1}{2}g^2(X_t)f''(X_t)
+    \right]\mathrm{d}t+g(X_t)f'(X_t)\,\mathrm{d}W_t~.
+\end{equation}
+We keep in mind this second order contribution as we use the Itô convention further down when deriving the Fokker-planck equation.
+
+Another common convention is the Stratonovich convention, corresponding to $\alpha=1/2$:
+\begin{equation}
+    \int_t^{t+\Delta t} g(X_s)\,\mathrm{d}B_s\simeq g\left(\frac{X_t+X_{t+\Delta t}}{2}\right)\Delta B_t~.
+\end{equation}
+The noise amplitude is then evaluated at the midpoint of the time step. The Stratonovich convention preserves the usual rules of calculus, which often makes it more natural when stochastic equations are obtained as limits of deterministic equations driven by rapidly fluctuating noise with a finite correlation time. However, the corresponding stochastic integral is no longer non-anticipating as the Itô convention is, because the midpoint involves \(X_{t+\Delta t}\), which already contains information about the increment $\Delta B_t$.
+
+Choosing a stochastic convention is not simply a notational modification from one convetion to the other: for multiplicative noise, it changes the drift term that appears in the Itô representation of the dynamics.
+
+In this manuscript, we use the Itô convention. This choice is convenient because the stochastic integral has zero mean and because the associated Fokker-Planck equation follows directly from the generator of the Itô process. For additive noise, where \(g\) is constant, all conventions coincide since \(g'(x)=0\). This is the case for a Brownian particle in an unbounded bulk fluid with constant diffusion coefficient.
+
+\subsection{From Langevin dynamics to the Fokker-Planck equation}
+
+The Langevin equation provides a trajectory-level description of Brownian motion. 
+It shows how the position of a colloid evolves under deterministic forces and thermal fluctuations. However, we are sometimes more interested in the probability of finding the colloid at a given position and time. The Fokker-Planck equation provides an equivalent description at the level of the probability density.
+
+Let $P(x,t|x_0)$ denote the probability density of finding the particle at position $x$ at time $t$, knowing that it was initially located at $x_0$. Its initial condition is therefore:
+\begin{equation}
+    P(x,t=0|x_0)=\delta(x-x_0)~.
+\end{equation}
+The Fokker-Planck equation is the evolution equation obeyed by this probability density.
+
+For a stochastic process, this current contains both a deterministic contribution, due to the drift, and a diffusive contribution, due to the noise.
+
+We consider the Itô stochastic differential equation defined in section \ref{sec:ito}
+\begin{equation}
+    \mathrm{d}X_t=u(X_t)\,\mathrm{d}t+g(X_t)\,\mathrm{d}W_t~,
+    \label{eq:ito_sde_general}
+\end{equation}
+where $u(X_t)$ is the drift, $g(X_t)$ is the noise amplitude, and $B_t$ is a Wiener process. The corresponding Fokker-Planck equation reads
+\begin{equation}
+    \frac{\partial P(x,t|x_0)}{\partial t}=-\frac{\partial}{\partial x}
+    \left[u(x)P(x,t|x_0)\right]+
+    \frac{1}{2}\frac{\partial^2}{\partial x^2}
+    \left[g^2(x)P(x,t|x_0) \right]~.
+    \label{eq:fokker_planck_general}
+\end{equation}
+Equivalently, Since probability is conserved, the density $P$ can be written as a conservation equation
+\begin{equation}
+\frac{\partial P}{\partial t}=-\frac{\partial J}{\partial x}
+\end{equation}
+where $J(x,t)$ is the probability current, and
+\begin{equation}
+    J(x,t)
+    =
+    u(x)P(x,t|x_0)
+    -
+    \frac{1}{2}
+    \frac{\partial}{\partial x}
+    \left[
+        g^2(x)P(x,t|x_0)
+    \right]~
+\end{equation}
+in this case.
+
+The first term in the current corresponds to deterministic transport by the drift velocity $u(x)$, while the second term is the spreading induced by the stochastic fluctuations. In the particular case of additive noise, where $g$ is constant, this diffusive contribution reduces to the usual Fick diffusion current \cite{Fick1855}.
+
+For example, for a Brownian particle in an unbounded bulk fluid, the overdamped Langevin equation is
+\begin{equation}
+    \mathrm{d}x=\sqrt{2D_0}\,\mathrm{d}W_t~.
+\end{equation}
+We identify
+\begin{equation}
+    u(x)=0,
+    \qquad
+    g(x)=\sqrt{2D_0}~.
+\end{equation}
+Substitution into Eq.~\eqref{eq:fokker_planck_general} gives
+\begin{equation}
+    \frac{\partial P(x,t|x_0)}{\partial t}=D_0\frac{\partial^2 P(x,t|x_0)}{\partial x^2}~,
+    \label{eq:bulk_diffusion_equation}
+\end{equation}
+which is the diffusion equation.
+
+A more complex case involving multiplicative noise is presented in Chapter 2.
 
 \section{Advances and state of the Art}
 
 
 \section{Bases of numerical simulations}
+
+\subsection{The Euler scheme}
+Computational physics by essence do not work with continuous processes. One of the biggest challenges is to choose or sometimes develop discretisation methods to remain accurate physically, but also computationally efficient. Throughout this manuscript, the codes I develop mostly rely on the Euler-Maruyama method for their discretisation step. Fortunately, this method has largely been applied to Brownian problems as an extension of the Euler method to stochastic processes, and is exceptionally inexpensive to simulate.
+
+
+
+
+\subsubsection{Error propagation}
+The Euler-Maruyama remains a first-order approximation: it is by no means accurate at any point, and its recursivity means errors build upon each other the further one inspects the simulated data. The choice of a small enough time step is thus crucial to ensure minimal error propagation throughout the simulation.
+
+For the sake of safety, I follow a simple protocol in the determination of the time step I use in simulations. First, I identify all time scales in the system. For the aforementioned underdamped Brownian motion, we expect only one: the inertial time scale $\tau_m$. Other processes can have various characteristic times, and in that case, we choose the smallest amongst them. 
+
+Then, I choose a time lag $\Delta t$ which satisfies
+\begin{equation}
+    \Delta t \leq \frac{1}{100}\tau_m~,
+\end{equation}
+where $1/100$ is a common safety used to ensure the time step is smaller than the smallest time scale of the system. 
+
+I illustrate the importance of the time lag duration choice in Fig. \ref{fig:error_propagation_euler}. 
+
+\section{Discretised underdamped Langevin equation}
+
+\begin{equation}
+    \frac{\mathrm{d}W_t}{\mathrm{d}t} \simeq \frac{w_i}{\Delta t}~,
+\end{equation}
+where $w_i$ is a random Gaussian number with $\langle w_i w_j \rangle = \Delta t$. Then, Eq. \ref{Eq:UDlangevin} becomes:
+\begin{equation}
+    v_{i+1} = \left(1 - \frac{\Delta t}{\tau_m}\right)v_i + \sqrt{\frac{2k_\mathrm{B}\Theta}{m \tau_m}} w_i~.
+\end{equation}
+
+
+
+
+\begin{lstlisting}[caption={Simulation of an underdamped, free bulk Brownian motion}]
+    def simulate_underdamped_euler(dt):
+
+        nsteps = int(np.round(tmax / dt))
+        t = np.arange(nsteps + 1) * dt
+
+        x = np.zeros((ntraj, nsteps + 1))
+        v = np.zeros((ntraj, nsteps + 1))
+
+        v[:, 0] = 0.0
+
+        drift_velocity =  0.0
+
+        noise_prefactor = np.sqrt(2 * vT2 * dt / tau)
+
+        for n in range(nsteps):
+            xi = rng.normal(0.0, 1.0, size=ntraj)
+
+            v[:, n + 1] = (
+                v[:, n] - (dt / tau) * (v[:, n] - drift_velocity) + noise_prefactor * xi
+            )
+
+            x[:, n + 1] = x[:, n] + dt * v[:, n]
+
+        return t, x, v
+\end{lstlisting}
+
+
+
+
+\subsection{Noise generation}
+
+
+\section{Numerical results}
+
+\subsection{Trajectories}
+
+
+\begin{figure}
+    \centering
+    \includegraphics{Codes/chapter1/2dbrown_traj.pdf}[Two-dimensional Brownian motion generated from an underdamped Langevin equation.]{}
+\end{figure}
+\subsection{Mean squared displacement and inference of the diffusivity}
+
+\textcolor{blue}{Wednesday : abstract and conclusion.}
