@@ -1,4 +1,9 @@
+% ============================================================
+% Encoding and page geometry
+% ============================================================
+
 \usepackage[utf8]{inputenc}
+
 \usepackage[
   a4paper,
   inner=2.8cm,
@@ -7,7 +12,258 @@
   bottom=2.7cm,
   includehead
 ]{geometry}
+
 \setlength{\headheight}{14pt}
+
+
+% ============================================================
+% Colors
+% ============================================================
+
+\usepackage{xcolor}
+
+\definecolor{SnippetBack}{HTML}{FFF7ED}
+\definecolor{SnippetFrame}{HTML}{E76F51}
+\definecolor{SnippetTitle}{HTML}{7C2D12}
+
+\definecolor{CodeKeyword}{HTML}{6D28D9}
+\definecolor{CodeComment}{HTML}{6B7280}
+\definecolor{CodeString}{HTML}{B45309}
+\definecolor{CodeNumber}{HTML}{9CA3AF}
+
+
+% ============================================================
+% Text spacing
+% ============================================================
+
+\usepackage{setspace}
+\usepackage{parskip}
+
+\setstretch{1.12}
+
+
+% ============================================================
+% Table of contents, appendices, included PDFs
+% ============================================================
+
+\usepackage[nottoc]{tocbibind} % Adds list of figures/tables to TOC
+\usepackage{pdfpages}
+
+
+% ============================================================
+% Headers and footers
+% ============================================================
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \renewcommand{\headrulewidth}{0.3pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+
+% ============================================================
+% Chapter tabs
+% Black tabs, chapter number only, outer edge of the page
+% Odd pages: right side
+% Even pages: left side
+% ============================================================
+
+\usepackage{tikz}
+\usepackage{eso-pic}
+
+\newif\ifshowchaptertabs
+\showchaptertabstrue
+
+\newcommand{\enablechaptertabs}{\global\showchaptertabstrue}
+\newcommand{\disablechaptertabs}{\global\showchaptertabsfalse}
+
+\newcommand{\chaptertab}{%
+  \AddToShipoutPictureBG{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \ifshowchaptertabs
+        \ifnum\value{chapter}>0
+          \ifodd\value{page}
+            % Right-hand pages: tab on the right
+            \node[
+              fill=black,
+              text=white,
+              font=\sffamily\bfseries\small,
+              minimum width=0.8cm,
+              minimum height=1.8cm,
+              anchor=east
+            ] at ([yshift={-2.5cm-\value{chapter}*1.9cm}]current page.north east)
+            {\thechapter};
+          \else
+            % Left-hand pages: tab on the left
+            \node[
+              fill=black,
+              text=white,
+              font=\sffamily\bfseries\small,
+              minimum width=0.8cm,
+              minimum height=1.8cm,
+              anchor=west
+            ] at ([yshift={-2.5cm-\value{chapter}*1.9cm}]current page.north west)
+            {\thechapter};
+          \fi
+        \fi
+      \fi
+    \end{tikzpicture}%
+  }%
+}
+
+\AtBeginDocument{\chaptertab}
+
+% ============================================================
+% Tables
+% ============================================================
+
+\usepackage{longtable} % Tables continuing across pages
+\usepackage{booktabs}
+
+
+% ============================================================
+% Algorithms
+% ============================================================
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+% ============================================================
+% Mathematics
+% ============================================================
+
+\usepackage{amsmath, amssymb}
+\usepackage{upgreek}
+\usepackage{esvect}
+\usepackage{bm}
+
+\newcommand{\vect}[1]{\bm{#1}}      % vectors
+\newcommand{\tens}[1]{\bm{#1}}      % tensors
+\newcommand{\mat}[1]{\mathbf{#1}}   % matrices
+
+
+% ============================================================
+% Figures
+% ============================================================
+
+\usepackage{graphicx}
+
+
+% ============================================================
+% Cute code snippets
+% ============================================================
+
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{listings,skins,breakable}
+
+\lstdefinestyle{thesispython}{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{CodeKeyword}\bfseries,
+  commentstyle=\color{CodeComment}\itshape,
+  stringstyle=\color{CodeString},
+  showstringspaces=false,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  tabsize=4,
+  numbers=left,
+  numberstyle=\scriptsize\color{CodeNumber},
+  numbersep=8pt
+}
+
+\lstset{style=thesispython}
+
+\renewcommand{\lstlistingname}{Snippet}
+\renewcommand{\lstlistlistingname}{List of snippets}
+
+\newtcblisting{pycode}[2][]{
+  enhanced,
+  breakable,
+  listing only,
+  listing engine=listings,
+  listing options={style=thesispython},
+  colback=SnippetBack,
+  colframe=SnippetFrame,
+  coltitle=white,
+  fonttitle=\sffamily\bfseries,
+  title={#2},
+  attach boxed title to top left={
+    xshift=4mm,
+    yshift=-2mm
+  },
+  boxed title style={
+    colback=SnippetFrame,
+    colframe=SnippetFrame,
+    arc=2mm,
+    boxrule=0pt,
+    left=2mm,
+    right=2mm,
+    top=1mm,
+    bottom=1mm
+  },
+  arc=2mm,
+  boxrule=0.6pt,
+  left=2mm,
+  right=2mm,
+  top=4mm,
+  bottom=2mm,
+  before skip=1em,
+  after skip=1em,
+  #1
+}
+
+\newcommand{\pyinline}{\lstinline[style=thesispython]}
+
+
+% ============================================================
+% Bibliography
+% ============================================================
+
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none
+]{biblatex}
+
+\addbibresource{bibliography/references.bib}
+
+
+% ============================================================
+% Hyperlinks
+% ============================================================
+
+\usepackage[hidelinks]{hyperref}
+
+% ============================================================
+% Unnumbered chapter helper
+% ============================================================
+
+\newcommand{\unnumberedchapter}[1]{%
+  \chapter*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}%
+  \markboth{#1}{#1}%
+}
+
+% ============================================================
+% Publication appendix helpers
+% ============================================================
 
 \newcommand{\currentpublicationtitle}{}
 
@@ -20,8 +276,6 @@
   \markright{\thesection\quad #1}%
 }
 
-\usepackage[hidelinks]{hyperref}
-
 \newcommand{\includepublicationpdf}[2][]{%
   \includepdf[
     pages=-,
@@ -33,84 +287,9 @@
     #1
   ]{#2}%
 }
-
-\usepackage{xcolor}
-
-\usepackage{setspace}
-\usepackage{parskip}
-\setstretch{1.12}
-
-\usepackage[nottoc]{tocbibind} % Add list of fig to TOC
-\usepackage{pdfpages}
-
-\usepackage{fancyhdr}
-
-\pagestyle{fancy}
-\fancyhf{} 
-
-\fancyhead[LE,RO]{\thepage}
-
-\fancyhead[RE]{\nouppercase{\leftmark}}
-\fancyhead[LO]{\nouppercase{\rightmark}}
-
-
-\fancypagestyle{plain}{
-  \fancyhf{}
-  \fancyhead[LE,RO]{\thepage}
-  \renewcommand{\headrulewidth}{0.3pt}
-  \renewcommand{\footrulewidth}{0pt}
+\newcommand{\blankpageafterpublication}{%
+  \clearpage
+  \thispagestyle{empty}%
+  \null
+  \clearpage
 }
-
-\usepackage{tikz}
-\usepackage{eso-pic}
-
-\newcommand{\chaptertab}{%
-  \AddToShipoutPictureBG{%
-    \begin{tikzpicture}[remember picture, overlay]
-      \ifnum\value{chapter}>0
-        \node[
-          fill=black,
-          text=white,
-          font=\sffamily\bfseries\small,
-          minimum width=0.8cm,
-          minimum height=1.8cm,
-          anchor=east
-        ] at ([yshift={-2.5cm-\value{chapter}*1.9cm}]current page.north east) {\thechapter};
-      \fi
-    \end{tikzpicture}%
-  }%
-} % Chapter little black thing at the side
-
-\usepackage{longtable} % Table continue across pages
-\usepackage{algorithm} % Code snipsnips
-\usepackage{algpseudocode}
-\usepackage{amsmath, amssymb}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{booktabs}
-
-\usepackage{listings}
-\usepackage{upgreek}
-
-
-\lstset{
-    language=Python,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\color{blue},
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
-    showstringspaces=false,
-    frame=single,
-    breaklines=true
-}
-\renewcommand{\lstlistingname}{Snippet} % Alternate code snipsnips ? I odnt remember
-
-\usepackage{esvect}
-\usepackage{bm}
-\usepackage{bm}
-
-\newcommand{\vect}[1]{\bm{#1}}      % vectors
-\newcommand{\tens}[1]{\bm{#1}}      % tensors
-\newcommand{\mat}[1]{\mathbf{#1}}   % matrices
-\usepackage[backend=biber,style=numeric, sorting=none]{biblatex}
-\addbibresource{bibliography/references.bib}

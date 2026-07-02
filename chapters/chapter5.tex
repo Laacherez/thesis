@@ -1,7 +1,7 @@
 \chapter{Activity in Brownian Motion}
 
 \section{Introduction}
-The final part of this manuscript is dedicated to the study of active matter and their interplay with external fluid flows. This subject was actually the motivation for my PhD thesis, and the first part of this Chapter presents my first introduction to the field of active matter. The end of this Chapter treats the problem of active Taylor-Aris dispersion. The notion of Taylor-Aris dispersion is described in Chapter 4. For the sake of clarity, I thus invite the reader to consult its developments before reading this part. We conducted this work in tandem with Marc Lagoin, Guirec de Tournemire, Ahmad Badr and Antoine Allard. 
+The final part of this manuscript is dedicated to the study of active matter and their interplay with external fluid flows. This subject was actually the motivation for my PhD thesis, and the first part of this chapter presents my first introduction to the field of active matter. The end of this chapter treats the problem of active Taylor-Aris dispersion. The notion of Taylor-Aris dispersion is described in chapter 4. For the sake of clarity, I thus invite the reader to consult its developments before reading this part. We conducted this work in tandem with Marc Lagoin, Guirec de Tournemire, Ahmad Badr and Antoine Allard. 
 \subsection{Activity}
 
 Authors define active matter as one or both of the following:
@@ -23,7 +23,7 @@ Numerous examples of active systems exist, and these systems can be found at any
 
 
 \subsection{\emph{Chlamydomonas reinhardtii} as a model swimmer}
-A particularly convenient experimental model of a biological microswimmer is the unicellular green alga \emph{Chlamydomonas reinhardtii} (Fig. \ref{chlamy_img}) ~\cite{polin2009chlamydomonas}. This tiny alga is the system we use in the study at the end of this Chapter. It measures only a few tens of microns at most. However, through the beating of its anterior flagella, it self-propels in a fluid at surprisingly high speeds of ten body lengths per second. Yet, this is not sufficient for \emph{Chlamydomonas} to be considered high-Reynolds systems ($\mathrm{R_e} \gg 1$), as it typically reaches a Reynolds number of about $\mathrm{R_e} = 1 \times 10 ^{-4}$. It thus still evolves in a very viscous medium. 
+A particularly convenient experimental model of a biological microswimmer is the unicellular green alga \emph{Chlamydomonas reinhardtii} (Fig. \ref{chlamy_img}) ~\cite{polin2009chlamydomonas}. This tiny alga is the system we use in the study at the end of this chapter. It measures only a few tens of microns at most. However, through the beating of its anterior flagella, it self-propels in a fluid at surprisingly high speeds of ten body lengths per second. Yet, this is not sufficient for \emph{Chlamydomonas} to be considered high-Reynolds systems ($\mathrm{R_e} \gg 1$), as it typically reaches a Reynolds number of about $\mathrm{R_e} = 1 \times 10 ^{-4}$. It thus still evolves in a very viscous medium. 
 
 \begin{figure}
     \centering
@@ -199,7 +199,7 @@ Now, we can identify two limiting cases for the RTP process: when $\lambda=0$, w
 \subsection{Other conventional methods for swimmer modelling}
 The models I presented so far describe active matter through an ensemble of reduced sets of degrees of freedom. Therein, the swimmer is treated as a point-like particle through its leading far-field hydrodynamic signature. Though minimal, these methods are efficient in terms of computation cost. In the next section, I present a case study where complex swimmers interact with a flow and two boundaries using these techniques and recover the correct behaviour observed in experiments. However, these more elementary techniques do not fully resolve the finite swimmer size, surface motion, full lubrication forces, or detailed flow structures that become important when swimmers come close to one another or to a boundary.
 
-A first step is to represent the swimmer as a finite-size body with surface activity. The classical example is the squirmer model introduced by James Lighthill in 1952 ~\cite{lighthill1952squirming} but refined by Blake in 1971 ~\cite{Blake_1971}, in which a spherical particle swims by imposing a tangential slip velocity on its surface. The propulsion mechanisms are then modeled through the flow generated at the swimmer's boundaries. It is then possible to recover different swimmer behaviours (Shaker, pusher, puller, etc.) by tweaking the system's parameters. This model can be implemented in numerical methods such as the RigidMultiblobWalls method I describe in Chapter 2 to model complex, active bodies in a fluid. 
+A first step is to represent the swimmer as a finite-size body with surface activity. The classical example is the squirmer model introduced by James Lighthill in 1952 ~\cite{lighthill1952squirming} but refined by Blake in 1971 ~\cite{Blake_1971}, in which a spherical particle swims by imposing a tangential slip velocity on its surface. The propulsion mechanisms are then modeled through the flow generated at the swimmer's boundaries. It is then possible to recover different swimmer behaviours (Shaker, pusher, puller, etc.) by tweaking the system's parameters. This model can be implemented in numerical methods such as the RigidMultiblobWalls method I describe in chapter 2 to model complex, active bodies in a fluid. 
 
 More resolved approaches include solving the fluid, such as boundary-element, immersed-boundary, multiparticle collision dynamics, or lattice-Boltzmann methods. These methods compute the fluid flow around the swimmer and can incorporate complex swimmer shapes, deformable boundaries, confinement, or no-slip walls. They are much more computationally demanding, but they provide access to regimes where the point-particle approximation breaks down.
 
@@ -211,7 +211,7 @@ Point-particle models are well suited to identify generic non-equilibrium mechan
 \section{Active Brownian Particles in fluid flows}
 
 \subsection{Context}
-In Chapter 4, I introduce the notion of Taylor-Aris dispersion, originally developed for passive solutions in Poiseuille flows. Extensions of this framework have been developed for biased and gyrotactic swimming microorganisms ~\cite{hill2002taylor,manela2003generalized,bees2010dispersion,bearon2012biased}, as well as for idealized active particles and active Brownian particles in confined flows ~\cite{jiang2019dispersion,peng2020upstream}. Our study provides an experimental realization with living \textit{Chlamydomonas reinhardtii} in a confined, sinusoidal Poiseuille flow, which is validated numerically with Langevin simulations. Our study was published in the Proceedings of the National Academy of Sciences of the United States of America (PNAS) in 2025 ~\cite{lagoin_enhanced_2025}.
+In chapter 4, I introduce the notion of Taylor-Aris dispersion, originally developed for passive solutions in Poiseuille flows. Extensions of this framework have been developed for biased and gyrotactic swimming microorganisms ~\cite{hill2002taylor,manela2003generalized,bees2010dispersion,bearon2012biased}, as well as for idealized active particles and active Brownian particles in confined flows ~\cite{jiang2019dispersion,peng2020upstream}. Our study provides an experimental realization with living \textit{Chlamydomonas reinhardtii} in a confined, sinusoidal Poiseuille flow, which is validated numerically with Langevin simulations. Our study was published in the Proceedings of the National Academy of Sciences of the United States of America (PNAS) in 2025 ~\cite{lagoin_enhanced_2025}.
 
 
 
@@ -299,7 +299,7 @@ Along the $y-$axis, I simply make sure before conducting momentum analyses that 
 
 
 \subsection{Results}
-We recall the Taylor-Aris dispersion formula from the last Chapter, but keep in mind that the swimmer now has an effective diffusion coefficient at long times which is not $D$, the thermal diffusion coefficient, but $D_0$, which we defined in the above sections as $D_0 = v^2/ D_\mathrm{R}$. The expected enhancement following the Taylor-Aris prediction thus reads
+We recall the Taylor-Aris dispersion formula from chapter 4, but keep in mind that the swimmer now has an effective diffusion coefficient at long times which is not $D$, the thermal diffusion coefficient, but $D_0$, which we defined in the above sections as $D_0 = v^2/ D_\mathrm{R}$. The expected enhancement following the Taylor-Aris prediction thus reads
 \begin{equation}
     D_{x,\mathrm{TA}} = D_0(1 + \alpha \mathrm{Pe}^2)~,
     \label{TaylorArisFormula}
@@ -357,16 +357,10 @@ where $\beta$ is a geometric factor. \textcolor{red}{Couldnt PeA just be include
 
 \section{Conclusion and perspectives}
 
-In this Chapter, I have investigated the dispersion of active microswimmers in confined viscous flows, using \textit{Chlamydomonas reinhardtii} as a model swimmer. The aim was to test whether a classical theory for passive transport, namely the Taylor-Aris dispersion, can be extended to self-propelled particles whose motion is persistent and orientation variable. For this, microfluidic experiments were combined with single-cell tracking, statistical analysis, numerical Langevin simulations, and theoretical modelling.
+In this chapter, I have investigated the dispersion of active microswimmers in confined viscous flows, using \textit{Chlamydomonas reinhardtii} as a model swimmer. The aim was to test whether a classical theory for passive transport, namely the Taylor-Aris dispersion, can be extended to self-propelled particles whose motion is persistent and orientation variable. For this, microfluidic experiments were combined with single-cell tracking, statistical analysis, numerical Langevin simulations, and theoretical modelling.
 
 The experiments confirmed that the spatial distribution of the alga is strongly affected by confinement. In agreement with previous observations on swimming microorganisms, the cells were found to accumulate near the channel walls. This boundary accumulation is not a geometric detail: it determines how the swimmers sample the imposed Poiseuille flow and it plays a central role in their cross-streamwise distribution. In the direction along the flow, the MSD displayed a clear crossover from a short-time ballistic regime, dominated by persistent swimming and flow advection effects, to a long-time diffusive-like regime. The latter regime was clearly affected by the amplitude of the imposed flow.
 
 These observations were quantified by a minimal theoretical description and by RTP Langevin simulations. Despite the complexity of the living system, the main behaviours could be captured by an effective active-particle description.
 
 Several directions remain open. First, \textit{Chlamydomonas reinhardtii} is a puller-type swimmer, and it would be interesting to test whether the same active Taylor-Aris mechanism persists, or is modified and how, for pusher-type microorganisms such as \emph{E. coli}. Second, the present work focused on unbiased swimming in imposed flows. Incorporating external stimuli such as light, chemical gradients, or electromagnetic fields in general could reveal how taxis modifies active dispersion. Stronger confinement would require a more detailed treatment of near-wall hydrodynamic and lubrication effects, as well as possible transitions between swimming, adhesion, and gliding. Finally, the oscillatory flows used here were kept in a quasi-steady regime to obtain sufficient statistical resolution. Exploring higher oscillation frequencies, especially beyond the natural orientational decorrelation rate $\tau_\mathrm{R}$ of the swimmers, could reveal new couplings which are relevant to biological settings.
-
-
-
-
-\textcolor{red}{Last thing to do: I asked Marc what PeA is on his figures, because it is unclear to me why we need it (3.7 factor ??). Will update when i have understood. Sorry tom.}
-\textcolor{blue}{Code is ready. Add chlamy github to chapter. Add code to git thesis.}

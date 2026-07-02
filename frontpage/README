@@ -1,0 +1,11 @@
+Voici des modèles de page Latex conforme aux recommendations de l'UB.
+Elles se compilent avec la commande pdflatex.
+Ces pages, une fois compilées en PDF, peuvent être inclus dans un manuscrit de thèse avec la commande suivante :
+
+
+\includepdf[pagecommand={\thispagestyle{empty}}]{page_garde.pdf}
+\includepdf[pagecommand={\thispagestyle{empty}}]{page_resume_FR_ENG.pdf}
+
+Sous réserve d'avoir chargé la librairie suivante :
+
+\usepackage{pdfpages}

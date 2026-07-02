@@ -16,7 +16,8 @@ from numpy.random import SeedSequence
 
 
 # Please note that I developed this code while the theory was also being developed, so as a rule of thumb, there is no kbT, and
-# if there is one, it's equal to 1.
+# if there is one, it's equal to 1. It is also not perfect, I sometimes relied on old stackexchange posts or gpt for tips on optimisation.
+# for instance, dont ask me anything on the BLAS stuff, i have no clue. I just know it was a recurrent thing to try to increase efficiency.
 from tm_sinusoid_trap_pack_save_every import trajectory_sin_trap
 
 

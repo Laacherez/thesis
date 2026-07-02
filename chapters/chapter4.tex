@@ -1,12 +1,9 @@
-
-
-
 \chapter{Brownian motion in fluid flows}
 
 
 \section{Introduction}
 Fluid flows are ubiquitous in many biological settings. The study of fluid dynamics provides insights on multiple ranges of applications.
-Oceanic currents and large-scale weather phenomena ~\cite{pedlosky_geophysical_1987}, the lift of an airplane foil ~\cite{anderson_aerodynamics_2016}, surfing ~\cite{butt_physics_2024} and drug biodisponibility all rely at least partly on a range of application of fluid dynamics. The latter is particularly relevant to my thesis, as it is a perfect example of the interplay between a fluid flow and Brownian motion for the diffusive transport of drugs in the bloodstream. In this Chapter, I will focus on the study of Brownian motion in fluid flows, and more specifically in viscous flows. This is a very common situation in microfluidic experiments.
+Oceanic currents and large-scale weather phenomena ~\cite{pedlosky_geophysical_1987}, the lift of an airplane foil ~\cite{anderson_aerodynamics_2016}, surfing ~\cite{butt_physics_2024} and drug biodisponibility all rely at least partly on a range of application of fluid dynamics. The latter is particularly relevant to my thesis, as it is a perfect example of the interplay between a fluid flow and Brownian motion for the diffusive transport of drugs in the bloodstream. In this chapter, I will focus on the study of Brownian motion in fluid flows, and more specifically in viscous flows. This is a very common situation in microfluidic experiments.
 
 \subsection{The Reynolds number}
 We commonly use the Reynolds number $\mathrm{Re}$ to predict the behaviour of a fluid. This number is a ratio between inertial and viscous forces in the fluid
@@ -27,7 +24,7 @@ Most microfluidic experiments and simulations are conducted in the low-Reynolds-
 
 In the framework of this thesis, I am interested in understanding flow effects on Brownian motion. Specifically, one question has already been very well investigated in the last century: \emph{"What happens to a Brownian solute once it is advected by a low-Reynolds, viscous flow?"} 
 
-This Chapter first introduces the classical Taylor-Aris theory, developed to predict the dispersion of a Brownian solute under such flow. Then, I present an adjacent unpublished work carried out in collaboration with Joshua Mc. Graw, Blaise Delmotte and their respective groups, investigating hydrodynamic interactions in a dilute Brownian solute under flow advection. 
+This chapter first introduces the classical Taylor-Aris theory, developed to predict the dispersion of a Brownian solute under such flow. Then, I present an adjacent unpublished work carried out in collaboration with Joshua Mc. Graw, Blaise Delmotte and their respective groups, investigating hydrodynamic interactions in a dilute Brownian solute under flow advection. 
 
 
 \section{Taylor-Aris dispersion}
@@ -90,13 +87,13 @@ which is the classical Taylor-Aris formula ~\cite{taylor_dispersion_1953} ~\cite
     \label{DeffD0}
 \end{figure}
 
-Taylor-Aris dispersion is still a very much ongoing field of study. Researchers have incorporated to the original Taylor-Aris theory a range of sophistications, from time-varying flow profiles ~\cite{vedel_transient_2012} ~\cite{lee_taylor_2014} to particle size determination ~\cite{cottet_mixtures_2007} ~\cite{cottet_individual_2010} ~\cite{cipelletti_polydispersity_2014} ~\cite{lesaux_size-based_2008}, and even to active swimmers ~\cite{lagoin_enhanced_2025}, which will be the focus of the next Chapter.
+Taylor-Aris dispersion is still a very much ongoing field of study. Researchers have incorporated to the original Taylor-Aris theory a range of sophistications, from time-varying flow profiles ~\cite{vedel_transient_2012} ~\cite{lee_taylor_2014} to particle size determination ~\cite{cottet_mixtures_2007} ~\cite{cottet_individual_2010} ~\cite{cipelletti_polydispersity_2014} ~\cite{lesaux_size-based_2008}, and even to active swimmers ~\cite{lagoin_enhanced_2025}, which will be the focus of the next chapter.
  
 \section{Hydrodynamic interactions in an advected solute}
 The reason I became personally interested in flow effects on Brownian motion in the first place is thanks to Masoodah Gunny (ESPCI) and her thesis supervisors Alexandre Vilquin and Joshua McGraw. Their group focuses among other thematiques on the problem of Taylor-Aris dispersion near the solid-liquid interface. Specifically, they wonder in this project whether the volume fraction of a solute in a flow can influence the diffusion of this solute, even a very low density (this is akin to an ideal gas limit). Because this problem is highly nontrivial from experimental standpoint, their group together with Blaise Delmotte (LadHyX) suggested I conduct numerical simulations to replicate their system while in control of every parameter and interaction. I present here briefly their experimental protocol, their problematique and the results of our collaboration. 
 
 \subsection{Experimental aspects}
-This part of the Chapter is largely based on Masoodah Gunny's PhD thesis manuscript ~\cite{gunny_near-surface_2025}. 
+This part of the chapter is largely based on Masoodah Gunny's PhD thesis manuscript ~\cite{gunny_near-surface_2025}. 
 
 Experiments are carried out with silica beads of radius $a=55 \, \mathrm{nm}$ in salted water of concentration $[\mathrm{NaCl}] = 5.4-54\, \mathrm{mg.L}^{-1}$ (with corresponding Debye lengths $l_\mathrm{D} = 35-10 \, \mathrm{nm}$). The solution is injected in a microfluidic channel setup of length $L = 8.8\,\mathrm{cm}$, width $W = 180\,  \upmu \mathrm{ m}$ and thickness $H = 20 \, \upmu  \mathrm{m}$. A pressure gradient $\Delta P$ is then applied between the entrance and exit of the channel to start the flowing. Very close to the wall, we can approximate the Poiseuille profile of the flow in the microchannel as a linear shear $\gamma$ (Fig. \ref{alex}), and we take the shear rate $\dot\gamma$ as $\dot\gamma = H/(2\eta)\,\Delta P$ with $\eta$ the fluid's viscosity. We are interested in individual colloid behaviour, and thus need an imaging technique that allows for the visualisation of individual colloids rather than a global concentration profile.
 
@@ -196,7 +193,7 @@ with $Z$ a normalisation factor, and $U(z)$ the total potential energy, as
 \begin{equation}
     U(z) = A \exp(- \frac{z}{l_\mathrm{D}}) + \frac{z}{l_\mathrm{B}}~,
 \end{equation}
-with $A$ the dimensionless magnitude of the electrostatic repulsion potential, $l_\mathrm{D}$ the Debye length and $l_\mathrm{B}$ the Boltzmann constant. All these quantities are defined in Chapter 3. The distribution of colloids can be integrated to show that about $99\,\%$ of the colloids lie under $5l_\mathrm{B}$, and about $60\,\%$ below $l_\mathrm{B}$ (Fig. \ref{numerical_setup}b)). Thus, the problem is twofold: if we choose to lower the simulation cost by using a small box of height $H_\mathrm{box}$ with $H_\mathrm{box}<5l_\mathrm{B}$ to place our colloids at the beginning of the simulations, the solution will inevitably homogenize to a lower volume fraction after some simulation time (Fig. \ref{badlB}). Furthermore, one cannot simply choose a volume fraction for the whole box and homogeneously place the colloids in that box. Colloids diffuse in the vertical direction and reach the Gibbs-Boltzmann distribution, which is not homogeneous (Fig. \ref{numerical_setup} b)). Thus, the volume fraction is higher close to the wall and lower far from it (Fig. \ref{numerical_setup} b)). To compute the true volume fraction $\phi_{5l_\mathrm{B}}$ we must feed the code for the whole $5l_\mathrm{B}$ slab in order to retrieve the target $\phi$ within the $\lambda_\mathrm{e}$ slab, we use
+with $A$ the dimensionless magnitude of the electrostatic repulsion potential, $l_\mathrm{D}$ the Debye length and $l_\mathrm{B}$ the Boltzmann constant. All these quantities are defined in chapter 2 \textcolor{red}{are they?}. The distribution of colloids can be integrated to show that about $99\,\%$ of the colloids lie under $5l_\mathrm{B}$, and about $60\,\%$ below $l_\mathrm{B}$ (Fig. \ref{numerical_setup}b)). Thus, the problem is twofold: if we choose to lower the simulation cost by using a small box of height $H_\mathrm{box}$ with $H_\mathrm{box}<5l_\mathrm{B}$ to place our colloids at the beginning of the simulations, the solution will inevitably homogenize to a lower volume fraction after some simulation time (Fig. \ref{badlB}). Furthermore, one cannot simply choose a volume fraction for the whole box and homogeneously place the colloids in that box. Colloids diffuse in the vertical direction and reach the Gibbs-Boltzmann distribution, which is not homogeneous (Fig. \ref{numerical_setup} b)). Thus, the volume fraction is higher close to the wall and lower far from it (Fig. \ref{numerical_setup} b)). To compute the true volume fraction $\phi_{5l_\mathrm{B}}$ we must feed the code for the whole $5l_\mathrm{B}$ slab in order to retrieve the target $\phi$ within the $\lambda_\mathrm{e}$ slab, we use
 \begin{equation}
     \phi_{5l_\mathrm{B}} = \frac{\phi \lambda_\mathrm{e}}{5l_\mathrm{B} \frac{1}{Z}\int_0^{\lambda_\mathrm{e}} P_\mathrm{eq}(z) \mathrm{d}z }~.
 \end{equation}

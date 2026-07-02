@@ -1,26 +1,32 @@
-\documentclass[11pt]{book} % or book / custom thesis class
+\documentclass[12pt]{book} % or book / custom thesis class
 
 \input{preamble}
 
 \begin{document}
-
-\chaptertab
-
 \tableofcontents
 \listoffigures
-\listoftables
+\disablechaptertabs
+
 
 \include{chapters/notations}
+\include{chapters/introduction_fr}
 \include{chapters/introduction}
+\chaptertab
 \include{chapters/chapter1}
 \include{chapters/chapter2}
 \include{chapters/chapter3}
 \include{chapters/chapter4}
 \include{chapters/chapter5}
+\disablechaptertabs
+
 \include{chapters/conclusion}
-\include{chapters/Appendix 1: Publications}
+\include{chapters/Appendix_publications}
 
 \printbibliography
+
+
+\includepdf{chapters/abstract.pdf}
+
 
 
 \end{document}
