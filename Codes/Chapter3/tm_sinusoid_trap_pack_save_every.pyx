@@ -136,7 +136,7 @@ def qi_full_arrays(
     return q1_saved, q2_saved
 
 
-# === Public Interface ===
+# === Interface ===
 
 def trajectory_sin_trap(int N, dtype_t g_11, dtype_t g_12, dtype_t g_22,
                         dtype_t tau, dtype_t kappa, dtype_t alpha, dtype_t l,

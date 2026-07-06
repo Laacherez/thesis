@@ -468,8 +468,3 @@ class SinusoidalTrapSimulator:
         out_file = os.path.join(output_subdir, "combined_global.pickle")
         with open(out_file, "wb") as fh:
             pickle.dump(out, fh, protocol=pickle.HIGHEST_PROTOCOL)
-
-        print(
-            f"Global trajectories: {global_traj} | Converged: {converged} | Total wall time: {total_wall:.2f}s"
-        )
-        print(f"Wrote: {out_file}")

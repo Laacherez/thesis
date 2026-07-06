@@ -1,22 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[28] biber:342> INFO - === Wed Jul  1, 2026, 19:26:58
-[34] Biber.pm:421> INFO - Reading 'main.bcf'
-[75] Biber.pm:1002> INFO - Found 105 citekeys in bib section 0
-[82] Biber.pm:4487> INFO - Processing section 0
-[86] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography/references.bib' for section 0
-[87] bibtex.pm:1713> INFO - LaTeX decoding ...
-[143] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography/references.bib'
-[421] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[421] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[421] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[421] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[450] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[477] bbl.pm:779> INFO - Output to main.bbl
-[477] Biber.pm:132> WARN - Duplicate entry key: 'millan_numerical_2023' in file 'bibliography/references.bib', skipping ...
-[477] Biber.pm:132> WARN - Duplicate entry key: 'gue2015' in file 'bibliography/references.bib', skipping ...
-[477] Biber.pm:132> WARN - Duplicate entry key: 'polin2009chlamydomonas' in file 'bibliography/references.bib', skipping ...
-[477] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_Dlyp/33e59b5ca9ec342068223d604c3f8d55_11160.utf8, line 493, warning: 117 characters of junk seen at toplevel
-[477] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_Dlyp/33e59b5ca9ec342068223d604c3f8d55_11160.utf8, line 952, warning: 144 characters of junk seen at toplevel
-[477] Biber.pm:132> WARN - BibTeX subsystem: /var/folders/cn/hc6sy9vj2vlchg2np1k_bvvh0000gn/T/biber_tmp_Dlyp/33e59b5ca9ec342068223d604c3f8d55_11160.utf8, line 1172, warning: 116 characters of junk seen at toplevel
-[477] Biber.pm:134> INFO - WARNINGS: 6
+[27] biber:342> INFO - === Fri Jul  3, 2026, 14:27:37
+[32] Biber.pm:421> INFO - Reading 'main.bcf'
+[68] Biber.pm:1002> INFO - Found 34 citekeys in bib section 0
+[74] Biber.pm:4487> INFO - Processing section 0
+[78] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography/references.bib' for section 0
+[80] bibtex.pm:1713> INFO - LaTeX decoding ...
+[132] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography/references.bib'
+[222] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[222] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[222] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[222] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[230] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[237] bbl.pm:779> INFO - Output to main.bbl
