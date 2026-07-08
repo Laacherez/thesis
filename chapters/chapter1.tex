@@ -14,18 +14,18 @@ Luckily, History has a tendency to repeat itself: the discovery of Brownian moti
 \end{figure}
 
 
-Brown then repeated the experiment with other essences, and other parts of the specimens he was working on. The dance was still present, although from different sources than male organelles. He concluded that if the process was alive, it was therefore not related to reproduction; pollen grains were not consciously seeking a mate through their motion. The then-widespread theory of George-Louis Leclerc that living things were built upon ``organic molecules'' seduced him \cite{buffon1749histoire}; perhaps this motion could still owe to a living mechanism. The final blow to this theory of ``organic molecules'' with an intrinsic voluntary motion was dealt when he repeated the same observations with ``inert'' mineral dusts of similar size. 
+Brown then repeated the experiment with other essences, and other parts of the specimens he was working on. The dance was still present, although from different sources than male organelles. He concluded that if the process was alive, it was therefore not related to reproduction; pollen grains were not consciously seeking a mate through their motion. The then-widespread theory of George-Louis Leclerc that living things were built upon ``organic molecules'' seduced him~\cite{buffon1749histoire}; perhaps this motion could still owe to a living mechanism. The final blow to this theory of ``organic molecules'' with an intrinsic voluntary motion was dealt when he repeated the same observations with ``inert'' mineral dusts of similar size. 
 
 The dance of ``molecules'', thought not formalised at the time, came to be known as \emph{``Brownian motion''}. The theory of Brownian motion only really began to develop in the beginning of the twentieth century, through two fundamental contributions: Albert Einstein's formal description of the atomistic nature of matter in 1905, which was undeniably validated experimentally in 1908 by Jean Perrin and rewarded with a Nobel prize. 
 Einstein subscribed to the hypothesis that matter is not a continuum, and is rather made of elementary and indivisible constituents appropriately called ``atoms''. In the opening of his historical publication on what we now know to be Brownian motion~\cite{einstein_uber_1905}, he stated that ``bodies of microscopically visible size suspended in liquids must, as a result of thermal molecular motion, perform motions of such magnitude that these motions can be easily detected by a microscope''.  He started interpreting a suspension of particles in a fluid not as fundamentally distinct entities from the fluid molecules. Rather, they were larger molecules which still obeyed the same physical laws of the molecular-kinetic theory of heat, previously developed by Maxwell and Boltzmann~\cite{Boltzmann1896, Maxwell1867}. He connected his developments to ordinary diffusion from Fick's law~\cite{Fick1855}, and quantitatively derived the expression for the diffusion coefficient of a dilute suspension of particles in a fluid:
 \begin{equation}
 \boxed{
-    D_0 = \frac{k_\mathrm{B}\Theta}{\gamma}~,
+    D_0 = \dfrac{k_\mathrm{B}\Theta}{\gamma}~,
 }
 \label{Eq:Stokes-einstein}
 \end{equation} 
 where $k_\mathrm{B}$ is the Boltzmann constant, $\Theta$ the fluid temperature, and $\gamma$ is the friction coefficient deriving from the Stokes drag ($\gamma = 6 \pi \eta_0 a$ for a perfect sphere of radius $a$ in a fluid of viscosity $\eta_0$). 
-This expression could finally give an estimate of the size of the particle of interest, which was for some cases impossible to do experimentally due to optical limitations. I provide, in Table~\ref{tab:brown_clarkia_diffusion}, an estimate of the diffusion coefficient for a whole pollen grain and a single amyloplast, approximated as a spherical particle. In terms of displacement relative to characteristic size, amyloplasts explored their available space much more efficiently that the larger pollen grains. Additionally, it could as well as predict how quickly it would explore space with respect to elapsed time $t$, with the expression of its Mean Squared Displacement (MSD):
+This expression, known as the Stokes-Einstein relation could finally give an estimate of the size of the particle of interest, which was for some cases impossible to do experimentally due to optical limitations. I provide, in Table~\ref{tab:brown_clarkia_diffusion}, an estimate of the diffusion coefficient for a whole pollen grain and a single amyloplast, approximated as a spherical particle. In terms of displacement relative to characteristic size, amyloplasts explored their available space much more efficiently that the larger pollen grains. Additionally, it could as well as predict how quickly it would explore space with respect to elapsed time $t$, with the expression of its Mean Squared Displacement (MSD):
 \begin{equation}
     \boxed{
     \mathrm{MSD(r)} = 2dD_0t~,}
@@ -82,19 +82,19 @@ This section aims at providing the theoretical tools to extract information from
 
 \subsection{The underdamped Langevin equation}
 \label{subsec:UDLangevin}
-Stochastic processes can be described by a Langevin equation \cite{Langevin1908Brownian}, which is essentially a Newton's second law with a stochastic forcing owing to the thermal agitation of the fluid molecules. The velocity of a colloid of mass $m$ and friction coefficient $\gamma$ obeys the following Langevin equation: 
+Stochastic processes can be described by a Langevin equation~\cite{Langevin1908Brownian}, which is essentially a Newton's second law with a stochastic forcing owing to the thermal agitation of the fluid molecules. The velocity of a colloid of mass $m$ and friction coefficient $\gamma$ obeys the following Langevin equation: 
 \begin{equation}
-    m \frac{\mathrm{d}v}{\mathrm{d}t} = - \gamma v + \xi (t)~,
+    m \dfrac{\mathrm{d}v}{\mathrm{d}t} = - \gamma v + \xi (t)~,
     \label{Eq:UDlangevin}
 \end{equation}
 where $\xi(t)$ is a stochastic forcing such that $\xi(t)=\sqrt{A} \eta(t)$, and $\eta$ is a Gaussian white noise, as $\langle \eta(t) \rangle_t = 0$ and $\langle \eta(t)\eta(t')\rangle_t = \delta(t-t')$. We aim at deriving an expression for $A$, the noise strength. We do so, in this development, by expressing $\mathrm{d}(v^2)$ and identifying $A$ using the equipartition of energy. 
 
-We rewrite Eq. \ref{Eq:UDlangevin} as an Ornstein-Uhlenbeck~\cite{UhlenbeckOrnstein1930} process:
+We rewrite Eq.~\ref{Eq:UDlangevin} as an Ornstein-Uhlenbeck~\cite{UhlenbeckOrnstein1930} process:
 \begin{equation}
     \mathrm{d}v = - \lambda v \mathrm{d}t + \sigma \mathrm{d}W_t~,
     \label{Eq:UDOrstein}
 \end{equation}
-where $\mathrm{d}W_t$ is an increment of a Wiener process with $\mathrm{d}W_t^2 = \mathrm{d}t$, and with $\lambda = \gamma / m$ and $\sigma = \sqrt{A}/m$. Taking the square of the above Eq. \ref{Eq:UDOrstein}:
+where $\mathrm{d}W_t$ is an increment of a Wiener process with $\mathrm{d}W_t^2 = \mathrm{d}t$, and with $\lambda = \gamma / m$ and $\sigma = \sqrt{A}/m$. Taking the square of the above Eq.~\ref{Eq:UDOrstein}:
 \begin{equation}
     \left(\mathrm{d}v\right)^2 = \left(\lambda v\right)^2\, (\mathrm{d}t)^2 - 2 \lambda \sigma v \mathrm{d}t \, \mathrm{d}W_t + \sigma^2 \mathrm{d}t~.
 \end{equation}
@@ -120,22 +120,22 @@ Thus,
 \begin{equation}
 \begin{aligned}
     \mathrm{d}\left(v^2\right) &= -2v^2 \lambda \mathrm{d}t + 2v\sigma \mathrm{d}W_t + \sigma^2 \mathrm{d}t~,\\
-    \frac{\mathrm{d}\langle\left(v^2\right)\rangle}{\mathrm{d}t} &= -2\langle v^2 \rangle \lambda  + \sigma^2~,\\
-    & = -\frac{2 \langle v^2 \rangle \gamma}{m} + \frac{A}{m^2}~,
+    \dfrac{\mathrm{d}\langle\left(v^2\right)\rangle}{\mathrm{d}t} &= -2\langle v^2 \rangle \lambda  + \sigma^2~,\\
+    & = -\dfrac{2 \langle v^2 \rangle \gamma}{m} + \dfrac{A}{m^2}~,
 \end{aligned}
 \end{equation}
 because $\langle \mathrm{d}W_t \rangle = 0$. However, at equilibrium, the variance of the velocity is stationary: 
 \begin{equation}
-    \frac{\mathrm{d}\langle\left(v^2\right)_\mathrm{eq}\rangle}{\mathrm{d}t} = 0~.
+    \dfrac{\mathrm{d}\langle\left(v^2\right)_\mathrm{eq}\rangle}{\mathrm{d}t} = 0~.
 \end{equation}
 Thus, 
 \begin{equation}
-    \langle v^2 \rangle_\mathrm{eq} = \frac{A}{2 \gamma m}~.
+    \langle v^2 \rangle_\mathrm{eq} = \dfrac{A}{2 \gamma m}~.
     \label{v2eq_exp1}
 \end{equation}
 Finally, we invoke the theorem on the equipartition of energy:
 \begin{equation}
-    \boxed{\frac{1}{2} m \langle v^2\rangle_\mathrm{eq} = \frac{1}{2} k_\mathrm{B}\Theta}~,
+    \boxed{\dfrac{1}{2} m \langle v^2\rangle_\mathrm{eq} = \dfrac{1}{2} k_\mathrm{B}\Theta}~,
 \end{equation}
 and, comparing to Eq.~\ref{v2eq_exp1}, we finally obtain for $A$:
 \begin{equation}
@@ -147,18 +147,18 @@ which is the noise amplitude of the process described in Eq.~\ref{Eq:UDlangevin}
 \end{equation}
 
 \subsection{Ballistic-to-diffusive crossover and overdamped limit}
-With the noise strength, we can now identify the time scale over which the velocity loses memory of its initial value. Starting from the Ornstein-Uhlenbeck form of Eq. \ref{Eq:UDOrstein}, we first consider the deterministic relaxation of the mean velocity. The ensemble average gives:
+With the noise strength, we can now identify the time scale over which the velocity loses memory of its initial value. Starting from the Ornstein-Uhlenbeck form of Eq.~\ref{Eq:UDOrstein}, we first consider the deterministic relaxation of the mean velocity. The ensemble average gives:
 \begin{equation}
-    \frac{\mathrm{d}\langle v\rangle}{\mathrm{d}t} = -\lambda \langle v\rangle~,
+    \dfrac{\mathrm{d}\langle v\rangle}{\mathrm{d}t} = -\lambda \langle v\rangle~,
 \end{equation}
 since $\langle \mathrm{d}W_t\rangle=0$. Therefore,
 \begin{equation}
     \langle v(t)\rangle = \langle v(0)\rangle e^{-\lambda t} = \langle v(0)\rangle
-    \exp\left(-\frac{t}{\tau_m}\right)~,
+    \exp\left(-\dfrac{t}{\tau_m}\right)~,
 \end{equation}
 where
 \begin{equation}
-    \tau_m=\frac{1}{\lambda}=\frac{m}{\gamma}
+    \tau_m=\dfrac{1}{\lambda}=\dfrac{m}{\gamma}
     \label{taum}
 \end{equation}
 is the momentum relaxation time. 
@@ -173,7 +173,7 @@ Multiplying by $v(0)$ and averaging gives
 \end{equation}
 The stochastic integral is independent of the initial velocity and has zero mean, so the second term vanishes. At equilibrium, $\langle v^2(0)\rangle=k_\mathrm{B}\Theta/m$, and thus
 \begin{equation}
-    \boxed{\langle v(t)v(0)\rangle=\frac{k_\mathrm{B}\Theta}{m}\exp\left(-\frac{t}{\tau_m}\right)~.}
+    \boxed{\langle v(t)v(0)\rangle=\dfrac{k_\mathrm{B}\Theta}{m}\exp\left(-\dfrac{t}{\tau_m}\right)~.}
     \label{ballistic_msd_1}
 \end{equation}
 This exponential decay of the velocity autocorrelation controls the ballistic-to-diffusive crossover of the mean-square displacement.
@@ -185,16 +185,16 @@ Since the displacement is the time integral of the velocity,
 \end{equation}
 the MSD is
 \begin{equation}
-    \left\langle \Delta x^2(t)\right\rangle = 2D_0\left[t-\tau_m \left(1-\exp\left(-\frac{t}{\tau_m}\right)\right) \right]~,
+    \left\langle \Delta x^2(t)\right\rangle = 2D_0\left[t-\tau_m \left(1-\exp\left(-\dfrac{t}{\tau_m}\right)\right) \right]~,
     \label{Eq:UD_MSD}
 \end{equation}
 where
 \begin{equation}
-    D_0 = \frac{k_\mathrm{B}\Theta}{\gamma}~.
+    D_0 = \dfrac{k_\mathrm{B}\Theta}{\gamma}~.
 \end{equation}
-Equation~\ref{Eq:UD_MSD} contains two limiting regimes. At short times ($t \ll \tau_m$), the exponential can be expanded, and the MSD behaves as:
+Eq.~\ref{Eq:UD_MSD} contains two limiting regimes. At short times ($t \ll \tau_m$), the exponential can be expanded, and the MSD behaves as:
 \begin{equation}
-    \left\langle \Delta x^2(t)\right\rangle \simeq \frac{k_\mathrm{B}\Theta}{m}t^2~.
+    \left\langle \Delta x^2(t)\right\rangle \simeq \dfrac{k_\mathrm{B}\Theta}{m}t^2~.
     \label{msd_shorttimes}
 \end{equation}
 The motion is therefore ballistic. At long times lags ($t \gg\tau_m$), the exponential term vanishes and the MSD becomes
@@ -250,7 +250,7 @@ one has the Itô rule
 \end{equation}
 Therefore, terms of second order in $\mathrm{d}W_t$ contribute at order $\mathrm{d}t$ and cannot be neglected. For a smooth function $f(X_t)$, one obtains Itô's formula:
 \begin{equation}
-    \mathrm{d}f(X_t)=f'(X_t)\,\mathrm{d}X_t+\frac{1}{2}f''(X_t)(\mathrm{d}X_t)^2~.
+    \mathrm{d}f(X_t)=f'(X_t)\,\mathrm{d}X_t+\dfrac{1}{2}f''(X_t)(\mathrm{d}X_t)^2~.
 \end{equation}
 For the Itô stochastic differential equation
 \begin{equation}
@@ -259,14 +259,14 @@ For the Itô stochastic differential equation
 this gives:
 \begin{equation}
     \mathrm{d}f(X_t)=\left[
-        u(X_t)f'(X_t)+\frac{1}{2}g^2(X_t)f''(X_t)
+        u(X_t)f'(X_t)+\dfrac{1}{2}g^2(X_t)f''(X_t)
     \right]\mathrm{d}t+g(X_t)f'(X_t)\,\mathrm{d}W_t~.
 \end{equation}
 We keep in mind this second order contribution as we use the Itô convention further down when deriving the Fokker-planck equation.
 
 Another common convention is the Stratonovich convention, corresponding to $\alpha=1/2$:
 \begin{equation}
-    \int_t^{t+\Delta t} g(X_s)\,\mathrm{d}W_s\simeq g\left(\frac{X_t+X_{t+\Delta t}}{2}\right)\Delta W_t~.
+    \int_t^{t+\Delta t} g(X_s)\,\mathrm{d}W_s\simeq g\left(\dfrac{X_t+X_{t+\Delta t}}{2}\right)\Delta W_t~.
 \end{equation}
 The noise amplitude is then evaluated at the midpoint of the time step. The Stratonovich convention preserves the usual rules of calculus, which often makes it more natural when stochastic equations are obtained as limits of deterministic equations driven by rapidly fluctuating noise with a finite correlation time. However, the corresponding stochastic integral is no longer non-anticipating as the Itô convention is, because the midpoint involves $X_{t+\Delta t}$, which already contains information about the increment $\Delta W_t$. Choosing a stochastic convention is not simply a notational modification from one convention to the other: for multiplicative noise, it changes the drift term that appears in the Itô representation of the dynamics. In this manuscript, we use the Itô convention. This choice is convenient because the stochastic integral has zero mean and because the associated Fokker-Planck equation follows directly from the generator of the Itô process. For additive noise, where $g$ is constant, all conventions coincide since $g'(x)=0$. This is the case for a Brownian particle in an unbounded bulk fluid with constant diffusion coefficient.
 
@@ -276,32 +276,33 @@ The noise amplitude is then evaluated at the midpoint of the time step. The Stra
 \begin{equation}
     P(x,t=0|x_0)=\delta(x-x_0)~.
 \end{equation}
-The Fokker-Planck equation is the evolution equation obeyed by this probability density. We consider the Itô stochastic differential equation defined in section \ref{sec:ito} on the particle position in time $X_t$:
+The Fokker-Planck equation is the evolution equation obeyed by this probability density. We consider the Itô stochastic differential equation defined in section~\ref{sec:ito} on the particle position in time $X_t$:
 \begin{equation}
     \mathrm{d}X_t=u(X_t)\,\mathrm{d}t+g(X_t)\,\mathrm{d}W_t~,
     \label{eq:ito_sde_general}
 \end{equation}
 where $u(X_t)$ is the drift, $g(X_t)$ is the noise amplitude, and $W_t$ is a Wiener process. The corresponding Fokker-Planck equation reads:
 \begin{equation}
-    \frac{\partial P(x,t|x_0)}{\partial t}=-\frac{\partial}{\partial x}
+    \dfrac{\partial P(x,t|x_0)}{\partial t}=-\dfrac{\partial}{\partial x}
     \left[u(x)P(x,t|x_0)\right]+
-    \frac{1}{2}\frac{\partial^2}{\partial x^2}
+    \dfrac{1}{2}\dfrac{\partial^2}{\partial x^2}
     \left[g^2(x)P(x,t|x_0) \right]~.
     \label{eq:fokker_planck_general}
 \end{equation}
 Equivalently, the density $P$ can be written as a conservation equation:
 \begin{equation}
-\frac{\partial P}{\partial t}=-\frac{\partial J}{\partial x}~,
+\dfrac{\partial P}{\partial t}=-\dfrac{\partial J}{\partial x}~,
 \end{equation}
 where $J(x,t)$ is the probability current. For a stochastic process, this current contains both a deterministic contribution, due to the drift, and a diffusive contribution, due to the noise. Since the total probability is conserved, the probability current reads:
 \begin{equation}
-    J(x,t) = u(x)P(x,t|x_0) - \frac{1}{2} \frac{\partial}{\partial x} \left[ g^2(x)P(x,t|x_0) \right]
+    J(x,t) = u(x)P(x,t|x_0) - \dfrac{1}{2} \dfrac{\partial}{\partial x} \left[ g^2(x)P(x,t|x_0) \right]
 \end{equation}
 in this case.
 
 The first term in the current corresponds to deterministic transport by the drift velocity $u(x)$, while the second term is the spreading induced by the stochastic fluctuations. In the particular case of additive noise, where $g$ is constant, this diffusive contribution reduces to the usual diffusion current. For example, for a Brownian particle in an unbounded, quiescent bulk fluid, the overdamped Langevin equation is:
 \begin{equation}
     \mathrm{d}x=\sqrt{2D_0}\,\mathrm{d}W_t~.
+    \label{Eq.:ODLangevin}
 \end{equation}
 We identify:
 \begin{equation}
@@ -309,7 +310,7 @@ We identify:
 \end{equation}
 Substitution into Eq.~\eqref{eq:fokker_planck_general} gives:
 \begin{equation}
-    J = -D_0 \frac{\partial P}{\partial x}~,
+    J = -D_0 \dfrac{\partial P}{\partial x}~,
     \label{eq:bulk_diffusion_equation}
 \end{equation}
 which is the Fickian diffusion current~\cite{Fick1855}. A more complex case involving multiplicative noise is presented in chapter 2.
@@ -319,7 +320,7 @@ which is the Fickian diffusion current~\cite{Fick1855}. A more complex case invo
 \subsection{The Euler scheme}
 Computational physics by essence do not work with continuous processes. One of the biggest challenges is therefore to choose or sometimes develop discretisation methods to remain accurate physically, but also computationally efficient. Throughout this manuscript, the codes I develop mostly rely on the Euler-Maruyama method~\cite{Maruyama1955,KloedenPlaten1992,Higham2001} for their discretisation step. Fortunately, this method has largely been applied to Brownian problems as an extension of the Euler method to stochastic processes, and is exceptionally inexpensive to simulate. This method approximates the solution of a stochastic differential equation by discretising time into small steps $\Delta t$. The continuous-time stochastic process is then approximated by a discrete-time process, where the state of the system is updated at each time step according to the deterministic and stochastic components of the dynamics. We approximate the differentiation of a variable $X$ with respect to time $t$ using the Euler-Maruyama method as:
 \begin{equation}
-    \frac{\mathrm{d}X}{\mathrm{d}t} = \frac{X_{i+1} - X{i}}{\Delta t}~,
+    \dfrac{\mathrm{d}X}{\mathrm{d}t} = \dfrac{X_{i+1} - X{i}}{\Delta t}~,
 \end{equation}
 where $X_i$ is the value of $X$ at time $t_i = i \Delta t$. The update rule for the variable $X$ is then given by:
 \begin{equation}
@@ -328,19 +329,19 @@ where $X_i$ is the value of $X$ at time $t_i = i \Delta t$. The update rule for 
 
 The Euler-Maruyama remains, however, a first-order approximation: it is by no means accurate at any point, and its recursivity means errors build upon each other the further. The choice of a small enough time step is thus crucial to ensure initial accuracy and minimal error propagation throughout the simulation. For the sake of safety, I follow a simple protocol in the determination of the time step I use in simulations. First, I identify all time scales in the system. For the aforementioned underdamped Brownian motion, we expect only one: the inertial time scale $\tau_m$. Other processes can have various characteristic times, and in that case, we choose the smallest amongst them. Then, I choose a time lag $\Delta t$ which satisfies
 \begin{equation}
-    \Delta t \leq \frac{1}{100}\tau_m~,
+    \Delta t \leq \dfrac{1}{100}\tau_m~,
 \end{equation}
 where $1/100$ is a common safety used to ensure the time step is smaller than the smallest time scale of the system. I illustrate the importance of the time lag duration choice in Fig.~\ref{fig:error_propagation_euler}. The inertial regime is particularly affected as it depends on the velocity. The exact, deterministic velocity decays as:
 \begin{equation}
-    v(t + \Delta t) = \exp{-\frac{\Delta t}{\tau_m}}v(t)~,
+    v(t + \Delta t) = \exp{-\dfrac{\Delta t}{\tau_m}}v(t)~,
 \end{equation}
 but Euler discretisation implies:
 \begin{equation}
-    v_{i+1} = \left( 1 - \frac{\Delta t}{\tau_m}\right)v_i~.
+    v_{i+1} = \left( 1 - \dfrac{\Delta t}{\tau_m}\right)v_i~.
 \end{equation}
-Comparatively, for a time step $\Delta t = \tau_m$, the exact velocity decay is theoretically predicted with a factor of $exp(-1) = 0.37$, whereas the Euler method predicts a factor of $\left(1 - \frac{\Delta t}{\tau_m}\right) = 0$, a complete erasure of velocity after a single time step. This is readily visible on the first panel of Fig.~\ref{fig:error_propagation_euler}, where the PDF of the velocities of a simulated trajectory generated from the discretised Eq. \ref{Eq:UDlangevin} is shown for various choices of $\Delta t$. In theory, the PDF of velocities should follow the Gaussian distribution of the Maxwell-Boltzmann statistics, as:
+Comparatively, for a time step $\Delta t = \tau_m$, the exact velocity decay is theoretically predicted with a factor of $exp(-1) = 0.37$, whereas the Euler method predicts a factor of $\left(1 - \dfrac{\Delta t}{\tau_m}\right) = 0$, a complete erasure of velocity after a single time step. This is readily visible on the first panel of Fig.~\ref{fig:error_propagation_euler}, where the PDF of the velocities of a simulated trajectory generated from the discretised Eq.~\ref{Eq:UDlangevin} is shown for various choices of $\Delta t$. In theory, the PDF of velocities should follow the Gaussian distribution of the Maxwell-Boltzmann statistics, as:
 \begin{equation}
-    P(v) = \frac{1}{Z} \exp \left( - \frac{v^2}{2v_T^2} \right)~,
+    P(v) = \dfrac{1}{Z} \exp \left( - \dfrac{v^2}{2v_T^2} \right)~,
     \label{velocity_maxwellian}
 \end{equation}
 \begin{figure}
@@ -362,7 +363,7 @@ a too large choice of time step entails a wrong ballistic velocity, which immedi
 \section{Discretised underdamped Langevin equation}
 We can discretise Eq.~\ref{Eq:UDlangevin} using the Euler scheme. We must, however, choose how to treat the noise term $\mathrm{d}W_t/\mathrm{d}t$, which we re-express in it discretised equivalent as $w_i/\Delta t$, where $w_i$ is a random Gaussian variable drawn from a distribution which satisfies $\langle w_i \rangle = 0$ and $\langle w_i w_j \rangle = \Delta t \delta_{ij}$. Under those assumptions, Eq.~\ref{Eq:UDlangevin} becomes:
 \begin{equation}
-    v_{i+1} = \left(1 - \frac{\Delta t}{\tau_m}\right)v_i + \sqrt{\frac{2k_\mathrm{B}\Theta}{m \tau_m}} w_i~.
+    v_{i+1} = \left(1 - \dfrac{\Delta t}{\tau_m}\right)v_i + \sqrt{\dfrac{2k_\mathrm{B}\Theta}{m \tau_m}} w_i~.
     \label{UDLangevinEuler}
 \end{equation}
 Below, I provide a snippet to simulate easily this equation, including a thermalisation step at the beginning to draw velocities from equilibrium and avoid altered statistics at the beginning of the simulation, which could pollute the ballistic regime. Furthermore, the whole temporal look is provided to better illustrate the workflow of a simulation for a single trajectory. However, I typically conduct multiple simulations of a same system and stack their statistics together to infer ballistic and diffusive constants from their observables.
@@ -437,7 +438,7 @@ $t_\mathrm{max}$ & last simulated time step & $5000\tau_m$ & -- \\
 \end{figure}
 
 
-The MSD can be computed from several techniques. The first I present is the most straightforward one: from a trajectory, one defines its displacements by simply subtracting the trajectory array to itself, shifted in time, for every possible time lag. We then compute the variance of the resulting displacement arrays at all time lags, and retrieve the MSD. I provide a plot for a simple one-dimensional in Fig. \ref{1dmsd_udlangevin}.
+The MSD can be computed from several techniques. The first I present is the most straightforward one: from a trajectory, one defines its displacements by simply subtracting the trajectory array to itself, shifted in time, for every possible time lag. We then compute the variance of the resulting displacement arrays at all time lags, and retrieve the MSD. I provide a plot for a simple one-dimensional in Fig.~\ref{1dmsd_udlangevin}.
 \begin{figure}
     \centering
     \includegraphics[width = .8 \textwidth]{Codes/chapter1/msd_x_results.pdf}

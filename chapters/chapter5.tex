@@ -7,23 +7,23 @@ The final part of this manuscript is dedicated to the study of active matter and
 Authors define active matter as one or both of the following:
 
 \begin{enumerate}
-    \item ``energy-consuming particles'' : individual units that extract free energy from internal or external sources and convert it to motion, forces, or mechanical stresses ~\cite{prost_active_2009, ramaswamy_active_2010, marchetti_hydrodynamics_2013, bechinger_active_2016}. They are thus inherently out-of-equilibrium systems;
-    \item ``interacting particles'' : individual self-propelled units which interact locally and exhibit emergent, collective behaviours, such as through hydrodynamic interactions (swimming microorganisms, squirmers, active droplets...)~\cite{marchetti_hydrodynamics_2013}, phoretic interactions (catalytic Janus colloids, some chemotactic bacteria...)~\cite{palacci_living_2013}, mechanical force transmission (cellular tissue, cytoskeleton, active gels...)~\cite{prost_active_2009}, and even social interactions (human crowds, bird flocks, fish schools, autonomous drones...)~\cite{toner_hydrodynamics_2005}, to only cite a few. Some of these interactions can be accurately represented with minimal models, which approximate them as alignment interactions with some noise, such as the Vicsek model ~\cite{vicsek_novel_1995}.
+    \item ``energy-consuming particles'': individual units that extract free energy from internal or external sources and convert it to motion, forces, or mechanical stresses ~\cite{prost_active_2009, ramaswamy_active_2010, marchetti_hydrodynamics_2013, bechinger_active_2016}. They are thus inherently out-of-equilibrium systems;
+    \item ``interacting particles'': individual self-propelled units which interact locally and exhibit emergent, collective behaviours, such as through hydrodynamic interactions (swimming microorganisms, squirmers, active droplets...)~\cite{marchetti_hydrodynamics_2013}, phoretic interactions (catalytic Janus colloids, some chemotactic bacteria...)~\cite{palacci_living_2013}, mechanical force transmission (cellular tissue, cytoskeleton, active gels...)~\cite{prost_active_2009}, and even social interactions (human crowds, bird flocks, fish schools, autonomous drones...)~\cite{toner_hydrodynamics_2005}, to only cite a few. Some of these interactions can be accurately represented with minimal models, which approximate them as alignment interactions with some noise, such as the Vicsek model ~\cite{vicsek_novel_1995}.
 \end{enumerate}
 
 
-Numerous examples of active systems exist, and these systems can be found at any scale (Fig. \ref{Reynolds_sizes}). It is essential to not only classify them by size but also by Reynolds number. Interestingly, the definition of active matter is loose enough to even include human beings, robots and even large aircrafts.  This thesis articulates around notions of small systems, and I thus restrict my arguments to these systems from there on.
+Numerous examples of active systems exist, and these systems can be found at any scale (Fig.~\ref{Reynolds_sizes}). It is essential to not only classify them by size but also by Reynolds number. Interestingly, the definition of active matter is loose enough to even include human beings, robots and even large aircrafts.  This thesis articulates around notions of small systems, and I thus restrict my arguments to these systems from there on.
 
 \begin{figure}
     \centering
     \includegraphics[width=.9\textwidth]{figures/chapter5/fig1.pdf}
-    \caption{Comparison of typical length scales and Reynolds numbers for various active systems. }
+    \caption{Comparison of typical length scales and Reynolds numbers for various active systems.}
     \label{Reynolds_sizes}
 \end{figure}
 
 
 \subsection{\emph{Chlamydomonas reinhardtii} as a model swimmer}
-A particularly convenient experimental model of a biological microswimmer is the unicellular green alga \emph{Chlamydomonas reinhardtii} (Fig. \ref{chlamy_img}) ~\cite{polin2009chlamydomonas}. This tiny alga is the system we use in the study at the end of this chapter. It measures only a few tens of microns at most. However, through the beating of its anterior flagella, it self-propels in a fluid at surprisingly high speeds of ten body lengths per second. Yet, this is not sufficient for \emph{Chlamydomonas} to be considered high-Reynolds systems ($\mathrm{R_e} \gg 1$), as it typically reaches a Reynolds number of about $\mathrm{R_e} = 1 \times 10 ^{-4}$. It thus still evolves in a very viscous medium. 
+A particularly convenient experimental model of a biological microswimmer is the unicellular green alga \emph{Chlamydomonas reinhardtii} (Fig.~\ref{chlamy_img}) ~\cite{polin2009chlamydomonas}. This tiny alga is the system we use in the study at the end of this chapter. It measures only a few tens of microns at most. However, through the beating of its anterior flagella, it self-propels in a fluid at surprisingly high speeds of ten body lengths per second. Yet, this is not sufficient for \emph{Chlamydomonas} to be considered high-Reynolds systems ($\mathrm{R_e} \gg 1$), as it typically reaches a Reynolds number of about $\mathrm{R_e} = 1 \times 10 ^{-4}$. It thus still evolves in a very viscous medium. 
 
 \begin{figure}
     \centering
@@ -45,12 +45,12 @@ The thermal diffusion of a colloid affects both its translational degrees of fre
 
 
 \begin{equation}
-D = \frac{k_\mathrm{B}\Theta}{6\pi \eta a}~,
+D = \dfrac{k_\mathrm{B}\Theta}{6\pi \eta a}~,
 \label{ThermalD}
 \end{equation}
 where $k_\mathrm{B}\Theta$ is the thermal energy of the bath, $\eta$ the fluid viscosity and $a$ the colloid radius. The rotational diffusion coefficient $D_\mathrm{R}$, is inversely proportional to the colloid's volume:
 \begin{equation}
-D_\mathrm{R} = \frac{k_\mathrm{B}\Theta}{8\pi \eta a^3 }= \tau_\mathrm{R}^{-1}~,
+D_\mathrm{R} = \dfrac{k_\mathrm{B}\Theta}{8\pi \eta a^3 }= \tau_\mathrm{R}^{-1}~,
 \label{ActiveR}
 \end{equation}
 with $\tau_\mathrm{R}$ the characteristic reorientation time scale.
@@ -60,9 +60,9 @@ We can describe the motion of the passive colloid with the following Langevin eq
 \begin{equation}
 \label{PassiveBrownian}
 \begin{aligned}
-   \frac{\mathrm{d}x}{\mathrm{d}t} &= \sqrt{2D}\xi_x(t) \\
-   \frac{\mathrm{d}y}{\mathrm{d}t} &= \sqrt{2D}\xi_y(t) \\
-   \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~,
+   \dfrac{\mathrm{d}x}{\mathrm{d}t} &= \sqrt{2D}\xi_x(t) \\
+   \dfrac{\mathrm{d}y}{\mathrm{d}t} &= \sqrt{2D}\xi_y(t) \\
+   \dfrac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~,
 \end{aligned}
 \end{equation}
 where $\xi_i(t)$ are Gaussian white noises. This process is heavily reliant on the thermal diffusion coefficients $D$ and $D_\mathrm{R}$. This means that thermal Brownian motion is strongly hindered in the case of larger colloids, where ``large'' means of the order of a few tens of microns. For example, if we take a colloid of a size that is comparable to a \emph{Chlamydomonas}, that is to say $a = 10\,  \upmu  \mathrm{m}$, we get $D=2.2\times10^{-3} \, \upmu  \mathrm{m}^2.\mathrm{s}^{-1}$. This value indicates that by pure thermal diffusion, a colloid of this size would need tens of hours to explore an area equivalent to its own size.
@@ -71,26 +71,26 @@ As we discussed already, swimmers can circumvent this limitation by collecting e
 \begin{equation}
 \begin{aligned}
     \label{ActiveBrownian}
-    \frac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D}\xi_x(t)\\
-    \frac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)\\
-    \frac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
+    \dfrac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D}\xi_x(t)\\
+    \dfrac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)\\
+    \dfrac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
 \end{aligned}
 \end{equation}
 These equations can then be discretised with an Euler scheme, and I provide on the thesis' GitHub page a simple code to generate trajectories for this case. 
 \begin{figure}
     \centering
     \includegraphics[width=.45\textwidth]{figures/chapter5/compaABP_PBP.pdf}
-    \caption[Simulation of passive BM and ABP models.]{Comparison of passive and active Brownian colloid trajectories. Panels $a)$ and $c)$: Twenty stacked trajectories obtained from discretising Eqs. \ref{PassiveBrownian} and \ref{ActiveBrownian} respectively, with $\Delta t = 0.05$, $n_\mathrm{steps} = 5000$, $D = 0.05$, $D_\mathrm{R} = 0.3$, $v = 0.1$, with all units in simulation units. Colours are only used for readability and have no physical meaning. Panels $c)$ and $d)$: final position of 2000 simulations for the passive and active Brownian particle models, respectively. }
+    \caption[Simulation of passive BM and ABP models.]{Comparison of passive and active Brownian colloid trajectories. Panels $a)$ and $c)$: Twenty stacked trajectories obtained from discretising Eqs.~\ref{PassiveBrownian} and~\ref{ActiveBrownian} respectively, with $\Delta t = 0.05$, $n_\mathrm{steps} = 5000$, $D = 0.05$, $D_\mathrm{R} = 0.3$, $v = 0.1$, with all units in simulation units. Colours are only used for readability and have no physical meaning. Panels $c)$ and $d)$: final position of 2000 simulations for the passive and active Brownian particle models, respectively. }
     \label{ABPPBP}
 \end{figure}
-The MSD in that case follows ~\cite{franke1990galvanotaxis, howse2007selfmotile, martens2012probability} (see Fig. \ref{MSDcomparatives})
+The MSD in that case follows ~\cite{franke1990galvanotaxis, howse2007selfmotile, martens2012probability} (see Fig.~\ref{MSDcomparatives})
 \begin{equation}
 \boxed{
-\mathrm{MSD}_x(t) = \mathrm{MSD}_y(t) = 2D t + \frac{v^2}{D_\mathrm{R}^2}
+\mathrm{MSD}_x(t) = \mathrm{MSD}_y(t) = 2D t + \dfrac{v^2}{D_\mathrm{R}^2}
 \left(D_\mathrm{R} t+e^{-D_\mathrm{R} t}-1\right)}~.
 \label{MSDABP}
 \end{equation}
-We thus expect a thermally diffusing regime at very short time lags with diffusivity $D$, followed by a superdiffusive regime in intermediate times, and finally, after the characteristic time scale $\tau_\mathrm{R}$, a second, higher diffusive regime at very long times with a new effective diffusivity $D_0$, as $D_0 = v^2/(2D_\mathrm{R})$ (see Figure \ref{ABPPBP} for a comparison of a passive Brownian colloid and an ABP).
+We thus expect a thermally diffusing regime at very short time lags with diffusivity $D$, followed by a superdiffusive regime in intermediate times, and finally, after the characteristic time scale $\tau_\mathrm{R}$, a second, higher diffusive regime at very long times with a new effective diffusivity $D_0$, as $D_0 = v^2/(2D_\mathrm{R})$ (see Fig.~\ref{ABPPBP} for a comparison of a passive Brownian colloid and an ABP).
 
 
 \textcolor{red}{perhaps change D0 to Deff in all. Check later for homogeneisation.}
@@ -103,9 +103,9 @@ While the ABP translation mechanisms remain unchanged, we add a constant rotatio
 \begin{equation}
 \begin{aligned}
     \label{ChactiveBrownian}
-    \frac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D}\xi_x(t)\\
-    \frac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)\\
-    \frac{\mathrm{d}\phi}{\mathrm{d}t} &=\omega  \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
+    \dfrac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D}\xi_x(t)\\
+    \dfrac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)\\
+    \dfrac{\mathrm{d}\phi}{\mathrm{d}t} &=\omega  \sqrt{2D_\mathrm{R}}\xi_\phi(t)~.
 \end{aligned}
 \end{equation}
 It is therefore possible to play with the angular velocity $\omega$ to obtain different behaviours, from shrinking spirals to circles to expanding spirals for the two-dimensional case.
@@ -113,8 +113,8 @@ It is therefore possible to play with the angular velocity $\omega$ to obtain di
 Three-dimensional, helical motion can be described starting from a three-dimensional ABP model, such as
 \begin{equation}
 \begin{aligned}
-\frac{\mathrm d \vect r}{\mathrm dt} &= v \vect{n} + \sqrt{2D_t}\,\boldsymbol{\xi_\mathrm{T}}(t),\\
-\frac{\mathrm d \vect n}{\mathrm dt} &= \boldsymbol{\Omega}\times\vect{n}+ \sqrt{2D_r}\,
+\dfrac{\mathrm d \vect r}{\mathrm dt} &= v \vect{n} + \sqrt{2D_t}\,\boldsymbol{\xi_\mathrm{T}}(t),\\
+\dfrac{\mathrm d \vect n}{\mathrm dt} &= \boldsymbol{\Omega}\times\vect{n}+ \sqrt{2D_r}\,
 \boldsymbol{\xi_\mathrm{R}}(t)\times\vect{n},
 \label{3d_helical}
 \end{aligned}
@@ -130,12 +130,12 @@ with $\vect{r}$ the position vector $ \vect{r} = (x,y,z)$, and $\vect{n}$ the or
 \omega
 \end{pmatrix}~,
 \end{equation}
-for a rotation about the $z$ axis (Fig. \ref{Traj_helical}).
+for a rotation about the $z$ axis (Fig.~\ref{Traj_helical}).
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter5/helical.pdf}
-    \caption[Simulation of a chiral ABP in 3D.]{Simulated trajectories from the discretised Eqs. \ref{3d_helical}.$a)$ Full trajectory for $n_\mathrm{steps}=80000$, $\Delta T = 0.01$, $D = 0.005$, $D_\mathrm{R} = 0.01$, $v = 1.0$, $\boldsymbol\Omega = 1.0$ and $\omega = \pi/12$. All units are in simulation units. $b)$ Same trajectory, for the first 800 steps. Colourmap corresponds to elapsed time and is only indicative. }
+    \caption[Simulation of a chiral ABP in 3D.]{Simulated trajectories from the discretised Eqs.~\ref{3d_helical}.$a)$ Full trajectory for $n_\mathrm{steps}=80000$, $\Delta T = 0.01$, $D = 0.005$, $D_\mathrm{R} = 0.01$, $v = 1.0$, $\boldsymbol\Omega = 1.0$ and $\omega = \pi/12$. All units are in simulation units. $b)$ Same trajectory, for the first 800 steps. Colourmap corresponds to elapsed time and is only indicative. }
     \label{Traj_helical}
 \end{figure}
 
@@ -146,8 +146,8 @@ A RTP is an active particle that alternates between two types of motion: long pe
 along its instantaneous orientation $\phi(t)$. The position therefore evolves as
 \begin{equation}
 \begin{aligned}
-    \frac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D}\xi_x(t)\\
-    \frac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)~,
+    \dfrac{\mathrm{d}x}{\mathrm{d}t} &= v \cos[\phi(t)] + \sqrt{2D}\xi_x(t)\\
+    \dfrac{\mathrm{d}y}{\mathrm{d}t} &= v\sin[\phi(t)] + \sqrt{2D}\xi_y(t)~,
 \end{aligned}
 \end{equation}
 which are the same equations as the ABP case. However, the orientation of the particle may suddenly change, usually according to a Poisson process with rate $\lambda$. This change is called a tumble, and happens for instance when an \emph{E. coli} bacterium desynchronises its flagella. The probability that at least one tumble occurs during a given time $\Delta t$ is
@@ -156,7 +156,7 @@ P_{\mathrm{tumble}}(\Delta t) = 1-\exp(-\lambda \Delta t)~.
 \end{equation}
 The typical time between two tumbles is then
 \begin{equation}
-    \tau_{\mathrm{run}} = \frac{1}{\lambda}~.
+    \tau_{\mathrm{run}} = \dfrac{1}{\lambda}~.
     \label{poisson}
 \end{equation}
 At each tumble time $t_i$, the orientation is instantly changed as
@@ -167,21 +167,21 @@ where $\phi(t_i^+)$ is the orientation immediately after the tumble, $\phi(t_i^+
 
 The particle has a persistent direction of motion, but this persistence is destroyed by two mechanisms: continuous rotational diffusion, controlled by $D_\mathrm{R}$, and tumbling events, controlled by $\lambda$. In two dimensions, for fully random tumbles, the persistence timescale is given by
 \begin{equation}
-    \tau_\mathrm{p} = \frac{1}{D_\mathrm{R}+\lambda}~.
+    \tau_\mathrm{p} = \dfrac{1}{D_\mathrm{R}+\lambda}~.
 \end{equation}
 At very long time, the process thus becomes diffusive, much like the ABP case again, and with diffusivity 
 \begin{equation}
-    D_{\mathrm{eff}}=D_ + \frac{v^2}{2(D_\mathrm{R}+\lambda)}~.
+    D_{\mathrm{eff}}=D_ + \dfrac{v^2}{2(D_\mathrm{R}+\lambda)}~.
 \end{equation}
 
-The MSD in that case is given by (see Fig. \ref{MSDcomparatives})
+The MSD in that case is given by (see Fig.~\ref{MSDcomparatives})
 \begin{equation}
 \boxed{
-\mathrm{MSD}_x(t)=\mathrm{MSD}_y(t)=2D t+\frac{v^2}{\lambda^2}
+\mathrm{MSD}_x(t)=\mathrm{MSD}_y(t)=2D t+\dfrac{v^2}{\lambda^2}
 \left(\lambda t+e^{-\lambda t}-1\right)}
 \label{MSDRNT}
 \end{equation}
-This equation is strictly equivalent to Eq. \ref{MSDABP}, save for a substitution of $\lambda$ with $D_\mathrm{R}$. The MSD is not able to distinguish between processes, and one must turn to other quantities (non-gaussianity, velocity autocorrelation, or even visually by trajectory shape) to properly assess the difference between ABP and RTP processes. 
+This equation is strictly equivalent to Eq.~\ref{MSDABP}, save for a substitution of $\lambda$ with $D_\mathrm{R}$. The MSD is not able to distinguish between processes, and one must turn to other quantities (non-gaussianity, velocity autocorrelation, or even visually by trajectory shape) to properly assess the difference between ABP and RTP processes. 
 
 Now, we can identify two limiting cases for the RTP process: when $\lambda=0$, we naturally retrieve the ABP process. When $D_\mathrm{R}=0$, the motion is a pure run-and-tumble for reorientation comes solely from the active process, with $D_{\mathrm{eff}} =v^2/(2\lambda)$.
 
@@ -190,7 +190,7 @@ Now, we can identify two limiting cases for the RTP process: when $\lambda=0$, w
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter5/msd_abp_rtp.pdf}
-    \caption[Comparison of the ABP, run-and-tumble and passive MSDs.]{MSDs of an ABP (light blue line), a run-and-tumble particle (navy blue line) and a passive Brownian colloid (purple line), for trajectories of $N_\mathrm{steps} = 5\times10^5$ steps, $\Delta t = 0.01$, $D = 0.01$, $v = 1.0$, and $\lambda = 0.05$. Corresponding theoretical curves from Eqs. \ref{PassiveBrownian}, \ref{MSDABP} and \ref{MSDRNT} are shown in dashed lines in respective colours.}
+    \caption[Comparison of the ABP, run-and-tumble and passive MSDs.]{MSDs of an ABP (light blue line), a run-and-tumble particle (navy blue line) and a passive Brownian colloid (purple line), for trajectories of $N_\mathrm{steps} = 5\times10^5$ steps, $\Delta t = 0.01$, $D = 0.01$, $v = 1.0$, and $\lambda = 0.05$. Corresponding theoretical curves from Eqs.~\ref{PassiveBrownian},~\ref{MSDABP} and~\ref{MSDRNT} are shown in dashed lines in respective colours.}
     \label{MSDcomparatives}
 \end{figure}
 
@@ -217,7 +217,7 @@ In chapter 4, I introduce the notion of Taylor-Aris dispersion, originally devel
 
 \subsection{Experimental setup}
 
-We create a microfluidic channel using soft lithography on a PolyDiMethylSiloxane (PDMS) chip. The channel has dimensions $(L, W, H) =  (88 \, \mathrm{mm}, 180 \, \upmu \mathrm{m}, 100\, \upmu \mathrm{m}$), with $W$ the width, $H$ the height and $L$ the length of the channel (Fig. \ref{ExperimentalSetup}). The streamwise direction is defined along $\vect{e_x}$. The cell is then slowly filled with a dilute suspension of \emph{Chlamydomonas reinhardtii} to ensure negligible interaction between individual algae. We suppress phototacic response of the algae by filtering out light wavelength save for red.  
+We create a microfluidic channel using soft lithography on a PolyDiMethylSiloxane (PDMS) chip. The channel has dimensions $(L, W, H) =  (88 \, \mathrm{mm}, 180 \, \upmu \mathrm{m}, 100\, \upmu \mathrm{m}$), with $W$ the width, $H$ the height and $L$ the length of the channel (Fig.~\ref{ExperimentalSetup}). The streamwise direction is defined along $\vect{e_x}$. The cell is then slowly filled with a dilute suspension of \emph{Chlamydomonas reinhardtii} to ensure negligible interaction between individual algae. We suppress phototacic response of the algae by filtering out light wavelength save for red.  
 
 \begin{figure}
     \centering
@@ -231,7 +231,7 @@ We create a microfluidic channel using soft lithography on a PolyDiMethylSiloxan
 A pressure controller is plugged at one end of the channel, on the entry point. On the exit point, constant pressure is maintained by a hydrostatic bath. We input a controlled pressure, which can be modulated by a sinusoid using the pressure controller. The pressure difference between the entry and exit points launches the flowing of the suspension inside the microchannel. The fluid velocity is given by:
 
 \begin{equation}
-    \vect{u}(y, z, t) = \frac{\Delta P}{R_\mathrm{h}} f (y ,z) \sin \left( \frac{2 \pi t}{T} + \phi_0\right) \vect{e_x}~,
+    \vect{u}(y, z, t) = \dfrac{\Delta P}{R_\mathrm{h}} f (y ,z) \sin \left( \dfrac{2 \pi t}{T} + \phi_0\right) \vect{e_x}~,
     \label{fluidvelexp}
 \end{equation}
 where $\Delta P$ is the pressure difference between the amplitude of the pressure controller and the hydrostatic bath, $R_\mathrm{h}$ is the hydraulic resistance of the channel, $T$ is the pressure oscillation period, and $\phi_0$ is a phase at origin, and $f(x, y)$ is the cross-sectional profile, which in a quasi two-dimensional limit is expressed $f(y) = 4 y/W  \left(1 - y/W\right)$. Because the channel is sufficiently narrow and our observations flatten out the $z$ coordinate, we use this expression of $f$ as our approximation for the study.
@@ -239,13 +239,13 @@ where $\Delta P$ is the pressure difference between the amplitude of the pressur
 
 
 
-We then image the channel from the top, over the $z-$plane. We record frames for 200 s at 40 frames per second. We then link individual trajectories using a linking algorithm, and only keep trajectories which last for more than 20 s in the field of view of the camera for treatment. The oscillatory flow has the advantage of forcing the algae into the field of view for longer durations (Fig. \ref{ExperimentalTraj}).
+We then image the channel from the top, over the $z-$plane. We record frames for 200 s at 40 frames per second. We then link individual trajectories using a linking algorithm, and only keep trajectories which last for more than 20 s in the field of view of the camera for treatment. The oscillatory flow has the advantage of forcing the algae into the field of view for longer durations (Fig.~\ref{ExperimentalTraj}).
 
 
 The treatment of a single trajectory then involves demodulating the signal from the oscillatory signature of the flow velocity using a sliding windowed demodulation, assuming that the position of an alga in time along the $x-$axis can be expressed as
 
 \begin{equation}
-    x(t) = \hat{x}(t) + A[y(t), t] \cos \left( \frac{2 \pi t}{T}\right)~,
+    x(t) = \hat{x}(t) + A[y(t), t] \cos \left( \dfrac{2 \pi t}{T}\right)~,
 \end{equation}
 where $A[y(t), t]$ is an unknown function, and $\hat{x}(t)$ is the position of the alga in the flow's comoving frame. 
 
@@ -265,25 +265,25 @@ where $A[y(t), t]$ is an unknown function, and $\hat{x}(t)$ is the position of t
 
 To reproduce the experimental results from this study, I choose a two-dimensional RTP model with a reorientation rate $\tau_\mathrm{R}^{-1} = D_\mathrm{R}$. Strictly speaking, this $D_\mathrm{R}$ is not a diffusion coefficient in the thermal sense, but for the sake of continuity with experimental nomenclature, we still define it as an active rotational diffusion coefficient. The equations thus give:
 \begin{align}
-    \frac{\mathrm{d}x}{\mathrm{d}t} & = v \cos [\phi(t)] + \sqrt{2D} \xi_x + u(y, t)~, \\ 
-    \frac{\mathrm{d}y}{\mathrm{d}t} & = v \sin [\phi(t)] + \sqrt{2D} \xi_y~, \\
-    \frac{\mathrm{d}\phi}{\mathrm{d}t} & = \frac{1}{2} \omega(t) + \sqrt{2D_\phi} \xi_\phi~,
+    \dfrac{\mathrm{d}x}{\mathrm{d}t} & = v \cos [\phi(t)] + \sqrt{2D} \xi_x + u(y, t)~, \\ 
+    \dfrac{\mathrm{d}y}{\mathrm{d}t} & = v \sin [\phi(t)] + \sqrt{2D} \xi_y~, \\
+    \dfrac{\mathrm{d}\phi}{\mathrm{d}t} & = \dfrac{1}{2} \omega(t) + \sqrt{2D_\phi} \xi_\phi~,
     \label{equationsnum}
 \end{align}
-with $v$ the particle's self propelling speed, $D_\phi = \tau_\mathrm{R}^{-1}$ the rotation rate, $\omega$ the rotational velocity due to the vorticity of the flow, and the fluid velocity is expressed, strictly equivalently to Eq. \ref{fluidvelexp}, as $\vect{u}(y, t) = 1/(2 \eta_0) \Delta P/L y(H - y) \sin \left(2 \pi t/T\right) \vect{e_x}$, with $\eta_0$ the fluid viscosity.
+with $v$ the particle's self propelling speed, $D_\phi = \tau_\mathrm{R}^{-1}$ the rotation rate, $\omega$ the rotational velocity due to the vorticity of the flow, and the fluid velocity is expressed, strictly equivalently to Eq.~\ref{fluidvelexp}, as $\vect{u}(y, t) = 1/(2 \eta_0) \Delta P/L y(H - y) \sin \left(2 \pi t/T\right) \vect{e_x}$, with $\eta_0$ the fluid viscosity.
 
-I then disretise Eqs. \ref{equationsnum} using a forward Euler scheme. The results of solving the discretised Eqs. \ref{equationsnum} is shown in Figs. \ref{NumTraj1} and \ref{NumTraj2}. By comparing a case where particles are active but in no advection, and a case where they move both due to their own activity and to the fluid flow, one notices a very noticeable enhancement in the dispersion (Fig. \ref{NumTraj1}). Indeed, in absence of flow, particles tend to quickly reach one boundary, and then take a noticeable amount of time (of the order of $\tau_\mathrm{R}$) to reorient away from the wall through their active rotational process. In the case where a Poiseuille flow exists, particles tend not to approach the wall as much. I interpret this as a direct result of the stronger shear close to the wall: a swimmer will only need a tiny``pus'' in its orientation to escape contact with the wall. 
+I then disretise Eqs.~\ref{equationsnum} using a forward Euler scheme. The results of solving the discretised Eqs.~\ref{equationsnum} is shown in Figs.~\ref{NumTraj1} and~\ref{NumTraj2}. By comparing a case where particles are active but in no advection, and a case where they move both due to their own activity and to the fluid flow, one notices a very noticeable enhancement in the dispersion (Fig.~\ref{NumTraj1}). Indeed, in absence of flow, particles tend to quickly reach one boundary, and then take a noticeable amount of time (of the order of $\tau_\mathrm{R}$) to reorient away from the wall through their active rotational process. In the case where a Poiseuille flow exists, particles tend not to approach the wall as much. I interpret this as a direct result of the stronger shear close to the wall: a swimmer will only need a tiny``pus'' in its orientation to escape contact with the wall. 
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter5/numtraj1.pdf}
-    \caption[Qualitative demonstration of the Taylor-Aris effect with numerical simulations.]{Snapshots of 100 numerically generated trajectories obtained from discretising Eqs. \ref{equationsnum} with an Euler scheme with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1\, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14 \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $a = 5 \, \upmu \mathrm{m}$ for the active case without a flow (top), where $\Delta P = 0.0 \, \mathrm{Pa}$, and with a flow (bottom), where $\Delta P = 73.0 \, \mathrm{Pa}$. The simulations do not account for interactions, we assume here a perfect gas behaviour for the swimmers. The colormap corresponds to the local density of ABPs in a binned $(x, y)$ space. The Taylor-Aris dispersion effect is clearly visible by comparing the top and bottom plots at each given time, as we see the bulk of ABPs spreading for the active, advected case, much more than for the purely active case. }
+    \caption[Qualitative demonstration of the Taylor-Aris effect with numerical simulations.]{Snapshots of 100 numerically generated trajectories obtained from discretising Eqs.~\ref{equationsnum} with an Euler scheme with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1\, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14 \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $a = 5 \, \upmu \mathrm{m}$ for the active case without a flow (top), where $\Delta P = 0.0 \, \mathrm{Pa}$, and with a flow (bottom), where $\Delta P = 73.0 \, \mathrm{Pa}$. The simulations do not account for interactions, we assume here a perfect gas behaviour for the swimmers. The colormap corresponds to the local density of ABPs in a binned $(x, y)$ space.}
     \label{NumTraj1}
 \end{figure}
 
 
 
-Along the $x-$axis, we see that the trajectory of a swimmer presents a strong signature of the oscillations of the fluid flow (Fig. \ref{NumTraj2}). To demodulate the signal, I use a different technique than the experimentalists on this study, with a lower computational cost: a simple linear regression. I know that the parasitic drift I have to remove has a known frequency, which I choose when running the simulations. I feed to a simple linear regression model all the parameters I know, as well as the smoothed $y-$ coordinate for each time step to avoid overfitting thermal noise. This is important, as we see in Eq. \ref{fluidvelexp} that the amplitude of the sine wave depends on the $y-$position of the particle. Finally, the model takes the $x-$positions and returns a demodulated version, which we call $\hat{x}(t)$.
+Along the $x-$axis, we see that the trajectory of a swimmer presents a strong signature of the oscillations of the fluid flow (Fig.~\ref{NumTraj2}). To demodulate the signal, I use a different technique than the experimentalists on this study, with a lower computational cost: a simple linear regression. I know that the parasitic drift I have to remove has a known frequency, which I choose when running the simulations. I feed to a simple linear regression model all the parameters I know, as well as the smoothed $y-$ coordinate for each time step to avoid overfitting thermal noise. This is important, as we see in Eq.~\ref{fluidvelexp} that the amplitude of the sine wave depends on the $y-$position of the particle. Finally, the model takes the $x-$positions and returns a demodulated version, which we call $\hat{x}(t)$.
 
 Along the $y-$axis, I simply make sure before conducting momentum analyses that the particle has had enough time to explore the whole channel cross-section fully, multiple times. This is vital to ensure the particle has crossed the Poiseuille streamlines, a condition which ensures we are in the Taylor-Aris regime for passive Brownian colloids. 
 
@@ -291,7 +291,7 @@ Along the $y-$axis, I simply make sure before conducting momentum analyses that 
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figures/chapter5/numtraj2.pdf}
-    \caption[Trajectories of an active Brownian particle in a sinusoidal Poiseuille flow obtained from numerical simulations.]{Numerical results obtained from discretising Eqs. \ref{equationsnum} with an Euler scheme with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14\, \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $\Delta P = 73.0 \, \mathrm{Pa}$, $a = 5 \, \upmu \mathrm{m}$. Top: streamwise trajectory along the $x-$axis. The full blue curve shows the raw trajectory, with a strong modulation from the fluid flow oscillations. The indigo dashed curve is the result of a demodulation of the signal obtained from a linear regression. The inset shows a zoom on times $t \in [160; 180]$ for better visualiation of the demodulation. Bottom: cross-streamwise trajectory along the $y-$axis (orange curve). The grey dotted lines represents the boundary of the channel, beyond which the ABP cannot wander. Multiple explorations of the full available width are visible, which is a key observation to ensure the ABP has crossed the full flow profile multiple times and can therefore be considered in a Taylor-Aris dispersion regime.}
+    \caption[Trajectories of an active Brownian particle in a sinusoidal Poiseuille flow obtained from numerical simulations.]{Numerical results obtained from discretising Eqs.~\ref{equationsnum} with an Euler scheme with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14\, \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $\Delta P = 73.0 \, \mathrm{Pa}$, $a = 5 \, \upmu \mathrm{m}$. Top: streamwise trajectory along the $x-$axis. The full blue curve shows the raw trajectory. The indigo dashed curve is the result of a demodulation of the signal obtained from a linear regression. The inset shows a zoom on times $t \in [160; 180]$ for better visualiation of the demodulation. Bottom: cross-streamwise trajectory along the $y-$axis (orange curve). The grey dotted lines represents the boundary of the channel, beyond which the ABP cannot wander.}
     \label{NumTraj2}
 \end{figure}
 
@@ -306,41 +306,41 @@ We recall the Taylor-Aris dispersion formula from chapter 4, but keep in mind th
 \end{equation}
 where $D_{x,\mathrm{TA}}$ is the expected dispersion coefficient for a Brownian colloid with diffusion coefficient $D_0$, $\alpha$ is a geometrical factor depending on the channel geometry (here, $\alpha = 1/210$) and $\mathrm{Pe}$ is an active Péclet number which compares advection and diffusion, as
 \begin{equation}
-    \mathrm{Pe} = \frac{\Delta P}{\sqrt{2}R_\mathrm{h}}\frac{W}{D_0}~,
+    \mathrm{Pe} = \dfrac{\Delta P}{\sqrt{2}R_\mathrm{h}}\dfrac{W}{D_0}~,
 \end{equation}
 where the $\Delta P/\left(\sqrt{2}R_\mathrm{h}\right)$ factor is the root-mean-square fluid velocity due to the oscillations of the pressure difference. 
 
-To extract diffusion coefficients and dispersion along the $x-$axis, we compute the dedridfted MSDs of multiple trajectories for a given set of parameters and average them. This is not the most computationally efficient method, but it is sufficient as we do not require a large amount of statistics for this study. We then repeat this process for multiple $\Delta P$ values, or equivalently, multiple $\mathrm{Pe}$ values. The results of these calculations is shown in Fig. \ref{MSDpeclet}. 
+To extract diffusion coefficients and dispersion along the $x-$axis, we compute the dedridfted MSDs of multiple trajectories for a given set of parameters and average them. This is not the most computationally efficient method, but it is sufficient as we do not require a large amount of statistics for this study. We then repeat this process for multiple $\Delta P$ values, or equivalently, multiple $\mathrm{Pe}$ values. The results of these calculations is shown in Fig.~\ref{MSDpeclet}. 
 
 
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figures/chapter5/MSD2.pdf}
-    \caption[MSDs computed from numerical simulations for various Péclet numbers.]{MSDs along the $x-$axis computed from demodulated numerical trajectories for various Péclet numbers, with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14 \,\times 10^{-19} \, \mathrm{J}$, $v = 100  \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $a = 5 \, \upmu \mathrm{m}$. The colormap corresponds to the Péclet number of a given numerical experiment. The grey lines indicate a slope of 2 on the left and 1 on the right in log-scale, which correspond to the expected ballistic regime at short times and effective diffusive regime at long times of an ABP. Higher Péclet numbers show both a stonger ballistic regime and a larger diffusivity at long times.}
+    \caption[MSDs computed from numerical simulations for various Péclet numbers.]{MSDs along the $x-$axis computed from demodulated numerical trajectories for various Péclet numbers, with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14 \,\times 10^{-19} \, \mathrm{J}$, $v = 100  \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $a = 5 \, \upmu \mathrm{m}$. The colormap corresponds to the Péclet number of a given numerical experiment. The grey lines indicate a slope of 2 on the left and 1 on the right in log-scale, which correspond to the expected ballistic regime at short times and effective diffusive regime at long times of an ABP.}
     \label{MSDpeclet}
 \end{figure}
 
-We already notice that every MSD follows the expected shape from Eq. \ref{MSDRNT}, in a case where the thermal diffusion coefficient $D$ is too small to be visible at very short times. The first visible regime is therefore the ballistic regime, where the particle hasn't had time yet to reorient. Beyond the typical reorientation time $\tau_\mathrm{R}$, the MSDs all take a diffusive behaviour. Furthermore, as the Péclet number grows, MSDs retain their shape but are systematically higher, which is the hallmark of an enhanced dispersion coefficient due to fluid flow advection. 
+We already notice that every MSD follows the expected shape from Eq.~\ref{MSDRNT}, in a case where the thermal diffusion coefficient $D$ is too small to be visible at very short times. The first visible regime is therefore the ballistic regime, where the particle hasn't had time yet to reorient. Beyond the typical reorientation time $\tau_\mathrm{R}$, the MSDs all take a diffusive behaviour. Furthermore, as the Péclet number grows, MSDs retain their shape but are systematically higher, which is the hallmark of an enhanced dispersion coefficient due to fluid flow advection. 
 
-We now turn to quantifying that enhancement of the dispersion. I present in Fig. \ref{MSDfits} a typical plot in which dispersion coefficients are measured, from performing log-fits in the diffusive regime of the $\hat{x}-$wise MSD. In this treatment, I also retrieve the ballistic prefactors at short times, which correspond to the mean squared velocity of the particle in the $x-$ and $y-$ directions for later analyses.
+We now turn to quantifying that enhancement of the dispersion. I present in Fig.~\ref{MSDfits} a typical plot in which dispersion coefficients are measured, from performing log-fits in the diffusive regime of the $\hat{x}-$wise MSD. In this treatment, I also retrieve the ballistic prefactors at short times, which correspond to the mean squared velocity of the particle in the $x-$ and $y-$ directions for later analyses.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter5/N_1000000-tau_0.001-R_5e-06-H_0.0001-eta_0_0.001-kbT_4.141947e-21-D_r_3.35-v_0.0001-T_2.0-delta_P_9.943020230137991-L_0.088-W_0.00018-oscillations_True-N_trajectories_100-Job_ID_10_0.pdf}
-    \caption[Extraction of ballistic and diffusive regime values from computed MSDs.]{Typical MSDs computed from 100 stacked trajectories and averaged, with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \times 10 ^{-3}\, \mathrm{s}$, $T = 2/, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14 \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $a = 5 \, \upmu \mathrm{m}$, $\Delta P = 10.0 \, \mathrm{Pa}$. The blue curve corresponds to the MSD along the $x-$axis, and presents a strong signature of the flow's oscillation. The orange curve corresponds to the $y-$axis. It presents two regimes: a ballistic regime at short times (with an exponent of 2), and a confined regime at long times (with an exponent of 1). The green curve corresponds to the angular MSD, which remains diffusive at all times, as we can expect from the angular Eq. \ref{equationsnum}. Finally, the pink curve is the demodulated MSD on the $x-$axis. At short times, it also presents a ballistic regime, and crosses over to a diffusive regime at long times (with an exponent of 1). All fits are performed in log-scale and all $D_x$, $\langle V_x^2 \rangle $ and $\langle V_y^2\rangle$ values are extracted from dataset such as the one shown here. }
+    \caption[Extraction of ballistic and diffusive regime values from computed MSDs.]{Typical MSDs computed from 100 stacked trajectories and averaged, with $N_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \times 10 ^{-3}\, \mathrm{s}$, $T = 2/, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14 \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $a = 5 \, \upmu \mathrm{m}$, $\Delta P = 10.0 \, \mathrm{Pa}$. The blue curve corresponds to the MSD along the $x-$axis, and presents a strong signature of the flow's oscillation. The orange curve corresponds to the $y-$axis. The green curve corresponds to the angular MSD. Finally, the pink curve is the demodulated MSD on the $x-$axis.}
     \label{MSDfits}
 \end{figure}
 
-Finally, the treatment is repeated over a span of Péclet numbers. The enhancement on the diffusivity $D_x / D_0$ is plotted against $\mathrm{Pe}^2$ in Fig. \ref{dxd0}. We notice that the dispersion enhancement follows the trend set by Eq. \ref{TaylorArisFormula}, but may become smaller or larger than a passive case by tuning the fluid oscillation period to lower or higher periods respectively. This hints at an asymptotical behaviour for very large periods, where the enhancement of the diffusivity reaches a higher profile which still follows the trend set by Eq. \ref{TaylorArisFormula} as $D_x / D_0 = 1 + \alpha \mathrm{Pe}^2$. However, the $\alpha$ coefficient is modified by the activity of the particle, which explains why the active Taylor dispersion phenomenon reaches higher values than its passive counterpart. 
+Finally, the treatment is repeated over a span of Péclet numbers. The enhancement on the diffusivity $D_x / D_0$ is plotted against $\mathrm{Pe}^2$ in Fig.~\ref{dxd0}. We notice that the dispersion enhancement follows the trend set by Eq.~\ref{TaylorArisFormula}, but may become smaller or larger than a passive case by tuning the fluid oscillation period to lower or higher periods respectively. This hints at an asymptotical behaviour for very large periods, where the enhancement of the diffusivity reaches a higher profile which still follows the trend set by Eq.~\ref{TaylorArisFormula} as $D_x / D_0 = 1 + \alpha \mathrm{Pe}^2$. However, the $\alpha$ coefficient is modified by the activity of the particle, which explains why the active Taylor dispersion phenomenon reaches higher values than its passive counterpart. 
 
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figures/chapter5/Fig4.pdf}
-    \caption[Demonstration of the Taylor-Aris diffusion effect for active Brownian particles in an oscillating Poiseuille flow.]{Measured enhacement of the streamwise diffusion $D_x / D_0$  of an ABP in an oscillating poiseuille flow as a function of Péclet number. $a)$ Experimental dispersion coefficients $D_x$. $b)$ Comparison of experimental and numerical renormalised dispersion coefficients $D_x/D_0$ against $\mathrm{Pe}^2$. Grey markers correspond to a passive Brownian tracer with the same parameters otherwise. Diamonds are the numerical simulation results, whereas circles correspond to the experimental data. The black curve shows the expected enhancement of the dispersion from Eq. \ref{TaylorArisFormula}. Colours correspond to various fluid oscillation periods. }
+    \caption[Demonstration of the Taylor-Aris diffusion effect for active Brownian particles in an oscillating Poiseuille flow.]{Measured enhacement of the streamwise diffusion $D_x / D_0$  of an ABP in an oscillating poiseuille flow as a function of Péclet number. $a)$ Experimental dispersion coefficients $D_x$. $b)$ Comparison of experimental and numerical renormalised dispersion coefficients $D_x/D_0$ against $\mathrm{Pe}^2$. Grey markers correspond to a passive Brownian tracer with the same parameters otherwise. Diamonds are the numerical simulation results, whereas circles correspond to the experimental data. The black curve shows the expected enhancement of the dispersion from Eq.~\ref{TaylorArisFormula}. Colours correspond to various fluid oscillation periods. }
     \label{dxd0}
 \end{figure}
 
-The mean squared velocities (Fig. \ref{vxvy}) on the other hand do not demonstrate a strong effect of the fluid oscillation period. This is expected as we chose our oscillation period much greater than $\tau_\mathrm{R}$, which means that in the ballistic regime, the particle never has time to feel the fluid oscillation before having reoriented. We also notice that $\langle V_y^2 \rangle$ remains unchanged with Péclet number, whereas $\langle V_x^2 \rangle$ increases with $\mathrm{Pe}^2$. This is consistent with speed composition, and we expect the ratio $\langle V_x^2 \rangle / \langle V_y^2 \rangle$ to follow
+The mean squared velocities (Fig.~\ref{vxvy}) on the other hand do not demonstrate a strong effect of the fluid oscillation period. This is expected as we chose our oscillation period much greater than $\tau_\mathrm{R}$, which means that in the ballistic regime, the particle never has time to feel the fluid oscillation before having reoriented. We also notice that $\langle V_y^2 \rangle$ remains unchanged with Péclet number, whereas $\langle V_x^2 \rangle$ increases with $\mathrm{Pe}^2$. This is consistent with speed composition, and we expect the ratio $\langle V_x^2 \rangle / \langle V_y^2 \rangle$ to follow
 \begin{equation}
 \langle V_x^2 \rangle / \langle V_y^2 \rangle = 1 + \beta \mathrm{Pe}^2~,
 \label{Marcvelocities}
@@ -350,7 +350,7 @@ where $\beta$ is a geometric factor. \textcolor{red}{Couldnt PeA just be include
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figures/chapter5/Fig3.pdf}
-    \caption[Influence of the oscillating fluid flow's advection on the mean squared velocities of ABPs.]{Measured enhacement of the streamwise mean squared velocities $\langle V_x^2 \rangle / \langle V_y^2 \rangle$ of an ABP in an oscillating poiseuille flow as a function of Péclet number. $a)$ Experimental measurements of the mean squared velocities along $\vect{e_x}$ and $\vect{e_y}$. $b)$ comparison of experimental and numerical measurements of the ratio $\langle V_x^2 \rangle / \langle V_y^2 \rangle$ against Péclet number squared. Grey markers correspond to a passive Brownian tracer with the same parameters otherwise. Diamonds are the numerical simulation results, whereas circles correspond to the experimental data. Colours correspond to various fluid oscillation periods. Black line is Eq. \ref{Marcvelocities}.  }
+    \caption[Influence of the oscillating fluid flow's advection on the mean squared velocities of ABPs.]{Measured enhacement of the streamwise mean squared velocities $\langle V_x^2 \rangle / \langle V_y^2 \rangle$ of an ABP in an oscillating poiseuille flow as a function of Péclet number. $a)$ Experimental measurements of the mean squared velocities along $\vect{e_x}$ and $\vect{e_y}$. $b)$ comparison of experimental and numerical measurements of the ratio $\langle V_x^2 \rangle / \langle V_y^2 \rangle$ against Péclet number squared. Grey markers correspond to a passive Brownian tracer with the same parameters otherwise. Diamonds are the numerical simulation results, whereas circles correspond to the experimental data. Colours correspond to various fluid oscillation periods. Black line is Eq.~\ref{Marcvelocities}.  }
     \label{vxvy}
 \end{figure}
 
