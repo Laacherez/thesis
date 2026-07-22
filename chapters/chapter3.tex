@@ -1,358 +1,290 @@
 
 
 \chapter{Brownian Motion in Soft Confinement}
-yilin
 \section{Introduction}
 
-In many biological systems, one must not only take into account Brownian behaviours, but also carefully evaluate the effect of the system's or parts of the system's deformability on its dynamics. Indeed, if we take the example of a lipid bilayer, which is a soft and quasi-two-dimensional fluid, the thermal energy $k_\mathrm{B}\Theta$ of the system is sufficient to cause long-wavelength bending fluctuations of the cell membrane, thickness fluctuations, lipid movement within the plane itself, and so forth. Naturally, a neighbouring fluid's motion is then affected by these shape modifications, which can in turn affect the dynamics of a body evolving in that same bath. This coupling is not trivial. 
-
-The coupling between softness and viscous flows, which we will refer to as the elastohydrodynamic (EHD) coupling, has been extensively studied in the deterministic framework. We for example mention the emergence of lift forces near a deformable boundary at low Reynolds numbers, which have been first demonstrated theoretically ~\cite{sekimoto1993mechanism, Beaucourt2004, skotheim_soft_2004, Snoeijer2013, urzay_elastohydrodynamic_2007} and then experimentally ~\cite{Saintyves2016, Davies2018, Rallabandi2018, Vialar2019, zhang2020direct}.
-
-The field of stochastic EHD is still fairly new. Molecular dynamics simulations have been conducted to investigate the anomalous diffusion of a micelle near a lipid bilayer ~\cite{Sheikh2023}. Another recent study ~\cite{fares_observation_2024} demonstrated experimentally the emergence of a new, non-conservative force acting upon a Brownian soft colloid near a confining wall. However, we still to this day lack a precise theory to encompass quantitatively the long-time signatures of the coupling between softness, confinement and fluctuations.
-
-Because of the level of complexity of such a study, I present in this chapter a most simple model, with elementary ingredients, which can still qualitatively capture all the effects we are interested in. This model was published in \emph{Communications Physics} in 2025 ~\cite{lacherez_enhanced_2025} and the full print and Supplementary Information can be found in appendix of this thesis. In the following sections, I present the theoretical aspects of the model, developed by David S. Dean. I develop the numerical model used to simulate this toy model.  Finally, I show how numerics and theory compare.
+In the last chapter, we mentioned the strong influence of confinement on Brownian dynamics. It is common, in microbiological settings for instance, to work with such confined systems. However, strictly rigid confinements are scarce. More often, they can deform under external or active forces, stretch, and fluctuate. Indeed, if we take the example of a cell membrane, which we can describe with a lipid bilayer, the thermal energy $k_\mathrm{B}\Theta$ of the system is sufficient to cause long-wavelength fluctuations of the cell membrane, thickness fluctuations, lipid movement within the plane itself, and so forth. A neighbouring fluid's motion is then affected by these shape modifications, which can in turn affect the dynamics of a body evolving in that same bath. The coupling between softness and viscous flows, which we will refer to as the elastohydrodynamic coupling, has been extensively studied in the deterministic framework. We know lift forces active upon a translating body emerge near a deformable boundary at low Reynolds numbers~\cite{Bureau2023Lift}. This has been proposed first theoretically ~\cite{sekimoto1993mechanism, urzay_elastohydrodynamic_2007, Beaucourt2004, skotheim_soft_2004, Snoeijer2013, } and then experimentally ~\cite{Saintyves2016, Davies2018, Rallabandi2018, Vialar2019, zhang2020direct}. Studies involving fluid interfaces~\cite{Bickel2006Brownian,Wang2009}, fluctuating surfaces~\cite{Villa2023Microparticle,Marbach2018Transport}, and biological-inspired membranes~\cite{Sarfati2021Enhanced,DaddiMoussaIder2016Particle,Sheikh2023Brownian} have been carried out in that regard, though the field of stochastic elastohydrodynamics is still fairly new. Molecular dynamics simulations have been conducted to investigate the anomalous diffusion of a micelle near a lipid bilayer ~\cite{Sheikh2023}. Another recent study ~\cite{fares_observation_2024} demonstrated experimentally the emergence of a new, non-conservative force acting upon a Brownian soft colloid near a confining wall. However, we still to this day lack a precise theory, real experiments and numerical simulations that quantitatively encompass the long-time signatures of the coupling between softness, confined flows and fluctuations. I present in this chapter a most simple model, with all the elementary ingredients, which can still qualitatively capture all the effects we are interested in. This model was published in \emph{Communications Physics} in 2025 ~\cite{lacherez_enhanced_2025} and the full print and Supplementary Information can be found in appendix of this thesis. In the following sections, I present some theoretical aspects of the model, developed by David S. Dean. I develop the numerical method used to simulate this toy model. Finally, I show how numerics and theory compare.
 
 \section{Toy Model for soft Brownian Motion}
-\subsection{Overview of the Toy Model}
+From here on, we study a purely one-dimensional case of a colloid coupled to an elastic and fluctuating membrane (Fig.~\ref{toy_model_figure_1}). The colloid is represented by a first degree of freedom, $q_1$, and is submitted to a periodic trapping potential $\phi(q_1)$ of spatial period $\lambda$ and amplitude $\Delta U$. We couple to this colloid a minimal version of the membrane. We model the membrane with a colloid that is submitted to a harmonic potential of energy $q_2^2/(2\kappa)$, where $\kappa$ is the compliance (inverse stiffness), representing the elasticity of the membrane. This second colloid is tracked with the degree of freedom $q_2$.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/chapter3/toy_model_figure_1.pdf}
-    \caption[Schematic representation of a toy model for Brownian motion in soft, fluctuating confinement.]{Representation of the system. A Brownian colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled locally as a second Brownian colloid (red) subject to a harmonic potential of inverse stiffness (or \emph{compliance}) $\kappa$. This membrane is coupled to the colloid of interest through an indirect, hydrodynamic-like coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-friction $\gamma_{11}$ and $\gamma_{22}$, respectively.}
+    \caption[Schematic representation of a toy model for Brownian motion in soft, fluctuating confinement.]{Representation of the system. A colloid of interest (blue) is trapped in a periodic potential of amplitude $\Delta U$ and spatial period $\lambda$. An elastic membrane is modelled locally as a second colloid (red) subject to a harmonic potential of inverse stiffness (\emph{compliance}) $\kappa$. This membrane is coupled to the colloid of interest through an indirect, hydrodynamic-like coupling represented by the coefficient $\gamma_{12}$, and both the colloid and the membrane feel their own self-frictions, described by the coefficients $\gamma_{11}$ and $\gamma_{22}$, respectively.}
     \label{toy_model_figure_1}
 
 \end{figure}
 
 
-From here on, we study a purely one-dimensional case of a Brownian colloid coupled to an elastic and fluctuating membrane (Fig.~\ref{toy_model_figure_1}). The Brownian colloid is represented by a first degree of freedom, $q_1$, and is submitted to a periodic trapping potential $\phi(q_1)$ of spatial period $\lambda$ and amplitude $\Delta U$. Throughout this chapter, the Brownian colloid's degree of freedom $q_1$ will be color-coded in blue, and the membrane's degree of freedom $q_2$ in red. We couple to this colloid the toy model version of the membrane. We represent the membrane with a colloid that is submitted in a harmonic potential of energy $q_2^2/(2\kappa)$, where $\kappa$ is the compliance (or inverse stiffness). It represents the elasticity of the membrane. This second colloid is tracked with the second degree of freedom, $q_2$. 
-
-
-
-Both the Brownian colloid and the membrane feel their own self-friction, respectively $\gamma_{11}$ and $\gamma_{22}$. Furthermore, they interact through an indirect, hydrodynamic-like interaction $\gamma_{12}$. This interaction represents the effect of the fluid that is displaced by the motion of the colloid on the membrane, and \emph{vice-versa}. All together, these terms form the friction matrix $\mat\Gamma$
+Both the colloid and the membrane feel their own friction with the surrounding fluid medium. We refer to this as the self component of the friction matrix and note it as $\gamma_{11}$ and $\gamma_{22}$, respectively. Furthermore, they interact through a hydrodynamic-like interaction $\gamma_{12}$. This interaction represents the effect of the fluid that is displaced by the motion of the colloid on the membrane, and \emph{vice-versa}. All together, these terms form the friction matrix $\mat\Gamma$:
 \begin{equation}
     \mat{\Gamma} = \begin{pmatrix}
     \gamma_{11} & \gamma_{12} \\
     \gamma_{12} & \gamma_{22}
-    \end{pmatrix}
+    \end{pmatrix}~,
 \end{equation}
-which can be inverted to give the mobility matrix of the system, as $\mat{M} = \mat{\Gamma}^{-1}$. As per Lorentz's reciprocal theorem, both matrices must be positive definite, and, because their diagonal terms account for the self-friction and self-mobility respectively, $\mu_{11} > 0$ and $\mu_{22} > 0$.   
-
-We can write the total energy of the system as
+which can be inverted to give the mobility matrix of the system: $\mat{M} = \mat{\Gamma}^{-1}$. Both matrices must be positive definite, their diagonal terms account for the self-friction and self-mobility respectively. As a consequence, one has $\upmu_{11} > 0$ and $\upmu_{22} > 0$. We can write the total energy of the system as:
 \begin{equation}
     H (q_1, q_2) = \phi(q_1) + \dfrac{q_2^2}{2\kappa}~,
 \end{equation}
-and we notice the absence of Hamiltonian interactions in the system. In that case, we work in the overdamped limit, and we write the coupled Langevin equations describing the evolutions of $q_1$ and $q_2$ as
+and we notice the absence of Hamiltonian interactions in the system. We work in the overdamped limit and neglect inertial terms. The coupled Langevin equations describing the evolutions of $q_1$ and $q_2$ reads:
 \begin{align}
     \label{3ToyMod_langevin1}
     \gamma_{11}\dfrac{\mathrm{d}q_1}{\mathrm{d}t} + \gamma_{12}\dfrac{\mathrm{d}q_2}{\mathrm{d}t} &= -\phi'(q_1) + \eta_1(t)~, \\
     \gamma_{12}\dfrac{\mathrm{d}q_1}{\mathrm{d}t} + \gamma_{22}\dfrac{\mathrm{d}q_2}{\mathrm{d}t} &= -\dfrac{q_2}{\kappa} + \eta_2(t)~,
     \label{3ToyMod_langevin2}
 \end{align}
-where $\eta_i$ and $\eta_j$ (with $j \in \{1, 2\}$) are Gaussian white noises of zero mean and correlation functions $\langle \eta_i(t) \eta_j(t')\rangle = 2 k_\mathrm{B}T \delta(t - t')\gamma_{ij}$. The equilibrium probability density function of the system is then given by the Gibbs-Boltzmann distribution, as
+where $\eta_i$ and $\eta_j$ (with $j \in \{1, 2\}$) are Gaussian white noises of zero mean and correlation functions $\langle \eta_i(t) \eta_j(t')\rangle = 2 k_\mathrm{B}\Theta \delta(t - t')\gamma_{ij}$. The equilibrium probability density function of the system is then given by the Gibbs-Boltzmann distribution, as
 \begin{equation}
-    P_\mathrm{eq} = \dfrac{\exp[-\beta H(q_1, q_2)]}{Z}~.
+    P_\mathrm{eq} = \dfrac{\exp[-\beta H(q_1, q_2)]}{Z}~,
     \label{P_eq}
 \end{equation}
-
+where $\beta$ is the inverse thermal energy as $\beta = (k_\mathrm{B}\Theta)^{-1}$ and $Z$ is a normalising factor.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical developments}
-
-The objective of the following developments is to compute the modification to the long-time dynamics of the Brownian colloid diffusing within the sinusoidal trap. The development I choose to present here is not the most rigorous, and corresponds to the very stiff ($\kappa \to 0$) limit of the elastic membrane. The interested reader can find a more rigorous argument based on multiscale analysis ~\cite{hai2008, pav2008} in the appendices of this thesis, alongside a second development for the very compliant limit ($\kappa \to \infty$). 
-
-
-We begin by refactoring Eqs.~\ref{3ToyMod_langevin1} and~\ref{3ToyMod_langevin2} in the deterministic case $\Theta = 0$ 
+The objective of the following developments is to compute the modification to the long-time dynamics of the colloid diffusing within the periodic trap. The development I choose to present here is not the most rigorous, and corresponds to the stiff ($\kappa \to 0$) limit of the elastic mode $q_2$. The interested reader can find a more rigorous argument based on multiscale analysis ~\cite{hai2008, pav2008} in the appendices of this thesis, alongside a second development for the compliant limit ($\kappa \to \infty$). In the deterministic case (\emph{i.e.} $\Theta = 0$), inverting Eqs.~\ref{3ToyMod_langevin1} and~\ref{3ToyMod_langevin2} yields :
 \begin{align}
     \label{3ToyMod_athermal_q1}
-    \dfrac{\mathrm{d}q_1}{\mathrm{d}t} & = -\mu_{11} \phi'(q_1) - \dfrac{\mu_{12}}{\kappa}q_2~, \\
-    \dfrac{\mathrm{d}q_2}{\mathrm{d}t} & = -\mu_{12} \phi'(q_1) - \dfrac{\mu_{22}}{\kappa}q_2~. 
+    \dfrac{\mathrm{d}q_1}{\mathrm{d}t} & = -\upmu_{11} \phi'(q_1) - \dfrac{\upmu_{12}}{\kappa}q_2~, \\
+    \dfrac{\mathrm{d}q_2}{\mathrm{d}t} & = -\upmu_{12} \phi'(q_1) - \dfrac{\upmu_{22}}{\kappa}q_2~. 
 \end{align}
-
-We then integrate to express $q_2$ as
+We then integrate to express $q_2$:
 \begin{equation}
-    q_2 = - \dfrac{\kappa \mu_{12}}{\mu_{22}} \left( 1 + \dfrac{\kappa}{\mu_{22}} \dfrac{\mathrm{d}}{\mathrm{d}t}\right)^{-1} \phi'(q_1)~.
+    q_2 = - \dfrac{\kappa \upmu_{12}}{\upmu_{22}} \left( 1 + \dfrac{\kappa}{\upmu_{22}} \dfrac{\mathrm{d}}{\mathrm{d}t}\right)^{-1} \phi'(q_1)~.
 \end{equation}
-
-
-In the small $\kappa$ limit, we then expand the right-hand bracket term, taking into account the chain rule
+We define the characteristic relaxation time $\tau_2$ of the harmonic trapping corresponding to the membrane elasticity as $\tau_2 = \kappa/\upmu_{22}$.  In the small $\kappa$ limit, we then expand the right-hand bracket term:
 \begin{equation}
-    q_2 \simeq - \dfrac{\kappa \mu_{12}}{\mu_{22}} \left[ \phi'(q_1) - \dfrac{\kappa}{\mu_{22}}\phi''(q_1) \dfrac{\mathrm{d}q_1}{\mathrm{d}t} + O(\tau_2^2)\right]~.
+    q_2 \simeq - \dfrac{\kappa \upmu_{12}}{\upmu_{22}} \left[ \phi'(q_1) - \dfrac{\kappa}{\upmu_{22}}\phi''(q_1) \dfrac{\mathrm{d}q_1}{\mathrm{d}t} + O(\tau_2^2)\right]~,
 \end{equation}
-
-Here, we note that $\tau_2$ is the characteristic relaxation time of the harmonic trapping corresponding to the membrane elasticity, as $\tau_2 = \kappa/\mu_{22}$. Now, substituting this new expression for $q_2$ in Eq.~\ref{3ToyMod_athermal_q1}, we obtain
+Now, substituting this new expression for $q_2$ in Eq.~\ref{3ToyMod_athermal_q1}, we obtain:
 \begin{equation}
-     \dfrac{\mathrm{d}q_1}{\mathrm{d}t} = - \left( \mu_{11} - \dfrac{\mu_{12}^2}{\mu_{22}}\right) \phi'(q_1(t)) - \dfrac{\kappa \mu_{12}^2}{\mu_{22}^2} \phi''(q1(t)) \dfrac{\mathrm{d}q_1}{\mathrm{d}t}~,
+     \dfrac{\mathrm{d}q_1}{\mathrm{d}t} = - \left( \upmu_{11} - \dfrac{\upmu_{12}^2}{\upmu_{22}}\right) \phi'(q_1) - \dfrac{\kappa \upmu_{12}^2}{\upmu_{22}^2} \phi''(q_1(t)) \dfrac{\mathrm{d}q_1}{\mathrm{d}t}~,
 \end{equation}
-which we can reexpress as
+which we can reexpress as:
 \begin{equation}
-    \dfrac{\mathrm{d}q_1}{\mathrm{d}t} = -\mu_\mathrm{e}(q_1)\phi'(q_1)~,
+    \dfrac{\mathrm{d}q_1}{\mathrm{d}t} = -\upmu_\mathrm{e}(q_1)\phi'(q_1)~,
     \label{3ToyMod_q1mue}
 \end{equation}
-where $\mu_\mathrm{e}$ is a dressed mobility with expression
+where $\upmu_\mathrm{e}$ is a dressed mobility with expression:
 \begin{equation}
-    \mu_\mathrm{e} = \dfrac{\mu_{11}\mu_{22} - \mu_{12}^2}{\mu_{22}\left( 1 + \dfrac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{22}^2}\right)}~.
+    \upmu_\mathrm{e} = \dfrac{\upmu_{11}\upmu_{22} - \upmu_{12}^2}{\upmu_{22}\left( 1 + \dfrac{ \kappa \phi''(q_1) \upmu_{12}^2}{\upmu_{22}^2}\right)}~.
 \end{equation}
-
-Remembering that $\mat{\Gamma} = \mat{M}^{-1}$, 
+Remembering that $\mat{\Gamma} = \mat{M}^{-1}$, we finally obtain the dressed mobility:
 \begin{equation}
-    \mu_\mathrm{e} = \dfrac{1}{\gamma_{11}\left( 1 + \dfrac{ \kappa \phi''(q_1) \mu_{12}^2}{\mu_{11}^2}\right)}~.
+    \upmu_\mathrm{e} = \dfrac{1}{\gamma_{11}\left( 1 + \dfrac{ \kappa \phi''(q_1) \gamma_{12}^2}{\gamma_{11}^2}\right)}~.
 \end{equation}
-
-
-Now, we can avoid reexpressing the noise which should be applied to Eq.~\ref{3ToyMod_q1mue} for the thermal case by working directly with Fokker-Planck formalism. This formalism is introduced in its elementary form at the beginning of my thesis, and developed for more complex cases in chapter 2. Doing such a thing is not rigorous, as I previously mentioned, because the effective stochastic process has not been derived. Eliminating fast variables in Eq.~\ref{3ToyMod_q1mue} typically introduces non-trivial corrections. However, since we assume separation of timescales, the effective slow process still permits the writing of a uniquely-defined Fokker-Plank equation. 
-
-This Fokker-Plank equation reads
+Now, we can avoid reexpressing the noise which should be applied to Eq.~\ref{3ToyMod_q1mue} for the thermal case by working directly with Fokker-Planck formalism. This formalism is introduced in its elementary form at the beginning of my thesis, and developed for more complex cases in chapter 2. Doing such a thing is not rigorous, as I previously mentioned, because the effective stochastic process is not derived. Eliminating fast variables in Eq.~\ref{3ToyMod_q1mue} typically introduces non-trivial corrections. However, since we assume separation of time scales, the effective slow process ($q_2$ in this case) still permits the writing of a uniquely-defined Fokker-Planck equation. This Fokker-Planck equation reads:
 \begin{equation}
-    \dfrac{\partial P_1 (q_1, t)}{\partial t} = \dfrac{\partial}{\partial q_1} \mu_\mathrm{e}(q_1) \left[ k_\mathrm{B}\Theta \dfrac{\partial P_1 (q_1, t)}{\partial q_1} + \phi'(q_1)P_1(q_1, t)\right]~,
+    \dfrac{\partial P_1 (q_1, t)}{\partial t} = \dfrac{\partial}{\partial q_1} \upmu_\mathrm{e}(q_1) \left[ k_\mathrm{B}\Theta \dfrac{\partial P_1 (q_1, t)}{\partial q_1} + \phi'(q_1)P_1(q_1, t)\right]~,
 \end{equation}
-and, noting that the time derivative of the probability density function $P_1(q_1, t)$ can be expressed in terms of probability flux $J$,
+and $P_1(q_1, t)$ can be expressed in terms of probability flux $J$ as:
 \begin{equation}
-    \dfrac{\partial P_1(q_1, t)}{\partial t} = -\dfrac{\partial J}{\partial q_1~.}
+    \dfrac{\partial P_1(q_1, t)}{\partial t} = -\dfrac{\partial J}{\partial q_1}~,
 \end{equation}
-This allows us to write
+where:
 \begin{equation}
-    J = -D_\mathrm{e}(q_1) \dfrac{\partial}{\partial q_1} P_1(q_1, t) - \mu_\mathrm{e} \phi'(q_1) P_1(q_1, t)~,
+    J = -D_\mathrm{e}(q_1) \dfrac{\partial}{\partial q_1} P_1(q_1, t) - \upmu_\mathrm{e} \phi'(q_1) P_1(q_1, t)~,
 \end{equation}
-where $D_\mathrm{e} = k_\mathrm{B}\Theta$. The above equation can be rewritten 
+where $D_\mathrm{e}(q_1) = \mu_\mathrm{e}(q_1)k_\mathrm{B}\Theta$. The above equation can be rewritten as:
 \begin{equation}
-    J = - D_\mathrm{e}(q_1)\exp\left[-\beta \phi(q_1)\right] \dfrac{\mathrm{d}}{\mathrm{d}q} \left\{\exp\left[\beta \phi(q_1)\right]P_1 (q_1, t)\right\}
+    J = - D_\mathrm{e}(q_1)\exp\left[-\beta \phi(q_1)\right] \dfrac{\mathrm{d}}{\mathrm{d}q_1} \left\{\exp\left[\beta \phi(q_1)\right]P_1 (q_1, t)\right\}~.
+    \label{eq:tmcurrent}
 \end{equation}
-with $\beta = \dfrac{1}{k_\mathrm{B}\Theta}$.
-
-Now, we tilt the potential by adding a small force $F$, which gives a new potential $U(q_1)$, as
+Now, we tilt the potential by adding a small force $F$, which gives a total potential $U(q_1)$, as:
 \begin{equation}
     U(q_1) = \phi(q_1) - Fq_1~.
 \end{equation}
-Then, the current equation can be rewritten taking into account this new force, and gives
+Then, Eq.~\ref{eq:tmcurrent} is rewritten, taking into account this new force, as:
 \begin{equation}
-    \dfrac{\mathrm{d}}{\mathrm{d}q_1} \left\{ \exp[\beta U(q_1)] P(q_1, t)\right\} = - \dfrac{J(q_1, t)}{D_\mathrm{e}(q_1)} \exp[\beta U(q_1)]~.
+    \dfrac{\mathrm{d}}{\mathrm{d}q_1} \left\{ \exp[\beta U(q_1)] P(q_1, t)\right\} = - \dfrac{J}{D_\mathrm{e}(q_1)} \exp[\beta U(q_1)]~.
 \end{equation}
-We can then integrate over a period $\lambda$, and, using periodicity, we retrieve
+We can then integrate over a period $\lambda$:
 \begin{equation}
-    P_1(q_1, t) = \dfrac{J(q_1) \exp[-\beta U(q_1)]}{1 - \exp(-\beta F \lambda)} \int_{q_1}^{q_1 + \lambda} \dfrac{\exp[\beta U(q)]}{D_\mathrm{e}(q)}\mathrm{d}q~.
+    P_1(q_1) = \dfrac{J \exp[-\beta U(q_1)]}{1 - \exp(-\beta F \lambda)} \int_{q_1}^{q_1 + \lambda} \dfrac{\exp[\beta U(q)]}{D_\mathrm{e}(q)}\mathrm{d}q~.
 \end{equation}
-
-By essence, $P_1(q_1, t)$ is normalised
+The reduced density is normalised over one period:
 \begin{equation}
     \int_{0}^{\lambda}P_1(q_1)\mathrm{d}q_1 = 1~,
 \end{equation}
-and thus we retrieve for $J$
+and thus:
 \begin{equation}
-    J = \dfrac{1 - \exp[-\beta F \lambda]}{\int_{0}^{\lambda} \exp[-\beta U(q)]\mathrm{d}q \int_{q}^{q+\lambda} \dfrac{\exp[\beta U(q)]}{D_\mathrm{e}(q)}\mathrm{d}q}~.
+    J = \dfrac{1 - \exp[-\beta F \lambda]}{\int_{0}^{\lambda} \exp[-\beta U(q)]\mathrm{d}q \int_{q_1}^{q_1+\lambda} \dfrac{\exp[\beta U(q)]}{D_\mathrm{e}(q)}\mathrm{d}q}~.
 \end{equation}
-In the small force limit $F \to 0$,
+In the small force limit ($F \to 0$), one has:
 \begin{equation}
     1 - \exp(-\beta F \lambda)  \simeq \beta F \lambda~,
 \end{equation}
-which, to leading order in $F$, gives
+which, to leading order in $F$, gives:
 \begin{equation}
-    J = \dfrac{\beta F \lambda}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)] \mathrm{d}q_1 \int_{0}^{\lambda} \dfrac{\exp[\beta \phi(q_1)]}{D_\mathrm{e}(q_1)}\mathrm{d}q_1}~.
+    J = \dfrac{\beta F \lambda}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)] \mathrm{d}q_1 \int_{0}^{\lambda} \dfrac{\exp[\beta \phi(q)]}{D_\mathrm{e}(q)}\mathrm{d}q}~.
 \end{equation}
-
-Finally, we note that the drift velocity should read $v = J(q_1) \lambda$, and that the effective diffusion coefficient over $\lambda$ should be 
+We note that the drift velocity should read $v = J \lambda$, and that the effective long-time diffusion coefficient is:
 \begin{equation}
-    D^* = \dfrac{k_\mathrm{B}\Theta v}{F} = \dfrac{\lambda^2}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)]\mathrm{d}q_1 \int_{0}^{\lambda} \dfrac{\exp(\beta \phi(q_1))}{D_\mathrm{e}(q_1)}\mathrm{d}q_1}~,
+    D^*(\kappa) = \dfrac{k_\mathrm{B}\Theta v}{F} = \dfrac{\lambda^2}{\int_{0}^{\lambda} \exp[-\beta \phi(q_1)]\mathrm{d}q_1 \int_{0}^{\lambda} \dfrac{\exp(\beta \phi(q))}{D_\mathrm{e}(q)}\mathrm{d}q}~,
 \end{equation}
-which is the generalised Lifson-Jackson formula ~\cite{LifsonJackson}.
-
-
-Finally, we replace $D_\mathrm{e}(q_1)$ in the expression 
+which is the generalised Lifson-Jackson formula~\cite{LifsonJackson}. Finally, we replace $D_\mathrm{e}(q_1)$ in the expression, which leads to:
 \begin{equation}
-    D^* = \dfrac{k_\mathrm{B}\Theta\lambda^2}{\gamma_{11}\int_{0}^{\lambda} \mathrm{d}q \exp[\beta \phi(q)] \left(1 - \dfrac{\kappa \gamma_{12}^2 \phi'^2(q)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{\lambda} \mathrm{d}q \exp[-\beta \phi(q)]}~.
+    D^*(\kappa) = \dfrac{k_\mathrm{B}\Theta\lambda^2}{\gamma_{11}\int_{0}^{\lambda} \mathrm{d}q \exp[\beta \phi(q)] \left(1 - \dfrac{\kappa \gamma_{12}^2 \phi'^2(q)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{\lambda} \mathrm{d}q \exp[-\beta \phi(q)]}~.
 \end{equation}
-And, setting $\phi(q_1) = \Delta U \phi\left(\dfrac{q_1}{\lambda}\right)$, where $\Delta U$ is the amplitude of the periodic trap
+And, setting $\phi(q_1) = \Delta U \psi\left(\dfrac{q_1}{\lambda}\right)$ leads to:
 \begin{equation}
-    D^* = \dfrac{k_\mathrm{B}\Theta}{\gamma_{11}\int_{0}^{1} \mathrm{d}p \exp[\beta\Delta U \psi(p)] \left(1 - \dfrac{\kappa \gamma_{12}^2 \Delta U^2\psi'^2(p)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{1} \mathrm{d}p \exp[-\beta \Delta U\psi(p)]}~.
+    D^*(\kappa) = \dfrac{k_\mathrm{B}\Theta}{\gamma_{11}\int_{0}^{1} \mathrm{d}p \exp[\beta\Delta U \psi(p)] \left(1 - \dfrac{\kappa \gamma_{12}^2 \Delta U^2\psi'^2(p)}{k_\mathrm{B}\Theta \gamma_{11}^2}\right) \int_{0}^{1} \mathrm{d}p \exp[-\beta \Delta U\psi(p)]}~,
     \label{D_star}
 \end{equation}
-Which is the equation we use to compare with numerical results.
-
-
-In the $\kappa \to 0$ limit, the above expression can be approximated as
+which is the equation we use to compare with numerical results. In the $\kappa \to 0$ limit, Eq.~\ref{D_star} can be approximated as:
 \begin{equation}
-    D^* = D^*(0) (1 + \alpha)~,
+    \boxed{
+    D^*(\kappa) \simeq D^*(0) (1 + \alpha)}~,
+    \label{eq:dstar_stiff}
 \end{equation}
-with
+with:
 \begin{equation}
     \alpha = \beta \epsilon \dfrac{\lambda^2 \gamma_{12}^2}{\gamma_{11}^2} \dfrac{\int_{0}^{\lambda} \mathrm{d}q_1 \phi'(q_1)^2 \exp[\beta \phi(q_1)]}{\int_{0}^{\lambda} \mathrm{d}q_1 \exp[-\beta \phi(q_1)]}~,
 \end{equation}
-where we define $\epsilon = \dfrac{k_\mathrm{B}\Theta}{\lambda^2}$ a dimensionless compliance. As $\alpha > 0$, the coupling of the membrane to the Brownian colloid always increases its long-time diffusion constant.
-
-
-Furthermore, in the very compliant limit $\kappa \to \infty$, $D^*$ becomes
+where we define $\epsilon = \kappa k_\mathrm{B}\Theta/\lambda^2$, a dimensionless compliance. As $\alpha > 0$, the coupling of the membrane to the colloid always increases its long-time diffusion constant $D^*$. Furthermore, at the compliant limit ($\kappa \to \infty$), $D^*$ becomes:
 \begin{equation}
-    D^* = k_\mathrm{B}\Theta \dfrac{\mu_{11}(\mu_{11}\mu_{22} - \mu{12}^2)}{\lambda^{-2}Z_+Z_-(\mu_{11}\mu_{22} - \mu_{12}^2) + \mu_{12}^2} + O\left(\dfrac{1}{\sqrt(\epsilon)}\right)~.
-    \label{D_star_compliant}
+    \boxed{
+    D^* = k_\mathrm{B}\Theta \dfrac{\upmu_{11}(\upmu_{11}\upmu_{22} - \upmu{12}^2)}{\lambda^{-2}Z_+Z_-(\upmu_{11}\upmu_{22} - \upmu_{12}^2) + \upmu_{12}^2} + O\left(\dfrac{1}{\sqrt(\epsilon)}\right)
+    \label{D_star_compliant}}~,
 \end{equation}
-We notice, in that regime, the absence of a $\kappa$ or $\epsilon$ dependence. 
+where we define $Z_\pm$ as:
+\begin{equation}
+Z_\pm = \int_{0}^{\lambda} \exp[\pm \beta \phi(q)]\mathrm{d}q~.
+\end{equation}
+We notice, in that regime, the absence of a dependence on the compliance of the elastic mode.
 
+\section{Numerical modeling}
+This section presents the development of a numerical model to generate coupled Brownian trajectories according to Eqs.~\ref{3ToyMod_langevin1} and~\ref{3ToyMod_langevin2}. We keep in mind that, owing to the stochasticity of the system, and the strong coupling between the elastic mode and the colloid, we need to generate a considerable amount of data to converge the statistics. Thus, we balance two conditions on our numerical simulations: we require a cheap integrator, which avoids oversubscribing memory; and we must find a way to save data from hundreds of thousands of trajectories without cluttering memory. We begin by discretising Eqs.~\ref{3ToyMod_langevin1} and~\ref{3ToyMod_langevin2} using am Euler-Maruyama scheme~\cite{Maruyama1955} (See chapter~\ref{chapter1}, subsection~\ref{subsec:eulerscheme}).
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Numerical modelling}
 \subsection{Discretisation}
-My main mission in this project is to simulate the above Eqs.~\ref{3ToyMod_langevin1} and~\ref{3ToyMod_langevin2} efficiently. To do so, I discretise these equations using a simple forward Euler scheme (which was introduced in the beginning of this thesis). The equations read
+We discussed, in chapter 1, the most simple way to integrate a stochastic process over time. This discretisation method is the Euler-Maruyama scheme. I generally prefer to attempt this method before trying more complex integrators, as it is the most convenient to implement, and is often sufficient for the processes I simulate. Naturally, other methods could work as well and be less time step-sensitive, but with these more complex methods comes an added cost on the calculations (namely, we debated using Runge-Kutta methods in this problem, and ultimately concluded it was not necessary upon analysing the first Euler-discretised trajectories we generated). Finally, I find a high pedagogical aspect to the Euler method. It can be intuited by anyone, with simple hand-waving arguments and a basic knowledge of numerics. The Euler-discretised versions of Eqs.~\ref{3ToyMod_langevin1} and ~\ref{3ToyMod_langevin2} read:
 \begin{align}
     \label{q1_discretized}
-    q_1(t + \Delta t) - q_1(t) &= -\mu_{11} \phi'(q_1(t))\Delta t - \dfrac{\mu_{12}}{\kappa}q_2(t)\Delta t + \xi_1 \sqrt{2k_\mathrm{B}T\Delta t}~,\\
-q_2(t + \Delta t) - q_2(t) &=  - \dfrac{\mu_{22}}{\kappa}q_2(t)\Delta t -\mu_{12} \phi'(q_1(t))\Delta t + \xi_2 \sqrt{2k_\mathrm{B}T\Delta t}~, \label{q2_discretized}
+    q_1(t + \Delta t) - q_1(t) &= -\upmu_{11} \phi'(q_1(t))\Delta t - \dfrac{\upmu_{12}}{\kappa}q_2(t)\Delta t + \xi_1 \sqrt{2k_\mathrm{B}\Theta\Delta t}~,\\
+q_2(t + \Delta t) - q_2(t) &=  - \dfrac{\upmu_{22}}{\kappa}q_2(t)\Delta t -\upmu_{12} \phi'(q_1(t))\Delta t + \xi_2 \sqrt{2k_\mathrm{B}\Theta\Delta t}~, \label{q2_discretized}
 \end{align}
-where $\xi_i$ is a zero-mean Gaussian random variable, as
+where $\xi_i$ are zero-mean Gaussian random variables, with the two point correlators given by:
 \begin{equation}
-    \langle \xi_i \xi_j \rangle = \mu_{ij}~.
+    \langle \xi_i \xi_j \rangle = \upmu_{ij}~.
 \end{equation}
-We choose to work in terms of mobility instead of friction matrix elements for convenience in the upcoming developments. They are, however, strictly equivalent.
-
-Furthermore, in the rest of this study, we choose $\phi(q_1)$ to be sinusoidal, as $\phi(q_1) = \Delta U \sin\left(2 \pi q_1/\lambda\right)$,
-with $\Delta U$ the amplitude of the sinusoidal trap. 
+Furthermore, in the rest of this study, we choose $\phi(q_1)$ to be sinusoidal:
+\begin{equation}
+\phi(q_1) = -\Delta U \cos\left(2 \pi q_1/\lambda\right)~.
+\end{equation}
 
 \subsection{Time step selection}
+ In the present study, I identify two short time scales : the local relaxation time within a local minimum of the sinusoidal trap, and the relaxation time of the harmonic trap. Longer time scales associated with the diffusion of the colloid above the periodic trap exist, but we aim here at identifying the smallest time scale in the system.
 
-In any discretisation process, it is essential to choose the appropriate time step. This time step must be small enough to avoid a blowup from error propagation (again, see the beginning of this thesis for more details on how the Euler method propagates errors), but big enough to remain advantageous. An arbitrarily small timestep prohibits the probing of very long time dynamics due to computation time. 
-
-To select a correct time step for a simulation, I typically first identify all the smaller time scales in the system I want to simulate. In the present study, I identify two time scales : the local relaxation time within a local minimum of the sinusoidal trap, and the relaxation time of the harmonic trap. 
-
-Near a local minimum, we approximate the sinusoidal trap as harmonic. In that case, 
+ \subsubsection{Periodic trap time scale}
+Near a local minimum, we approximate the sinusoidal trap as harmonic. In that case:
 \begin{equation}
-    \phi(q_1) = \dfrac{1}{2} k_\mathrm{eff}q_1^2~,
+    \phi(q_1) \simeq \dfrac{1}{2} k_\mathrm{eff}q_1^2~,
 \end{equation}
-where $k_\mathrm{eff}$ is an effective stiffness, which we identify as the local curvature of the potential as 
+where $k_\mathrm{eff}$ is an effective stiffness, which is the local curvature of the potential:
 \begin{align}
 k_\mathrm{eff} &= |\phi''(0)| \\
 &= \Delta U \left( \dfrac{2 \pi}{\lambda} \right)^2~,
 \end{align}
-and we can finally identify this first timescale as
+and we can finally identify the first time scale as:
 \begin{equation}
-    \tau_1 = (\mu_{11} k_\mathrm{eff})^{-1} = \dfrac{\lambda^2}{4 \pi^2 \Delta U \mu_{11}}~.
+    \boxed{
+    \tau_1 = (\upmu_{11} k_\mathrm{eff})^{-1} = \dfrac{\lambda^2}{4 \pi^2 \Delta U \upmu_{11}}}~.
 \end{equation}
 
-The harmonic trap is much simpler, as it requires no approximations, and we find its characteristic timescale 
+\subsubsection{Elastic mode time scale}
+Similarly, we find the characteristic time scale of the harmonic trap associated to the elastic mode:
 \begin{equation}
-    \tau_2 = \dfrac{\kappa}{\mu_{22}}~.
+    \boxed{
+    \tau_2 = \dfrac{\kappa}{\upmu_{22}}}~.
+\end{equation}
+Then, we choose a time step which satisfies:
+\begin{equation}
+    \boxed{
+    \Delta t = \dfrac{1}{100}\min{\tau_1, \tau_2}}~.
 \end{equation}
 
-Then, I choose a time step which satisfies
-\begin{equation}
-    \Delta t = \dfrac{1}{100}\max{\tau_1, \tau_2}~.
-\end{equation}
-
-
-We also need to define an upper bound to the simulation time. We must always remain mindful of the computational cost of our simulations, as time and energy both are scarce resources. Thus, we can define a timescale $\tau^*$ which depends on the long-time effective diffusion coefficient $D^*(\kappa)$ defined in Eq.~\ref{D_star}
+\subsubsection{Maximum simulation time}
+We also need to define an upper bound to the simulation time. This time must be sufficient to probe at long-time effects such as the colloid diffusing over the periodic trap it is subjected to. We define a time scale $\tau^*$ which depends on the long-time effective diffusion coefficient $D^*(\kappa)$ defined in Eq.~\ref{D_star} through:
 \begin{equation}
     \tau^*(\kappa) = \dfrac{\lambda^2}{D^*(\kappa)}~.
 \end{equation}
-I choose to run my simulations for a time $T_\mathrm{sim}$ which is much larger than $\tau^*$, as $T_\mathrm{sim} = 100 \, \tau^*$. This allows me to probe the long-time dynamics of the system, and to extract the effective diffusion coefficient from the mean-squared displacement of the Brownian colloid. This, in turn, sets the computational cost of a simulation, which I can quantify using the total number of iterations in the time loop $N$ as
+I choose to run my simulations for a time $T_\mathrm{sim}$ which is much larger than $\tau^*$: $T_\mathrm{sim} = 100 \, \tau^*(\kappa)$. This allows the probing of the long-time dynamics of the system, and the extraction of the effective diffusion coefficient from the mean-squared displacement of the colloid. This, in turn, sets the computational cost of a simulation, which I quantify using the total number of iterations in the time loop $N$:
 \begin{equation}
     N = \left\lfloor \dfrac{T_\mathrm{sim}}{\Delta t} \right\rfloor = \left\lfloor \dfrac{100 \tau^*}{\Delta t} \right\rfloor~ .
 \end{equation}
+Note that $\tau^*$, $T_\mathrm{sim}$ and $\tau_2$ are $\kappa-$dependent. This means that simulations have different total durations and time step values. This must also be evaluated before launching a simulation, for example by killing processes of more than what the memory can hold at a time. Until a workaround is found, small values of $\kappa$ may be impossible to probe due to the maximal simulation time $T_\mathrm{sim}$ being large in comparison to the simulation time step $\Delta t$.  
 
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
-
-The interested reader can find a minimal version of a trajectory generation code \textcolor{red}{here}. This simple code allows the user to tune parameters and test for themself their effect on the dynamics of the system. Most of the figures presented in this section are generated using this simpler script, in which I left the seed fixed to ensure proper reproducibility.
+The interested reader can find a minimal version of a trajectory generation code in the GitHub associated to this manuscript. This simple code allows the user to tune parameters and test for themself their effect on the dynamics of the system. 
 
 \subsection{Trajectories}
 
-I first generate trajectories of the two coupled Brownian colloids using Eqs.~\ref{q1_discretized} and~\ref{q2_discretized}, for a given set of parameters. A sample of a single trajectory is shown in Fig.~\ref{Trajectories}. We can see that the membrane fluctuates around its equilibrium position in $q_2 = 0$, whereas the Brownian colloid is trapped at short times within a local minimum, and escapes through random thermal fluctuations at longer times to explore space. This is a first verification that the simulations behave as expected. Indeed, it is not unusual for Brownian simulations to blowup in the case of an unfortuitous dimensionalisation of the system, and this issue is almost always imputable to a too-large time step. We have already discussed this matter in the beginning of the manuscript. 
-
+I first generate trajectories of the two coupled colloids using Eqs.~\ref{q1_discretized} and~\ref{q2_discretized}, for a given set of parameters. A sample of a single trajectory is shown in Fig.~\ref{Trajectories}. The elastic mode fluctuates around its equilibrium position in $q_2 = 0$, whereas the colloid is trapped at short times within a local minimum, and escapes through random thermal fluctuations at longer times to explore space. This is a first verification that the simulations behave as expected.
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{figures/chapter3/Trajectories.pdf}
-    \caption[Trajectories computed by numerical simulations of the toy model.]{Trajectories of the Brownian colloid (blue) and the membrane (red) for $\kappa = 0.01$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$ and $\gamma_{12} = 0.8$, $\tau = 10^{-4}$.}
+    \caption[Trajectories computed by numerical simulations of the toy model.]{Trajectories of the colloid (blue) and the membrane (red) for $\kappa = 0.01$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$ and $\gamma_{12} = 0.8$, $\Delta t = 10^{-4}$.}
     \label{Trajectories}
 \end{figure}
 
-
-We verify the behaviour of the system at equilibrium by sampling the probability density function of $q_1$ and $q_2$ from the generated trajectories, and comparing them to the theoretical prediction from the Gibbs-Boltzmann distribution (Eq.~\ref{P_eq}). This is shown in Fig.~\ref{Peq_q1q2}. We can see that the sampled probability density functions (histograms) and theoretical prediction from the Gibbs-Boltzmann distribution (solid lines, Eq.~\ref{P_eq}) are in perfect agreement, even for low statistics (a single binned trajectory of $10^8$ points suffices to reach a good match between theory and numerics).
-
-
-
-
-The sampled probability distribution of $q_1$ follows the expected periodic shape, whereas the one of $q_2$ follows the expected Gaussian shape predicted by Eq.~\ref{P_eq}. This is a second verification that the simulations are working as expected, and that we are correctly sampling the equilibrium distribution of the system.
-
-
-
+\subsection{Marginal equilibrium distributions}
+I verify the behaviour of the system at equilibrium by sampling the probability density functions of $q_1$ and $q_2$ from the generated trajectories, and comparing them to the theoretical prediction from the Gibbs-Boltzmann distribution (Eq.~\ref{P_eq}). This is shown in Fig.~\ref{Peq_q1q2}. We can see that the sampled probability density functions (histograms) and marginal theoretical prediction from the Gibbs-Boltzmann distribution (solid lines, Eq.~\ref{P_eq}) are in perfect agreement, even for low statistics (a single binned trajectory of $10^8$ points suffices to reach a good match between theory and numerics).
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/chapter3/Peq_two_panel.pdf}
-    \caption[Equilibrium distributions binned from trajectories.]{Equilibrium probability density function of $q_1$ (top, for $q_1^* = q_1\mod\lambda$) and $q_2$ (bottom) for $\kappa = 0.010$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1.0\times 10^7$ points. The theoretical prediction from the Gibbs-Boltzmann distribution (Eq.~\ref{P_eq}, solid lines) is also shown. }
+    \caption[Equilibrium distributions binned from trajectories.]{Numerical equilibrium probability density function of $q_1$ (top, for $q_1^* = q_1\mod\lambda$) and $q_2$ (bottom) for $\kappa = 0.010$. The other parameters are fixed to $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$, $\gamma_{12} = 0.8$, $\Delta t = 10^{-4}$s, for a single trajectory of $N=1.0\times 10^7$ points. The theoretical prediction from the Gibbs-Boltzmann distribution (Eq.~\ref{P_eq}, solid lines) is also shown. }
     \label{Peq_q1q2}
 \end{figure}
 
 
 
-However, at this stage, we have not probed the dynamics of the system. Thus, we still have no insight on the effect of a soft membrane on the diffusion of the Brownian colloid. To do so, we will need to compute the MSD of $q_1$ and $q_2$ from the generated trajectories, and to extract the effective diffusion coefficient of $q_1$ from the long-time behaviour of its MSD. We will then be able to compare this effective diffusion coefficient to the theoretical prediction from Eq.~\ref{D_star}.
-
-
 \subsection{Mean-Squared displacements}
-In the present case below, the MSD is computed directly from the generated trajectories, calculating the average of the squared displacements over all possible or given time lags. This means that the computer will store the whole trajectories $q_1$ and $q_2$ in memory. It will then loop over all possible time lags $\Delta t$, and for each of them, it will compute the average of the squared displacements $[q(t + \Delta t) - q(t)]^2$ over all possible time origins $t$. This technique is straightforward and sufficient for demonstration purposes.
+At this stage, we do not probe the dynamics of the system. To do so, we compute the MSD of $q_1$ and $q_2$ from the generated trajectories, and extract the effective diffusion coefficient of $q_1$ from the long-time behaviour of its MSD. We compare this long-time effective diffusion coefficient to the theoretical prediction from Eq.~\ref{D_star}.
 
-\begin{lstlisting}[caption={Direct computation of the MSD from trajectories}]
-def MSD(x, lags):
-    msd = np.zeros(len(lags)) # Always initialise you arrays if you know their size beforehand.
+\subsubsection{MSD from raw trajectories}
+In the present case below, the MSD is computed directly from the generated trajectories. We calculate the average of the squared displacements over all possible or given time lags. This means that the memory stores whole trajectories $q_1$ and $q_2$. It then loops over all possible time lags $\Delta t$, and for each of them, computes the average of the squared displacements $[q(t + \Delta t) - q(t)]^2$ over all possible time origins $t$. This technique is straightforward and sufficient for demonstration purposes. 
 
-    for n, lag in enumerate(lags):
-        if lag >= len(x):     # Avoid pitfalls.
-            msd[n] = np.nan
-
-        else:
-            msd[n] = np.nanmean( # Ignore NaN values !
-                (x[:-lag] - x[lag:])**2 # In words, NaN-dropped mean of the square of displacements for timelag lag of index n in the lag array.
-            )
-
-    return msd # Returns an array of size n with the MSD for each time lag in the lags array.
-\end{lstlisting}
-
-With a simple estimate looking at the code above, we can see that the computational cost of such a method scales as $O(N^2)$ at worst.
-
-
-In our published work and in similar numerical studies ~\cite{millan_numerical_2023}, it is more convenient to first compute the \emph{histograms of displacements} at given time lags. We can then simply extract the MSD from the width of the histogram of displacements, as
+\subsubsection{MSD from the histogram of displacements}
+In our published work and in previous studies from our group ~\cite{millan_numerical_2023}, we showed that it is more robust to first compute the \emph{histograms of displacements} at given time lags. We then extract the MSD from the width of the histogram of displacements as:
 \begin{equation}
     \mathrm{MSD}(\Delta t) = \sigma^2(\Delta t)~,
+    \label{eq:tmsigma}
 \end{equation}
-where $\sigma^2$ is the variance of the histogram of displacements at time lag $\Delta t$.
-
-Thought not computationally lighter, this is the technique I recommend for this type of statistical study for the reasons that follow. The histogram of displacements has the advantage of being a stackable quantity across iterations of a same simulation. On a rolling basis, as multiple trajectories are calculated, we simply add counts to the histogram of displacements. Furthermore, it is a much more general quantity than the MSD, as it allows for the computation of other moments of the distribution of displacements (skewness, kurtosis, etc.). 
-
-We can define a convergence criterion on the histogram of displacements as the relative distance between a "previous" histogram of cumulative displacements, and an "updated" histogram which contains all previous iteration plus the new additions from the latest simulated trajectories. When this relative distance is smaller than a given threshold for a sufficient number of iterations, we deem the simulation to have converged, and it automatically stops. This is a convenient way of saving resources and active working time, as it allows full automation of the whole process.
-
-I define the convergence criterion as
+where $\sigma^2$ is the variance of the histogram of displacements at time lag $\Delta t$. The histogram of displacements has the advantage of being a stackable quantity across iterations of a same simulation. On a rolling basis, as multiple trajectories are generated, we add counts to the histogram of displacements. Furthermore, it is a much more general quantity than the MSD, as it allows for the computation of other moments of the distribution of displacements (skewness, kurtosis, etc.) if the study calls for it. The first step is the pre-definition of bin widths for each time lag. This is automated from the theoretical value of the MSD at this time lag $\tau$, according to Eqs.~\ref{eq:OGMSD} and~\ref{eq:tmsigma}. We choose an odd number of bins (typically, $n_\mathrm{bins} = 31$) so that one bin is always centered on 0, and a bin width is given by:
+\begin{equation}
+    w_\mathrm{bin} = \dfrac{10 \times 2D^*(\kappa) * \tau}{n_\mathrm{bins}}~,
+    \label{eq:binwidth}
+\end{equation}
+with the $10$ factor ensuring a large enough histogram width for all displacements to fall within the histogram. We can furthermore define a convergence criterion on the histograms of displacements as the relative distance between a ``previous'' histogram of cumulative displacements, and an ``updated'' histogram which contains all previous iterations plus the new additions from the latest simulated trajectories. When this relative distance is smaller than a given threshold for a given number of cumulative iterations, the simulation has converged, and it automatically stops. This hands-off technique permits much less supervision from the user over the simulation. I define the convergence criterion $\varepsilon$ as:
 \begin{equation}
     \varepsilon = \dfrac{\sum_i |P_i^\mathrm{prev} - P_i^\mathrm{updated}|}{\sum_i P_i^\mathrm{prev}}~,
 \end{equation}
-where $P$ is the histogram of displacements, and $i$ the index of the bin. I choose a threshold of $\varepsilon \leq 5\times10^{-3}$ for more than 3 iterations of 10 stacked trajectory statistics. This means that, when the relative distance between the "previous" and "updated" histograms of displacements is smaller than $5\times10^{-3}$ for more than 3 iterations of 10 stacked trajectories, we consider the simulation to have converged, and it automatically stops.
-
-The results of a typical MSD calculation for $q_1$ and $q_2$ are shown in Figs.~\ref{MSD_q1} and~\ref{MSD_q2}. We can see that the MSD of $q_1$ (Fig.~\ref{MSD_q1}) is at first diffusive with a $\Delta t$ exponent of 1 and a diffusion coefficient $D_\mathrm{m}$ which is directly proportional to the self-mobility of the Brownian colloid as 
+where $P$ is the histogram of displacements, and $i$ the index of the bin. I choose a threshold of $\varepsilon \leq 5\times10^{-3}$ for more than 3 iterations of 10 stacked trajectory statistics. The results of a typical MSD calculation for $q_1$ and $q_2$ are shown in Figs.~\ref{MSD_q1} and~\ref{MSD_q2}. We can see that the MSD of $q_1$ (Fig.~\ref{MSD_q1}) is at first diffusive with a $\Delta t$ exponent of 1 and a diffusion coefficient $D_\mathrm{m}$ which is directly proportional to the self-mobility of the colloid as:
 \begin{equation}
-D_\mathrm{m} = k_\mathrm{B}\Theta \mu_{11}~.
+D_\mathrm{m} = k_\mathrm{B}\Theta \upmu_{11}~.
 \label{D_m}
 \end{equation}
-It then falls into a slow crossover to reach a second diffusive regime of effective diffusivity $D^*$ as defined in Eqs.~\ref{D_star} and~\ref{D_star_compliant} for the very rigid and very compliant cases. The long-time diffusion coefficient is smaller than the short-time diffusion coefficient, which is a signature of the trapping effect of the sinusoidal potential. 
-
-
+It then falls into a slow crossover to reach a second diffusive regime of effective diffusivity $D^*$ as defined in Eq.~\ref{D_star}. The long-time diffusion coefficient is smaller than the short-time diffusion coefficient, which is a signature of the trapping effect of the sinusoidal potential. 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/chapter3/MSD_q1.pdf}
-    \caption[Mean-Squared Displacements computed from simulated trajectories of the mode $q_1$.]{Mean-Squared Displacement of $q_1$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. The bulk diffusion coefficient $D_\mathrm{m}$ (Eq.~\ref{D_m}) is shown for $\Delta t < \tau_1$ in blue dashes. The modified diffusion constant $D^*$ (Eq.~\ref{D_star_compliant}) is shown in blue dashdots for $\Delta t > \tau^*$. The dotted blue line indicates the expected long-time diffusion coefficient in the very rigid limit $\kappa \to 0$ (Eq.~\ref{D_star} for $\kappa = 0$).}
+    \includegraphics[width=0.9\textwidth]{figures/chapter3/MSD_q1.pdf}
+    \caption[Mean-Squared Displacements computed from simulated trajectories of the mode $q_1$.]{Mean-Squared Displacement of $q_1$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1$, $\gamma_{22} = 1$, $\gamma_{12} = 0.8$, $\Delta t = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. The bulk diffusion coefficient $D_\mathrm{m}$ (Eq.~\ref{D_m}) is shown for $\Delta t < \tau_1$ in blue dashes. The modified diffusion constant $D^*$ (Eq.~\ref{D_star_compliant}) is shown in a blue dash-dotted line for $\Delta t > \tau^*$. The dotted blue line indicates the expected long-time diffusion coefficient in the rigid limit where $\kappa \to 0$ (Eq.~\ref{D_star} for $\kappa = 0$).}
     \label{MSD_q1}
 \end{figure}
-
-The MSD of $q_2$ (Fig.~\ref{MSD_q2}) is also diffusive at short times with a diffusion coefficient $D_\mathrm{2}$ which is directly proportional to the self-mobility of the membrane as
+The MSD of $q_2$ (Fig.~\ref{MSD_q2}) is also diffusive at short times with a diffusion coefficient $D_\mathrm{2}$ which is directly proportional to the self-mobility of the elastic mode, as:
 \begin{equation}
-    D_\mathrm{2} = k_\mathrm{B}\Theta \mu_{22}~,
+    D_\mathrm{2} = k_\mathrm{B}\Theta \upmu_{22}~,
     \label{D_2}
 \end{equation}
-and then crosses over to a confined regime at long times $\Delta t > \tau_2$ due to the harmonic trapping of the membrane. We can predict the value of the long-time MSD plateau of $q_2$ as $\mathrm{MSD}(q_2) = 2 k_\mathrm{B}\Theta \kappa$, which we verify numerically.
-
+and then crosses over to a confined regime at long times $\Delta t > \tau_2$ due to the harmonic trapping. We can predict the value of the long-time MSD plateau of $q_2$ as $\mathrm{MSD}(q_2) = 2 k_\mathrm{B}\Theta \kappa$, which we verify numerically.
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/chapter3/MSD_q2.pdf}
-    \caption[Mean-Squared Displacements computed from simulated trajectories of the mode $q_2$.]{Mean-Squared Displacement of $q_2$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$, $\gamma_{12} = 0.8$, $\tau = 10^{-4}$s, for a single trajectory of $N=1\times 10^8$ points. At small time lags $\Delta t < \tau_2$, the membrane presents a diffusion constant $D_\mathrm{2}$ (Eq.~\ref{D_2}, in red dashes) which corresponds to a bulk, free diffusivity inside the minimum of the harmonic potential. The red dash-dotted line $\Delta t > \tau^2$ corresponds to the expected long-time MSD plateau value $2 k_\mathrm{B}\Theta \kappa$. }
+    \includegraphics[width=0.9\textwidth]{figures/chapter3/MSD_q2.pdf}
+    \caption[Mean-Squared Displacements computed from simulated trajectories of the mode $q_2$.]{Mean-Squared Displacement of $q_2$ for $\kappa = 0.01$, $\Delta U = 2.7 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 0.5$, $\gamma_{11} = 1.0$, $\gamma_{22} = 1.0$, $\gamma_{12} = 0.8$, $\Delta t = 10^{-4}$, for a single trajectory of $N=1\times 10^8$ points. At small time lags $\Delta t < \tau_2$, the membrane presents a diffusion constant $D_\mathrm{2}$ (Eq.~\ref{D_2}, in a blue dashed line) which corresponds to a bulk, free diffusivity inside the minimum of the harmonic potential. The blue dash-dotted line $\Delta t > \tau^2$ corresponds to the long-time MSD plateau value $2 k_\mathrm{B}\Theta \kappa$. }
     \label{MSD_q2}
 \end{figure}
 
@@ -360,42 +292,35 @@ and then crosses over to a confined regime at long times $\Delta t > \tau_2$ due
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/chapter3/Final_plot.pdf}
-    \caption[Expected enhancement of the diffusion of a Brownian colloid trapped near a soft, fluctuating membrane. Comparison of theoretical asymptotes, Kubo analytical solution and numerical simulation.]{Enhancement factor $\Delta D^*(\epsilon)/D^*$ as a function of the coupling parameter $\epsilon$ for $\Delta U = 3.0 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\mu_{11} = 1$, $\mu_{22} = 1$, $\mu_{12} = 0.85$. The Kubo analytical formula (Eq.~\ref{kubo}) is in solid black.}
+    \includegraphics[width=0.7\textwidth]{figures/chapter3/Final_plot.pdf}
+    \caption[Expected enhancement of the diffusion of a colloid trapped near a soft, fluctuating membrane. Comparison of theoretical asymptotes, Kubo analytical solution and numerical simulation.]{Enhancement factor $\Delta D^*(\epsilon)/D^*$ as a function of the coupling parameter $\epsilon$ for $\Delta U = 3.0 k_\mathrm{B}\Theta$, $k_\mathrm{B}\Theta = 1.0$, $\lambda = 1.0$, $\upmu_{11} = 1$, $\upmu_{22} = 1$, and $\upmu_{12} = 0.85$. The Kubo analytical formula (Eq.~\ref{kubo}) is in solid black.}
     \label{Final_plot}
 \end{figure}
-We can finally infer all diffusion coefficients by performing affine fits of the MSDs in the diffusive regimes, remembering that in the diffusive regime
-\begin{equation}
-    \mathrm{MSD}(\Delta t) = 2 D \Delta t~.
-\end{equation}
-
-In log scale, a diffusive regime corresponds to a linear regime with a time exponent of 1 as $\log(\mathrm{MSD}) = \log(2D) + \log(\Delta t)$, and the diffusion coefficient can be directly inferred from the intercept of the affine fit to the MSD axis at the origin of $\Delta t$. 
-
-For a given set of parameters, we can then compare the effect of a varying compliance of a soft membrane on the long-time diffusion coefficient of a Brownian colloid trapped nearby in a sinusoidal potential (Fig.~\ref{Final_plot}). 
-
-We define an augmentation factor $\Delta D^*(\epsilon)/D^*$ as
+Going beyond a simple graphical observation that numerical simulations agree with the predicted diffusivities, we now extract the values of the diffusivities associated to each diffusive regime from fitting the MSDs. In Fig.~\ref{MSD_q1}, we see that a diffusive regime corresponds to a linear regime with a time exponent of 1 as $\log(\mathrm{MSD}) = \log(2D) + \log(\Delta t)$, and the diffusion coefficient can be directly inferred from the offset of the affine fit. For a given set of parameters, we can then compare the effect of a varying compliance of a soft mode on the long-time diffusion coefficient of a colloid trapped nearby in a sinusoidal potential (Fig.~\ref{Final_plot}). We define an augmentation factor $\Delta D^*(\epsilon)/D^*$ as:
 \begin{equation}
     \dfrac{\Delta D^*(\epsilon)}{D^*} = \dfrac{D^*(\epsilon) - D^*(0)}{D^*(0)}~,
 \end{equation}
-to conveniently compare the coupled to uncoupled case. We notice that numerical results seem in perfect agreement with the expected theoretical augmentation factors in the asymptotical regions $\epsilon \to 0$ and $\epsilon \to \infty$. Interestingly, one may think of $\epsilon$ as a ratio of timescales. At very small $\epsilon$, the membrane is extremely stiff, and $q_2$ becomes the fast mode. At very large $\epsilon$, on the contrary, it comparatively becomes the slow mode. 
+to compare the rigid and soft cases. The numerical results agree with the expected theoretical augmentation factors in the asymptotical regions $\epsilon \to 0$ and $\epsilon \to \infty$. Interestingly, one may think of $\epsilon$ as a ratio of time scales. At small values of $\epsilon$, the elastic mode is stiff, and $q_2$ becomes the fast mode. At large $\epsilon$, on the contrary, it comparatively becomes the slow mode. Around $\epsilon = O(1)$, however, the time scale separation is lost. The particle coordinate and the elastic degree of freedom now relax on comparable time scales, and thus, neither Lifson-Jackson expression is valid. To access this crossover regime, we solve the full two-dimensional Kubo problem. 
 
-Around $\epsilon = O(1)$, however, the timescale separation is lost. The particle coordinate and the elastic degree of freedom now relax on comparable timescales, and thus, neither Lifson-Jackson expression is valid.
+\subsubsection{Linear-response and Kubo formulation}
+We use a Kubo linear-response formulation to determine the effective diffusion coefficient beyond the stiff-limit and compliant-limit approximations. Simply put, the idea is to perturb the system with a weak constant force acting along the colloidal coordinate and to extract from the change in the stationary drift velocity the long-time diffusivity through the Einstein relation. The stationary probability density is then expanded to first order in the applied force, with $r(q,u)$ denoting the corresponding linear correction to the equilibrium distribution, and where $q$ and $u$ are the adimensionalised coordinates corresponding to $q_1$ and $q_2$, respectively. For each value of the dimensionless compliance ($\epsilon$), this correction is obtained by solving the associated stationary Fokker-Planck equation under periodic boundary conditions in $q$, vanishing flux in $u$, and the normalisation constraint that the integral of $r$ is zero. Once $r(q,u)$ is known, the effective dimensionless diffusion coefficient follows from the Kubo expression:
+\begin{equation}
+    D_q^*=1-\int_0^1\mathrm{d}q\int_{-\infty}^{\infty}\mathrm{d}u\,
+    \left[v\psi'(q)+\frac{\mu_{12}}{\mu_{11}\sqrt{\epsilon}}u\right]r(q,u).
+    \label{eq:kubo_diffusion}
+\end{equation}
+The FlexPDE code used to solve Eq.~\ref{eq:kubo_diffusion}\footnote{This code works with inputting the matrix components of $\sqrt{\mu}$. The corresponding matrix is denoted $\mat{m}$.} is available in the GitHub related to this manuscript. It must be run for a panel of $\epsilon$ values, we can then be interpolated (Black curve on Fig.~\ref{Final_plot}.)
 
-To access this crossover regime, we solve the full two-dimensional Kubo problem \footnote{for which the interested reader can find the FlexPDE code in appendix of this manuscript.}~\cite{gue2015}. All the relevant developments and details on the numerical solution of the Kubo equation can be found in the appendix of this thesis. I will not go into details here, as I did not personally work on that matter. 
 
-This numerical solution does not require assuming either $\epsilon \ll 1$ or $\epsilon \gg 1$, and therefore gives the crossover between the two asymptotic regimes. It is, however, much more tedious to estimate due to the computational cost of solving. 
+\subsection{Application with biologically plausible parametres}
+Let us consider a colloid of radius $a = 100 \, \mathrm{nm}$ at a distance $d = 10 \, \mathrm{nm}$ from a membrane of elastic modulus $E = 1 \, \mathrm{kPa}$. The equivalent compliance of a membrane can be found using Hertz's model to give $\kappa = (E \sqrt{ad})^{-1}$. The system is immersed in a fluid of viscosity $\eta = 10^{-3}\, \mathrm{Pa.s}$, at room temperature $T = 300 \, \mathrm{K}$. The colloid is subject to a periodic potential of amplitude $\Delta U = 4k_\mathrm{B} \Theta$ and spatial period $\lambda = 100\, \mathrm{nm}$, which could for example model a patchy adhesive surface. To extract mobility values, we assume $\upmu_{11} = \upmu_{22} = (6 \pi \eta a)^{-1}$, and take Oseen mobility expressions (see the previous chapter, Eqs.~\ref{eq:oseen_diffusion_tensor_pair}) for $\upmu_{12}$, as $\upmu_{12} = (4 \pi \eta r)^{-1}$, where $r$ is the centre-to-centre distance between the colloid and the elastic mode, \emph{i.e.} $r = 2a + d$. 
 
-
-Furthermore, we may input to the model biological values for the parameters. Let us consider a colloid of radius $a = 100 \, \mathrm{nm}$ at a distance $d = 10 \, \mathrm{nm}$ from the membrane of elastic modulus $E = 1 \, \mathrm{kPa}$. The equivalent compliance of the membrane can be found using Hertz's model to give $\kappa = (E \sqrt{ad})^{-1}$. The system is immersed in a fluid of viscosity $\eta = 10^{-3}\, \mathrm{Pa.s}$, at room temperature $T = 300 \, \mathrm{K}$. The colloid is subject to a periodic potential of amplitude $\Delta U = 4k_\mathrm{B} \Theta$ and spatial period $\lambda = a = 100\, \mathrm{nm}$.
-
-To recover mobility values, we assume $\mu_{11} = mu_{22} = (6 \pi \eta a)^{-1}$, and assume Oseen's mobility expression for $\mu_{12}$ as $\mu_{12} = (4 \ pi \eta r)^{-1}$, with $r$ the center-to-center distance between the Brownian colloid and the colloid representing the membrane, as $r = 2a + d$. 
-
-With these values, the adimentionalised compliance $\epsilon$ falls exactly in the crossover region where the system is not considered very stiff or very compliant. Still, we may estimate the expected enhancement of the long-time diffusion coefficient by simply plotting these two asymptotes (Fig.~\ref{biovalues}) and recover at $\epsilon=0.013$ an expected enhancement of about $\Delta D^*/D^* \approx 100\%$.
+With these values, $\epsilon$ falls exactly in the crossover region, where the system is not considered stiff or compliant. We estimate the expected enhancement of the long-time diffusion coefficient by solving Eq.~\ref{eq:kubo_diffusion} (Fig.~\ref{biovalues}) and measure at $\epsilon=0.013$ an expected enhancement of about $\Delta D^*/D^* \approx 70\%$.
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter3/bio_values.pdf}
-    \caption[Application of the toy model with biologically plausible values to estimate the effect of softness on a real system.]{Estimation of the relative enhancement of the long-time diffusion coefficient of a Brownian colloid of radius $a=100\,\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}\Theta$ and spatial period $\lambda = 100\, \mathrm{nm}$ at a distance $d = 10\, \mathrm{nm}$ from membrane of elastic modulus $E = 1 \, \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\mu_{12}$ is estimated using Oseen's model. The two asymptotes of the very rigid $\epsilon \to 0$ and very soft $\epsilon \to \infty$ are shown in dash-dotted cyan and blue lines respectively.}
+    \caption[Application of the toy model with biologically plausible values to estimate the effect of softness on a real system.]{Estimation of the relative enhancement of the long-time diffusion coefficient of a colloid of radius $a=100\,\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}\Theta$ and spatial period $\lambda = 100\, \mathrm{nm}$ at a distance $d = 10\, \mathrm{nm}$ from a membrane of elastic modulus $E = 1 \, \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\upmu_{12}$ is estimated using Oseen's model. Coloured disks correspond to the solutions of Eq.~\ref{eq:kubo_diffusion} for $\epsilon \in [0.0001, 100.0]$. The vertical line acts as a guide for the eye, indicating $\epsilon = 0.013$. }
     \label{biovalues}
 \end{figure}
 
@@ -404,8 +329,4 @@ With these values, the adimentionalised compliance $\epsilon$ falls exactly in t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Take-home message}
 
-In this chapter, we have exposed the novelty of the field of stochastic elastohydrodynamics. We have developed a toy model with elementary ingredients which encompasses qualitatively the physics of a Brownian colloid diffusing nearby a soft membrane. We have then developed a theoretical framework to predict the long-time diffusion coefficient of the Brownian colloid as a function of the compliance of the membrane, and we have implemented numerical simulations to verify these predictions. We have found that the coupling of the membrane to the Brownian colloid always increases its long-time diffusion constant given the framework of our model.
-
-However, this systematic increase should be heavily modified by the introduction of more physical ingredients in the model. For instance, the attentive reader may have noticed our mobility matrix is not position-dependant, which hydrodynamically speaking would involve colloids quite far apart compared to their respective radii, rendering the coupling extremely weak. Furthermore, the system is so far in only one dimension, which should modify quantitatively the expected enhancement on the diffusion coefficient of the Brownian colloid. We also work in overdamped regime, but aknowledge the interest of keeping mass in the system so as to probe at added mass effects which are currently being investigated within our group.
-
-Nevertheless, the methodology presented in this chapter as well as the numerical methods are solid and, as the time of writing of this manuscript, being extended to some cases mentioned above.
+In this chapter, we have presented a toy model which encompasses qualitatively the physics of a colloid diffusing nearby a soft membrane. We have then developed a theoretical framework to predict the long-time diffusion coefficient of the colloid as a function of the compliance of the membrane, and we have implemented numerical simulations to verify these predictions. We have found that the coupling of the membrane to the colloid always increases the long-time diffusion constant of the latter given the framework of our model. However, this systematic increase should be heavily modified by the introduction of more physical ingredients in the model. For instance, the reader may have noticed the mobility matrix is not position-dependent, which hydrodynamically speaking would describe colloids quite far apart compared to their respective radii, rendering the coupling extremely weak. Furthermore, the system is so far in only one dimension. Working in higher dimensions should modify quantitatively the expected enhancement on the diffusion coefficient of the colloid. We also work in the overdamped regime, but aknowledge the interest of keeping mass in the system to probe at added potential elastohydrodynamic-like mass effects. These matters are currently being investigated within our group.

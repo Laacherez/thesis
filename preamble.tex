@@ -39,7 +39,7 @@
 \usepackage{setspace}
 \usepackage{parskip}
 
-\setstretch{1.1}
+\setstretch{1.15}
 
 
 % ============================================================
@@ -74,57 +74,68 @@
 }
 
 
-% ============================================================
-% Chapter tabs
-% Black tabs, chapter number only, outer edge of the page
-% Odd pages: right side
-% Even pages: left side
-% ============================================================
 
 \usepackage{tikz}
 \usepackage{eso-pic}
 
-\newif\ifshowchaptertabs
-\showchaptertabstrue
 
-\newcommand{\enablechaptertabs}{\global\showchaptertabstrue}
-\newcommand{\disablechaptertabs}{\global\showchaptertabsfalse}
+% ============================================================
+% Chapter title pages
+% ============================================================
 
-\newcommand{\chaptertab}{%
-  \AddToShipoutPictureBG{%
-    \begin{tikzpicture}[remember picture, overlay]
-      \ifshowchaptertabs
-        \ifnum\value{chapter}>0
-          \ifodd\value{page}
-            % Right-hand pages: tab on the right
-            \node[
-              fill=black,
-              text=white,
-              font=\sffamily\bfseries\small,
-              minimum width=0.8cm,
-              minimum height=1.8cm,
-              anchor=east
-            ] at ([yshift={-2.5cm-\value{chapter}*1.9cm}]current page.north east)
-            {\thechapter};
-          \else
-            % Left-hand pages: tab on the left
-            \node[
-              fill=black,
-              text=white,
-              font=\sffamily\bfseries\small,
-              minimum width=0.8cm,
-              minimum height=1.8cm,
-              anchor=west
-            ] at ([yshift={-2.5cm-\value{chapter}*1.9cm}]current page.north west)
-            {\thechapter};
-          \fi
-        \fi
-      \fi
-    \end{tikzpicture}%
-  }%
+\usepackage{titlesec}
+
+\newcommand{\chapterheadingframe}{%
+  \begin{tikzpicture}[baseline=(current bounding box.south)]
+
+    % Thin rectangular frame
+    \draw[line width=0.45pt]
+      (0,0) rectangle (\textwidth,1.35cm);
+
+    % "Chapter" label, masking the lower frame line
+    \node[
+      anchor=base west,
+      fill=white,
+      inner sep=0pt,
+      outer sep=0pt,
+      font=\rmfamily\Huge
+    ] (chapterword) at (0.5cm,-0.08cm)
+    {\chaptername};
+
+    % Large chapter number
+    \node[
+      anchor=base west,
+      fill=white,
+      inner xsep=2pt,
+      inner ysep=0pt,
+      outer sep=0pt,
+      font=\rmfamily\Huge,
+      scale=2.6,
+      transform shape
+    ] at ([xshift=0.0cm]chapterword.base east)
+    {\thechapter};
+
+  \end{tikzpicture}%
 }
 
-\AtBeginDocument{\chaptertab}
+\titleformat{\chapter}[display]
+  {\normalfont}
+  {\chapterheadingframe}
+  {0.55cm}
+  {\sffamily\bfseries\Huge\raggedright}
+
+\titlespacing*{\chapter}
+  {0pt}     % left indentation
+  {-15pt}   % vertical position from the top
+  {32pt}    % space after the chapter title
+
+
+% Unnumbered chapters such as Acknowledgements or Abstract
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont}
+  {}
+  {0pt}
+  {\sffamily\bfseries\Huge\raggedright}
 
 % ============================================================
 % Tables
@@ -293,3 +304,46 @@
   \null
   \clearpage
 }
+\usepackage[dvipsnames]{xcolor}
+\usepackage{epigraph,varwidth}
+
+\renewcommand{\epigraphsize}{\small}
+\setlength{\epigraphwidth}{0.6\textwidth}
+\renewcommand{\textflush}{flushright}
+\renewcommand{\sourceflush}{flushright}
+% A useful addition
+\newcommand{\epitextfont}{\itshape}
+\newcommand{\episourcefont}{\scshape}
+
+\makeatletter
+\newsavebox{\epi@textbox}
+\newsavebox{\epi@sourcebox}
+\newlength\epi@finalwidth
+\renewcommand{\epigraph}[2]{%
+  \vspace{\beforeepigraphskip}
+  {\epigraphsize\begin{\epigraphflush}
+   \epi@finalwidth=\z@
+   \sbox\epi@textbox{%
+     \varwidth{\epigraphwidth}
+     \begin{\textflush}\epitextfont#1\end{\textflush}
+     \endvarwidth
+   }%
+   \epi@finalwidth=\wd\epi@textbox
+   \sbox\epi@sourcebox{%
+     \varwidth{\epigraphwidth}
+     \begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
+     \endvarwidth
+   }%
+   \ifdim\wd\epi@sourcebox>\epi@finalwidth 
+     \epi@finalwidth=\wd\epi@sourcebox
+   \fi
+   \leavevmode\vbox{
+     \hb@xt@\epi@finalwidth{\hfil\box\epi@textbox}
+     \vskip1.75ex
+     \hrule height \epigraphrule
+     \vskip.75ex
+     \hb@xt@\epi@finalwidth{\hfil\box\epi@sourcebox}
+   }%
+   \end{\epigraphflush}
+   \vspace{\afterepigraphskip}}}
+\makeatother

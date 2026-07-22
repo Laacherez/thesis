@@ -1,7 +1,7 @@
 \chapter*{List of Symbols and abbreviations}
 \addcontentsline{toc}{chapter}{List of Symbols}
 
-Symbols are separated per chapter of occurrence. Symbols may appear in multiple Chapters once they have been defined.
+Symbols are separated per chapter of occurrence. Symbols may appear in multiple chapters once they have been defined.
 \begin{longtable}{p{3cm}p{11cm}}
 \hline
 Symbol & Description \\
@@ -10,6 +10,14 @@ Symbol & Description \\
 BM & Brownian Motion \\
 PDF & Probability Density Function \\
 MSD & Mean Squared Displacement \\
+
+RPY & Rotne-Prager-Yamakawa \\
+
+RBW & RigidMultiblobsWall library \\
+
+ABP & Active Brownian Particle \\
+
+RTP & Run and Tumble Particle \\
 \hline
 $a$ & Particle radius \\
 $D_0$ & Bulk diffusion coefficient \\
@@ -20,31 +28,38 @@ $\eta_0$ & Bulk dynamic fluid viscosity \\
 $d$ & Dimensionality ($d=2$ for 2D) \\
 $t$ & Time \\
 $m$ & Particle mass \\
-$v$ & Particle velocity \\
-$\langle v^2 \rangle_\mathrm{eq}$ & Mean squared velocity at equilibrium, thermal squared velocity \\
-$\tau_m$ & Momentum relaxation time, inertial time \\
-$\Delta t$ & Simulation time step \\
-
+$\tau_\mathrm{m}$ & Momentum relaxation time, inertial time \\
+$\Delta t$ & Time step \\
+$t_\mathrm{max}$ & Total time \\
 
 \hline
 $z$ & Colloid center to wall distance \\
-$\rho_\mathrm{object}$ & Object density \\
+$h$ & Colloid apex to wall distance $(z-a)$ \\
+$\gamma_\perp$ &  Effective friction for a normal motion \\
+$\gamma_\parallel$ & Effective friction for an in-plane motion \\
+$\rho$ & Density \\
 $g$ & Gravity acceleration \\
 $\Delta m$ & Buoyant mass \\
-
-$D_\perp$ & Effective diffusion coefficient for a normal diffusion \\
-$D_\parallel$  & Effective diffusion coefficient for an in-plane diffusion \\
-$D_{i \alpha, j \beta}$ &  Diffusion matrix component for colloids labeled $i$ and $j$, in directions $\alpha$ and $\beta$\\
+$z_i$ & Ion valency \\
+$\sigma$ & Surface charge density \\
 $l_\mathrm{B}$ & Boltzmann's length \\
 $l_\mathrm{D}$ & Debye's length \\
 $B$ & Adimensionalised electrostatic repulsion force\\
-$\eta_\perp$ &  Effective viscosity for a normal motion \\
-$\eta_\parallel$ & Effective viscosity for an in-plane motion \\
+$U_\mathrm{grav}$ & Gravitational potential \\
+$U_\mathrm{elec}$ & Electrostatic interaction potential \\
+$U$ & Total potential \\
+$D_\perp$ & Effective diffusion coefficient for a normal diffusion \\
+$D_\parallel$  & Effective diffusion coefficient for an in-plane diffusion \\
+$D_{i \alpha, j \beta}$ &  Diffusion matrix component for colloids labeled $i$ and $j$, in directions $\alpha$ and $\beta$\\
+$\gamma_\perp$ &  Effective friction for a normal motion \\
+$\bar{v}_\mathrm{d}$ & Total drift velocity \\
+$v_\mathrm{s}$ & Spurious drift velocity \\
+$v_\mathrm{d}$ & Deterministic drift velocity \\
+$\mat{\upmu}^\mathrm{tt}$ & Translational block of the mobility matrix \\
+$\mat{D}^\mathrm{tt}$ & Translational block of the diffusion matrix \\
+$D^\mathrm{C, R}_\perp$ & Collective (C) and relative (R) pair diffusion coefficients perpendicular ($\perp$) and parallel ($\parallel$) to the pair line of centres \\
 
 
-$\xi$ & Brownian white noise, zero mean and unit variance \\
-
-$\rho$ & Fluid density \\
 \hline 
 $q_i$ & Degree of freedom representing colloid $i$\\
 $\phi(q_1)$ & Sinusoidal potential acting upon $q_1$\\
@@ -52,60 +67,52 @@ $\Delta U$ & Sinusoidal trap amplitude \\
 $\lambda$ & Sinusoidal trap spatial period\\
 $\kappa$ & Inverse stiffness or compliance\\
 $\epsilon$ & Adimensionalised compliance \\
-
+$\mat{\gamma}$ & Friction matrix \\
+$\gamma_{ij}$ & Friction matrix element \\
+$\mat{\upmu}$ & Mobility matrix \\
+$\upmu_{ij}$ & Mobility matrix elements\\
 $E$ & Elastic modulus \\
-
 $k_\mathrm{eff}$ & Local trap stiffness around a minimum of $\phi(q_1)$\\
-
 $D_\mathrm{m}$ & Microscopic diffusion coefficient of mode $q_1$\\
 $D_2$ & Microscopic diffusion coefficient of mode $q_2$ \\
-
-
-
 $\tau_i$ & Characteristic relaxation time of $q_i$ \\
-$\Delta t$ & Simulation time step \\
 $T_\mathrm{sim}$ & Total simulation time \\
 $n_\mathrm{steps}$ & Total number of iteration inside the trajectory simulation loop \\
-$\varepsilon$ & Convergence criterion \\
-
+$\mathcal{C}$ & Convergence criterion \\
 $\sigma(x)^2$ & Variance of $x$ \\
-
-$\mat{\gamma}$ & Friction matrix \\
-$\mat{\mu}$ & Mobility matrix \\
-
-
-
 $\mu_\mathrm{e} $ & Dressed mobility \\
 $D^*(\kappa)$ & Effective long-time diffusion coefficient \\
+
 \hline
 $\mathrm{Re}$ & Reynolds number \\
-$U$ & Characteristic velocity \\
-$L$ & Characteristic length \\
 $\mathrm{Pe}$ & Péclet number \\
-$\bar{u}$ & Mean crosswise fluid velocity \\
-
 $W$ & Channel half-width \\
 $H$ & Channel thickness \\
-
 $\tau_\mathrm{D}$ & Transverse diffusion time \\
-$D_\mathrm{eff}$ & Dispersion coefficient \\
+$D_{x, \mathrm{TA}}$ & Taylor-Aris dispersion coefficient \\
 $\Delta P$ & Entry-to-exist pressure difference \\
-$\dot{\gamma} $ & Shear rate \textcolor{red}{Dang ! its the same at friction ! oopsies. changing it in the chapter.}\\
+$\dot s $ & Shear rate \\
 $D_y$ & Crosswise diffusion coefficient \\
 $D^\infty_y$ & Crosswise diffusion coefficient away from wall interactions \\
 $N$ & Number of colloids \\
-$\Phi$ & Volume fraction \\
-$\tau$ & Time lag between TIRFM experiment frames \\
-$\lambda_\mathrm{e}$ & Evanescent wave visualisation limit \\
+$\phi$ & Volume fraction \\
+$L_i$ & Periodic box length in direction $i \in (x, y)$\\
+$H_\mathrm{box}$ & Virtual simulation box height\\
+
 
 
 \hline
 $D_\mathrm{T}$ & Translational diffusion coefficient \\
 $D_\mathrm{R}$ & Rotational diffusion coefficient \\
+$D_\mathrm{eff}$ & Active translational diffusion coefficient \\
 $\omega$ & Angular velocity \\
-$\boldsymbol{\Omega}$ & Angular velocity vector \\
-ABP & Active Brownian Particle \\
-RNT & Run and Tumble particle \\
+$v$ & Self-propelling, active velocity \\
+$\tau_{run}$ & Typical time between tumbles \\
+$\tau_{p}$ & Run persistence duration \\
+$T$ & Flow oscillation period \\
+$R_\mathrm{h}$ & Hydraulic resistance \\
+$\mathrm{Pe}_\mathrm{A}$ & Active Péclet number \\
+
 
 
 
