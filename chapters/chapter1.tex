@@ -1,10 +1,6 @@
 \chapter{Brownian motion}
 \label{chapter1}
 
-\epigraph{``In dark times, should the stars also go out?''}{Disco Elysium}
-
-
-
 This first chapter introduces the notion of Brownian motion from a historical standpoint. I intend to remain broad in this chapter, and provide only the key developments for a simple colloid in an unbounded fluid. Brownian motion is not only relevant in the field of History of Sciences, but also in current research.
 
 \section{On serendipity}
@@ -14,9 +10,9 @@ Serendipitous discoveries are common in physics, though they often rely on numer
 Fortunately, History has a tendency to repeat itself: the discovery of Brownian motion also falls under the qualification of ``serendipitous''. Over the end of the eighteenth century to the middle of the nineteenth century, Robert Brown, a Scottish botanist, made significant contributions to his field through the use of optical microscopy, a state-of-the-art tool at the time~\cite{pearle_brown_2010}. However, he is mostly known amongst physicists for a discovery which decorrelates completely from his field of work. In 1827, he observed \emph{Clarkia pulchella} pollen grains (Fig.~\ref{Clarkia} $a)$ for the whole plant, and $b)$ for single pollen grains) with a one-lens microscope. Surely, he supposed, much could be revealed on the process of pollinisation by studying pollen structure closely. He noted that the pollen grains were packed with smaller ``molecules'' (amyloplasts and spherosomes, Fig.~\ref{Clarkia} $c)$), a common word at the time to qualify small granules. To his surprise, once submerged in water, the pollen grains released some of these ``molecules''. They seemed to be dancing in what he called an ``oscillatory motion''\footnote{Often in literature and dissemination events, it is improperly said that Brown observed pollen grains moving in water. This is simply not possible, neither it is reported by Brown, as pollen grains are too large to undergo such motion with a sufficient amplitude to be visible with microscopes at the time. We illustrate this quantitatively further down.}. 
 \begin{figure}
      \centering
-    \label{Clarkia}
     \includegraphics[width=.6\textwidth]{figures/chapter1/clarkia.pdf}
     \caption[\emph{Clarkia pulchella} and its pollen grains.]{\emph{Clarkia pulchella} and its pollen grains. $a)$ Painting of a \emph{Clarkia pulchella} specimen's anatomy by Frederick Pursh. $b)$ \emph{Clarkia} pollen grain under a microscope. $c)$ Bursting grain of pollen. $b)$ and $c)$ adapted from~\cite{pearle_brown_2010}.}
+    \label{Clarkia}
 \end{figure}
 
 
@@ -40,9 +36,9 @@ This expression, known as the Stokes-Einstein relation could finally give an est
 with $d$ a factor owing to the dimensionality of the system ($d = 2$ for a two-dimensional motion). A spherical colloid would thus explore its available space within a simple fluid linearly with respect to elapsed time. In terms of displacement relative to characteristic size, amyloplasts explored their available space much more efficiently that the larger pollen grains.  Perrin later confirmed Einstein's predictions by designing a whole experimental program~\cite{Perrin1909}. He prepared suspensions of known particles, measured displacements (Fig.~\ref{Perrin_rainbow}), varied particle sizes, liquids, viscosity, and other parameters, and obtained consistent values of Avogadro's number. The agreement made it impossible to doubt the kinetic theory of Brownian motion, and thus the existence of atoms.
 \begin{figure}
      \centering
-    \label{Perrin_rainbow}
     \includegraphics[width=1\textwidth]{figures/chapter1/Brownian_scheme.pdf}
     \caption[Observation of the Brownian motion of a colloid in a fluid by Jean Perrin.]{Observation of the random and erratic motion of a colloid in a fluid by Jean Perrin (adapted from ``Mouvement brownien et réalité moléculaire'', 1909). The coarse-grained trajectory of the colloid is represented in a rainbow line. The positions are indicated as $r$, with $r(0)$ the position at origin, $r(t)$ the position at time $t$ and $r(t - \Delta t)$ the position at one observation time step before $t$.}
+    \label{Perrin_rainbow}
 \end{figure}
 \begin{table}[h]
 \centering
@@ -327,9 +323,9 @@ Comparatively, for a time step $\Delta t = \tau_\mathrm{m}$, the exact velocity 
 \end{equation}
 \begin{figure}
      \centering
-    \label{fig:error_propagation_euler}
     \includegraphics[width=1.\textwidth]{figures/chapter1/euler_error.pdf}
     \caption[Effect of the  time step choice on numerical results from Euler discretisation.]{Effect of time step choice on numerical results when simulating Eq.~\ref{Eq:UDlangevin} with an Euler scheme, with purple disks corresponding to simulated data with $\Delta t/\tau_\mathrm{m} = 1.5$, blue disks with $\Delta t/\tau_\mathrm{m} = 1.0$, and teal disks with $\Delta t/\tau_\mathrm{m} = 0.01$, and other parameters in Table~\ref{tab:simulation_parameters}. $a)$ PDF of renormalised velocities $v/\sqrt{\langle v^2 \rangle_\mathrm{eq}} $. Black lines show the expected value from Eq. \ref{velocity_maxwellian}. Dashed curves show the Gaussian fit to the binned velocity histograms in their respective colours. Curves are offset for readability. $b)$ MSD renormalised by $2D_0\tau_m$ as a function of elapsed time for a single trajectory. The black curve indicates the exact prediction from Eq.~\ref{Eq:UD_MSD}.}
+    \label{fig:error_propagation_euler}
 \end{figure}
 where $1/Z$ is the normalisation constant. The choice of a time step of order $\tau_\mathrm{m}$ implicates a PDF which does not follow Eq.~\ref{velocity_maxwellian}. (blue and purple disks on panel $a)$ of Fig.~\ref{fig:error_propagation_euler}). The choice of a time step $\Delta t = 0.01 \tau_\mathrm{m}$ (teal disks) is, however, small enough to ensure the PDF of velocities follows the expected Maxwell-Boltzmann distribution.
 Furthermore, since the MSD depends on the velocity variance as:
@@ -347,13 +343,9 @@ We can discretise Eq.~\ref{Eq:UDlangevin} using the Euler scheme. We must, howev
     v_{i+1} = \left(1 - \dfrac{\Delta t}{\tau_\mathrm{m}}\right)v_i + \sqrt{\dfrac{2k_\mathrm{B}\Theta}{m \tau_\mathrm{m}}} w_i~.
     \label{UDLangevinEuler}
 \end{equation}
-\begin{figure}
-    \centering
-    \includegraphics[width = .8 \textwidth]{Codes/chapter1/2dbrown_traj.pdf}
-    \caption[Two-dimensional Brownian motion generated from an underdamped Langevin equation.]{Trajectory generated from the two-dimensional equivalent of Eq.~\ref{UDLangevinEuler}, with parameters given in Table~\ref{tab:simulation_parameters}. Colorbar indicates elapsed time. Start and finish positions are indicated with a purple and a red disk respectively. }
-    \label{2dtraj_udlangevin}
-\end{figure}
 Below, I provide a snippet to simulate easily this equation, including a thermalisation step to draw velocities from equilibrium and avoid altered statistics at the beginning of the simulation, which pollute the ballistic regime. Furthermore, the whole temporal loop is provided to better illustrate the workflow of a simulation for a single trajectory. However, I typically conduct multiple simulations of a same system and stack their statistics together to infer ballistic and diffusive constants from their observables.
+\\
+\\
 \begin{lstlisting}[caption={Simulation of an underdamped, free bulk Brownian motion}]
     import numpy as np
 
@@ -379,7 +371,12 @@ Below, I provide a snippet to simulate easily this equation, including a thermal
         return t, x, v
         t, x, v = simulate_underdamped_euler(dt)
 \end{lstlisting}
-
+\begin{figure}
+    \centering
+    \includegraphics[width = .8 \textwidth]{Codes/chapter1/2dbrown_traj.pdf}
+    \caption[Two-dimensional Brownian motion generated from an underdamped Langevin equation.]{Trajectory generated from the two-dimensional equivalent of Eq.~\ref{UDLangevinEuler}, with parameters given in Table~\ref{tab:simulation_parameters}. Colorbar indicates elapsed time. Start and finish positions are indicated with a purple and a red disk respectively. }
+    \label{2dtraj_udlangevin}
+\end{figure}
 A typical two-dimensional trajectory generated from Eq.~\ref{UDLangevinEuler} is shown in Fig.~\ref{2dtraj_udlangevin}. 
 \section{Numerical results}
 
@@ -409,7 +406,7 @@ $D_0$ & bulk colloid diffusion coefficient & $2.22 \times 10^{-13}$ & $\mathrm{m
 It is sometimes more convenient to compute the MSD at only certain given time lags to reduce the computational cost of data treatment, and this is the technique we use in chapters 4 and 5. However, there exists a way to be even more efficient by not keeping all these arrays in memory, but rather computing the MSD from the variance of the PDF of displacements. In that case, a single histogram per time lag of our choice is created, with pre-computed bins. We then generate a batch of trajectories, compute the displacements at given time lags, fill the displacement histograms and empty the memory. We can then go on with generating more data, up until the displacement PDFs become stable with new iterations. Then, the variance is computed, and directly gives access to the value of the MSD at a time lag. This is the technique we use in chapters 2 and 3 for different reasons. From the MSD, I extract the mean squared velocity (the squared thermal velocity in this case) from the ballistic regime, and the diffusion constant from the diffusive regime. I use log-fits to do so, which avoid giving too much weight to the points corresponding to large time lags, as they are generally less reliable statistically speaking due to less overlap between the trajectory array and the same array, shifted in time. 
 \begin{figure}
     \centering
-    \includegraphics[width = .6 \textwidth]{Codes/chapter1/msd_x_results.pdf}
+    \includegraphics[width = .7 \textwidth]{figures/chapter1/msd_x_results.pdf}
     \caption[Mean squared displacement of a one-dimensional trajectory.]{Mean squared displacement of an underdamped Langevin simulation. Parameters are given in Table~\ref{tab:simulation_parameters}, with $\Delta t = 0.01 \tau_\mathrm{m}$ for 5 stacked trajectory statistics. Purple disks correspond to the MSD computed from the mean of the squared displacement arrays at give times, and the black curve corresponds to the theoretical prediction from Eq.~\ref{Eq:UD_MSD}. The dashed teal line indicates the fit to the diffusive regime (Eq.~\ref{fit:long}) beyond $\tau_\mathrm{m}$ (grey dash dots) from which we retrieve a diffusion coefficient of $D_{0, \text{fit}} = 2.26 \times 10^{-13}\,\mathrm{m^2\,s^{-1}}$, in good agreement with the theoretical value.}
     \label{1dmsd_udlangevin}
 \end{figure}

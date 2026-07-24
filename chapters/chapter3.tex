@@ -305,7 +305,7 @@ to compare the rigid and soft cases. The numerical results agree with the expect
 \subsubsection{Linear-response and Kubo formulation}
 We use a Kubo linear-response formulation to determine the effective diffusion coefficient beyond the stiff-limit and compliant-limit approximations. Simply put, the idea is to perturb the system with a weak constant force acting along the colloidal coordinate and to extract from the change in the stationary drift velocity the long-time diffusivity through the Einstein relation. The stationary probability density is then expanded to first order in the applied force, with $r(q,u)$ denoting the corresponding linear correction to the equilibrium distribution, and where $q$ and $u$ are the adimensionalised coordinates corresponding to $q_1$ and $q_2$, respectively. For each value of the dimensionless compliance $\epsilon$, this correction is obtained by solving the associated stationary Fokker-Planck equation under periodic boundary conditions in $q$, vanishing flux in $u$, and the normalisation constraint that the integral of $r$ is zero. Once $r(q,u)$ is known, the effective dimensionless diffusion coefficient follows from the Kubo expression:
 \begin{equation}
-    D_q^*=1-\int_0^1\mathrm{d}q\int_{-\infty}^{\infty}\mathrm{d}u\,
+    D_\mathrm{q}^*=1-\int_0^1\mathrm{d}q\int_{-\infty}^{\infty}\mathrm{d}u\,
     \left[v\psi'(q)+\frac{\mu_{12}}{\mu_{11}\sqrt{\epsilon}}u\right]r(q,u).
     \label{eq:kubo_diffusion}
 \end{equation}
@@ -317,7 +317,7 @@ Let us consider a colloid of radius $a = 100 \, \mathrm{nm}$ at a distance $d = 
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{figures/chapter3/bio_values.pdf}
+    \includegraphics[width=.7\textwidth]{figures/chapter3/bio_values.pdf}
     \caption[Application of the toy model with biologically plausible values to estimate the effect of softness on a real system.]{Estimation of the relative enhancement of the long-time diffusion coefficient of a colloid of radius $a=100\,\mathrm{nm}$ in a periodic potential of amplitude $\Delta U = 4 k_\mathrm{B}\Theta$ and spatial period $\lambda = 100\, \mathrm{nm}$ at a distance $d = 10\, \mathrm{nm}$ from a membrane of elastic modulus $E = 1 \, \mathrm{kPa}$ or equivalent dimensionless compliance $\epsilon = 0.013$. The hydrodynamic constant $\upmu_{12}$ is estimated using Oseen's model. Coloured disks correspond to the solutions of Eq.~\ref{eq:kubo_diffusion} for $\epsilon \in [0.0001, 100.0]$. The vertical line acts as a guide for the eye, indicating $\epsilon = 0.013$. }
     \label{biovalues}
 \end{figure}

@@ -73,7 +73,7 @@ where $\xi_i(t)$ are Gaussian white noises. This process is heavily reliant on t
 \end{equation}
 \begin{figure}
     \centering
-    \includegraphics[width=.55\textwidth]{figures/chapter5/compaABP_PBP.pdf}
+    \includegraphics[width=.6\textwidth]{figures/chapter5/compaABP_PBP.pdf}
     \caption[Simulation of passive BM and ABP models.]{Comparison of passive and active Brownian colloid trajectories. Panels $a)$ and $c)$: Twenty stacked trajectories obtained from discretising Eqs.~\ref{PassiveBrownian} and~\ref{ActiveBrownian} respectively, with $\Delta t = 0.05$, $n_\mathrm{steps} = 5000$, $D_0 = 0.05$, $D_\mathrm{R} = 0.3$, $v = 0.1$, with all units in simulation units. Colours are only used for readability and correspond to separate trajectories. Panels $c)$ and $d)$: final position of 2000 simulations for the passive and active Brownian particle models, respectively. }
     \label{ABPPBP}
 \end{figure}
@@ -87,7 +87,12 @@ The MSD in that case follows ~\cite{franke1990galvanotaxis, howse2007selfmotile,
 We thus expect a thermally diffusing regime at very short times with diffusivity $D_0$, followed by a superdiffusive regime at intermediate times, and finally, after the characteristic time scale $\tau_\mathrm{R}$, a second, higher diffusive regime at very long times with a new effective diffusivity $D_\mathrm{eff}$, as $D_\mathrm{eff} = v^2/(2D_\mathrm{R})$ (see Fig.~\ref{ABPPBP} for a comparison of a passive Brownian colloid and an ABP).
 
 \subsubsection{Chiral ABPs}
-
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{figures/chapter5/helical.pdf}
+    \caption[Simulation of a chiral ABP in 3D.]{Simulated trajectories from the discretised Eqs.~\ref{3d_helical}. $a)$ Full trajectory for $n_\mathrm{steps}=80000$, $\Delta t = 0.01$, $D_0 = 0.005$, $D_\mathrm{R} = 0.01$, $v = 1.0$, and $\omega = \pi/12$. All units are in simulation units. $b)$ Same trajectory, for the first 800 steps. The colormap corresponds to elapsed time and is only indicative. }
+    \label{Traj_helical}
+\end{figure}
 Some microswimmers or clusters of microswimmers have irregular shapes or asymmetric propulsion mechanisms. It is possible to model the consequences of these asymmetries by adding a chiral component to the ABP model. While the ABP translation mechanisms remain unchanged, we add a constant rotation speed $\omega$ in the angular Langevin equation, as follows ~\cite{vanteeffelen2008brownian,mijalkov2013sorting,volpe2014simulation}:
 \begin{equation}
 \begin{aligned}
@@ -116,13 +121,6 @@ with $\vect{r}$ the position vector $ \vect{r} = (x,y,z)$, and $\vect{n}$ the or
 \end{pmatrix}~,
 \end{equation}
 for a rotation about the $z-$ axis (Fig.~\ref{Traj_helical}).
-\begin{figure}
-    \centering
-    \includegraphics[width=.7\textwidth]{figures/chapter5/helical.pdf}
-    \caption[Simulation of a chiral ABP in 3D.]{Simulated trajectories from the discretised Eqs.~\ref{3d_helical}. $a)$ Full trajectory for $n_\mathrm{steps}=80000$, $\Delta t = 0.01$, $D_0 = 0.005$, $D_\mathrm{R} = 0.01$, $v = 1.0$, and $\omega = \pi/12$. All units are in simulation units. $b)$ Same trajectory, for the first 800 steps. The colormap corresponds to elapsed time and is only indicative. }
-    \label{Traj_helical}
-\end{figure}
-
 
 \subsection{Run and tumble}
 
@@ -284,7 +282,7 @@ where $\beta$ is a geometric factor, and $\mathrm{Pe_A}$ is the zero-flow, activ
 \end{figure}
 
 
-\section{Conclusion and perspectives}
+\section{Take-home message}
 
 In this chapter, I have investigated the dispersion of active microswimmers in confined viscous flows, using \textit{Chlamydomonas reinhardtii} as a model swimmer. The aim was to test whether a classical theory for passive transport, namely the Taylor-Aris dispersion, can be extended to self-propelled particles whose motion is persistent and orientation variable. For this, microfluidic experiments were combined with single-cell tracking, statistical analysis, numerical Langevin simulations, and theoretical modeling.
 
