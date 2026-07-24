@@ -1465,6 +1465,153 @@
       \verb 10.1039/D0SM00879F
       \endverb
     \endentry
+    \entry{lee2007characterizing}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=7412540fedfb6595d8c4bd80398edb95}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Sang-Hyuk},
+           giveni={S\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=8574aadd1203f6c72ee90b479e037715}{%
+           family={Roichman},
+           familyi={R\bibinitperiod},
+           given={Yohai},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cd27b493e3d9f6e66f26b43583b02b66}{%
+           family={Yi},
+           familyi={Y\bibinitperiod},
+           given={Gi-Ra},
+           giveni={G\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=9b5b3ebfa99cfa3a06658a80a5c4affc}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Shin-Hyun},
+           giveni={S\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=2f4c8b85100a53e5ffa78cf604d27918}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Seung-Man},
+           giveni={S\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=65b1109d4d25b055e6b395be15ed82e3}{%
+           family={Blaaderen},
+           familyi={B\bibinitperiod},
+           given={Alfons},
+           giveni={A\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=d4ea72c2d83e7aa7d4b660a1f73e6908}{%
+           family={Oostrum},
+           familyi={O\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=38e1bb8b010ced5c82b43be2661a35d2}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad2753d0da21261918c8b0470b61c144}
+      \strng{fullhash}{fea76ce0a4534eaaf433648a2646d582}
+      \strng{fullhashraw}{fea76ce0a4534eaaf433648a2646d582}
+      \strng{bibnamehash}{ad2753d0da21261918c8b0470b61c144}
+      \strng{authorbibnamehash}{ad2753d0da21261918c8b0470b61c144}
+      \strng{authornamehash}{ad2753d0da21261918c8b0470b61c144}
+      \strng{authorfullhash}{fea76ce0a4534eaaf433648a2646d582}
+      \strng{authorfullhashraw}{fea76ce0a4534eaaf433648a2646d582}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Optics Express}
+      \field{number}{26}
+      \field{title}{Characterizing and tracking single colloidal particles with video holographic microscopy}
+      \field{volume}{15}
+      \field{year}{2007}
+      \field{pages}{18275\bibrangedash 18282}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1364/OE.15.018275
+      \endverb
+    \endentry
+    \entry{lavaud2021stochastic}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=2f6c433aa5c414b6a38a252acecb092f}{%
+           family={Lavaud},
+           familyi={L\bibinitperiod},
+           given={Maxime},
+           giveni={M\bibinitperiod}}}%
+        {{hash=563d39a1a2bbe25f939ae31722333d95}{%
+           family={Salez},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1e82a5b69f93f79c6463555044bbe423}{%
+           family={Louyer},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=708d2165af22a874a38359b95246536e}{%
+           family={Amarouchene},
+           familyi={A\bibinitperiod},
+           given={Yacine},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{422ab12115ff04f93626621fc508608d}
+      \strng{fullhash}{669fbd49b7c80d1b70ff5979c921703c}
+      \strng{fullhashraw}{669fbd49b7c80d1b70ff5979c921703c}
+      \strng{bibnamehash}{422ab12115ff04f93626621fc508608d}
+      \strng{authorbibnamehash}{422ab12115ff04f93626621fc508608d}
+      \strng{authornamehash}{422ab12115ff04f93626621fc508608d}
+      \strng{authorfullhash}{669fbd49b7c80d1b70ff5979c921703c}
+      \strng{authorfullhashraw}{669fbd49b7c80d1b70ff5979c921703c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Research}
+      \field{number}{3}
+      \field{title}{Stochastic inference of surface-induced effects using {Brownian} motion}
+      \field{volume}{3}
+      \field{year}{2021}
+      \field{pages}{L032011}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevResearch.3.L032011
+      \endverb
+    \endentry
+    \entry{ashkin1992forces}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=720d9b46ba1b70a7af127cad9298698d}{%
+           family={Ashkin},
+           familyi={A\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{fullhash}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{fullhashraw}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{bibnamehash}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{authorbibnamehash}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{authornamehash}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{authorfullhash}{720d9b46ba1b70a7af127cad9298698d}
+      \strng{authorfullhashraw}{720d9b46ba1b70a7af127cad9298698d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biophysical Journal}
+      \field{number}{2}
+      \field{title}{Forces of a single-beam gradient laser trap on a dielectric sphere in the ray optics regime}
+      \field{volume}{61}
+      \field{year}{1992}
+      \field{pages}{569\bibrangedash 582}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/S0006-3495(92)81860-X
+      \endverb
+    \endentry
     \entry{Bureau2023Lift}{article}{}{}
       \name{author}{3}{}{%
         {{hash=3794ef150b74b5c4ddde59e88f0edc88}{%
@@ -1944,8 +2091,8 @@
       \strng{authornamehash}{6d571c7051667d205f98fc02cb246ca8}
       \strng{authorfullhash}{6d571c7051667d205f98fc02cb246ca8}
       \strng{authorfullhashraw}{6d571c7051667d205f98fc02cb246ca8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The European Physical Journal E}
@@ -1984,8 +2131,8 @@
       \strng{authornamehash}{d12d04a806fbf8c086b9e53167991e53}
       \strng{authorfullhash}{d12d04a806fbf8c086b9e53167991e53}
       \strng{authorfullhashraw}{d12d04a806fbf8c086b9e53167991e53}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Letters}
@@ -2036,8 +2183,8 @@
       \strng{authornamehash}{cf725b28628136c139e52362a89fc0cf}
       \strng{authorfullhash}{734b99634d1f6a74ad0fab34155b0996}
       \strng{authorfullhashraw}{734b99634d1f6a74ad0fab34155b0996}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Colloid and Interface Science}
@@ -2076,8 +2223,8 @@
       \strng{authornamehash}{cf09d39164b17265c4518351ac042a72}
       \strng{authorfullhash}{cf09d39164b17265c4518351ac042a72}
       \strng{authorfullhashraw}{cf09d39164b17265c4518351ac042a72}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature Physics}
@@ -2565,8 +2712,8 @@
       \strng{authornamehash}{eb00690b18fae5d777518b572da81519}
       \strng{authorfullhash}{eb00690b18fae5d777518b572da81519}
       \strng{authorfullhashraw}{eb00690b18fae5d777518b572da81519}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Geophysical Fluid Dynamics}
@@ -2591,8 +2738,8 @@
       \strng{authornamehash}{0d7080711db4e5e2feabab32a6988a32}
       \strng{authorfullhash}{0d7080711db4e5e2feabab32a6988a32}
       \strng{authorfullhashraw}{0d7080711db4e5e2feabab32a6988a32}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{7}
@@ -3137,39 +3284,6 @@
       \verb 10.1073/pnas.2519691122
       \endverb
     \endentry
-    \entry{gunny_near-surface_2025}{thesis}{}{}
-      \name{author}{1}{}{%
-        {{hash=28ab0492ddef351940e57c793a866502}{%
-           family={Gunny},
-           familyi={G\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Université Paris-Saclay}%
-      }
-      \strng{namehash}{28ab0492ddef351940e57c793a866502}
-      \strng{fullhash}{28ab0492ddef351940e57c793a866502}
-      \strng{fullhashraw}{28ab0492ddef351940e57c793a866502}
-      \strng{bibnamehash}{28ab0492ddef351940e57c793a866502}
-      \strng{authorbibnamehash}{28ab0492ddef351940e57c793a866502}
-      \strng{authornamehash}{28ab0492ddef351940e57c793a866502}
-      \strng{authorfullhash}{28ab0492ddef351940e57c793a866502}
-      \strng{authorfullhashraw}{28ab0492ddef351940e57c793a866502}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Near-surface colloidal hydrodynamics: From wall slip in complex fluids to soft {Taylor} dispersion}
-      \field{type}{phdthesis}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://pastel.hal.science/tel-05603445
-      \endverb
-      \verb{url}
-      \verb https://pastel.hal.science/tel-05603445
-      \endverb
-    \endentry
     \entry{vilquin_time_2021}{article}{}{}
       \name{author}{8}{}{%
         {{hash=b1046ac48b1caea3e25743232a69acdc}{%
@@ -3236,6 +3350,39 @@
       \verb 10.1103/PhysRevFluids.6.064201
       \endverb
     \endentry
+    \entry{gunny_near-surface_2025}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=28ab0492ddef351940e57c793a866502}{%
+           family={Gunny},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université Paris-Saclay}%
+      }
+      \strng{namehash}{28ab0492ddef351940e57c793a866502}
+      \strng{fullhash}{28ab0492ddef351940e57c793a866502}
+      \strng{fullhashraw}{28ab0492ddef351940e57c793a866502}
+      \strng{bibnamehash}{28ab0492ddef351940e57c793a866502}
+      \strng{authorbibnamehash}{28ab0492ddef351940e57c793a866502}
+      \strng{authornamehash}{28ab0492ddef351940e57c793a866502}
+      \strng{authorfullhash}{28ab0492ddef351940e57c793a866502}
+      \strng{authorfullhashraw}{28ab0492ddef351940e57c793a866502}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Near-surface colloidal hydrodynamics: From wall slip in complex fluids to soft {Taylor} dispersion}
+      \field{type}{phdthesis}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://pastel.hal.science/tel-05603445
+      \endverb
+      \verb{url}
+      \verb https://pastel.hal.science/tel-05603445
+      \endverb
+    \endentry
     \entry{fish_tirf_2009}{article}{}{}
       \name{author}{1}{}{%
         {{hash=782c83849f1536035dafe510c9cf47ab}{%
@@ -3252,8 +3399,8 @@
       \strng{authornamehash}{782c83849f1536035dafe510c9cf47ab}
       \strng{authorfullhash}{782c83849f1536035dafe510c9cf47ab}
       \strng{authorfullhashraw}{782c83849f1536035dafe510c9cf47ab}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Current Protocols in Cytometry}
