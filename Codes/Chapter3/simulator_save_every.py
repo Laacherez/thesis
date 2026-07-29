@@ -10,14 +10,12 @@ import time as _time, os as _os
 from numpy.random import SeedSequence
 
 # Goal of the current code : Be able to generate data that is converged and return the necessary time to do so.
-# Code runs small simulaiton batches in parallel, and computes the convergence overall (thus not in parallel, you catch my drift.)
 # Then, it returns the histoigrams of displacements as pickles, and the treatment code takes care of computing msds and diffusivities.
 # Its cool.
 
 
 # Please note that I developed this code while the theory was also being developed, so as a rule of thumb, there is no kbT, and
 # if there is one, it's equal to 1. It is also not perfect, I sometimes relied on old stackexchange posts or gpt for tips on optimisation.
-# for instance, dont ask me anything on the BLAS stuff, i have no clue. I just know it was a recurrent thing to try to increase efficiency.
 from tm_sinusoid_trap_pack_save_every import trajectory_sin_trap
 
 
@@ -109,7 +107,8 @@ class SinusoidalTrapSimulator:
     def simulation_time_step(self):
         """
         Returns a timestep to ensure simulation work and converge to a proper value.
-        Feel free to tweak this, I chose it very small for some last minute tests."""
+        Feel free to tweak this, I chose it very small for some last minute tests for reviewer 2.
+        """
         return 1e-7
 
     def tau_star(self):
@@ -122,7 +121,6 @@ class SinusoidalTrapSimulator:
     def D_eff_Lifson_Jackson(self):
         """
         Uncoupled, long-time diffusion coefficient as per computed usin Lifson and Jackson's formula.
-
         """
         q = np.linspace(0, self.l, 100_000)
         phi = self.alpha * np.sin(2 * np.pi * q / self.l)
@@ -195,7 +193,7 @@ class SinusoidalTrapSimulator:
     def bins_edges_and_centers(sigma):
         """TO FIX :
         Calculates the bin width and positions to ensure hitograms are stacked properly.
-        ISSUE : Data_range may be too small or too large depending on the expected augmentation.
+        ISSUE : Data_range may be too small or too large depending on the expected augmentation. I had enough free time to tweak manually.
         """
         num_bins = 31
         data_range = (-12 * sigma, 12 * sigma)
@@ -231,7 +229,13 @@ class SinusoidalTrapSimulator:
     @staticmethod
     def _seed_rng(task_id, batch_idx, extra=0):
         ss = SeedSequence(
-            [_os.getpid(), int(_time.time() * 1e6), task_id, batch_idx, extra]
+            [
+                _os.getpid(),
+                int(_time.time() * 1e6),
+                task_id,
+                batch_idx,
+                extra,
+            ]  # i didnt invent this
         )
         np.random.seed(ss.generate_state(1)[0] & 0xFFFFFFFF)
 
@@ -308,7 +312,6 @@ class SinusoidalTrapSimulator:
 
     # --------- GLOBAL COORDINATOR ----------
     def run_all_tasks(self, max_workers=5):
-        # keep BLAS threads from oversubscribing across processes
         os.environ.setdefault("OMP_NUM_THREADS", "1")
         os.environ.setdefault("MKL_NUM_THREADS", "1")
         os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
@@ -316,7 +319,6 @@ class SinusoidalTrapSimulator:
         output_subdir = os.path.join(self.output_dir, self.output_filename_base())
         os.makedirs(output_subdir, exist_ok=True)
 
-        # Precompute bin_edges map for workers
         bin_edges_by_tl = {}
         for tl in self.time_lags:
             sigma = np.sqrt(2 * self.D_LJ * self.tau * tl)

@@ -78,6 +78,62 @@
 \usepackage{tikz}
 \usepackage{eso-pic}
 
+% ============================================================
+% Skinny chapter tabs
+% ============================================================
+
+\newif\ifshowchaptertabs
+\showchaptertabstrue
+
+\newcommand{\chaptertab}{%
+  \ifshowchaptertabs
+    \ifnum\value{chapter}>0\relax
+
+      % Calculate the vertical position of the current chapter tab
+      \pgfmathsetlengthmacro{\chaptertabshift}{%
+        -2.1cm-(\value{chapter}-1)*1.45cm
+      }%
+
+      % Odd pages: outer edge is on the right
+      \ifodd\value{page}
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[
+            anchor=north east,
+            xshift=1mm,
+            yshift=\chaptertabshift,
+            minimum width=0.42cm,
+            minimum height=1.35cm,
+            inner sep=0pt,
+            fill=black!82,
+            text=white,
+            font=\sffamily\bfseries\scriptsize,
+            rounded corners=1pt
+          ] at (current page.north east) {\thechapter};
+        \end{tikzpicture}%
+
+      % Even pages: outer edge is on the left
+      \else
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[
+            anchor=north west,
+            xshift=-1mm,
+            yshift=\chaptertabshift,
+            minimum width=0.42cm,
+            minimum height=1.35cm,
+            inner sep=0pt,
+            fill=black!82,
+            text=white,
+            font=\sffamily\bfseries\scriptsize,
+            rounded corners=1pt
+          ] at (current page.north west) {\thechapter};
+        \end{tikzpicture}%
+      \fi
+
+    \fi
+  \fi
+}
+
+\AddToShipoutPictureFG{\chaptertab}
 
 % ============================================================
 % Chapter title pages

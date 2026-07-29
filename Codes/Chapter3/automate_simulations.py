@@ -13,8 +13,11 @@ import yaml
 
 def set_blas_threads(n_threads: int | None):
     """
-    Set BLAS / OpenMP thread caps before np or sp are imported.
-    Uses setdefault so an explicit environment setting still wins.
+    basic linear algebra subprograms.
+    blas are alredy implemented in numpy/scipy. we only restrict np/sp to a single thread per calculation to
+    avoid artificial slowing down. example :
+    8 simu processes with 8 blas = 64 threads, whereas 8 simu with 1 blas gives 8 thread.
+    i also think blas is a funny name.
     """
     if n_threads is None:
         return
@@ -29,8 +32,13 @@ def set_blas_threads(n_threads: int | None):
 
 
 class SimulationBatchRunner:
+    """
+    I only used classes here to lern a little bit more about them, but I didn't like it so much.
+    I think I will try again with another project where it makes more sense, but I am not sure yet.
+    """
+
     def __init__(self, config_file):
-        """Initialize the runner with the configuration."""
+        """Initialise the runner with the configuration."""
         self.config_file = config_file
         self.config = self.load_config(config_file)
 
@@ -42,18 +50,17 @@ class SimulationBatchRunner:
         os.makedirs(self.log_dir, exist_ok=True)
         os.makedirs(self.param_dir, exist_ok=True)
 
-        # global defaults
         self.save_every = self.config.get("save_every", 1000)
-        # decide per run if not provided
         self.max_workers = self.config.get("max_workers", None)
 
-        # convergence defaults (global-mode in the simulator)
         self.use_convergence = self.config.get("use_convergence", True)
         self.tol = self.config.get("tol", 5e-3)
         self.check_every = self.config.get("check_every", 5)
         self.patience = self.config.get("patience", 3)
         self.min_trajectories = self.config.get("min_trajectories", 20)
-        self.max_trajectories = self.config.get("max_trajectories", 100000)
+        self.max_trajectories = self.config.get(
+            "max_trajectories", 100000
+        )  # You need to stop the simulation at some point.
 
     def load_config(self, config_file):
         """Load the configuration from simulation_config.yaml."""
@@ -68,8 +75,7 @@ class SimulationBatchRunner:
 
     def get_output_subdir(self, **params):
         """
-        Generate a stable directory path for output based on key params.
-        Keep names short but informative; include convergence flags when used.
+        Generate a directory path for output based on key params.
         """
         key_order = [
             "mu11",
@@ -127,7 +133,6 @@ class SimulationBatchRunner:
 
         output_subdir = self.get_output_subdir(**params)
 
-        # param file name
         param_file = os.path.join(
             self.param_dir,
             f"params_mu_{mu11}_{mu12}_{mu22}__k_{kappa}__a_{alpha}__l_{l}__tasks_{n_tasks}.txt",
