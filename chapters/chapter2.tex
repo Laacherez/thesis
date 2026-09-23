@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} 
 
-The last chapter focused on a very simple, ideal case. A colloid is far from any boundary. Though we mention Brownian solutes, we consider each colloid as non-interacting with its peers. These assumptions and choices are strong, and very often in biological settings, they do not suffice to describe the dynamics of the system. Nevertheless, confined Brownian motion has been extensively investigated over the last century. Even at long range, hydrodynamic interactions influence the behaviour of colloids diffusing in a fluid ~\cite{kim_microhydrodynamics_2005, Batchelor_1976}. We now know that introducing a single boundary near a colloid effectively increases the dissipation in an inhomogeneous and anisotropic way. The motion of the colloid results in two distinct modes, along the boundary direction, and perpendicular to it ~\cite{brenner_slow_1961}. In turn, because the diffusion coefficient depends inversely on the drag coefficient of the colloid (Eq.~\ref{Eq:Stokes-einstein}), it is hindered by confinement. Moreover, volume fraction also hinders a colloid's diffusion, while collective diffusion of the solute speeds up as osmotic pressure gradients become stronger with higher local concentration~\cite{Batchelor_1976}. The pair diffusion of colloids in hydrodynamic interaction is thoroughly documented ~\cite{JeffreyOnishi1984, JeffreyOnishi1984a}.
+The last chapter focused on a very simple, ideal case: a single colloid, far from any boundary. Though we mention Brownian solutes, we consider each colloid as non-interacting with its peers. These assumptions and choices are strong, and very often in biological settings, they do not suffice to describe the dynamics of the system. Nevertheless, confined Brownian motion has been extensively investigated over the last century. Even at long range, hydrodynamic interactions influence the behaviour of colloids diffusing in a fluid ~\cite{kim_microhydrodynamics_2005, Batchelor_1976}. We now know that introducing a single boundary near a colloid effectively increases the dissipation in an inhomogeneous and anisotropic way~\cite{Faxen_1924, brenner_slow_1961}. The motion of the colloid results in two distinct modes, along the boundary direction, and perpendicular to it~\cite{brenner_slow_1961}. In turn, because the diffusion coefficient depends inversely on the drag coefficient of the colloid (Eq.~\ref{Eq:Stokes-einstein}), it is hindered by confinement. Moreover, volume fraction also hinders a colloid's diffusion, while collective diffusion of the solute speeds up as osmotic pressure gradients become stronger with higher local concentration~\cite{Batchelor_1976}. The pair diffusion of colloids in hydrodynamic interaction is thoroughly documented ~\cite{JeffreyOnishi1984, JeffreyOnishi1984a}.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/intro.pdf}
@@ -142,7 +142,7 @@ The general solution is:
     \psi(r) = K_1 \dfrac{\exp(r/l_\mathrm{D})}{r} 
     + K_2 \dfrac{\exp(-r/l_\mathrm{D})}{r}~.
 \end{equation}
-Imposing $\lim_{r \to \infty}\psi(r) = 0$ gives $K_1=0$. The remaining constant is fixed by the constant-surface-charge boundary condition at $r=a$, where $a$ is the sphere radius. Namely:
+Imposing $\lim\limits_{r \to \infty}\psi(r) = 0$ gives $K_1=0$. The remaining constant is fixed by the constant-surface-charge boundary condition at $r=a$, where $a$ is the sphere radius, namely:
 \begin{equation}
     -\varepsilon \left.\dfrac{\partial \psi}{\partial r}\right|_{r=a}=\sigma~,
 \end{equation}
@@ -384,7 +384,7 @@ with $+$ corresponding to the collective mode, and $-$ to the relative mode.
 
 
 \subsection{The Rotne-Prager-Yamakawa tensor}
-To account for finite-size effects, we regularise the Oseen approximation by introducing the Rotne-Prager-Yamakawa (RPY) tensor. This tensor incorporates the finite radius of the colloids at the pairwise level \emph{via} Fax\'en's first law~\cite{Faxen_1924}. For two identical spherical colloids of radius $a$, separated by $\vect{r}_{ij}$, the off-diagonal translational RPY mobility for non-overlapping particles reads:
+To account for finite-size effects, we regularise the Oseen approximation by introducing the Rotne-Prager-Yamakawa (RPY) tensor~\cite{rotne1969variational,yamakawa1970transport}. This tensor incorporates the finite radius of the colloids at the pairwise level \emph{via} Fax\'en's first law~\cite{Faxen_1924}. For two identical spherical colloids of radius $a$, separated by $\vect{r}_{ij}$, the off-diagonal translational RPY mobility for non-overlapping particles reads:
 \begin{equation}
 \tens{\upmu}_{ij}^{\mathrm{RPY}}=\dfrac{1}{8\pi\eta_0 r_{ij}}\left[\left(1+\dfrac{2a^2}{3r_{ij}^2}\right)\mat{I}+\left(1-\dfrac{2a^2}{r_{ij}^2}\right)
 \hat{\vect{r}}_{ij}\hat{\vect{r}}_{ij}\right]~,     \qquad i\neq j~.
@@ -398,7 +398,7 @@ The RPY tensor therefore adds corrections of order $\sim \mathcal{O}(a^2/r_{ij}^
 \begin{equation}
 \tens D_{ij}^{\mathrm{RPY}}
 =
-k_\mathrm B\Theta\tens\mu_{ij}^{\mathrm{RPY}}~.
+k_\mathrm B\Theta\tens\upmu_{ij}^{\mathrm{RPY}}~.
 \label{mat:D_RPY}
 \end{equation}
 
@@ -407,7 +407,7 @@ Near a boundary, the pair hydrodynamic coupling must also satisfy the no-slip an
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{figures/chapter2/beadbead_plate.pdf}
-    \caption[Two colloids interacting hydrodynamically in a bulk fluid near a boundary.]{Schematic of two colloids interacting near a boundary. The two colloids are separated by a distance $r$, is along their line of centres. The pair remains in the plane parallel to the boundary, and its height is defined from the centres' height to the boundary as $h$.}
+    \caption[Two colloids interacting hydrodynamically in a bulk fluid near a boundary.]{Schematic of two colloids interacting near a boundary. The two colloids are separated by a distance $r$, is along their line of centres. The pair remains in the plane parallel to the boundary, and its height is defined from the centres' height to the boundary as $z$.}
     \label{fig:beadbeadplate}
 \end{figure}
 
@@ -422,7 +422,7 @@ The hydrodynamic coupling of two Brownian colloids near a planar boundary was st
 \end{figure}
 
 \subsubsection{Blake image system}
-In the presence of a boundary, the Green's function of the Stokes equations must be modified to satisfy the no-slip and no-penetration boundary conditions at the solid boundary. This can be achieved using Blake's image construction~\cite{Blake_1971}. A Stokeslet located at $\vect{r}_j$ above the boundary is supplemented by an image system located at $\vect{R}_j=\vect{r}_j - 2h\vect{e}_z$, where $z$ is the height of the colloid centre above the boundary. This image system contains an image Stokeslet, a source doublet and a Stokeslet doublet. Taken together, these singularities cancel the fluid velocity at the boundary and yield the boundary-corrected Green's function. For a single colloid diffusing above a boundary, the leading-order corrections to the diffusion coefficients are:
+In the presence of a boundary, the Green's function of the Stokes equations must be modified to satisfy the no-slip and no-penetration boundary conditions at the solid boundary. This can be achieved using Blake's image construction~\cite{Blake_1971}. A Stokeslet located at $\vect{r}_j$ above the boundary is supplemented by an image system located at $\vect{R}_j=\vect{r}_j - 2z\vect{e}_z$, where $z$ is the height of the colloid centre above the boundary. This image system contains an image Stokeslet, a source doublet and a Stokeslet doublet. Taken together, these singularities cancel the fluid velocity at the boundary and yield the boundary-corrected Green's function. For a single colloid diffusing above a boundary, the leading-order corrections to the diffusion coefficients are:
 \begin{align}
     \frac{D_z(z)}{D_0}&=1-\frac{9}{8}\frac{a}{z}+\mathcal{O}\left(\frac{a^3}{z^3}\right)~,\\
     \frac{D_{xy}(z)}{D_0}&=1-\frac{9}{16}\frac{a}{z}+\mathcal{O}\left(\frac{a^3}{z^3}\right)~.

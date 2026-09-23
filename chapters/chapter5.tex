@@ -4,7 +4,7 @@
 The final part of this manuscript is dedicated to the study of active particles and their interplay with external fluid flows. This subject was actually the motivation for my thesis, and the first part of this chapter presents an introduction to the field of active matter. The end of this chapter treats the problem of active Taylor-Aris dispersion. The notion of Taylor-Aris dispersion is described in chapter 4. For the sake of clarity, I thus invite the reader to consult its developments before reading this part. We conducted this work in tandem with Marc Lagoin, Guirec de Tournemire, Ahmad Badr and Antoine Allard. 
 \subsection{Activity}
 
-Authors define active matter the first or both of the following:
+Authors define active matter as the first or both of the following:
 
 \begin{enumerate}
     \item individual units that extract free energy from internal or external sources and convert it to motion, forces, or mechanical stresses ~\cite{prost_active_2009, ramaswamy_active_2010, marchetti_hydrodynamics_2013, bechinger_active_2016}. They are thus inherently out-of-equilibrium systems;
@@ -62,7 +62,7 @@ We can describe the motion of the passive colloid with the following Langevin eq
    \dfrac{\mathrm{d}\phi}{\mathrm{d}t} &= \sqrt{2D_\mathrm{R}}\xi_\phi(t)~,
 \end{aligned}
 \end{equation}
-where $\xi_i(t)$ are Gaussian white noises. This process is heavily reliant on the thermal diffusion coefficients $D_0$ and $D_\mathrm{R}$. This means that thermal Brownian motion is strongly hindered in the case of large colloids, where ``large'' means of the order of a few tens of microns. For example, if we take a colloid of a size that is comparable to a \emph{Chlamydomonas}, that is to say $a = 10\,  \upmu  \mathrm{m}$, we get $D_0=2.2\times10^{-3} \, \upmu  \mathrm{m}^2.\mathrm{s}^{-1}$. This value indicates that by pure thermal diffusion, a colloid of this size would need tens of hours to explore an area equivalent to its own size. As we discussed already, swimmers can circumvent this limitation by collecting energy from their surroundings to self propel with a given velocity $\mathbf{v}$. A very simple model used to represent this scenario is the ABP model. We implement this model with the following Langevin equations:
+where $\xi_i(t)$ are Gaussian white noises. This process is heavily reliant on the thermal diffusion coefficients $D_0$ and $D_\mathrm{R}$. This means that thermal Brownian motion is strongly hindered in the case of large colloids, where ``large'' means of the order of a few tens of microns. For example, if we take a colloid of a size that is comparable to a \emph{Chlamydomonas}, that is to say $a = 10\,  \upmu  \mathrm{m}$, we get $D_0=2.2\times10^{-3} \, \upmu  \mathrm{m}^2.\mathrm{s}^{-1}$. This value indicates that by pure thermal diffusion, a colloid of this size would need tens of hours to explore an area equivalent to its own size. As we discussed already, swimmers can circumvent this limitation by collecting energy from their surroundings to self propel with a given velocity $v$. A very simple model used to represent this scenario is the ABP model. We implement this model with the following Langevin equations:
 \begin{equation}
 \begin{aligned}
     \label{ActiveBrownian}

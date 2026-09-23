@@ -98,11 +98,7 @@ For $\mathrm{d}t \to 0$, terms of higher order than $\mathcal{O}\mathrm{d}t$ van
     \left(\mathrm{d}v\right)^2 = \sigma^2 \mathrm{d}t~.}
     \label{Eq:(dv)^2}
 \end{equation}
-At this stage, we use the standard stochastic-calculus rule for Brownian increments, namely:
-\begin{equation}
-(\mathrm{d}W_t)^2 = \mathrm{d}t~, \qquad \mathrm{d}t\mathrm{d}W_t = 0~, \qquad \mathrm{d}t^2 = 0~,
-\end{equation}
-which will be discussed in more detail in Sec.~\ref{sec:ito}. Therefore, when differentiating $(v^2)$, the quadratic increment cannot be discarded. One obtains:
+Therefore, when differentiating $(v^2)$, the quadratic increment cannot be discarded (see the next section). One obtains:
 \begin{equation}
 \mathrm{d}(v^2)=2v\,\mathrm{d}v+(\mathrm{d}v)^2~.
 \end{equation}
@@ -137,21 +133,7 @@ which is the noise amplitude of the process described in Eq.~\ref{Eq:UDlangevin}
 \end{equation}
 
 \subsection{Ballistic-to-diffusive crossover and overdamped limit}
-With the noise strength, we can now identify the time scale over which the velocity loses memory of its initial value. Starting from Eq.~\ref{Eq:UDOrstein}, we first consider the deterministic relaxation of the mean velocity. The ensemble average gives:
-\begin{equation}
-    \dfrac{\mathrm{d}\langle v\rangle}{\mathrm{d}t} = -\lambda \langle v\rangle~,
-\end{equation}
-since $\langle \mathrm{d}W_t\rangle=0$. Therefore,
-\begin{equation}
-    \langle v(t)\rangle = \langle v(0)\rangle \mathrm{e}^{-\lambda t} = \langle v(0)\rangle
-    \exp\left(-\dfrac{t}{\tau_\mathrm{m}}\right)~,
-\end{equation}
-where:
-\begin{equation}
-    \tau_\mathrm{m}=\dfrac{1}{\lambda}=\dfrac{m}{\gamma}
-    \label{taum}
-\end{equation}
-is the momentum relaxation time. More generally, the formal solution of the Ornstein-Uhlenbeck equation is:
+With the noise strength, we can now identify the time scale over which the velocity loses memory of its initial value. Starting from Eq.~\ref{Eq:UDOrstein}, we first consider the deterministic relaxation of the mean velocity. The formal solution of the Ornstein-Uhlenbeck equation is~\cite{chandrasekhar1943stochastic}:
 \begin{equation}
     v(t) = v(0)\mathrm{e}^{-\lambda t} + \sigma \int_0^t \mathrm{e}^{-\lambda(t-s)}\,\mathrm{d}W_s~.
 \end{equation}
@@ -161,15 +143,20 @@ Multiplying by $v(0)$ and averaging gives:
 \end{equation}
 The stochastic integral is independent of the initial velocity and has zero mean, so the second term vanishes. At thermal equilibrium, the mean squared velocity $v$ obeys $\langle v^2\rangle_\mathrm{eq}=k_\mathrm{B}\Theta/m$, and thus:
 \begin{equation}
-    \boxed{\langle v(t)v(0)\rangle=\dfrac{k_\mathrm{B}\Theta}{m}\exp\left(-\dfrac{t}{\tau_\mathrm{m}}\right)~.}
+    \boxed{\langle v(t)v(0)\rangle=\dfrac{k_\mathrm{B}\Theta}{m}\exp\left(-\dfrac{t}{\tau_\mathrm{m}}\right)}~,
     \label{ballistic_msd_1}
 \end{equation}
-This exponential decay of the velocity autocorrelation controls the ballistic-to-diffusive crossover of the mean-squared displacement. Since the displacement is the time integral of the velocity, as:
+where:
+\begin{equation}
+    \tau_\mathrm{m}=\dfrac{1}{\lambda}=\dfrac{m}{\gamma}
+    \label{taum}
+\end{equation}
+is the momentum relaxation time. This exponential decay of the velocity autocorrelation controls the ballistic-to-diffusive crossover of the mean-squared displacement. Since the displacement is the time integral of the velocity, as:
 \begin{equation}
     \Delta x(t)=\int_0^t v(s)\,\mathrm{d}s~,
     \label{ballistic_msd_2}
 \end{equation}
-the MSD is:
+the MSD is~\cite{chandrasekhar1943stochastic}:
 \begin{equation}
     \left\langle \Delta x^2(t)\right\rangle = 2D_0\left[t-\tau_\mathrm{m} \left(1-\exp\left(-\dfrac{t}{\tau_\mathrm{m}}\right)\right) \right]~.
     \label{Eq:UD_MSD}
@@ -198,7 +185,7 @@ Equivalently,
 
 \subsection{Stochastic conventions}
 \label{sec:ito}
-The Langevin equation is a trajectory-level description of Brownian motion. It shows how the position of a colloid evolves under deterministic forces and thermal fluctuations. However, we are sometimes more interested in the probability of finding the colloid at a given position and time. The Fokker-Planck equation provides an equivalent description at the level of the probability density~\cite{Risken_1996,Dhont_1996,Gardiner_2009}. Historically, this equation was introduced by Fokker and Planck in the context of statistical dynamics~\cite{Fokker_1914,Planck_1917}. Before deriving the Fokker-Planck equation in the next section, we must choose which convention we use to integrate a stochastic differential equation of the form
+The Langevin equation is a trajectory-level description of Brownian motion. It shows how the position of a colloid evolves under deterministic forces and thermal fluctuations. However, we are sometimes more interested in the probability of finding the colloid at a given position and time, which can be provided by the Fokker-Planck equation~\cite{Risken_1996,Dhont_1996,Gardiner_2009}. Historically, this equation was introduced by Fokker and Planck in the context of statistical dynamics~\cite{Fokker_1914,Planck_1917}. Before deriving the Fokker-Planck equation in the next section, we must choose which convention we use to integrate a stochastic differential equation of the form
 \begin{equation}
     \mathrm{d}X_t = u(X_t)\,\mathrm{d}t + g(X_t)\,\mathrm{d}W_t~.
 \end{equation}
@@ -244,7 +231,7 @@ We keep in mind this second order contribution as we use the Itô convention fur
 \begin{equation}
     \int_t^{t+\Delta t} g(X_s)\,\mathrm{d}W_s\simeq g\left(\dfrac{X_t+X_{t+\Delta t}}{2}\right)\Delta W_t~.
 \end{equation}
-The noise amplitude is then evaluated at the midpoint of the time step. The Stratonovich convention preserves the usual rules of calculus, which often makes it more natural when stochastic equations are obtained as limits of deterministic equations driven by rapidly fluctuating noise with a finite correlation time. However, the corresponding stochastic integral is no longer non-anticipating, because the midpoint involves $X_{t+\Delta t}$, which already contains information about the increment $\Delta W_t$. For multiplicative noise, the convention changes the drift term that appears in the Itô representation of the dynamics. In this manuscript, we use the Itô convention. This choice is convenient because the stochastic integral has zero mean and because the associated Fokker-Planck equation follows directly from the generator of the Itô process. For additive noise, where $g$ is constant, all conventions coincide since $g'(x)=0$. This is the case for a Brownian particle in an unbounded bulk fluid with constant diffusion coefficient.
+The noise amplitude is then evaluated at the midpoint of the time step. The Stratonovich convention preserves the usual rules of calculus, which often makes it more natural when stochastic equations are obtained as limits of deterministic equations driven by rapidly fluctuating noise with a finite correlation time. However, the corresponding stochastic integral is no longer non-anticipating, because the midpoint involves $X_{t+\Delta t}$, which already contains information about the increment $\Delta W_t$. For multiplicative noise, the convention changes the drift term that appears in the Itô representation of the dynamics. In this manuscript, we use the Itô convention.
 
 \subsection{From Langevin dynamics to the Fokker-Planck equation}
 
@@ -252,7 +239,7 @@ The noise amplitude is then evaluated at the midpoint of the time step. The Stra
 \begin{equation}
     P(x,t=0|x_0)=\delta(x-x_0)~.
 \end{equation}
-The Fokker-Planck equation is the evolution equation obeyed by this probability density. We consider the Itô stochastic differential equation defined in section~\ref{sec:ito} on the particle position in time $X_t$:
+The Fokker-Planck equation is the evolution equation obeyed by $P$. We consider the Itô stochastic differential equation defined in section~\ref{sec:ito} on the particle position in time $X_t$:
 \begin{equation}
     \mathrm{d}X_t=u(X_t)\,\mathrm{d}t+g(X_t)\,\mathrm{d}W_t~,
     \label{eq:ito_sde_general}
@@ -297,7 +284,7 @@ which is the Fickian diffusion current~\cite{Fick1855}. A more complex case invo
 \label{subsec:eulerscheme}
 Computational physics by essence do not work with continuous processes. One of the biggest challenges is therefore to choose or sometimes develop discretisation methods to remain accurate physically, but also computationally efficient. Throughout this manuscript, the codes I develop mostly rely on the Euler-Maruyama method~\cite{Maruyama1955,KloedenPlaten1992,Higham2001}. Fortunately, this method has largely been applied to Brownian problems as an extension of the Euler method to stochastic processes, and is exceptionally inexpensive to simulate. This method approximates the solution of a stochastic differential equation by discretising time into small steps $\Delta t$. The continuous-time stochastic process is then approximated by a discrete-time process, where the state of the system is updated at each time step according to the deterministic and stochastic components of the dynamics. We approximate the differentiation of a variable $X$ with respect to time $t$ using the Euler-Maruyama method as follows:
 \begin{equation}
-    \dfrac{\mathrm{d}X}{\mathrm{d}t} = \dfrac{X_{i+1} - X{i}}{\Delta t}~,
+    \dfrac{\mathrm{d}X}{\mathrm{d}t} \simeq \dfrac{X_{i+1} - X{i}}{\Delta t}~,
 \end{equation}
 where $X_i$ is the value of $X$ at time $t_i = i \Delta t$. The update rule for the variable $X$ is then given by:
 \begin{equation}
@@ -344,8 +331,6 @@ We can discretise Eq.~\ref{Eq:UDlangevin} using the Euler scheme. We must, howev
     \label{UDLangevinEuler}
 \end{equation}
 Below, I provide a snippet to simulate easily this equation, including a thermalisation step to draw velocities from equilibrium and avoid altered statistics at the beginning of the simulation, which pollute the ballistic regime. Furthermore, the whole temporal loop is provided to better illustrate the workflow of a simulation for a single trajectory. However, I typically conduct multiple simulations of a same system and stack their statistics together to infer ballistic and diffusive constants from their observables.
-\\
-\\
 \begin{lstlisting}[caption={Simulation of an underdamped, free bulk Brownian motion}]
     import numpy as np
 
@@ -371,17 +356,17 @@ Below, I provide a snippet to simulate easily this equation, including a thermal
         return t, x, v
         t, x, v = simulate_underdamped_euler(dt)
 \end{lstlisting}
-\begin{figure}
+A typical two-dimensional trajectory generated from Eq.~\ref{UDLangevinEuler} is shown in Fig.~\ref{2dtraj_udlangevin}. 
+\begin{figure}[h]
     \centering
     \includegraphics[width = .8 \textwidth]{Codes/chapter1/2dbrown_traj.pdf}
     \caption[Two-dimensional Brownian motion generated from an underdamped Langevin equation.]{Trajectory generated from the two-dimensional equivalent of Eq.~\ref{UDLangevinEuler}, with parameters given in Table~\ref{tab:simulation_parameters}. Colorbar indicates elapsed time. Start and finish positions are indicated with a purple and a red disk respectively. }
     \label{2dtraj_udlangevin}
 \end{figure}
-A typical two-dimensional trajectory generated from Eq.~\ref{UDLangevinEuler} is shown in Fig.~\ref{2dtraj_udlangevin}. 
 \section{Numerical results}
 
 \subsection{Mean squared displacement and inference of ballistic and diffusive constants}
-The MSD can be computed from several techniques. The first I present is the most straightforward one: from a generated trajectory, one defines its displacements by simply subtracting the trajectory array to itself, shifted in time, for every possible time lag. We then compute the variance of the resulting displacement arrays at all time lags, and retrieve the MSD. I provide a plot for a simple one-dimensional in Fig.~\ref{1dmsd_udlangevin}.
+The MSD can be computed from several techniques. The first I present is the most straightforward one: from a generated trajectory, one defines its displacements by simply subtracting the trajectory array to itself, shifted in time, for every possible time lag. We then compute the variance of the resulting displacement arrays at all time lags, and retrieve the MSD. I provide a plot for a simple one-dimensional trajectory in Fig.~\ref{1dmsd_udlangevin}.
 \begin{table}[htbp]
 \centering
 \caption{Physical parameters used in the simulation.}
@@ -415,7 +400,7 @@ At long times $t \gg \tau_\mathrm{m}$, taking the logarithm of the MSD (Eq.~\ref
     \log\left(\Delta x^2\right) = \log(2D_0) + \log(t)~.
     \label{fit:long}
 \end{equation}
-Thus, we expect the diffusive regime to have a time lag exponent of 1. We verify numerically that the fit does return these values with a small tolerance of about $5\%$, and we can then infer from their offsets the value of the diffusion coefficient $D_0$. We find, for the parameters given in Table~\ref{tab:simulation_parameters} and the MSD in Fig.~\ref{1dmsd_udlangevin}, a diffusion coefficient of $D_{0, \text{fit}} = 2.26 \times 10^{-13}\,\mathrm{m^2\,s^{-1}}$, which is in good agreement with the theoretical value of $D_0 = 2.22 \times 10^{-13}\,\mathrm{m^2\,s^{-1}}$. Arguably, fitting the whole expression from Eq.~\ref{Eq:UD_MSD} would be more accurate, as it would take into account the whole ballistic-to-diffusive crossover. Since the purpose of this section is to present my typical methods, this is not what I choose to present here. I do not always have access to the full MSD expression beforehand, and I prefer as a rule of thumb to keep models and their treatment as general as possible. 
+Thus, we expect the diffusive regime to have a time exponent of 1. We verify numerically that the fit does return these values with a small tolerance of about $5\%$, and we can then infer from their offsets the value of the diffusion coefficient $D_0$. We find, for the parameters given in Table~\ref{tab:simulation_parameters} and the MSD in Fig.~\ref{1dmsd_udlangevin}, a diffusion coefficient of $D_{0, \text{fit}} = 2.26 \times 10^{-13}\,\mathrm{m^2\,s^{-1}}$, which is in good agreement with the theoretical value of $D_0 = 2.22 \times 10^{-13}\,\mathrm{m^2\,s^{-1}}$. Arguably, fitting the whole expression from Eq.~\ref{Eq:UD_MSD} would be more accurate, as it would take into account the whole ballistic-to-diffusive crossover. Since the purpose of this section is to present my typical methods, this is not what I choose to present here. I do not always have access to the full MSD expression beforehand, and I prefer as a rule of thumb to keep models and their treatment as general as possible. 
 
 \section{Take-home message}
 In this introductory chapter, I have presented the history and bases of the theory on Brownian motion. I remained in the most simple framework, for a single colloid in a quiescent and unbounded fluid. I also showed the common methods used to discretise and generate trajectories numerically. I also provided the different means that are usually used to extract dynamical quantities such as the MSD from trajectory data. All these developments will be used in the following chapters. The generation and treatment codes are available on the GitHub page related to this manuscript.

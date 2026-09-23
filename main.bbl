@@ -411,6 +411,37 @@
       \verb 10.1103/PhysRev.36.823
       \endverb
     \endentry
+    \entry{chandrasekhar1943stochastic}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2cdd974df31a73795c3a486550391e0c}{%
+           family={Chandrasekhar},
+           familyi={C\bibinitperiod},
+           given={Subrahmanyan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{fullhash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{fullhashraw}{2cdd974df31a73795c3a486550391e0c}
+      \strng{bibnamehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authorbibnamehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authornamehash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authorfullhash}{2cdd974df31a73795c3a486550391e0c}
+      \strng{authorfullhashraw}{2cdd974df31a73795c3a486550391e0c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{number}{1}
+      \field{title}{Stochastic Problems in Physics and Astronomy}
+      \field{volume}{15}
+      \field{year}{1943}
+      \field{pages}{1\bibrangedash 89}
+      \range{pages}{89}
+      \verb{doi}
+      \verb 10.1103/RevModPhys.15.1
+      \endverb
+    \endentry
     \entry{Risken_1996}{book}{}{}
       \name{author}{1}{}{%
         {{hash=bc2aa497350c2292df85dd959abfe1ba}{%
@@ -587,8 +618,8 @@
       \strng{authornamehash}{0d6a530d89b491581dc7bfdcc8c10c48}
       \strng{authorfullhash}{0d6a530d89b491581dc7bfdcc8c10c48}
       \strng{authorfullhashraw}{0d6a530d89b491581dc7bfdcc8c10c48}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -613,8 +644,8 @@
       \strng{authornamehash}{fbf21679b217fcca56beeb75de7a2d23}
       \strng{authorfullhash}{fbf21679b217fcca56beeb75de7a2d23}
       \strng{authorfullhashraw}{fbf21679b217fcca56beeb75de7a2d23}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the Imperial Academy}
@@ -788,6 +819,33 @@
       \verb 10.1017/S0022112076001663
       \endverb
     \endentry
+    \entry{Faxen_1924}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6191e3ea613df7f0a6bb457bcb28afa6}{%
+           family={Faxén},
+           familyi={F\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{fullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{fullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{bibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorbibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authornamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorfullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \strng{authorfullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Arkiv for Matematik, Astronomi och Fysik}
+      \field{title}{Fredholm integral equations of hydrodynamics of liquids {I}}
+      \field{volume}{18}
+      \field{year}{1924}
+      \field{pages}{29\bibrangedash 32}
+      \range{pages}{4}
+    \endentry
     \entry{brenner_slow_1961}{article}{}{}
       \name{author}{1}{}{%
         {{hash=7ed117964de0d4434ace5135a56bb2d2}{%
@@ -937,33 +995,6 @@
       \verb 10.1103/PhysRevLett.85.3317
       \endverb
     \endentry
-    \entry{Faxen_1924}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=6191e3ea613df7f0a6bb457bcb28afa6}{%
-           family={Faxén},
-           familyi={F\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-      }
-      \strng{namehash}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{fullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{fullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{bibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{authorbibnamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{authornamehash}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{authorfullhash}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \strng{authorfullhashraw}{6191e3ea613df7f0a6bb457bcb28afa6}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Arkiv for Matematik, Astronomi och Fysik}
-      \field{title}{Fredholm integral equations of hydrodynamics of liquids {I}}
-      \field{volume}{18}
-      \field{year}{1924}
-      \field{pages}{29\bibrangedash 32}
-      \range{pages}{4}
-    \endentry
     \entry{BakerGravesMorris_1996}{book}{}{}
       \name{author}{2}{}{%
         {{hash=8dbfeef9673a1811e4a7bce2b0539419}{%
@@ -993,8 +1024,8 @@
       \strng{authornamehash}{b17157effa5d2451cdade0792cabd320}
       \strng{authorfullhash}{b17157effa5d2451cdade0792cabd320}
       \strng{authorfullhashraw}{b17157effa5d2451cdade0792cabd320}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -1203,8 +1234,8 @@
       \strng{authornamehash}{2e6e0387961ca64fcda412b402af2c2b}
       \strng{authorfullhash}{2e6e0387961ca64fcda412b402af2c2b}
       \strng{authorfullhashraw}{2e6e0387961ca64fcda412b402af2c2b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Low Reynolds Number Hydrodynamics}
@@ -1232,8 +1263,8 @@
       \strng{authornamehash}{b301872d87f37e159237a92c47853a7a}
       \strng{authorfullhash}{b301872d87f37e159237a92c47853a7a}
       \strng{authorfullhashraw}{b301872d87f37e159237a92c47853a7a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Neuere Methoden und Ergebnisse in der Hydrodynamik}
@@ -1270,6 +1301,73 @@
       \verb 10.1088/0034-4885/29/1/306
       \endverb
     \endentry
+    \entry{rotne1969variational}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=aca2c42ec39a0ef9a46bf0cf8f220bbc}{%
+           family={Rotne},
+           familyi={R\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=92102688f30da63ee99c9e07c3454869}{%
+           family={Prager},
+           familyi={P\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a67f391973468e0b60603869607a7879}
+      \strng{fullhash}{a67f391973468e0b60603869607a7879}
+      \strng{fullhashraw}{a67f391973468e0b60603869607a7879}
+      \strng{bibnamehash}{a67f391973468e0b60603869607a7879}
+      \strng{authorbibnamehash}{a67f391973468e0b60603869607a7879}
+      \strng{authornamehash}{a67f391973468e0b60603869607a7879}
+      \strng{authorfullhash}{a67f391973468e0b60603869607a7879}
+      \strng{authorfullhashraw}{a67f391973468e0b60603869607a7879}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Chemical Physics}
+      \field{number}{11}
+      \field{title}{Variational Treatment of Hydrodynamic Interaction in Polymers}
+      \field{volume}{50}
+      \field{year}{1969}
+      \field{pages}{4831\bibrangedash 4837}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1063/1.1670977
+      \endverb
+    \endentry
+    \entry{yamakawa1970transport}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5e4b607976948cb713d421a6810045e3}{%
+           family={Yamakawa},
+           familyi={Y\bibinitperiod},
+           given={Hiromi},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e4b607976948cb713d421a6810045e3}
+      \strng{fullhash}{5e4b607976948cb713d421a6810045e3}
+      \strng{fullhashraw}{5e4b607976948cb713d421a6810045e3}
+      \strng{bibnamehash}{5e4b607976948cb713d421a6810045e3}
+      \strng{authorbibnamehash}{5e4b607976948cb713d421a6810045e3}
+      \strng{authornamehash}{5e4b607976948cb713d421a6810045e3}
+      \strng{authorfullhash}{5e4b607976948cb713d421a6810045e3}
+      \strng{authorfullhashraw}{5e4b607976948cb713d421a6810045e3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Chemical Physics}
+      \field{number}{1}
+      \field{title}{Transport Properties of Polymer Chains in Dilute Solution: Hydrodynamic Interaction}
+      \field{volume}{53}
+      \field{year}{1970}
+      \field{pages}{436\bibrangedash 443}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1063/1.1673799
+      \endverb
+    \endentry
     \entry{Blake_1971}{article}{}{}
       \name{author}{1}{}{%
         {{hash=1c99995c753900532fb241b048045917}{%
@@ -1286,8 +1384,8 @@
       \strng{authornamehash}{1c99995c753900532fb241b048045917}
       \strng{authorfullhash}{1c99995c753900532fb241b048045917}
       \strng{authorfullhashraw}{1c99995c753900532fb241b048045917}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Mathematical Proceedings of the Cambridge Philosophical Society}
@@ -1322,8 +1420,8 @@
       \strng{authornamehash}{9a69a1023ab20bf2b0a995cb03b63b09}
       \strng{authorfullhash}{9a69a1023ab20bf2b0a995cb03b63b09}
       \strng{authorfullhashraw}{9a69a1023ab20bf2b0a995cb03b63b09}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annual Review of Fluid Mechanics}
@@ -1357,8 +1455,8 @@
       \strng{authornamehash}{99bf01d39a2c4236c39d60b59e244779}
       \strng{authorfullhash}{99bf01d39a2c4236c39d60b59e244779}
       \strng{authorfullhashraw}{99bf01d39a2c4236c39d60b59e244779}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physics of Fluids}
@@ -1638,8 +1736,8 @@
       \strng{authornamehash}{91fac7d9c15d7f5a50a957c943a13da2}
       \strng{authorfullhash}{91fac7d9c15d7f5a50a957c943a13da2}
       \strng{authorfullhashraw}{91fac7d9c15d7f5a50a957c943a13da2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The European Physical Journal E}
@@ -1674,8 +1772,8 @@
       \strng{authornamehash}{23a8540e998b8657c32d45c34dcc3929}
       \strng{authorfullhash}{23a8540e998b8657c32d45c34dcc3929}
       \strng{authorfullhashraw}{23a8540e998b8657c32d45c34dcc3929}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Europhysics Letters}
@@ -1712,8 +1810,8 @@
       \strng{authornamehash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
       \strng{authorfullhash}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
       \strng{authorfullhashraw}{4121faa6b8ffaf9d2eb5f0dd10bb23e1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physics of Fluids}
@@ -1753,8 +1851,8 @@
       \strng{authornamehash}{41fd15734e1170e2058a098c98cbdb51}
       \strng{authorfullhash}{41fd15734e1170e2058a098c98cbdb51}
       \strng{authorfullhashraw}{41fd15734e1170e2058a098c98cbdb51}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Europhysics Letters}
@@ -1785,8 +1883,8 @@
       \strng{authornamehash}{346037f3ace65760b1074f67ec4314c8}
       \strng{authorfullhash}{346037f3ace65760b1074f67ec4314c8}
       \strng{authorfullhashraw}{346037f3ace65760b1074f67ec4314c8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Letters}
@@ -1826,8 +1924,8 @@
       \strng{authornamehash}{baa29d2e449ed46052c23a03021b9729}
       \strng{authorfullhash}{baa29d2e449ed46052c23a03021b9729}
       \strng{authorfullhashraw}{baa29d2e449ed46052c23a03021b9729}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physics of Fluids}
@@ -1869,8 +1967,8 @@
       \strng{authornamehash}{f090d735ae2f6e7382c06d41830b6d5e}
       \strng{authorfullhash}{96da9a679df50799f3fb4746264b2415}
       \strng{authorfullhashraw}{96da9a679df50799f3fb4746264b2415}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the National Academy of Sciences}
@@ -1925,8 +2023,8 @@
       \strng{authornamehash}{8ce13f04492e33191e0381aac96f626f}
       \strng{authorfullhash}{0e3fca2d2dc57ae05b81d42e0e439d02}
       \strng{authorfullhashraw}{0e3fca2d2dc57ae05b81d42e0e439d02}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Letters}
@@ -1968,8 +2066,8 @@
       \strng{authornamehash}{c9d29597e4480adef6ec3deb6bb4e71b}
       \strng{authorfullhash}{7436357f81d0f535e2db38c46e3ce350}
       \strng{authorfullhashraw}{7436357f81d0f535e2db38c46e3ce350}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature Physics}
@@ -2010,8 +2108,8 @@
       \strng{authornamehash}{2063cf88d88eee3bb13d1bc71c4fe140}
       \strng{authorfullhash}{d646442b621d4b6ca7f6fdd8d052d156}
       \strng{authorfullhashraw}{d646442b621d4b6ca7f6fdd8d052d156}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Langmuir}
@@ -2063,8 +2161,8 @@
       \strng{authornamehash}{9d68f9635b7c1db697e909162e2280d3}
       \strng{authorfullhash}{ce27e61aab6352abf86367c69856ece1}
       \strng{authorfullhashraw}{ce27e61aab6352abf86367c69856ece1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Letters}
@@ -2557,8 +2655,8 @@
       \strng{authornamehash}{af59cff5fbdc744b9aaa7b410487728f}
       \strng{authorfullhash}{af59cff5fbdc744b9aaa7b410487728f}
       \strng{authorfullhashraw}{af59cff5fbdc744b9aaa7b410487728f}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Statistical Physics}
@@ -2592,8 +2690,8 @@
       \strng{authornamehash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
       \strng{authorfullhash}{bdf4c88736f4a29c4d9c6a957a7e84c3}
       \strng{authorfullhashraw}{bdf4c88736f4a29c4d9c6a957a7e84c3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Fluctuation and Noise Letters}
@@ -2628,8 +2726,8 @@
       \strng{authornamehash}{90759640014174c43521768476ce6ee3}
       \strng{authorfullhash}{90759640014174c43521768476ce6ee3}
       \strng{authorfullhashraw}{90759640014174c43521768476ce6ee3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Chemical Physics}
@@ -2674,8 +2772,8 @@
       \strng{authornamehash}{01819fa850c9b24f70838928a0986444}
       \strng{authorfullhash}{9513dec9477affaf362a896b93d976e5}
       \strng{authorfullhashraw}{9513dec9477affaf362a896b93d976e5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{European Physical Journal E}
@@ -3073,8 +3171,8 @@
       \strng{authornamehash}{a1d0649220ce6394193aa78e69a522c0}
       \strng{authorfullhash}{a1d0649220ce6394193aa78e69a522c0}
       \strng{authorfullhashraw}{a1d0649220ce6394193aa78e69a522c0}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Analytical Chemistry}
@@ -3124,8 +3222,8 @@
       \strng{authornamehash}{ca73087daa96986a124fa7781cc07b70}
       \strng{authorfullhash}{8f53565f3372180322691a58882f0908}
       \strng{authorfullhashraw}{8f53565f3372180322691a58882f0908}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Analytical Chemistry}
@@ -3170,8 +3268,8 @@
       \strng{authornamehash}{fa67d91a0a197006d4d5655795c122a9}
       \strng{authorfullhash}{4682220203ebd1a44b75e90d7b619596}
       \strng{authorfullhashraw}{4682220203ebd1a44b75e90d7b619596}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Analytical Chemistry}
@@ -3206,8 +3304,8 @@
       \strng{authornamehash}{c0bc537a67d4be624b228c4b205c1d7c}
       \strng{authorfullhash}{c0bc537a67d4be624b228c4b205c1d7c}
       \strng{authorfullhashraw}{c0bc537a67d4be624b228c4b205c1d7c}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Analytical Chemistry}
@@ -3269,8 +3367,8 @@
       \strng{authornamehash}{fa5ef693c61b0f911a2919a7ccce8d07}
       \strng{authorfullhash}{9fe1cb0c9fcf7a5b0c16451ec42385f2}
       \strng{authorfullhashraw}{9fe1cb0c9fcf7a5b0c16451ec42385f2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the National Academy of Sciences of the United States of America}
@@ -3335,8 +3433,8 @@
       \strng{authornamehash}{3a6e6360d8208bc2800730d961c3ac04}
       \strng{authorfullhash}{c8bfc823b977a12e78f5e2bf3681f7af}
       \strng{authorfullhashraw}{c8bfc823b977a12e78f5e2bf3681f7af}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review Fluids}
@@ -3637,8 +3735,8 @@
       \strng{authornamehash}{f3f68959845fda656d89b62e257a748e}
       \strng{authorfullhash}{ff18072e2808b46c6578380b2da60e3e}
       \strng{authorfullhashraw}{ff18072e2808b46c6578380b2da60e3e}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Science}
@@ -3678,8 +3776,8 @@
       \strng{authornamehash}{41a6c763148364ec210089e4925f9524}
       \strng{authorfullhash}{41a6c763148364ec210089e4925f9524}
       \strng{authorfullhashraw}{41a6c763148364ec210089e4925f9524}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annals of Physics}
@@ -4376,8 +4474,8 @@
       \strng{authornamehash}{31991d16698fb4d1c400ec6a7a794cc9}
       \strng{authorfullhash}{31991d16698fb4d1c400ec6a7a794cc9}
       \strng{authorfullhashraw}{31991d16698fb4d1c400ec6a7a794cc9}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Physical Review E}
@@ -4412,8 +4510,8 @@
       \strng{authornamehash}{680d1628efe83c89507d59590324c826}
       \strng{authorfullhash}{680d1628efe83c89507d59590324c826}
       \strng{authorfullhashraw}{680d1628efe83c89507d59590324c826}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Soft Matter}
@@ -4452,8 +4550,8 @@
       \strng{authornamehash}{5014d86483738ec8c9aa913062151d20}
       \strng{authorfullhash}{5014d86483738ec8c9aa913062151d20}
       \strng{authorfullhashraw}{5014d86483738ec8c9aa913062151d20}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{American Journal of Physics}
@@ -4488,8 +4586,8 @@
       \strng{authornamehash}{631799544a680f6b385e45f32cb70cb1}
       \strng{authorfullhash}{631799544a680f6b385e45f32cb70cb1}
       \strng{authorfullhashraw}{631799544a680f6b385e45f32cb70cb1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature}
@@ -4556,8 +4654,8 @@
       \strng{editornamehash}{a6b58a29dea2ec2919fba00fb7c01b58}
       \strng{editorfullhash}{a6b58a29dea2ec2919fba00fb7c01b58}
       \strng{editorfullhashraw}{a6b58a29dea2ec2919fba00fb7c01b58}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Biology of the Chemotactic Response}
@@ -4588,8 +4686,8 @@
       \strng{authornamehash}{8761bc41c113f8c7576e8347d8f98b7f}
       \strng{authorfullhash}{8761bc41c113f8c7576e8347d8f98b7f}
       \strng{authorfullhashraw}{8761bc41c113f8c7576e8347d8f98b7f}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{E. coli in Motion}
@@ -4614,8 +4712,8 @@
       \strng{authornamehash}{eea1108242f9788f484f1806161a8e45}
       \strng{authorfullhash}{eea1108242f9788f484f1806161a8e45}
       \strng{authorfullhashraw}{eea1108242f9788f484f1806161a8e45}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Communications on Pure and Applied Mathematics}
