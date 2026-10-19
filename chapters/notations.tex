@@ -1,122 +1,219 @@
-\chapter*{List of Symbols and abbreviations}
-\addcontentsline{toc}{chapter}{List of Symbols}
+\chapter*{List of Symbols and Abbreviations}
+\addcontentsline{toc}{chapter}{List of Symbols and Abbreviations}
 
-Symbols are separated per chapter of occurrence. Symbols may appear in multiple chapters once they have been defined.
+Symbols are grouped by chapter of first use. A symbol may have different meanings in different chapters; these are identified below.
 \begin{longtable}{p{3cm}p{11cm}}
 \hline
 Symbol & Description \\
 \hline
-
-BM & Brownian Motion \\
-PDF & Probability Density Function \\
-MSD & Mean Squared Displacement \\
-
+\multicolumn{2}{l}{\textbf{Abbreviations}}\\
+BM & Brownian motion \\
+PDF & Probability density function \\
+MSD & Mean-squared displacement \\
 RPY & Rotne-Prager-Yamakawa \\
-
+RPB & Rotne-Prager-Yamakawa-Blake \\
 RBW & RigidMultiblobsWall library \\
-
-ABP & Active Brownian Particle \\
-
-RTP & Run and Tumble Particle \\
+ABP & Active Brownian particle \\
+RTP & Run-and-tumble particle \\
+TIRFM & Total internal reflection fluorescence microscopy \\
+DLVO & Derjaguin-Landau-Verwey-Overbeek \\
 \hline
+\multicolumn{2}{l}{\textbf{Chapter 1: Brownian motion and stochastic processes}}\\
 $a$ & Particle radius \\
-$D_0$ & Bulk diffusion coefficient \\
-$k_\mathrm{B}$ & Boltzmann's constant \\
-$\Theta$ & Temperature \\
-$\gamma$ & Stokes drag coefficient, friction coefficient \\
-$\eta_0$ & Bulk dynamic fluid viscosity \\
-$d$ & Dimensionality ($d=2$ for 2D) \\
-$t$ & Time \\
+$d$ & Spatial dimensionality; $d=2$ for two-dimensional motion (in Chapter 4, penetration depth of the evanescent wave) \\
+$D_0$ & Bulk translational diffusion coefficient \\
+$k_\mathrm{B}$ & Boltzmann constant \\
+$\Theta$ & Fluid temperature \\
+$\gamma$ & Particle friction coefficient (Stokes drag coefficient) \\
+$\eta_0$ & Dynamic viscosity of the bulk fluid \\
 $m$ & Particle mass \\
-$\tau_\mathrm{m}$ & Momentum relaxation time, inertial time \\
-$\Delta t$ & Time step \\
-$t_\mathrm{max}$ & Total time \\
-
+$t$ & Time \\
+$x$ & Particle position coordinate \\
+$r$ & Position or displacement coordinate; $\vect r$ denotes a position vector \\
+$f$ & Smooth test function in It\^o's formula; cross-sectional flow-profile function in Chapter 5 \\
+$v$ & Particle velocity \\
+$F$ & Applied or deterministic force \\
+$\xi(t)$ & Stochastic force in the Langevin equation \\
+$\eta(t)$ & Unit Gaussian white noise \\
+$A$ & Noise strength in the underdamped Langevin equation \\
+$\lambda$ & Velocity relaxation rate $\gamma/m$ in Chapter 1; spatial period in Chapter 3; tumble rate in Chapter 5 \\
+$\sigma$ & Noise amplitude in the Ornstein-Uhlenbeck equation (surface charge density in Chapter 2; standard deviation in Chapter 3) \\
+$\tau_\mathrm{m}$ & Momentum relaxation time, $m/\gamma$ \\
+$\Delta t$ & Time increment or simulation time step \\
+$\Delta x$ & Displacement over a time interval \\
+$\xi$ & Standardised Gaussian random variable or noise (context-dependent) \\
+$W_t$ & Wiener process; $\mathrm dW_t$ is its increment \\
+$X_t$ & Stochastic position process \\
+$X_i$ & Discrete-time state at time step $i$ \\
+$u(x)$ & Drift coefficient in a stochastic differential equation (fluid velocity in Chapters 2, 4, and 5) \\
+$g(x)$ & Noise amplitude in a stochastic differential equation (gravity acceleration in Chapter 2) \\
+$\alpha$ & Evaluation parameter defining a stochastic integral convention \\
+$P(x,t\mid x_0)$ & Probability density at position $x$ and time $t$, conditional on initial position $x_0$ \\
+$J$ & Probability flux or current \\
+$\delta(\cdot)$ & Dirac delta distribution \\
+$Z$ & Normalisation constant or partition function, as specified by context \\
+$w_i$ & Gaussian Wiener increment used in the discrete-time scheme \\
+$i,j$ & Particle, component, or time-step indices, as specified by context \\
 \hline
-$z$ & Colloid center to wall distance \\
-$h$ & Colloid apex to wall distance $(z-a)$ \\
-$\gamma_\perp$ &  Effective friction for a normal motion \\
-$\gamma_\parallel$ & Effective friction for an in-plane motion \\
-$\rho$ & Density \\
-$g$ & Gravity acceleration \\
-$\Delta m$ & Buoyant mass \\
-$z_i$ & Ion valency \\
-$\sigma$ & Surface charge density \\
-$l_\mathrm{B}$ & Boltzmann's length \\
-$l_\mathrm{D}$ & Debye's length \\
-$B$ & Adimensionalised electrostatic repulsion force\\
-$U_\mathrm{grav}$ & Gravitational potential \\
-$U_\mathrm{elec}$ & Electrostatic interaction potential \\
-$U$ & Total potential \\
-$D_\perp$ & Effective diffusion coefficient for a normal diffusion \\
-$D_\parallel$  & Effective diffusion coefficient for an in-plane diffusion \\
-$D_{i \alpha, j \beta}$ &  Diffusion matrix component for colloids labeled $i$ and $j$, in directions $\alpha$ and $\beta$\\
-$\bar{v}_\mathrm{d}$ & Total drift velocity \\
-$v_\mathrm{s}$ & Spurious drift velocity \\
-$v_\mathrm{d}$ & Deterministic drift velocity \\
-$\mat{\upmu}^\mathrm{tt}$ & Translational block of the mobility matrix \\
-$\mat{D}^\mathrm{tt}$ & Translational block of the diffusion matrix \\
-$D^\mathrm{C, R}_\perp$ & Collective (C) and relative (R) pair diffusion coefficients perpendicular ($\perp$) and parallel ($\parallel$) to the pair line of centres \\
-
-
-\hline 
-$q_i$ & Degree of freedom representing colloid $i$\\
-$\phi(q_1)$ & Sinusoidal potential acting upon $q_1$\\
-$\Delta U$ & Sinusoidal trap amplitude \\
-$\lambda$ & Sinusoidal trap spatial period\\
-$\kappa$ & Inverse stiffness or compliance\\
-$\epsilon$ & Adimensionalised compliance \\
-$\mat{\gamma}$ & Friction matrix \\
-$\gamma_{ij}$ & Friction matrix element \\
-$\mat{\upmu}$ & Mobility matrix \\
-$\upmu_{ij}$ & Mobility matrix elements\\
-$E$ & Elastic modulus \\
-$k_\mathrm{eff}$ & Local trap stiffness around a minimum of $\phi(q_1)$\\
-$D_\mathrm{m}$ & Microscopic diffusion coefficient of mode $q_1$\\
-$D_2$ & Microscopic diffusion coefficient of mode $q_2$ \\
-$\tau_i$ & Characteristic relaxation time of $q_i$ \\
-$T_\mathrm{sim}$ & Total simulation time \\
-$n_\mathrm{steps}$ & Total number of iteration inside the trajectory simulation loop \\
-$\mathcal{C}$ & Convergence criterion \\
-$\sigma(x)^2$ & Variance of $x$ \\
-$\upmu_\mathrm{e} $ & Dressed mobility \\
-$D^*(\kappa)$ & Effective long-time diffusion coefficient \\
-
+\multicolumn{2}{l}{\textbf{Chapter 2: Confined and interacting colloids}}\\
+$x,y,z$ & Cartesian coordinates; $z$ is normal to the boundary \\
+$\rho$ & Fluid, colloid, or mass density, as indicated by a subscript \\
+$\eta_0$ & Bulk-fluid dynamic viscosity \\
+$\gamma_\perp(z),\gamma_\parallel(z)$ & Effective friction normal and parallel to a boundary \\
+$D_\perp,D_\parallel$ & Diffusion coefficients normal and parallel to a boundary \\
+$D_z,D_{xy}$ & Diffusion coefficients normal and parallel to a boundary, respectively \\
+$h$ & Surface-to-surface gap between a colloid and a plane; for a sphere above a plane, $h=z-a$ \\
+$a_1,a_2$ & Radii of two interacting spheres \\
+$z$ & Colloid-centre distance from the boundary \\
+$l_\mathrm{B}$ & Gravitational Boltzmann length, $k_\mathrm{B}\Theta/(g\Delta m)$ \\
+$l_\mathrm{D}$ & Debye screening length \\
+$g$ & Gravitational acceleration \\
+$\Delta m$ & Buoyant mass of a colloid \\
+$U_\mathrm{grav}$ & Gravitational potential energy \\
+$U_\mathrm{elec}$ & Electrostatic interaction potential energy \\
+$U$ & Total potential energy (characteristic velocity in Chapter 4) \\
+$z_i$ & Valency of ionic species $i$ \\
+$c_i(\vect r),c_i^\infty$ & Local and bulk number concentrations of ionic species $i$ \\
+$e$ & Elementary charge \\
+$\varepsilon$ & Fluid permittivity \\
+$\psi(\vect r)$ & Electrostatic potential (pair mode in the notation $D_\psi$) \\
+$K_1,K_2$ & Integration constants in the screened electrostatic potential around a sphere \\
+$\sigma,\sigma_i,\sigma_\mathrm{boundary}$ & Surface charge density of a sphere or boundary (noise amplitude in Chapter 1; standard deviation in Chapter 3) \\
+$B$ & Dimensionless amplitude of the sphere-boundary electrostatic repulsion \\
+$\kappa$ & Inverse Debye length, $l_\mathrm{D}^{-1}$, in Chapter 2 (compliance in Chapter 3) \\
+$P_\mathrm{eq},P_\mathrm{ss}$ & Equilibrium and steady-state probability densities \\
+$F(z)$ & Force on a colloid at height $z$ \\
+$\vect r_0$ & Location of a point force in the Stokes equations \\
+$F_\mathrm{ext},F_\mathrm{hydro}$ & External and hydrodynamic forces \\
+$F_\mathrm{ss}$ & Effective steady-state force \\
+$v_\mathrm{d},v_\mathrm{s},\bar v_\mathrm{d}$ & Deterministic, spurious, and mean drift velocities \\
+$U_\mathrm{ss}$ & Effective steady-state potential \\
+$A(z)$ & Auxiliary function $g^2(z)P_\mathrm{ss}(z)$ in the steady-state derivation \\
+$\vect r,\vect r_i,\vect r_{ij}$ & Position, particle position, and pair-separation vectors \\
+$r,r_{ij}$ & Centre-to-centre or pair-separation distance \\
+$\vect R_j$ & Position of the image system associated with particle $j$ \\
+$\hat{\vect r}$ & Unit vector in the direction of $\vect r$ \\
+$\vect u,\vect V_i$ & Fluid velocity and translational velocity of particle $i$ \\
+$p(\vect r)$ & Fluid pressure \\
+$\tens G$ & Stokeslet (Oseen Green's-function) tensor \\
+$\mat I$ & Identity tensor \\
+$\vect F_i$ & Force exerted by particle $i$ on the fluid \\
+$\tens\upmu_{ij}^{tt},\tens\upmu^{tt}$ & Pair block and grand translational mobility matrix \\
+$\mat D^{tt}$ & Grand translational diffusion matrix, related to mobility by fluctuation-dissipation \\
+$D_{i\alpha,j\beta}$ & Diffusion tensor component for particles $i,j$ and Cartesian components $\alpha,\beta$ \\
+$D_\mathrm{c},D^\mathrm{C},D^\mathrm{R}$ & Cross-diffusion, collective-mode, and relative-mode coefficients \\
+$D_\psi$ & Pair-mode diffusion coefficient for mode $\psi$ \\
+$D_\parallel^{\mathrm{C,R}},D_\perp^{\mathrm{C,R}}$ & Collective and relative pair diffusion coefficients parallel and perpendicular to the line of centres \\
+$C,R$ & Collective and relative pair modes \\
+$\alpha$ & Auxiliary parameter in Brenner's friction expression (stochastic convention parameter in Chapter 1; geometrical factor in Chapter 4) \\
+$\xi$ & Dimensionless pair-boundary separation parameter, $4z^2/r^2$ \\
+$\tens\upmu_{ij}^{\mathrm{RPY}}$ & Rotne-Prager-Yamakawa pair mobility tensor \\
+$\tens\upmu_\mathrm{RPB}$ & Rotne-Prager-Yamakawa-Blake mobility matrix \\
+$\tens R_\mathrm{lub}^{\mathrm{sup}}$ & Pairwise-superposed lubrication resistance matrix \\
+$\tens R_\mathrm{RPB}^{\mathrm{sup}}$ & Pairwise-superposed RPY-Blake resistance matrix \\
+$N$ & Number of colloids, or number of pair-position resets in the simulation protocol \\
+$t_\mathrm{free}$ & Free-diffusion interval between pair-position resets \\
 \hline
-$\mathrm{Re}$ & Reynolds number \\
-$\mathrm{Pe}$ & Péclet number \\
+\multicolumn{2}{l}{\textbf{Chapter 3: Brownian motion in soft confinement}}\\
+$q_1,q_2$ & Degrees of freedom for the colloid and the membrane mode, respectively \\
+$q_1^*$ & Position $q_1$ reduced modulo the potential period $\lambda$ \\
+$\phi(q_1)$ & Periodic trapping potential acting on $q_1$ \\
+$\Delta U$ & Amplitude of the periodic trapping potential \\
+$\lambda$ & Spatial period of the trapping potential (velocity relaxation rate in Chapter 1; tumble rate in Chapter 5) \\
+$\kappa$ & Membrane compliance (inverse stiffness; inverse Debye length in Chapter 2) \\
+$\epsilon$ & Dimensionless compliance, $\kappa k_\mathrm{B}\Theta/\lambda^2$ \\
+$\mat\gamma,\gamma_{ij}$ & Friction matrix and its elements \\
+$\mat\upmu,\upmu_{ij}$ & Mobility matrix and its elements \\
+$\upmu_\mathrm{e}$ & Dressed effective mobility of the colloid \\
+$H(q_1,q_2)$ & Total energy of the colloid-membrane model \\
+$\beta$ & Inverse thermal energy, $(k_\mathrm{B}\Theta)^{-1}$ \\
+$P_\mathrm{eq},P_1$ & Equilibrium joint density and marginal density of $q_1$ \\
+$\eta_i(t)$ & Thermal noise acting on degree of freedom $q_i$ \\
+$k_\mathrm{eff}$ & Local stiffness of the periodic potential near a minimum \\
+$\tau_1,\tau_2$ & Relaxation times of the periodic-trap and elastic modes \\
+$\tau^*(\kappa)$ & Diffusion time across one trap period, $\lambda^2/D^*(\kappa)$ \\
+$D_\mathrm{m},D_2$ & Short-time diffusion coefficients of modes $q_1$ and $q_2$ \\
+$D_\mathrm{e}(q_1)$ & Position-dependent effective diffusion coefficient of $q_1$ \\
+$D^*(\kappa)$ & Long-time effective diffusion coefficient of the trapped colloid \\
+$D_\mathrm{q}^*$ & Dimensionless effective diffusion coefficient in the Kubo formulation \\
+$T_\mathrm{sim}$ & Total simulation duration \\
+$n_\mathrm{steps}$ & Number of simulation time steps \\
+$\sigma^2(\tau)$ & Variance of the displacement distribution at lag $\tau$ \\
+$w_\mathrm{bin}$ & Width of a displacement-histogram bin \\
+$n_\mathrm{bins}$ & Number of bins in a displacement histogram \\
+$\mathcal C$ & Relative change between successive cumulative displacement histograms; convergence criterion \\
+$F$ & Weak applied force used in the linear-response calculation \\
+$J$ & Probability flux in the effective one-dimensional model \\
+$Z_\pm$ & Integrals of $\exp[\pm\beta\phi(q)]$ over one potential period \\
+$\psi(p)$ & Dimensionless shape of the periodic potential \\
+$q,u$ & Dimensionless coordinates corresponding to $q_1,q_2$ in the Kubo formulation \\
+$r(q,u)$ & First-order correction to the equilibrium density under weak forcing \\
+$E$ & Elastic modulus of a membrane \\
+$a,d$ & Colloid radius and colloid-membrane separation in the application example \\
+\hline
+\multicolumn{2}{l}{\textbf{Chapter 4: Brownian solutes in fluid flows}}\\
+$\mathrm{Re}$ & Reynolds number, ratio of inertial to viscous effects \\
+$\rho$ & Fluid density \\
+$U,L$ & Characteristic fluid speed and length in the Reynolds number \\
+$\eta$ & Dynamic viscosity of the fluid \\
+$c(x,y,t)$ & Solute concentration field \\
+$\bar c,c'$ & Cross-sectional mean concentration and shear-induced correction \\
+$u(y),\bar u$ & Flow velocity profile and its cross-sectional mean \\
+$x,y$ & Streamwise and cross-stream coordinates in a channel \\
 $W$ & Channel half-width \\
+$\tau_\mathrm{D}$ & Transverse diffusion time, $W^2/D_0$ \\
+$D_{x,\mathrm{TA}}$ & Taylor-Aris longitudinal dispersion coefficient \\
+$D_\mathrm{eff}$ & Effective dispersion coefficient (active long-time diffusion coefficient in Chapter 5) \\
+$\alpha$ & Geometry-dependent Taylor-Aris dispersion factor \\
+$\mathrm{Pe}$ & Péclet number, ratio of advective to diffusive transport \\
+$L$ & Channel length in the experimental setup (characteristic length in the Reynolds number) \\
 $H$ & Channel thickness \\
-$\tau_\mathrm{D}$ & Transverse diffusion time \\
-$D_{x, \mathrm{TA}}$ & Taylor-Aris dispersion coefficient \\
-$\Delta P$ & Entry-to-exist pressure difference \\
-$\dot s $ & Shear rate \\
-$D_y$ & Crosswise diffusion coefficient \\
-$D^\infty_y$ & Crosswise diffusion coefficient away from wall interactions \\
-$N$ & Number of colloids \\
-$\phi$ & Volume fraction \\
-$L_i$ & Periodic box length in direction $i \in (x, y)$\\
-$H_\mathrm{box}$ & Virtual simulation box height\\
-
-
-
+$\Delta P$ & Pressure difference across a channel \\
+$\dot s$ & Shear rate \\
+$D_y$ & Cross-stream diffusion coefficient measured from colloid trajectories \\
+$\theta,\theta_\mathrm{c}$ & Incidence angle and critical angle in TIRFM \\
+$n_1,n_2$ & Refractive indices of the water and solid media, respectively \\
+$\lambda_0$ & Vacuum wavelength of the excitation laser \\
+$d$ & Evanescent-wave penetration depth (spatial dimensionality in Chapter 1) \\
+$I(z),I_0$ & Fluorescence intensity at height $z$ and its value at the interface \\
+$\sigma_y^2$ & Variance of cross-stream displacements \\
+$\tau$ & Frame lag used to estimate transverse diffusion \\
+$\phi$ & Colloidal volume fraction (orientation angle in Chapter 5) \\
+$N$ & Number of colloids in the suspension \\
+$L_x,L_y$ & Periodic simulation-box lengths in the $x$ and $y$ directions \\
+$H_\mathrm{box}$ & Height of the virtual simulation box \\
+$\lambda_\mathrm{e}$ & Effective observation-layer thickness used in the volume-fraction estimate \\
+$A$ & Dimensionless amplitude of electrostatic repulsion in the simulation model \\
+$R_\mathrm{h}$ & Hydraulic resistance of a channel \\
+$g^*$ & Artificially increased gravitational acceleration used in the simulation \\
 \hline
+\multicolumn{2}{l}{\textbf{Chapter 5: Active microswimmers in shear flows}}\\
+$D_\mathrm{R}$ & Rotational diffusion coefficient (active rotational decorrelation rate in the flow model) \\
 $D_\mathrm{T}$ & Translational diffusion coefficient \\
-$D_\mathrm{R}$ & Rotational diffusion coefficient \\
-$D_\mathrm{eff}$ & Active translational diffusion coefficient \\
-$\omega$ & Angular velocity \\
-$v$ & Self-propelling, active velocity \\
-$\tau_\mathrm{run}$ & Typical time between tumbles \\
-$\tau_\mathrm{p}$ & Run persistence duration \\
-$T$ & Flow oscillation period \\
-$R_\mathrm{h}$ & Hydraulic resistance \\
-$\mathrm{Pe}_\mathrm{A}$ & Active Péclet number \\
-
-
-
-
-
-
-
-
+$\tau_\mathrm{R}$ & Orientational relaxation time, $D_\mathrm{R}^{-1}$ \\
+$\phi$ & Orientation angle of a swimmer (volume fraction in Chapter 4) \\
+$\xi_x,\xi_y,\xi_\phi$ & Independent Gaussian white noises in the two-dimensional active-particle model \\
+$\vect r$ & Swimmer position vector \\
+$\vect n$ & Unit swimmer-orientation vector \\
+$\boldsymbol\Omega$ & Angular-velocity vector; $\omega$ is its scalar magnitude in the specified rotation direction \\
+$\omega$ & Angular velocity of a chiral swimmer or vorticity-induced rotation rate \\
+$D_\phi$ & Rotational noise coefficient in the active-flow model \\
+$D_\mathrm{eff}$ & Long-time effective diffusivity of an active swimmer (Taylor-Aris dispersion coefficient in Chapter 4) \\
+$\tau_\mathrm{run}$ & Mean time between run-and-tumble events, $\lambda^{-1}$ \\
+$\tau_\mathrm{p}$ & Persistence time of a run-and-tumble particle \\
+$P_\mathrm{tumble}(\Delta t)$ & Probability of at least one tumble during $\Delta t$ \\
+$\Delta\phi_i$ & Reorientation angle at tumble event $i$ \\
+$T$ & Oscillation period of the imposed flow \\
+$f(y,z)$ & Cross-sectional profile of the imposed flow \\
+$\vect u(y,z,t)$ & Imposed fluid-velocity field \\
+$V_x,V_y$ & Swimmer-velocity components in the streamwise and cross-stream directions \\
+$D_x$ & Longitudinal dispersion coefficient measured for active swimmers \\
+$\mathrm{Pe}_\mathrm{A}$ & Active Péclet number in the absence of flow \\
+$\beta$ & Geometric factor in the relation between squared swimmer-velocity components \\
+$\phi_0$ & Phase offset of the imposed oscillatory flow \\
+$\hat x(t)$ & Streamwise position in the frame moving with the oscillatory flow \\
+$A[y(t),t]$ & Amplitude of the oscillatory displacement as a function of height and time \\
+$\vect e_x$ & Unit vector along the streamwise direction \\
+$\vect e_z$ & Unit vector along the rotation axis in the chiral-swimmer model \\
+\hline
 \end{longtable}

@@ -1,5 +1,5 @@
 \chapter{Dispersion of active microswimmers in shear flows}
-
+\epigraph{``I heard there was a tide that needed turning.''}{Magic The Gathering}
 \section{Introduction}
 The final part of this manuscript is dedicated to the study of active particles and their interplay with external fluid flows. This subject was actually the motivation for my thesis, and the first part of this chapter presents an introduction to the field of active matter. The end of this chapter treats the problem of active Taylor-Aris dispersion. The notion of Taylor-Aris dispersion is described in chapter 4. For the sake of clarity, I thus invite the reader to consult its developments before reading this part. We conducted this work in tandem with Marc Lagoin, Guirec de Tournemire, Ahmad Badr and Antoine Allard. 
 \subsection{Activity}
@@ -12,7 +12,7 @@ Authors define active matter as the first or both of the following:
 \end{enumerate}
 
 
-Numerous examples of active systems exist, and these systems can be found at any scale (Fig.~\ref{Reynolds_sizes}). It is essential to not only classify them by size but also by Reynolds number. Interestingly, the definition of active matter is loose enough to even include human beings, robots and even large aircrafts.  This thesis articulates around notions of small systems, and I thus restrict my arguments to these systems from there on.
+Numerous examples of active systems exist, and these systems can be found at any scale (Fig.~\ref{Reynolds_sizes}). It is essential to not only classify them by size but also by Reynolds number. Interestingly, the definition of active matter is loose enough to even include human beings, robots and even large aircraft.  This thesis articulates around notions of small systems, and I thus restrict my arguments to these systems from there on.
 
 \begin{figure}
     \centering
@@ -182,7 +182,7 @@ In chapter 4, I introduced the notion of Taylor-Aris dispersion, originally deve
 
 \subsection{Experimental setup}
 
-We create a microfluidic channel using soft lithography on a PolyDiMethylSiloxane (PDMS) chip. The channel has dimensions $(L, W, H) =  (88 \, \mathrm{mm}, 180 \, \upmu \mathrm{m}, 100\, \upmu \mathrm{m}$), with $W$ the width, $H$ the height and $L$ the length of the channel (Fig.~\ref{ExperimentalSetup}). The streamwise direction is defined along $\vect{e_x}$. The cell is then slowly filled with a dilute suspension of \emph{Chlamydomonas reinhardtii} to ensure negligible interaction between individual algae. We suppress the phototacic response with a red filter~\cite{Foster1984}.
+We create a microfluidic channel using soft lithography on a PolyDiMethylSiloxane (PDMS) chip. The channel has dimensions $(L, W, H) =  (88 \, \mathrm{mm}, 180 \, \upmu \mathrm{m}, 100\, \upmu \mathrm{m}$), with $W$ the width, $H$ the height and $L$ the length of the channel (Fig.~\ref{ExperimentalSetup}). The streamwise direction is defined along $\vect{e_x}$. The cell is then slowly filled with a dilute suspension of \emph{Chlamydomonas reinhardtii} to ensure negligible interaction between individual algae. We suppress the phototactic response with a red filter~\cite{Foster1984}.
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figures/chapter5/experimental_setup.pdf}
@@ -220,7 +220,7 @@ To reproduce the experimental results from this study, I choose a two-dimensiona
 \end{align}
 with $v$ the particle's self propelling speed, $D_\phi = \tau_\mathrm{R}^{-1}$ the rotation rate, $\omega$ the rotational velocity due to the vorticity of the flow as $\omega = \partial{u(y, t)}/\partial{y}$, and where fluid velocity is expressed, strictly equivalently to Eq.~\ref{fluidvelexp}, as $\vect{u}(y, t) = 1/(2 \eta_0) \, \Delta P/L \, y(H - y) \sin \left(2 \pi t/T\right) \vect{e_x}$.
 
-I then disretise Eqs.~\ref{equationsnum} using a forward Euler scheme. The results of solving the discretised Eqs.~\ref{equationsnum} is shown in Figs.~\ref{NumTraj1} and~\ref{NumTraj2}. By comparing a case where particles are active but in no advection, and a case where they move both due to their own activity and to the fluid flow, one notices a very noticeable enhancement in the dispersion (Fig.~\ref{NumTraj1}). Indeed, in the absence of flow, particles tend to quickly reach one boundary where they accumulate, and then take a noticeable amount of time (of the order of $\tau_\mathrm{R}$) to reorient away from the wall through their active rotational process. In the case where a Poiseuille flow exists, particles tend not to approach the wall as much. I interpret this as a direct result of the stronger shear close to the wall: a swimmer will only need a tiny ``push'' in its orientation to escape contact with the wall. 
+I then discretise Eqs.~\ref{equationsnum} using a forward Euler scheme. The results of solving the discretised Eqs.~\ref{equationsnum} is shown in Figs.~\ref{NumTraj1} and~\ref{NumTraj2}. By comparing a case where particles are active but in no advection, and a case where they move both due to their own activity and to the fluid flow, one notices a very noticeable enhancement in the dispersion (Fig.~\ref{NumTraj1}). Indeed, in the absence of flow, particles tend to quickly reach one boundary where they accumulate, and then take a noticeable amount of time (of the order of $\tau_\mathrm{R}$) to reorient away from the wall through their active rotational process. In the case where a Poiseuille flow exists, particles tend not to approach the wall as much. I interpret this as a direct result of the stronger shear close to the wall: a swimmer will only need a tiny ``push'' in its orientation to escape contact with the wall.
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{figures/chapter5/numtraj1.pdf}
@@ -231,7 +231,7 @@ Along the $x-$axis, we see that the trajectory of a swimmer presents a strong si
 \begin{figure}
     \centering
     \includegraphics[width=.9\textwidth]{figures/chapter5/numtraj2.pdf}
-    \caption[Trajectories of an active Brownian particle in a sinusoidal Poiseuille flow obtained from numerical simulations.]{Numerical results obtained from discretising Eqs.~\ref{equationsnum} with an Euler scheme with $n_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14\, \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $\Delta P = 73.0 \, \mathrm{Pa}$, $a = 5 \, \upmu \mathrm{m}$. Top: streamwise trajectory along the $x-$axis. The full blue curve shows the raw trajectory. The indigo dashed curve is the result of a demodulation of the signal obtained from a linear regression. The inset shows a zoom on times $t \in [160; 180]$ for better visualiation of the demodulation. Bottom: cross-streamwise trajectory along the $y-$axis (orange curve). The grey dotted lines represents the boundary of the channel, beyond which the ABP cannot wander.}
+    \caption[Trajectories of an active Brownian particle in a sinusoidal Poiseuille flow obtained from numerical simulations.]{Numerical results obtained from discretising Eqs.~\ref{equationsnum} with an Euler scheme with $n_\mathrm{steps} = 10^{6}$, $\Delta t = 1 \, \times 10 ^{-3}\, \mathrm{s}$, $T = 2\, \mathrm{s}$, $k_\mathrm{B}\Theta = 4.14\, \times 10^{-19} \, \mathrm{J}$, $v = 100 \, \upmu \mathrm{m.s}^{-1} \, \mathrm{m.s}^{-1}$, $D_\mathrm{R} = 3.35 \, \mathrm{s}^{-1}$, $\Delta P = 73.0 \, \mathrm{Pa}$, $a = 5 \, \upmu \mathrm{m}$. Top: streamwise trajectory along the $x-$axis. The full blue curve shows the raw trajectory. The indigo dashed curve is the result of a demodulation of the signal obtained from a linear regression.     The inset shows a zoom on times $t \in [160; 180]$ for better visualisation of the demodulation. Bottom: cross-streamwise trajectory along the $y-$axis (orange curve). The grey dotted lines represents the boundary of the channel, beyond which the ABP cannot wander.}
     \label{NumTraj2}
 \end{figure}
 
@@ -246,7 +246,7 @@ where $\alpha$ is a geometrical factor depending on the channel geometry (here, 
 \begin{equation}
     \mathrm{Pe} = \dfrac{\Delta P}{\sqrt{2}R_\mathrm{h}}\dfrac{W}{D_\mathrm{eff}}~,
 \end{equation}
-where the $\Delta P/\left(\sqrt{2}R_\mathrm{h}\right)$ factor is the root-mean-square fluid velocity due to the oscillations of the pressure difference. To extract dispersion coefficients, we compute the dedridfted MSDs of multiple trajectories for a given set of parameters and average them. This is not the most computationally efficient method, but it is sufficient as we do not require a large amount of statistics for this study. We then repeat this process for multiple $\Delta P$ values, or equivalently, multiple $\mathrm{Pe}$ values. The results of these calculations is shown in Fig.~\ref{MSDpeclet}. 
+where the $\Delta P/\left(\sqrt{2}R_\mathrm{h}\right)$ factor is the root-mean-square fluid velocity due to the oscillations of the pressure difference. To extract dispersion coefficients, we compute the drift-corrected MSDs of multiple trajectories for a given set of parameters and average them. This is not the most computationally efficient method, but it is sufficient as we do not require a large amount of statistics for this study. We then repeat this process for multiple $\Delta P$ values, or equivalently, multiple $\mathrm{Pe}$ values. The results of these calculations is shown in Fig.~\ref{MSDpeclet}.
 \begin{figure}
     \centering
     \includegraphics[width=.9\textwidth]{figures/chapter5/MSD2.pdf}
